@@ -1,50 +1,287 @@
 {
-    "academic_experiences": [
+  "academic_experiences": [
+    {
+      "current": true,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/research-assistant",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Feb 2021 - Gen 2022",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/assistant-professor",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Assistant Professor (RTDa)",
+      "time_period": "Feb 2023 - Gen 2025",
+      "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, SSD INF/01, funded by the Italian Ministero dell'Universit\u00e0 e della Ricerca (DM 1062/2021 \u2013 PON 'Ricerca e Innovazione' 2014\u20132020 Asse IV, azione IV.1)",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/research-grant",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Holder of a research grant (assegno di ricerca B)",
+      "time_period": "Feb 2020 - Gen 2021",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food, SSD ING-INF/05",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/research-assistant-grant",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (assegno di ricerca B)",
+      "time_period": "Feb 2019 - Gen 2020",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food, SSD ING-INF/05",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/research-assistant",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Nov 2015 - Oct 2016",
+      "topic": "Definition and implementation of the UniData center\u2019s data architecture",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/research-assistant",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Sep 2014 - Aug 2015",
+      "topic": "Development of software components for the efficient implementation of semantic technologies for extracting, processing, and utilising information on the web. Access to web services through mobile channels",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it/ricerca/experience/research-fellow",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Fellow",
+      "ssd": "ING-INF/05",
+      "time_period": "Feb 2011 - Jan 2012",
+      "topic": "Development Methodologies for Value-Added Services in Agriculture",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://www.unimib.it",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Collaborator",
+      "time_period": "2007 - 2008",
+      "topic": "",
+      "university": "University of Milan-Bicocca"
+    }
+  ],
+  "international_academic_experiences": [
+    {
+      "current": true,
+      "department": "Big Data for Smart Society Institute",
+      "link": "https://www.uni-sofia.bg",
+      "logo": "sofia.png",
+      "place": "Sofia, Bulgaria",
+      "position": "Researcher",
+      "ssd": "",
+      "time_period": "Apr 2022 - Mar 2024",
+      "topic": "Building competence in data enrichment for artificial intelligence, financed by the Bulgarian Ministry of Education and Science (European Science Network)",
+      "university": "Sofia University \u201cSt. Kliment Ohridski\u201d"
+    },
+    {
+      "current": false,
+      "department": "Big Data for Smart Society Institute",
+      "link": "https://www.uni-sofia.bg",
+      "logo": "sofia.png",
+      "place": "Sofia, Bulgaria",
+      "position": "Researcher",
+      "ssd": "",
+      "time_period": "Jul 2021 - Mar 2022",
+      "topic": "Building competence in data enrichment for artificial intelligence, financed by the Bulgarian Ministry of Education and Science (European Science Network)",
+      "university": "Sofia University \u201cSt. Kliment Ohridski\u201d"
+    },
+    {
+      "current": false,
+      "department": "Semantic Computing Group",
+      "link": "https://www.uni-bielefeld.de",
+      "logo": "bielefeld.png",
+      "place": "Bielefeld, Germany",
+      "position": "Researcher",
+      "ssd": "",
+      "time_period": "Nov 2018 - Apr 2019",
+      "topic": "Research internship abroad through the Erasmus+ Traineeship program",
+      "university": "Bielefeld University"
+    }
+  ],
+  "research_and_technology_transfer": [
+    {
+      "position": "CTO, Co-founder",
+      "place": "Milan, Italy",
+      "institution": "WhatData srl",
+      "time_period": "2025",
+      "topic": "Spin-off of the University of Milano-Bicocca, approved by the Academic Senate on March 5, 2025, and by the Board of Directors on March 18, 2025"
+    },
+    {
+      "position": "Consultant",
+      "place": "Rome, Italy",
+      "institution": "Aton Informatica s.r.l.",
+      "time_period": "2023",
+      "topic": "Scientific support for the MAPS-EH project (Monitoring the Implementation of Security Policies in the E-Health sector), funded by the Cyber 4.0 Competence Center"
+    },
+    {
+      "position": "Consultant",
+      "place": "Milan, Italy",
+      "institution": "Nana Bianca/Instal srl",
+      "time_period": "Apr 2020 - May 2020",
+      "topic": "Definition of a software architecture based on LSTM algorithms for the lexicalization of RDF data"
+    },
+    {
+      "position": "Consultant",
+      "place": "Perugia, Italy",
+      "institution": "Umbria Digital S.e. a r.l.",
+      "time_period": "2015\u20132016",
+      "topic": "Scientific support for the development of components for the publication of Open Data"
+    }
+  ],
+  "entrepreneurial_initiatives": [
+    {
+      "position": "CEO, Co-founder",
+      "place": "Bergamo, Italy",
+      "institution": "Whatasport srl",
+      "time_period": "Jan 2014 \u2013 Oct 2016",
+      "topic": "Innovative start-up specialising in the development of cutting-edge applications for the sports industry"
+    },
+    {
+      "position": "CTO, Co-founder",
+      "place": "Bergamo, Italy",
+      "institution": "NPcow srl",
+      "time_period": "2012 \u2013 2014",
+      "topic": "Company specialising in web development, communication, and event organization"
+    }
+  ],
+  "company_experiences": [
+    {
+      "position": "PM, Grant Writer",
+      "place": "Rieti, Italy",
+      "institution": "Aton Informatica srl",
+      "time_period": "Jan 2005 \u2013 Present",
+      "topic": "Consultancy in R&D project management, grant writing, strategic planning, and fostering partnerships"
+    },
+    {
+      "position": "Consultant",
+      "place": "Florence, Italy",
+      "institution": "Instal srl",
+      "time_period": "Sep 2017 \u2013 Mar 2018",
+      "topic": "Optimised mobile ad delivery, enhanced performance tracking, and implemented monetisation strategies"
+    },
+    {
+      "position": "Consultant",
+      "place": "New York, USA",
+      "institution": "Mobile Avenue Solutions LLC",
+      "time_period": "Jan 2017 \u2013 Aug 2017",
+      "topic": "Optimised mobile ad delivery, enhanced performance tracking, and implemented monetisation strategies"
+    },
+    {
+      "position": "Developer",
+      "place": "Rome, Italy",
+      "institution": "Future Space spa",
+      "time_period": "Jul 2012 \u2013 Dec 2012",
+      "topic": "Designed and optimised backend systems, improved database efficiency and software performance"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Computer Science",
+      "time_period": "Nov 2016 \u2013 Oct 2019",
+      "thesis_title": "Enabling tabular data understanding by human and machines through semantic interpretation",
+      "thesis_link": "https://hdl.handle.net/10281/255365",
+      "international_experience": "Bielefeld University, Germany",
+      "courses": [
+        "Writing of Scientific papers",
+        "Big Data Technologies",
+        "Privacy and processing of personal data. Technical and legal aspects",
+        "Knowledge Graphs and Semantic Data Management: Models, Techniques and Applications",
+        "Internet of Things: a service-oriented perspective"
+      ],
+      "summer_schools": [
+        "Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience \u2013 Como, Italy, Sep 18 \u2013 22, 2017",
+        "2nd International Summer School on Deep Learning 2018 \u2013 Genova, Italy, July 23 \u2013 27, 2018"
+      ]
+    },
+    {
+      "degree": "M.Sc. in Computer Science",
+      "time_period": "Oct 2007 \u2013 Sep 2010",
+      "thesis_title": "Framework di supporto alla pianificazione di servizi basato su un approccio multi-paradigma",
+      "honours": "magna cum laude"
+    },
+    {
+      "degree": "B.Sc. in Computer Science",
+      "time_period": "Oct 2002 \u2013 Oct 2007",
+      "thesis_title": "Progettazione e realizzazione di una applicazione web per la gestione di un indirizzario dipartimentale"
+    }
+  ],
+  "publications": {
+    "submitted_publications": [
       {
-        "current": true,
-        "department": "Department of Informatics, Systems and Communication",
-        "link": "https://www.unimib.it/ricerca/experience/research-assistant",
-        "logo": "unimib.png",
-        "place": "Milan, Italy",
-        "position": "Research Assistant",
-        "ssd": "ING-INF/05",
-        "time_period": "Feb 2021 - Gen 2022",
-        "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
-        "university": "University of Milan-Bicocca"
+        "title": "Decoding the mind: a RAG-LLM on ICD-11 for decision support in psychology",
+        "authors": [
+          "Marco Cremaschi",
+          "Davide Ditolvo",
+          "Cesare Curcio",
+          "Anna Panzeri",
+          "Andrea Spoto",
+          "Andrea Maurino"
+        ],
+        "venue": "Expert Systems With Applications",
+        "publisher": "Elsevier",
+        "year": 2025,
+        "type": "Journal paper",
+        "quartile": "Q1 Artificial Intelligence"
       },
       {
-        "current": false,
-        "department": "Department of Informatics, Systems and Communication",
-        "link": "https://www.unimib.it/ricerca/experience/assistant-professor",
-        "logo": "unimib.png",
-        "place": "Milan, Italy",
-        "position": "Assistant Professor (RTDa)",
-        "time_period": "Feb 2023 - Gen 2025",
-        "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, SSD INF/01, funded by the Italian Ministero dell'Università e della Ricerca (DM 1062/2021 – PON 'Ricerca e Innovazione' 2014–2020 Asse IV, azione IV.1)",
-        "university": "University of Milan-Bicocca"
+        "title": "MantisTable UI: a web interface for comprehensive Semantic Table Interpretation management",
+        "authors": [
+          "Marco Cremaschi",
+          "Fabio D\u2019Adda",
+          "Sara Nocco"
+        ],
+        "venue": "Semantic Web Journal",
+        "publisher": "IOS Press",
+        "year": 2025,
+        "type": "Journal paper",
+        "quartile": "Q2 Computer Networks and Communications, Q2 Computer Science Applications, Q2 Information Systems"
       },
       {
-        "current": false,
-        "department": "Department of Informatics, Systems and Communication",
-        "link": "https://www.unimib.it/ricerca/experience/research-grant",
-        "logo": "unimib.png",
-        "place": "Milan, Italy",
-        "position": "Holder of a research grant (assegno di ricerca B)",
-        "time_period": "Feb 2020 - Gen 2021",
-        "topic": "Analysis and semantic annotation of data related to the nutritional components of food, SSD ING-INF/05",
-        "university": "University of Milan-Bicocca"
-      },
-      {
-        "current": false,
-        "department": "Department of Informatics, Systems and Communication",
-        "link": "https://www.unimib.it/ricerca/experience/research-assistant-grant",
-        "logo": "unimib.png",
-        "place": "Milan, Italy",
-        "position": "Research Assistant (assegno di ricerca B)",
-        "time_period": "Feb 2019 - Gen 2020",
-        "topic": "Analysis and semantic annotation of data related to the nutritional components of food, SSD ING-INF/05",
-        "university": "University of Milan-Bicocca"
+        "title": "Survey on semantic interpretation of tabular data: challenges and directions",
+        "authors": [
+          "Marco Cremaschi",
+          "Blerina Spahiu",
+          "Matteo Palmonari"
+        ],
+        "venue": "Artificial Intelligence Review",
+        "publisher": "Springer",
+        "year": 2025,
+        "type": "Journal paper",
+        "quartile": "Q1 Artificial Intelligence"
       }
     ]
   }
-  
+}
