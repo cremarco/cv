@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Cremaschi - Academic CV</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                    },
+                    colors: {
+                        'custom-lavender': '#F8F2FC',
+                        'gradient-purple': '#A478E8',
+                        'gradient-blue': '#516CF7',
+                        'primary': '#6366f1',
+                        'primary-hover': '#4f46e5',
+                        'text-dark': '#1f2937',
+                        'text-medium': '#4b5563',
+                        'text-light': '#6b7280',
+                        'text-lighter': '#9ca3af',
+                        'text-white': '#ffffff',
+                        'bg-main': '#ffffff',
+                        'bg-secondary': '#f9fafb',
+                        'bg-card': '#ffffff',
+                        'bg-icon': '#f3f4f6',
+                        'bg-lavender': '#F8F2FC',
+                        'border': '#e5e7eb',
+                        'border-light': '#f3f4f6',
+                        'linkedin': '#0077b5',
+                        'github': '#24292e',
+                        'italy-green': '#009246',
+                        'italy-white': '#ffffff',
+                        'italy-red': '#ce2b37',
+                        'uk-blue': '#00247d',
+                        'uk-white': '#ffffff',
+                        'uk-red': '#cf142b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Only keeping essential custom styles that can't be easily replicated with Tailwind */
+        .gradient-text {
+            background: linear-gradient(90deg, #A478E8, #516CF7, #A478E8);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            animation: gradient-shift 6s ease infinite;
+        }
+
+        .citation-gradient {
+            background: linear-gradient(135deg, #A478E8, #516CF7, #A478E8);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            animation: gradient-diagonal-shift 8s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes gradient-diagonal-shift {
+            0% { background-position: 0% 0%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .dark-theme {
+            --color-primary: #818cf8;
+            --color-primary-hover: #6366f1;
+            --color-text-dark: #f9fafb;
+            --color-text-medium: #e5e7eb;
+            --color-text-light: #d1d5db;
+            --color-text-lighter: #9ca3af;
+            --color-text-white: #ffffff;
+            --color-bg-main: #111827;
+            --color-bg-secondary: #1f2937;
+            --color-bg-card: #1f2937;
+            --color-bg-icon: #374151;
+            --color-bg-lavender: #2d2235;
+            --color-border: #374151;
+            --color-border-light: #4b5563;
+        }
+    </style>
+</head>
+
+<body class="bg-bg-main text-text-dark">
+    <div class="container mx-auto p-4 md:p-0 max-w-7xl">
+        <div class="flex flex-col md:flex-row gap-4">
+            <!-- Left Sidebar -->
+            <div class="w-full md:w-1/4 p-6">
+                <div class="flex flex-col items-center md:items-start">
+                    <!-- Profile Image -->
+                    <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-border-light">
+                        <img src="/placeholder.svg?height=96&width=96" alt="Profile Photo" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Name and Title -->
+                    <h1 class="text-2xl font-bold text-text-dark mb-1">Marco Cremaschi,</h1>
+                    <h2 class="text-lg font-semibold text-text-medium mb-4">PH.D</h2>
+                    <h3 class="text-lg font-medium gradient-text mb-8">Research Assistant</h3>
+
+                    <!-- Contact Information -->
+                    <div class="w-full space-y-5 mb-10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
+                                <i class='bx bx-envelope text-xl'></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-light font-light">Email</p>
+                                <a href="mailto:marco.cremaschi@unimib.it" class="text-sm text-text-medium hover:text-primary">marco.cremaschi@unimib.it</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
+                                <i class='bx bx-globe text-xl'></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-light font-light">Website</p>
+                                <a href="https://cremarco.bitbucket.org" class="text-sm text-text-medium hover:text-primary">cremarco.bitbucket.org</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
+                                <i class='bx bx-phone text-xl'></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-light font-light">Phone</p>
+                                <a href="tel:+393664168368" class="text-sm text-text-medium hover:text-primary">(+39) 366 41 68 368</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
+                                <i class='bx bx-map text-xl'></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-light font-light">Address</p>
+                                <p class="text-sm text-text-medium">Milan, Italy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Socials -->
+                    <h4 class="text-sm font-medium text-text-light mb-4 w-full">Socials</h4>
+                    <div class="w-full space-y-5 mb-10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-linkedin flex items-center justify-center text-white">
+                                <i class='bx bxl-linkedin text-lg'></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-light font-light">LinkedIn</p>
+                                <a href="https://linkedin.com/in/marco-cremaschi" class="text-sm text-text-medium hover:text-primary">marco-cremaschi</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-github flex items-center justify-center text-white">
+                                <i class='bx bxl-github text-lg'></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-light font-light">GitHub</p>
+                                <a href="https://github.com/cremarco" class="text-sm text-text-medium hover:text-primary">cremarco</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <h4 class="text-sm font-medium text-text-light mb-4 w-full">Languages</h4>
+                    <div class="w-full space-y-5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <img id="flag-italian" src="flag/italian.svg" alt="Italian Flag">
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-medium font-medium">Italian</p>
+                                <p class="text-xs text-text-light">Native</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <img id="flag-english" src="flag/english.svg" alt="English Flag">
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-medium font-medium">English</p>
+                                <p class="text-xs text-text-light">Professional working</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="w-full md:w-3/4 bg-bg-secondary p-6 rounded-lg relative">
+                <!-- Timeline line -->
+                <div class="absolute left-0 top-0 bottom-0 w-px bg-border"></div>
+
+                <!-- Research Section -->
+                <div class="mb-10 relative">
+                    <div class="relative pl-6 mb-6">
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                        <h2 class="text-xl font-semibold text-text-dark">Research</h2>
+                    </div>
+
+                    <div class="pl-6">
+                        <!-- Research Profile Card -->
+                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-medium text-text-dark mb-3">Research Profile</h3>
+                            <p class="text-text-medium mb-4 text-sm leading-relaxed">
+                                I am a <span class="font-medium">research assistant</span> at the <span class="font-medium">University of Milan-Bicocca</span>, Department of Informatics, Systems, and Communication (DISCo) in Italy. I hold a PhD in Computer Science from the University of Milano-Bicocca (2020). During my PhD, I spent six months at Heidelberg University (Germany) as part of the Semantic Computing Group in 2019. Prior to that, I earned both a Bachelor's and a Master's degree in Computer Science at the University of Milano-Bicocca.
+                            </p>
+                            <p class="text-text-medium mb-4 text-sm leading-relaxed">
+                                My research expertise includes knowledge graph construction, data enrichment, and more recently, the application of artificial intelligence techniques for developing clinical decision support systems and predictive models in mental health.
+                            </p>
+                            <p class="text-text-medium text-sm leading-relaxed">
+                                Over the years, I have actively contributed to the Semantic Web and AI communities by publishing scientific papers in reputable conferences and journals. My engagement in the academic community extends to serving on the program committee of several top-tier international conferences, where I have taken on roles as chair and reviewer.
+                            </p>
+                        </div>
+
+                        <!-- Research Interest Card -->
+                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-6 border border-border-light hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-medium text-text-dark mb-4">Research Interest</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Web</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Knowledge Graphs</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Table Interpretation</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Mental Health</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Clinical Decision Support Systems</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Disease Risk Prediction Models</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Early Disease Detection Systems</span>
+                            </div>
+                        </div>
+
+                        <!-- Citation Metrics Section -->
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <!-- Google Scholar Card -->
+                            <div class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
+                                <div class="flex items-center mb-4">
+                                    <i class='bx bxl-google text-xl text-text-light mr-2'></i>
+                                    <h3 class="text-lg font-medium text-text-dark">Google Scholar</h3>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-4">
+                                    <!-- Citations -->
+                                    <div class="flex flex-col items-center justify-center py-2 relative">
+                                        <p class="text-4xl font-semibold citation-gradient mb-1">382</p>
+                                        <p class="text-sm text-gray-500">citations</p>
+                                        <div class="absolute right-0 top-0 bottom-0 w-px bg-border"></div>
+                                    </div>
+
+                                    <!-- h-index -->
+                                    <div class="flex flex-col items-center justify-center py-2 relative">
+                                        <p class="text-4xl font-semibold citation-gradient mb-1">12</p>
+                                        <p class="text-sm text-gray-500">h-index</p>
+                                        <div class="absolute right-0 top-0 bottom-0 w-px bg-border"></div>
+                                    </div>
+
+                                    <!-- i10-index -->
+                                    <div class="flex flex-col items-center justify-center py-2">
+                                        <p class="text-4xl font-semibold citation-gradient mb-1">16</p>
+                                        <p class="text-sm text-gray-500">i10-index</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scopus Card -->
+                            <div class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
+                                <div class="flex items-center mb-4">
+                                    <i class='bx bx-book-open text-xl text-text-light mr-2'></i>
+                                    <h3 class="text-lg font-medium text-text-dark">Scopus</h3>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <!-- Citations -->
+                                    <div class="flex flex-col items-center justify-center py-2">
+                                        <p class="text-4xl font-semibold citation-gradient mb-1">8</p>
+                                        <p class="text-sm text-gray-500">citations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Experiences Section -->
+                <div class="mb-10 relative">
+                    <div class="relative pl-6 mb-6">
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                        <h2 class="text-xl font-semibold text-text-dark">Academic experiences</h2>
+                    </div>
+
+                    <div class="pl-6">
+                        <!-- Experience 1 -->
+                        <div class="bg-bg-lavender rounded-lg shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow">
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-text-light font-light">University of Milan-Bicocca</p>
+                                        <h3 class="text-lg font-medium text-text-dark">Research Assistant</h3>
+                                    </div>
+                                </div>
+                                <div class="md:mt-0 flex flex-col md:items-end">
+                                    <div class="flex items-center gap-2">
+                                        <a href="#" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>
+                                        <p class="text-sm text-primary font-medium">Feb 2025 - Gen 2026</p>
+                                    </div>
+                                    <p class="text-xs text-text-light flex items-center mt-1">
+                                        <i class='bx bx-map-pin text-xs mr-1'></i>
+                                        Milan, Italy
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="ml-16">
+                                <p class="text-text-medium text-sm leading-relaxed">
+                                    Holder of a research grant (assegno di ricerca B) on the topic "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field", SSD INF/01. Department of Informatics, Systems and Communication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Contracts at Foreign Institutes Section -->
+                <div class="mb-10 relative">
+                    <div class="relative pl-6 mb-6">
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                        <h2 class="text-xl font-semibold text-text-dark">Research contracts at foreign institutes</h2>
+                    </div>
+
+                    <div class="pl-6">
+                        <!-- ... existing content ... -->
+                    </div>
+                </div>
+
+                <!-- Research and Technology Transfer Section -->
+                <div class="mb-10 relative">
+                    <div class="relative pl-6 mb-6">
+                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                        <h2 class="text-xl font-semibold text-text-dark">Research and technology transfer</h2>
+                    </div>
+
+                    <div class="pl-6">
+                        <!-- ... existing content ... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

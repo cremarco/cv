@@ -1,0 +1,46 @@
+{
+    "academic_experiences": [
+      {
+        "position": "Research Assistant",
+        "university": "University of Milan-Bicocca",
+        "time_period": "Feb 2021 - Gen 2022",
+        "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+        "ssd": "ING-INF/05",
+        "department": "Department of Informatics, Systems and Communication",
+        "logo": "https://www.unimib.it/sites/default/files/2021-06/logo%20unimib.jpeg",
+        "link": "https://www.unimib.it/ricerca/experience/research-assistant",
+        "current": false
+      },
+      {
+        "position": "Assistant Professor (RTDa)",
+        "university": "University of Milan-Bicocca",
+        "time_period": "Feb 2023 - Gen 2025",
+        "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, SSD INF/01, funded by the Italian Ministero dell’Università e della Ricerca (DM 1062/2021 – PON “Ricerca e Innovazione” 2014–2020 Asse IV, azione IV.1)",
+        "department": "Department of Informatics, Systems and Communication",
+        "logo": "https://www.unimib.it/sites/default/files/2021-06/logo%20unimib.jpeg",
+        "link": "https://www.unimib.it/ricerca/experience/assistant-professor",
+        "current": false
+      },
+      {
+        "position": "Holder of a research grant (assegno di ricerca B)",
+        "university": "University of Milan-Bicocca",
+        "time_period": "Feb 2020 - Gen 2021",
+        "topic": "Analysis and semantic annotation of data related to the nutritional components of food, SSD ING-INF/05",
+        "department": "Department of Informatics, Systems and Communication",
+        "logo": "https://www.unimib.it/sites/default/files/2021-06/logo%20unimib.jpeg",
+        "link": "https://www.unimib.it/ricerca/experience/research-grant",
+        "current": false
+      },
+      {
+        "position": "Research Assistant (assegno di ricerca B)",
+        "university": "University of Milan-Bicocca",
+        "time_period": "Feb 2019 - Gen 2020",
+        "topic": "Analysis and semantic annotation of data related to the nutritional components of food, SSD ING-INF/05",
+        "department": "Department of Informatics, Systems and Communication",
+        "logo": "https://www.unimib.it/sites/default/files/2021-06/logo%20unimib.jpeg",
+        "link": "https://www.unimib.it/ricerca/experience/research-assistant-grant",
+        "current": false
+      }
+    ]
+  }
+  
