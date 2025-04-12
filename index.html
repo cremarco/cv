@@ -220,14 +220,13 @@
 
                 <!-- Research Section -->
                 <div class="mb-10 relative">
-                    <div class="relative pl-6 mb-6">
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                    <div class="pl-6 mb-6">
                         <h2 class="text-xl font-semibold text-text-dark">Research</h2>
                     </div>
 
                     <div class="pl-6">
                         <!-- Research Profile Card -->
-                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow">
+                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
                             <h3 class="text-lg font-medium text-text-dark mb-3">Research Profile</h3>
                             <p class="text-text-medium mb-4 text-sm leading-relaxed">
                                 I am a <span class="font-medium">research assistant</span> at the <span class="font-medium">University of Milan-Bicocca</span>, Department of Informatics, Systems, and Communication (DISCo) in Italy. I hold a PhD in Computer Science from the University of Milano-Bicocca (2020). During my PhD, I spent six months at Heidelberg University (Germany) as part of the Semantic Computing Group in 2019. Prior to that, I earned both a Bachelor's and a Master's degree in Computer Science at the University of Milano-Bicocca.
@@ -241,7 +240,7 @@
                         </div>
 
                         <!-- Research Interest Card -->
-                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-6 border border-border-light hover:shadow-md transition-shadow">
+                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
                             <h3 class="text-lg font-medium text-text-dark mb-4">Research Interest</h3>
                             <div class="flex flex-wrap gap-2">
                                 <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Web</span>
@@ -307,48 +306,23 @@
 
                 <!-- Academic Experiences Section -->
                 <div class="mb-10 relative">
-                    <div class="relative pl-6 mb-6">
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                    <div class="pl-6 mb-6">
                         <h2 class="text-xl font-semibold text-text-dark">Academic experiences</h2>
                     </div>
 
                     <div class="pl-6">
-                        <!-- Experience 1 -->
-                        <div class="bg-bg-lavender rounded-lg shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow">
-                            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                <div class="flex items-start">
-                                    <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                    </div>
-                                    <div>
-                                        <p class="text-sm text-text-light font-light">University of Milan-Bicocca</p>
-                                        <h3 class="text-lg font-medium text-text-dark">Research Assistant</h3>
-                                    </div>
-                                </div>
-                                <div class="md:mt-0 flex flex-col md:items-end">
-                                    <div class="flex items-center gap-2">
-                                        <a href="#" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>
-                                        <p class="text-sm text-primary font-medium">Feb 2025 - Gen 2026</p>
-                                    </div>
-                                    <p class="text-xs text-text-light flex items-center mt-1">
-                                        <i class='bx bx-map-pin text-xs mr-1'></i>
-                                        Milan, Italy
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="ml-16">
-                                <p class="text-text-medium text-sm leading-relaxed">
-                                    Holder of a research grant (assegno di ricerca B) on the topic "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field", SSD INF/01. Department of Informatics, Systems and Communication.
-                                </p>
-                            </div>
+                        <!-- Experience cards will be dynamically generated here -->
+                        <div id="academic-experiences">
+                            <!-- Content will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
 
                 <!-- Research Contracts at Foreign Institutes Section -->
                 <div class="mb-10 relative">
-                    <div class="relative pl-6 mb-6">
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
-                        <h2 class="text-xl font-semibold text-text-dark">Research contracts at foreign institutes</h2>
+                    <div class="pl-6 mb-6">
+                        <h2 class="text-xl font-semibold text-text-dark">Academic experiences</h2>
+                        <p class="text-sm text-text-light mt-2 pl-0">Research contracts at foreign institutes</p>
                     </div>
 
                     <div class="pl-6">
@@ -358,8 +332,7 @@
 
                 <!-- Research and Technology Transfer Section -->
                 <div class="mb-10 relative">
-                    <div class="relative pl-6 mb-6">
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary"></div>
+                    <div class="pl-6 mb-6">
                         <h2 class="text-xl font-semibold text-text-dark">Research and technology transfer</h2>
                     </div>
 
@@ -370,6 +343,91 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Load and display academic experiences
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data loaded successfully:', data);
+                    const container = document.getElementById('academic-experiences');
+                    
+                    if (!container) {
+                        console.error('Container element not found');
+                        return;
+                    }
+
+                    if (!data.academic_experiences || !Array.isArray(data.academic_experiences)) {
+                        console.error('Invalid data format');
+                        return;
+                    }
+                    
+                    data.academic_experiences.forEach((experience, index) => {
+                        const isFirst = index === 0;
+                        const isLast = index === data.academic_experiences.length - 1;
+                        
+                        const card = document.createElement('div');
+                        card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${
+                            experience.current ? 'bg-bg-lavender' : ''
+                        } ${
+                            isFirst ? 'rounded-t-lg' : ''
+                        } ${
+                            isLast ? 'rounded-b-lg' : ''
+                        }`;
+                        
+                        card.innerHTML = `
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
+                                        ${experience.logo ? `<img src="logo/${experience.logo}" alt="${experience.university} logo">` : ''}
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-text-light font-light">${experience.university}</p>
+                                        <h3 class="text-lg font-medium text-text-dark">${experience.position}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:mt-0 flex flex-col md:items-end">
+                                    <div class="flex items-center gap-2">
+                                        ${experience.link ? `<a href="${experience.link}" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>` : ''}
+                                        <p class="text-sm ${experience.current ? 'text-primary' : 'text-text-light'} font-medium">${experience.time_period}</p>
+                                    </div>
+                                    <p class="text-xs text-text-light flex items-center mt-1">
+                                        <i class='bx bx-map-pin text-xs mr-1'></i>
+                                        ${experience.place}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="ml-16">
+                                <p class="text-text-medium text-sm leading-relaxed">
+                                    ${experience.topic}
+                                </p>
+                                ${experience.department ? `<p class="text-text-medium text-sm leading-relaxed">${experience.department}</p>` : ''}
+                            </div>
+                        `;
+                        
+                        container.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading academic experiences:', error);
+                    const container = document.getElementById('academic-experiences');
+                    if (container) {
+                        container.innerHTML = `
+                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
+                                <p>Error loading academic experiences. Please try again later.</p>
+                                <p class="text-sm mt-2">${error.message}</p>
+                            </div>
+                        `;
+                    }
+                });
+        });
+    </script>
 </body>
 
 </html>
