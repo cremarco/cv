@@ -8,7 +8,6 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -136,7 +135,7 @@
                 <div class="flex flex-col items-center md:items-start">
                     <!-- Profile Image -->
                     <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-border-light">
-                        <img src="/placeholder.svg?height=96&width=96" alt="Profile Photo"
+                        <img src="/img/photo-profile.png" alt="Profile Photo"
                             class="w-full h-full object-cover">
                     </div>
 
@@ -239,10 +238,6 @@
                                 <p class="text-xs text-text-light">Professional working</p>
                             </div>
                         </div>
-
-
-                        <button id="download">Download as PDF</button>
-
                     </div>
                 </div>
             </div>
@@ -261,64 +256,56 @@
                     <div class="pl-6">
                         <!-- Research Profile Card -->
                         <div
-                            class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
+                            class="bg-bg-card rounded-t-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
                             <h3 class="text-lg font-medium text-text-dark mb-3">Research Profile</h3>
                             <p class="text-text-medium mb-4 text-sm leading-relaxed">
-                                I am a <span class="font-medium">research assistant</span> at the <span
-                                    class="font-medium">University of Milan-Bicocca</span>, Department of Informatics,
-                                Systems, and Communication (DISCo) in Italy. I hold a PhD in Computer Science from the
-                                University of Milano-Bicocca (2020). During my PhD, I spent six months at Heidelberg
-                                University (Germany) as part of the Semantic Computing Group in 2019. Prior to that, I
-                                earned both a Bachelor's and a Master's degree in Computer Science at the University of
-                                Milano-Bicocca.
+                                I am a <span class="font-medium">research assistant</span> at the <span class="font-medium">University of Milano-Bicocca</span>, 
+                                Department of <span class="font-medium">Informatics, Systems, and Communication</span> (DISCo) in <span class="font-medium">Italy</span>. 
+                                I hold a <span class="font-medium">PhD in Computer Science</span> from the same university (2020). During my doctoral studies, I spent 
+                                six months at <span class="font-medium">Bielefeld University</span> (Germany) in 2019, working within the <span class="font-medium">Semantic Computing Group</span>. 
+                                Prior to that, I earned both my <span class="font-medium">Bachelor’s</span> and <span class="font-medium">Master’s degrees</span> in Computer Science at the 
+                                <span class="font-medium">University of Milano-Bicocca</span>.
                             </p>
                             <p class="text-text-medium mb-4 text-sm leading-relaxed">
-                                My research expertise includes knowledge graph construction, data enrichment, and more
-                                recently, the application of artificial intelligence techniques for developing clinical
-                                decision support systems and predictive models in mental health.
+                                My research interests include <span class="font-medium">knowledge graph construction</span>, <span class="font-medium">data enrichment</span>, and, more recently, 
+                                the application of <span class="font-medium">artificial intelligence</span> techniques for building <span class="font-medium">clinical decision support systems</span> 
+                                and <span class="font-medium">predictive models</span> in the field of <span class="font-medium">mental health</span>.
                             </p>
                             <p class="text-text-medium text-sm leading-relaxed">
-                                Over the years, I have actively contributed to the Semantic Web and AI communities by
-                                publishing scientific papers in reputable conferences and journals. My engagement in the
-                                academic community extends to serving on the program committee of several top-tier
-                                international conferences, where I have taken on roles as chair and reviewer.
+                                Over the years, I have actively contributed to the <span class="font-medium">Semantic Web</span> and <span class="font-medium">AI</span> communities by publishing 
+                                <span class="font-medium">scientific papers</span> in reputable <span class="font-medium">conferences</span> and <span class="font-medium">journals</span>. My involvement in the academic 
+                                community also includes serving on the <span class="font-medium">program committee</span> of several top-tier international conferences, 
+                                where I have taken on roles as <span class="font-medium">chair</span> and <span class="font-medium">reviewer</span>.
                             </p>
+                            
                         </div>
 
                         <!-- Research Interest Card -->
                         <div
-                            class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
+                            class="bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
                             <h3 class="text-lg font-medium text-text-dark mb-4">Research Interest</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic
-                                    Web</span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Knowledge
-                                    Graphs</span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic
-                                    Table Interpretation</span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Mental
-                                    Health</span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Clinical
-                                    Decision Support Systems</span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Disease
-                                    Risk Prediction Models</span>
-                                <span
-                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Early
-                                    Disease Detection Systems</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Web</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Knowledge Graphs</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Ontology Engineering</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Table Interpretation</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Data Integration</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">FAIR Data</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Explainable AI (XAI)</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Mental Health</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Clinical Decision Support Systems</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Disease Risk Prediction Models</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Early Disease Detection Systems</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Biomedical Informatics</span>
+                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Responsible AI</span>                                                                                              
                             </div>
                         </div>
 
                         <!-- Citation Metrics Section -->
-                        <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex flex-col md:flex-row gap-2">
                             <!-- Google Scholar Card -->
                             <div
-                                class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
+                                class="bg-bg-card rounded-bl-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-4">
                                     <i class='bx bxl-google text-xl text-text-light mr-2'></i>
                                     <h3 class="text-lg font-medium text-text-dark">Google Scholar</h3>
@@ -349,9 +336,9 @@
 
                             <!-- Scopus Card -->
                             <div
-                                class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
+                                class="bg-bg-card rounded-br-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-4">
-                                    <i class='bx bxl-google text-xl text-text-light mr-2'></i>
+                                    <i class='bx bx-book-open text-xl text-text-light mr-2'></i>
                                     <h3 class="text-lg font-medium text-text-dark">Scopus</h3>
                                 </div>
 
@@ -678,9 +665,9 @@
                                 <div class="ml-16">
                                     <p class="text-text-medium text-sm leading-relaxed">
                                         ${experience.topic}
+                                        ${experience.ssd ? `<p class="text-text-medium text-sm leading-relaxed mt-2">SSD: ${experience.ssd}</p>` : ''}
                                     </p>
                                     ${experience.department ? `<p class="text-text-medium text-sm leading-relaxed mt-2">${experience.department}</p>` : ''}
-                                    ${experience.ssd ? `<p class="text-text-medium text-sm leading-relaxed mt-2">SSD: ${experience.ssd}</p>` : ''}
                                 </div>
                             `;
 
