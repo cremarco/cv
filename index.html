@@ -8,6 +8,8 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -72,17 +74,39 @@
         }
 
         @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes gradient-diagonal-shift {
-            0% { background-position: 0% 0%; }
-            25% { background-position: 100% 0%; }
-            50% { background-position: 100% 100%; }
-            75% { background-position: 0% 100%; }
-            100% { background-position: 0% 0%; }
+            0% {
+                background-position: 0% 0%;
+            }
+
+            25% {
+                background-position: 100% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            75% {
+                background-position: 0% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
         }
 
         .dark-theme {
@@ -105,14 +129,15 @@
 </head>
 
 <body class="bg-bg-main text-text-dark">
-    <div class="container mx-auto p-4 md:p-0 max-w-7xl">
+    <div id="content" class="container mx-auto p-4 md:p-0 max-w-7xl">
         <div class="flex flex-col md:flex-row gap-4">
             <!-- Left Sidebar -->
             <div class="w-full md:w-1/4 p-6">
                 <div class="flex flex-col items-center md:items-start">
                     <!-- Profile Image -->
                     <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-border-light">
-                        <img src="/placeholder.svg?height=96&width=96" alt="Profile Photo" class="w-full h-full object-cover">
+                        <img src="/placeholder.svg?height=96&width=96" alt="Profile Photo"
+                            class="w-full h-full object-cover">
                     </div>
 
                     <!-- Name and Title -->
@@ -128,7 +153,8 @@
                             </div>
                             <div>
                                 <p class="text-sm text-text-light font-light">Email</p>
-                                <a href="mailto:marco.cremaschi@unimib.it" class="text-sm text-text-medium hover:text-primary">marco.cremaschi@unimib.it</a>
+                                <a href="mailto:marco.cremaschi@unimib.it"
+                                    class="text-sm text-text-medium hover:text-primary">marco.cremaschi@unimib.it</a>
                             </div>
                         </div>
 
@@ -138,7 +164,8 @@
                             </div>
                             <div>
                                 <p class="text-sm text-text-light font-light">Website</p>
-                                <a href="https://cremarco.bitbucket.org" class="text-sm text-text-medium hover:text-primary">cremarco.bitbucket.org</a>
+                                <a href="https://cremarco.bitbucket.org"
+                                    class="text-sm text-text-medium hover:text-primary">cremarco.bitbucket.org</a>
                             </div>
                         </div>
 
@@ -148,7 +175,8 @@
                             </div>
                             <div>
                                 <p class="text-sm text-text-light font-light">Phone</p>
-                                <a href="tel:+393664168368" class="text-sm text-text-medium hover:text-primary">(+39) 366 41 68 368</a>
+                                <a href="tel:+393664168368" class="text-sm text-text-medium hover:text-primary">(+39)
+                                    366 41 68 368</a>
                             </div>
                         </div>
 
@@ -172,7 +200,8 @@
                             </div>
                             <div>
                                 <p class="text-sm text-text-light font-light">LinkedIn</p>
-                                <a href="https://linkedin.com/in/marco-cremaschi" class="text-sm text-text-medium hover:text-primary">marco-cremaschi</a>
+                                <a href="https://linkedin.com/in/marco-cremaschi"
+                                    class="text-sm text-text-medium hover:text-primary">marco-cremaschi</a>
                             </div>
                         </div>
 
@@ -182,7 +211,8 @@
                             </div>
                             <div>
                                 <p class="text-sm text-text-light font-light">GitHub</p>
-                                <a href="https://github.com/cremarco" class="text-sm text-text-medium hover:text-primary">cremarco</a>
+                                <a href="https://github.com/cremarco"
+                                    class="text-sm text-text-medium hover:text-primary">cremarco</a>
                             </div>
                         </div>
                     </div>
@@ -209,6 +239,10 @@
                                 <p class="text-xs text-text-light">Professional working</p>
                             </div>
                         </div>
+
+
+                        <button id="download">Download as PDF</button>
+
                     </div>
                 </div>
             </div>
@@ -226,37 +260,65 @@
 
                     <div class="pl-6">
                         <!-- Research Profile Card -->
-                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
+                        <div
+                            class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
                             <h3 class="text-lg font-medium text-text-dark mb-3">Research Profile</h3>
                             <p class="text-text-medium mb-4 text-sm leading-relaxed">
-                                I am a <span class="font-medium">research assistant</span> at the <span class="font-medium">University of Milan-Bicocca</span>, Department of Informatics, Systems, and Communication (DISCo) in Italy. I hold a PhD in Computer Science from the University of Milano-Bicocca (2020). During my PhD, I spent six months at Heidelberg University (Germany) as part of the Semantic Computing Group in 2019. Prior to that, I earned both a Bachelor's and a Master's degree in Computer Science at the University of Milano-Bicocca.
+                                I am a <span class="font-medium">research assistant</span> at the <span
+                                    class="font-medium">University of Milan-Bicocca</span>, Department of Informatics,
+                                Systems, and Communication (DISCo) in Italy. I hold a PhD in Computer Science from the
+                                University of Milano-Bicocca (2020). During my PhD, I spent six months at Heidelberg
+                                University (Germany) as part of the Semantic Computing Group in 2019. Prior to that, I
+                                earned both a Bachelor's and a Master's degree in Computer Science at the University of
+                                Milano-Bicocca.
                             </p>
                             <p class="text-text-medium mb-4 text-sm leading-relaxed">
-                                My research expertise includes knowledge graph construction, data enrichment, and more recently, the application of artificial intelligence techniques for developing clinical decision support systems and predictive models in mental health.
+                                My research expertise includes knowledge graph construction, data enrichment, and more
+                                recently, the application of artificial intelligence techniques for developing clinical
+                                decision support systems and predictive models in mental health.
                             </p>
                             <p class="text-text-medium text-sm leading-relaxed">
-                                Over the years, I have actively contributed to the Semantic Web and AI communities by publishing scientific papers in reputable conferences and journals. My engagement in the academic community extends to serving on the program committee of several top-tier international conferences, where I have taken on roles as chair and reviewer.
+                                Over the years, I have actively contributed to the Semantic Web and AI communities by
+                                publishing scientific papers in reputable conferences and journals. My engagement in the
+                                academic community extends to serving on the program committee of several top-tier
+                                international conferences, where I have taken on roles as chair and reviewer.
                             </p>
                         </div>
 
                         <!-- Research Interest Card -->
-                        <div class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
+                        <div
+                            class="bg-bg-card rounded-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
                             <h3 class="text-lg font-medium text-text-dark mb-4">Research Interest</h3>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Web</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Knowledge Graphs</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Table Interpretation</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Mental Health</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Clinical Decision Support Systems</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Disease Risk Prediction Models</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Early Disease Detection Systems</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic
+                                    Web</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Knowledge
+                                    Graphs</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic
+                                    Table Interpretation</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Mental
+                                    Health</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Clinical
+                                    Decision Support Systems</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Disease
+                                    Risk Prediction Models</span>
+                                <span
+                                    class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Early
+                                    Disease Detection Systems</span>
                             </div>
                         </div>
 
                         <!-- Citation Metrics Section -->
                         <div class="flex flex-col md:flex-row gap-4">
                             <!-- Google Scholar Card -->
-                            <div class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
+                            <div
+                                class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-4">
                                     <i class='bx bxl-google text-xl text-text-light mr-2'></i>
                                     <h3 class="text-lg font-medium text-text-dark">Google Scholar</h3>
@@ -286,7 +348,8 @@
                             </div>
 
                             <!-- Scopus Card -->
-                            <div class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
+                            <div
+                                class="bg-bg-card rounded-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-4">
                                     <i class='bx bxl-google text-xl text-text-light mr-2'></i>
                                     <h3 class="text-lg font-medium text-text-dark">Scopus</h3>
@@ -331,7 +394,8 @@
                         <h2 class="text-xl font-semibold text-text-dark">Research contracts at foreign institutes</h2>
                     </div>
                     <div>
-                        <p class="text-sm text-text-light mt-2 pl-0">International research collaborations and visiting positions</p>
+                        <p class="text-sm text-text-light mt-2 pl-0">International research collaborations and visiting
+                            positions</p>
                     </div>
 
                     <div class="pl-6">
@@ -382,13 +446,15 @@
 
                 <!-- Education Section -->
                 <div class="mb-10 relative">
+                    <!-- Section header with left border line from parent container -->
                     <div class="pl-6 mb-6">
                         <h2 class="text-xl font-semibold text-text-dark">Education</h2>
                     </div>
 
+                    <!-- Education cards container -->
                     <div class="pl-6">
                         <div id="education" class="space-y-8">
-                            <!-- Education cards will be loaded here -->
+                            <!-- Education cards will be dynamically generated here -->
                         </div>
                     </div>
                 </div>
@@ -396,36 +462,197 @@
         </div>
     </div>
 
+    <div class="container mx-auto p-4 text-center">
+        <button id="download" class="bg-primary text-white px-4 py-2 rounded hover:bg-primary-hover transition-colors">
+            <i class='bx bxs-download mr-2'></i>Download as PDF
+        </button>
+    </div>
+
     <script>
-        // Load and display academic experiences
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load academic experiences
+        /**
+         * Creates the HTML for the courses list if courses are present
+         * @param {Array} courses - Array of course names
+         * @returns {string} HTML string for courses section
+         */
+        function createCoursesHTML(courses) {
+            if (!courses || courses.length === 0) return '';
+
+            return `
+                <div class="mt-4">
+                    <h4 class="text-sm font-medium text-text-dark mb-2">Courses:</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        ${courses.map(course => `
+                            <li class="text-sm text-text-medium">${course}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        /**
+         * Creates the HTML for the summer schools list if present
+         * @param {Array} schools - Array of summer school descriptions
+         * @returns {string} HTML string for summer schools section
+         */
+        function createSummerSchoolsHTML(schools) {
+            if (!schools || schools.length === 0) return '';
+
+            return `
+                <div class="mt-4">
+                    <h4 class="text-sm font-medium text-text-dark mb-2">Summer Schools:</h4>
+                    <ul class="list-disc list-inside space-y-1">
+                        ${schools.map(school => `
+                            <li class="text-sm text-text-medium">${school}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        /**
+         * Creates the HTML for the thesis section if thesis information is present
+         * @param {Object} edu - Education object containing thesis information
+         * @returns {string} HTML string for thesis section
+         */
+        function createThesisHTML(edu) {
+            if (!edu.thesis_title) return '';
+
+            return `
+                <div class="ml-16">
+                    <h4 class="text-sm font-medium text-text-dark mb-1">Thesis Title:</h4>
+                    <p class="text-sm text-text-medium">${edu.thesis_title}</p>
+                    ${edu.thesis_link ? `
+                        <a href="${edu.thesis_link}" 
+                           class="text-sm text-primary hover:text-primary-hover mt-1 inline-flex items-center gap-1">
+                            View thesis
+                            <i class='bx bx-link-external'></i>
+                        </a>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        /**
+         * Creates the HTML for the international experience section if present
+         * @param {string} experience - International experience description
+         * @returns {string} HTML string for international experience section
+         */
+        function createInternationalExperienceHTML(experience) {
+            if (!experience) return '';
+
+            return `
+                <div class="ml-16 mt-4">
+                    <h4 class="text-sm font-medium text-text-dark mb-1">International Experience:</h4>
+                    <p class="text-sm text-text-medium">${experience}</p>
+                </div>
+            `;
+        }
+
+        /**
+         * Creates an education card element
+         * @param {Object} edu - Education data object
+         * @returns {HTMLElement} The created card element
+         */
+        function createEducationCard(edu) {
+            const card = document.createElement('div');
+            card.className = 'bg-bg-card shadow-sm p-6 rounded-lg border border-border-light hover:shadow-md transition-shadow';
+
+            card.innerHTML = `
+                <!-- Header with degree and time period -->
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
+                    <div class="flex items-start">
+                        <!-- Degree icon -->
+                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
+                            <i class='bx bxs-graduation text-2xl text-text-light'></i>
+                        </div>
+                        <!-- Degree information -->
+                        <div>
+                            <h3 class="text-lg font-medium text-text-dark">${edu.degree}</h3>
+                            ${edu.honours ? `<p class="text-sm text-primary italic">${edu.honours}</p>` : ''}
+                        </div>
+                    </div>
+                    <!-- Time period -->
+                    <div class="md:text-right mt-2 md:mt-0">
+                        <p class="text-sm text-text-light font-medium">${edu.time_period}</p>
+                    </div>
+                </div>
+
+                <!-- Thesis information -->
+                ${createThesisHTML(edu)}
+
+                <!-- International experience -->
+                ${createInternationalExperienceHTML(edu.international_experience)}
+
+                <!-- Courses list -->
+                ${createCoursesHTML(edu.courses)}
+
+                <!-- Summer schools list -->
+                ${createSummerSchoolsHTML(edu.summer_schools)}
+            `;
+
+            return card;
+        }
+
+        // Main initialization when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+
+            document.getElementById("download").addEventListener("click", () => {
+                const button = document.getElementById("download");
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="bx bx-loader-alt bx-spin mr-2"></i>Generating PDF...';
+                button.disabled = true;
+
+                const element = document.getElementById("content");
+                const opt = {
+                    margin: 1,
+                    filename: 'marco_cremaschi_cv.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        logging: true
+                    },
+                    jsPDF: { 
+                        unit: 'in', 
+                        format: 'a4', 
+                        orientation: 'portrait'
+                    }
+                };
+
+                html2pdf().set(opt).from(element).save()
+                    .then(() => {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                    })
+                    .catch(err => {
+                        console.error('Error generating PDF:', err);
+                        alert('There was an error generating the PDF. Please try again.');
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                    });
+            });
+
             fetch('data.json')
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                     return response.json();
                 })
                 .then(data => {
                     console.log('Data loaded successfully:', data);
-                    
+
                     // Load academic experiences
                     const academicContainer = document.getElementById('academic-experiences');
                     if (academicContainer && data.academic_experiences) {
                         data.academic_experiences.forEach((experience, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.academic_experiences.length - 1;
-                            
+
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${
-                                experience.current ? 'bg-bg-lavender' : ''
-                            } ${
-                                isFirst ? 'rounded-t-lg' : ''
-                            } ${
-                                isLast ? 'rounded-b-lg' : ''
-                            }`;
-                            
+                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                                } ${isFirst ? 'rounded-t-lg' : ''
+                                } ${isLast ? 'rounded-b-lg' : ''
+                                }`;
+
                             card.innerHTML = `
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div class="flex items-start">
@@ -456,7 +683,7 @@
                                     ${experience.ssd ? `<p class="text-text-medium text-sm leading-relaxed mt-2">SSD: ${experience.ssd}</p>` : ''}
                                 </div>
                             `;
-                            
+
                             academicContainer.appendChild(card);
                         });
                     }
@@ -467,16 +694,13 @@
                         data.international_academic_experiences.forEach((experience, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.international_academic_experiences.length - 1;
-                            
+
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${
-                                experience.current ? 'bg-bg-lavender' : ''
-                            } ${
-                                isFirst ? 'rounded-t-lg' : ''
-                            } ${
-                                isLast ? 'rounded-b-lg' : ''
-                            }`;
-                            
+                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                                } ${isFirst ? 'rounded-t-lg' : ''
+                                } ${isLast ? 'rounded-b-lg' : ''
+                                }`;
+
                             card.innerHTML = `
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div class="flex items-start">
@@ -507,7 +731,7 @@
                                     ${experience.ssd ? `<p class="text-text-medium text-sm leading-relaxed mt-2">SSD: ${experience.ssd}</p>` : ''}
                                 </div>
                             `;
-                            
+
                             internationalContainer.appendChild(card);
                         });
                     }
@@ -518,16 +742,13 @@
                         data.research_and_technology_transfer.forEach((experience, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.research_and_technology_transfer.length - 1;
-                            
+
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${
-                                experience.current ? 'bg-bg-lavender' : ''
-                            } ${
-                                isFirst ? 'rounded-t-lg' : ''
-                            } ${
-                                isLast ? 'rounded-b-lg' : ''
-                            }`;
-                            
+                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                                } ${isFirst ? 'rounded-t-lg' : ''
+                                } ${isLast ? 'rounded-b-lg' : ''
+                                }`;
+
                             card.innerHTML = `
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div class="flex items-start">
@@ -556,7 +777,7 @@
                                     </p>
                                 </div>
                             `;
-                            
+
                             researchTransferContainer.appendChild(card);
                         });
                     }
@@ -567,16 +788,13 @@
                         data.entrepreneurial_initiatives.forEach((initiative, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.entrepreneurial_initiatives.length - 1;
-                            
+
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${
-                                initiative.current ? 'bg-bg-lavender' : ''
-                            } ${
-                                isFirst ? 'rounded-t-lg' : ''
-                            } ${
-                                isLast ? 'rounded-b-lg' : ''
-                            }`;
-                            
+                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${initiative.current ? 'bg-bg-lavender' : ''
+                                } ${isFirst ? 'rounded-t-lg' : ''
+                                } ${isLast ? 'rounded-b-lg' : ''
+                                }`;
+
                             card.innerHTML = `
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div class="flex items-start">
@@ -605,7 +823,7 @@
                                     </p>
                                 </div>
                             `;
-                            
+
                             entrepreneurialContainer.appendChild(card);
                         });
                     }
@@ -616,16 +834,13 @@
                         data.company_experiences.forEach((experience, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.company_experiences.length - 1;
-                            
+
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${
-                                experience.current ? 'bg-bg-lavender' : ''
-                            } ${
-                                isFirst ? 'rounded-t-lg' : ''
-                            } ${
-                                isLast ? 'rounded-b-lg' : ''
-                            }`;
-                            
+                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                                } ${isFirst ? 'rounded-t-lg' : ''
+                                } ${isLast ? 'rounded-b-lg' : ''
+                                }`;
+
                             card.innerHTML = `
                                 <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                                     <div class="flex items-start">
@@ -654,145 +869,33 @@
                                     </p>
                                 </div>
                             `;
-                            
+
                             companyContainer.appendChild(card);
                         });
                     }
 
-                    // Load education
+                    // Load education section
                     const educationContainer = document.getElementById('education');
                     if (educationContainer && data.education) {
-                        data.education.forEach((edu, index) => {
-                            const card = document.createElement('div');
-                            card.className = 'bg-bg-card shadow-sm p-6 rounded-lg border border-border-light hover:shadow-md transition-shadow';
-                            
-                            let coursesHtml = '';
-                            if (edu.courses && edu.courses.length > 0) {
-                                coursesHtml = `
-                                    <div class="mt-4">
-                                        <h4 class="text-sm font-medium text-text-dark mb-2">Courses:</h4>
-                                        <ul class="list-disc list-inside space-y-1">
-                                            ${edu.courses.map(course => `
-                                                <li class="text-sm text-text-medium">${course}</li>
-                                            `).join('')}
-                                        </ul>
-                                    </div>
-                                `;
-                            }
-
-                            let summerSchoolsHtml = '';
-                            if (edu.summer_schools && edu.summer_schools.length > 0) {
-                                summerSchoolsHtml = `
-                                    <div class="mt-4">
-                                        <h4 class="text-sm font-medium text-text-dark mb-2">Summer Schools:</h4>
-                                        <ul class="list-disc list-inside space-y-1">
-                                            ${edu.summer_schools.map(school => `
-                                                <li class="text-sm text-text-medium">${school}</li>
-                                            `).join('')}
-                                        </ul>
-                                    </div>
-                                `;
-                            }
-                            
-                            card.innerHTML = `
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            <i class='bx bxs-graduation text-2xl text-text-light'></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="text-lg font-medium text-text-dark">${edu.degree}</h3>
-                                            ${edu.honours ? `<p class="text-sm text-primary italic">${edu.honours}</p>` : ''}
-                                        </div>
-                                    </div>
-                                    <div class="md:text-right">
-                                        <p class="text-sm text-text-light font-medium">${edu.time_period}</p>
-                                    </div>
-                                </div>
-                                ${edu.thesis_title ? `
-                                    <div class="ml-16">
-                                        <h4 class="text-sm font-medium text-text-dark mb-1">Thesis Title:</h4>
-                                        <p class="text-sm text-text-medium">${edu.thesis_title}</p>
-                                        ${edu.thesis_link ? `
-                                            <a href="${edu.thesis_link}" class="text-sm text-primary hover:text-primary-hover mt-1 inline-block">
-                                                View thesis
-                                            </a>
-                                        ` : ''}
-                                    </div>
-                                ` : ''}
-                                ${edu.international_experience ? `
-                                    <div class="ml-16 mt-4">
-                                        <h4 class="text-sm font-medium text-text-dark mb-1">International Experience:</h4>
-                                        <p class="text-sm text-text-medium">${edu.international_experience}</p>
-                                    </div>
-                                ` : ''}
-                                ${coursesHtml}
-                                ${summerSchoolsHtml}
-                            `;
-                            
-                            educationContainer.appendChild(card);
+                        data.education.forEach(edu => {
+                            educationContainer.appendChild(createEducationCard(edu));
                         });
                     }
                 })
                 .catch(error => {
                     console.error('Error loading experiences:', error);
-                    const academicContainer = document.getElementById('academic-experiences');
-                    const internationalContainer = document.getElementById('international-experiences');
-                    const researchTransferContainer = document.getElementById('research-transfer');
-                    
-                    if (academicContainer) {
-                        academicContainer.innerHTML = `
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p>Error loading academic experiences. Please try again later.</p>
-                                <p class="text-sm mt-2">${error.message}</p>
-                            </div>
-                        `;
-                    }
-                    
-                    if (internationalContainer) {
-                        internationalContainer.innerHTML = `
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p>Error loading international experiences. Please try again later.</p>
-                                <p class="text-sm mt-2">${error.message}</p>
-                            </div>
-                        `;
-                    }
 
-                    if (researchTransferContainer) {
-                        researchTransferContainer.innerHTML = `
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p>Error loading research and technology transfer experiences. Please try again later.</p>
-                                <p class="text-sm mt-2">${error.message}</p>
-                            </div>
-                        `;
-                    }
-
-                    const entrepreneurialContainer = document.getElementById('entrepreneurial-initiatives');
-                    if (entrepreneurialContainer) {
-                        entrepreneurialContainer.innerHTML = `
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p>Error loading entrepreneurial initiatives. Please try again later.</p>
-                                <p class="text-sm mt-2">${error.message}</p>
-                            </div>
-                        `;
-                    }
-
-                    const companyContainer = document.getElementById('company-experiences');
-                    if (companyContainer) {
-                        companyContainer.innerHTML = `
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p>Error loading company experiences. Please try again later.</p>
-                                <p class="text-sm mt-2">${error.message}</p>
-                            </div>
-                        `;
-                    }
-
+                    // Handle education section error
                     const educationContainer = document.getElementById('education');
                     if (educationContainer) {
                         educationContainer.innerHTML = `
                             <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p>Error loading education information. Please try again later.</p>
+                                <p class="font-medium">Error loading education information</p>
                                 <p class="text-sm mt-2">${error.message}</p>
+                                <button onclick="location.reload()" 
+                                        class="mt-2 text-sm bg-red-100 px-3 py-1 rounded-md hover:bg-red-200 transition-colors">
+                                    Retry
+                                </button>
                             </div>
                         `;
                     }
