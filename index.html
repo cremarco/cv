@@ -249,7 +249,7 @@
 
                 <!-- Research Section -->
                 <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 mb-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Research</h2>
                     </div>
 
@@ -263,7 +263,7 @@
                                 Department of <span class="font-medium">Informatics, Systems, and Communication</span> (DISCo) in <span class="font-medium">Italy</span>. 
                                 I hold a <span class="font-medium">PhD in Computer Science</span> from the same university (2020). During my doctoral studies, I spent 
                                 six months at <span class="font-medium">Bielefeld University</span> (Germany) in 2019, working within the <span class="font-medium">Semantic Computing Group</span>. 
-                                Prior to that, I earned both my <span class="font-medium">Bachelor’s</span> and <span class="font-medium">Master’s degrees</span> in Computer Science at the 
+                                Prior to that, I earned both my <span class="font-medium">Bachelor's</span> and <span class="font-medium">Master's degrees</span> in Computer Science at the 
                                 <span class="font-medium">University of Milano-Bicocca</span>.
                             </p>
                             <p class="text-text-medium mb-4 text-sm leading-relaxed">
@@ -363,8 +363,9 @@
 
                 <!-- Academic Experiences Section -->
                 <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 mb-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Academic experiences</h2>
+                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">1</span>
                     </div>
 
                     <div class="pl-6">
@@ -377,12 +378,12 @@
 
                 <!-- Research Contracts at Foreign Institutes Section -->
                 <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Research contracts at foreign institutes</h2>
+                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">0</span>
                     </div>
-                    <div>
-                        <p class="text-sm text-text-light mt-2 pl-0">International research collaborations and visiting
-                            positions</p>
+                    <div class="pl-6">
+                        <p class="text-sm text-text-light">International research collaborations and visiting positions</p>
                     </div>
 
                     <div class="pl-6">
@@ -394,8 +395,9 @@
 
                 <!-- Research and Technology Transfer Section -->
                 <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 mb-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Research and technology transfer</h2>
+                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">4</span>
                     </div>
 
                     <div class="pl-6">
@@ -407,8 +409,9 @@
 
                 <!-- Entrepreneurial Initiatives Section -->
                 <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 mb-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Entrepreneurial initiatives</h2>
+                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">2</span>
                     </div>
 
                     <div class="pl-6">
@@ -420,8 +423,9 @@
 
                 <!-- Company Experiences Section -->
                 <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 mb-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Company experiences</h2>
+                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">4</span>
                     </div>
 
                     <div class="pl-6">
@@ -433,9 +437,9 @@
 
                 <!-- Education Section -->
                 <div class="mb-10 relative">
-                    <!-- Section header with left border line from parent container -->
-                    <div class="pl-6 mb-6">
+                    <div class="pl-6 mb-6 flex items-center gap-2">
                         <h2 class="text-xl font-semibold text-text-dark">Education</h2>
+                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">3</span>
                     </div>
 
                     <!-- Education cards container -->
@@ -447,12 +451,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container mx-auto p-4 text-center">
-        <button id="download" class="bg-primary text-white px-4 py-2 rounded hover:bg-primary-hover transition-colors">
-            <i class='bx bxs-download mr-2'></i>Download as PDF
-        </button>
     </div>
 
     <script>
@@ -581,61 +579,67 @@
         }
 
         // Main initialization when DOM is loaded
+        let hasInitialized = false; // Flag to track initialization
         document.addEventListener('DOMContentLoaded', function () {
+            if (hasInitialized) {
+                console.log('Already initialized, skipping...');
+                return;
+            }
+            hasInitialized = true;
+            console.log('Initializing data loading...');
 
-            document.getElementById("download").addEventListener("click", () => {
-                const button = document.getElementById("download");
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="bx bx-loader-alt bx-spin mr-2"></i>Generating PDF...';
-                button.disabled = true;
-
-                const element = document.getElementById("content");
-                const opt = {
-                    margin: 1,
-                    filename: 'marco_cremaschi_cv.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { 
-                        scale: 2,
-                        useCORS: true,
-                        logging: true
-                    },
-                    jsPDF: { 
-                        unit: 'in', 
-                        format: 'a4', 
-                        orientation: 'portrait'
-                    }
-                };
-
-                html2pdf().set(opt).from(element).save()
-                    .then(() => {
-                        button.innerHTML = originalText;
-                        button.disabled = false;
-                    })
-                    .catch(err => {
-                        console.error('Error generating PDF:', err);
-                        alert('There was an error generating the PDF. Please try again.');
-                        button.innerHTML = originalText;
-                        button.disabled = false;
-                    });
-            });
-
+            // Load data
             fetch('data.json')
                 .then(response => {
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                     return response.json();
                 })
                 .then(data => {
                     console.log('Data loaded successfully:', data);
+                    console.log('Number of academic experiences in data:', data.academic_experiences?.length || 0);
+
+                    // Update section count badges
+                    const updateSectionCount = (sectionTitle, count) => {
+                        console.log(`Updating count for section "${sectionTitle}": ${count}`);
+                        const sectionHeaders = document.querySelectorAll('.pl-6.mb-6.flex.items-center.gap-2');
+                        for (const header of sectionHeaders) {
+                            const titleElement = header.querySelector('h2');
+                            if (titleElement && titleElement.textContent === sectionTitle) {
+                                const badge = header.querySelector('.text-primary');
+                                if (badge) {
+                                    badge.textContent = count;
+                                    console.log(`Updated badge for "${sectionTitle}" to ${count}`);
+                                }
+                                break;
+                            }
+                        }
+                    };
+
+                    // Update all section counts
+                    updateSectionCount('Research', data.publications?.submitted_publications?.length || 0);
+                    updateSectionCount('Academic experiences', data.academic_experiences?.length || 0);
+                    updateSectionCount('Research contracts at foreign institutes', data.international_academic_experiences?.length || 0);
+                    updateSectionCount('Research and technology transfer', data.research_and_technology_transfer?.length || 0);
+                    updateSectionCount('Entrepreneurial initiatives', data.entrepreneurial_initiatives?.length || 0);
+                    updateSectionCount('Company experiences', data.company_experiences?.length || 0);
+                    updateSectionCount('Education', data.education?.length || 0);
 
                     // Load academic experiences
                     const academicContainer = document.getElementById('academic-experiences');
                     if (academicContainer && data.academic_experiences) {
+                        console.log('Before clearing academic container:', academicContainer.children.length, 'elements');
+                        academicContainer.innerHTML = '';
+                        console.log('After clearing academic container:', academicContainer.children.length, 'elements');
+                        
                         data.academic_experiences.forEach((experience, index) => {
+                            console.log(`Adding academic experience ${index + 1}/${data.academic_experiences.length}`);
                             const isFirst = index === 0;
                             const isLast = index === data.academic_experiences.length - 1;
 
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
                                 } ${isFirst ? 'rounded-t-lg' : ''
                                 } ${isLast ? 'rounded-b-lg' : ''
                                 }`;
@@ -678,12 +682,15 @@
                     // Load international experiences
                     const internationalContainer = document.getElementById('international-experiences');
                     if (internationalContainer && data.international_academic_experiences) {
+                        // Clear existing content
+                        internationalContainer.innerHTML = '';
+                        
                         data.international_academic_experiences.forEach((experience, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.international_academic_experiences.length - 1;
 
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
                                 } ${isFirst ? 'rounded-t-lg' : ''
                                 } ${isLast ? 'rounded-b-lg' : ''
                                 }`;
@@ -726,12 +733,15 @@
                     // Load research and technology transfer experiences
                     const researchTransferContainer = document.getElementById('research-transfer');
                     if (researchTransferContainer && data.research_and_technology_transfer) {
+                        // Clear existing content
+                        researchTransferContainer.innerHTML = '';
+                        
                         data.research_and_technology_transfer.forEach((experience, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.research_and_technology_transfer.length - 1;
 
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
                                 } ${isFirst ? 'rounded-t-lg' : ''
                                 } ${isLast ? 'rounded-b-lg' : ''
                                 }`;
@@ -772,12 +782,15 @@
                     // Load entrepreneurial initiatives
                     const entrepreneurialContainer = document.getElementById('entrepreneurial-initiatives');
                     if (entrepreneurialContainer && data.entrepreneurial_initiatives) {
+                        // Clear existing content
+                        entrepreneurialContainer.innerHTML = '';
+                        
                         data.entrepreneurial_initiatives.forEach((initiative, index) => {
                             const isFirst = index === 0;
                             const isLast = index === data.entrepreneurial_initiatives.length - 1;
 
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${initiative.current ? 'bg-bg-lavender' : ''
+                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${initiative.current ? 'bg-bg-lavender' : ''
                                 } ${isFirst ? 'rounded-t-lg' : ''
                                 } ${isLast ? 'rounded-b-lg' : ''
                                 }`;
@@ -823,7 +836,7 @@
                             const isLast = index === data.company_experiences.length - 1;
 
                             const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-4 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
+                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
                                 } ${isFirst ? 'rounded-t-lg' : ''
                                 } ${isLast ? 'rounded-b-lg' : ''
                                 }`;
@@ -870,22 +883,8 @@
                     }
                 })
                 .catch(error => {
-                    console.error('Error loading experiences:', error);
-
-                    // Handle education section error
-                    const educationContainer = document.getElementById('education');
-                    if (educationContainer) {
-                        educationContainer.innerHTML = `
-                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700">
-                                <p class="font-medium">Error loading education information</p>
-                                <p class="text-sm mt-2">${error.message}</p>
-                                <button onclick="location.reload()" 
-                                        class="mt-2 text-sm bg-red-100 px-3 py-1 rounded-md hover:bg-red-200 transition-colors">
-                                    Retry
-                                </button>
-                            </div>
-                        `;
-                    }
+                    console.error('Error loading data:', error);
+                    alert('Error loading data. Please check the console for details.');
                 });
         });
     </script>
