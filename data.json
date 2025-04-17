@@ -89,37 +89,6 @@
       "topic": "Designed and optimised backend systems, improved database efficiency and software performance"
     }
   ],
-  "education": [
-    {
-      "degree": "Ph.D. in Computer Science",
-      "time_period": "Nov 2016 \u2013 Oct 2019",
-      "thesis_title": "Enabling tabular data understanding by human and machines through semantic interpretation",
-      "thesis_link": "https://hdl.handle.net/10281/255365",
-      "international_experience": "Bielefeld University, Germany",
-      "courses": [
-        "Writing of Scientific papers",
-        "Big Data Technologies",
-        "Privacy and processing of personal data. Technical and legal aspects",
-        "Knowledge Graphs and Semantic Data Management: Models, Techniques and Applications",
-        "Internet of Things: a service-oriented perspective"
-      ],
-      "summer_schools": [
-        "Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience \u2013 Como, Italy, Sep 18 \u2013 22, 2017",
-        "2nd International Summer School on Deep Learning 2018 \u2013 Genova, Italy, July 23 \u2013 27, 2018"
-      ]
-    },
-    {
-      "degree": "M.Sc. in Computer Science",
-      "time_period": "Oct 2007 \u2013 Sep 2010",
-      "thesis_title": "Framework di supporto alla pianificazione di servizi basato su un approccio multi-paradigma",
-      "honours": "magna cum laude"
-    },
-    {
-      "degree": "B.Sc. in Computer Science",
-      "time_period": "Oct 2002 \u2013 Oct 2007",
-      "thesis_title": "Progettazione e realizzazione di una applicazione web per la gestione di un indirizzario dipartimentale"
-    }
-  ],
   "publications": {
     "submitted_publications": [
       {
