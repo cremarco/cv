@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    min-height: 100vh;
+  }
+
   .a4-page {
     width: 210mm;
     height: 297mm;
