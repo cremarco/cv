@@ -128,5 +128,101 @@
       "topic": "Research internship abroad through the Erasmus+ Traineeship program. Semantic Computing Group.",
       "university": "Bielefeld University"
     }
+  ],
+  "research_and_technology_transfer": [
+    {
+      "current": true,
+      "company": "WhattaData srl",
+      "logo": "whattadata.png",
+      "place": null,
+      "position": "CTO, Co-funder",
+      "time_period": "2025",
+      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on March 5, 2025."
+    },
+    {
+      "current": false,
+      "company": "Aton Informatica s.r.l.",
+      "logo": "aton.png",
+      "place": "Rome, Italy",
+      "position": "Consultant",
+      "time_period": "2023",
+      "topic": "I provided hands-on R&D and technical consultancy, spanning software development, data/AI analytics and advanced digital solutions, across multiple publicly funded innovation projects."
+    },
+    {
+      "current": false,
+      "company": "Nana Bianca/Instal srl",
+      "logo": "nanabianca.png",
+      "place": "Milan, Italy",
+      "position": "Consultant",
+      "time_period": "Apr 2020 - May 2020",
+      "topic": "Definition of a software architecture based on LSTM algorithms for the lexicalization of RDF data."
+    },
+    {
+      "current": false,
+      "company": "Umbria Digitale S.c. a r.l.",
+      "logo": "umbria.png",
+      "place": "Perugia, Italy",
+      "position": "Consultant",
+      "time_period": "2015-2016",
+      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on March 5, 2025."
+    }
+  ],
+  "entrepreneurial_initiatives": [
+    {
+      "current": false,
+      "company": "Whattaspot srl",
+      "logo": "whattaspot.png",
+      "place": "Bergamo, Italy",
+      "position": "CEO, Co-funder",
+      "time_period": "Gen 2014 - Oct 2016",
+      "topic": "Innovative start-up specialising in the development of cutting-edge applications for the sports industry."
+    },
+    {
+      "current": false,
+      "company": "NPCrew srl",
+      "logo": "npcrew.png",
+      "place": "Bergamo, Italy",
+      "position": "CTO, Co-funder",
+      "time_period": "2012 - 2014",
+      "topic": "Company specialising in web development, communication, and event organization."
+    }
+  ],
+  "company_experiences": [
+    {
+      "current": true,
+      "company": "Aton Informatica srl",
+      "logo": "aton.png",
+      "place": "Rome, Italy",
+      "position": "PM, Grant Writer",
+      "time_period": "Gen 2015 - Present",
+      "topic": "Providing consultancy in R&D project management, grant writing, and strategic planning, supporting organisations in securing funding, coordinating research initiatives, and fostering partnerships with academic and industrial stakeholders."
+    },
+    {
+      "current": false,
+      "company": "Instal srl",
+      "logo": "instal.png",
+      "place": "Florence, Italy",
+      "position": "Consultant",
+      "time_period": "Sep 2017 - Mar 2018",
+      "topic": "Advised on mobile advertising solutions by optimising ad delivery software, enhancing performance tracking, and implementing innovative monetisation strategies."
+    },
+    {
+      "current": false,
+      "company": "Mobile Avenue Solutions LLC",
+      "logo": "mobile-avenue.png",
+      "place": "New York, USA",
+      "position": "Consultant",
+      "time_period": "Jan 2017 - Aug 2017",
+      "topic": "Advised on mobile advertising solutions by optimising ad delivery software, enhancing performance tracking, and implementing innovative monetisation strategies."
+    },
+    {
+      "current": false,
+      "company": "Future Space spa",
+      "logo": "futurespace.png",
+      "place": "Rome, Italy",
+      "position": "Developer",
+      "time_period": "Jul 2012 - Dec 2012",
+      "topic": "Designed, developed, and optimised backend systems, improving database efficiency and overall software performance."
+    }
   ]
 }

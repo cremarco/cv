@@ -111,13 +111,15 @@
             </div>
         </aside>
 
-        <section class="flex-1 flex flex-col bg-gray-50">
+        <section class="flex-1 flex flex-col bg-gray-50 relative">
+            <!-- Timeline globale che attraversa tutte le sezioni -->
+            <div class="absolute left-[30px] top-0 bottom-0 w-px bg-gray-300" data-global-timeline></div>
+            
             <div class="flex gap-4 pt-8 pl-2 pr-6 pb-0" data-section="research">
-                <div class="flex flex-col items-center w-4 shrink-0 ml-4" data-timeline="research">
+                <div class="flex flex-col items-center w-4 shrink-0 ml-4 relative z-10" data-timeline="research">
                     <div class="w-4 h-4 rounded-full bg-white shadow-lg flex items-center justify-center relative" data-pdf-no-shadow>
                         <div class="w-2 h-2 rounded-full bg-gray-dark"></div>
                     </div>
-                    <div class="w-px bg-gray-300 flex-1 min-h-[100px]"></div>
                 </div>
                 <div class="flex-1 pb-4">
                     <h2 class="text-xs-12 font-outfit font-medium text-ink mb-4">Research</h2>
@@ -141,7 +143,7 @@
                     </div>
                     <div class="flex gap-1 mb-4">
                         <div class="flex-1 bg-white border border-gray-200 rounded-md px-4 py-3 shadow relative overflow-hidden">
-                            <img src="img/logo/Google_Scholar_logo_2015.png" alt="Google Scholar" class="absolute top-0 right-2 w-10 h-10 object-contain rotate-12 -z-0">
+                            <img src="img/logo/scopus.png" alt="Google Scholar" class="absolute top-0 right-2 w-10 h-10 object-contain rotate-12 -z-0">
                             <div class="flex gap-2 items-center justify-center mb-1 relative z-10">
                                 <div class="text-center">
                                     <div class="bg-gradient-to-r from-[#a478e8] to-[#516cf7] bg-clip-text text-transparent text-xs-16 font-dm-sans font-medium mb-0.5">475</div>
@@ -160,7 +162,7 @@
                             </div>
                         </div>
                         <div class="flex-1 bg-white border border-gray-200 rounded-md px-4 py-3 shadow relative overflow-hidden">
-                            <img src="img/logo/Scopus_logo.png" alt="Scopus" class="absolute top-0 right-2 w-10 h-10 object-contain rotate-12 -z-0">
+                            <img src="img/logo/google_scholar.png" alt="Google Scholar" class="absolute top-0 right-2 w-10 h-10 object-contain rotate-12 -z-0">
                             <div class="flex items-center justify-center mb-1 relative z-10">
                                 <div class="text-center">
                                     <div class="bg-gradient-to-r from-[#a478e8] to-[#516cf7] bg-clip-text text-transparent text-xs-16 font-dm-sans font-medium mb-0.5">9</div>
@@ -173,11 +175,10 @@
             </div>
 
             <div class="flex gap-4 pl-2 pr-6 py-0" data-section="academic-experiences">
-                <div class="flex flex-col items-center w-4 shrink-0 ml-4" data-timeline="academic">
+                <div class="flex flex-col items-center w-4 shrink-0 ml-4 relative z-10" data-timeline="academic">
                     <div class="w-4 h-4 rounded-full bg-white shadow-lg flex items-center justify-center relative" data-pdf-no-shadow>
                         <div class="w-2 h-2 rounded-full bg-gray-dark"></div>
                     </div>
-                    <div class="w-px bg-gray-300 flex-1"></div>
                 </div>
                 <div class="flex-1 flex flex-col gap-4">
                     <h2 class="text-xs-12 font-outfit font-medium text-ink">Academic experiences</h2>

@@ -5,10 +5,16 @@ const SELECTORS = {
   experiencesSection: '[data-section="academic-experiences"]',
   foreignContractsContainer: '#foreign-research-contracts',
   foreignContractsSection: '[data-section="foreign-research-contracts"]',
+  researchTransferContainer: '#research-and-technology-transfer',
+  researchTransferSection: '[data-section="research-and-technology-transfer"]',
+  entrepreneurialInitiativesContainer: '#entrepreneurial-initiatives',
+  entrepreneurialInitiativesSection: '[data-section="entrepreneurial-initiatives"]',
   researchSection: '[data-section="research"]',
   pageNumber: '[data-page-number]',
   academicTimeline: '[data-timeline="academic"]',
   foreignTimeline: '[data-timeline="foreign"]',
+  researchTransferTimeline: '[data-timeline="research-transfer"]',
+  entrepreneurialTimeline: '[data-timeline="entrepreneurial"]',
 };
 
 const DATA_URL = './data/cv.json';
@@ -109,9 +115,16 @@ function createExperienceCard(exp, { isCurrent }) {
     ? `<p class="text-xs-6 text-muted italic mt-1">${departmentText}</p>`
     : '';
 
-  card.innerHTML = `
-    <img src="img/mini-logo/${exp.logo}" alt="${logoAlt}" class="w-5 h-5 object-contain flex-shrink-0 rounded">
-    <div class="flex-1">
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/logo/${exp.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  contentDiv.innerHTML = `
       <div class="flex justify-between items-start mb-1">
         <div class="${isCurrent ? 'w-[100px]' : 'w-[178px]'}">
           <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.university}</div>
@@ -132,8 +145,8 @@ function createExperienceCard(exp, { isCurrent }) {
         ${topicMarkup}
         ${departmentMarkup}
       </div>
-    </div>
-  `;
+    `;
+  card.appendChild(contentDiv);
 
   return card;
 }
@@ -147,9 +160,16 @@ function createForeignContractCard(exp, { isCurrent }) {
   const logoAlt = exp.university ? `${exp.university} logo` : 'University logo';
   const topicMarkup = topicText ? `<p class="mb-0">${topicText}</p>` : '';
 
-  card.innerHTML = `
-    <img src="img/mini-logo/${exp.logo}" alt="${logoAlt}" class="w-5 h-5 object-contain flex-shrink-0 rounded">
-    <div class="flex-1">
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/logo/${exp.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  contentDiv.innerHTML = `
       <div class="flex justify-between items-start mb-1">
         <div class="${isCurrent ? 'w-[100px]' : 'w-[178px]'}">
           <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.university}</div>
@@ -169,8 +189,56 @@ function createForeignContractCard(exp, { isCurrent }) {
       <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal">
         ${topicMarkup}
       </div>
+    `;
+  card.appendChild(contentDiv);
+
+  return card;
+}
+
+function createResearchTransferCard(exp, { isCurrent }) {
+  const card = document.createElement('div');
+  card.className = CARD_BASE_CLASSES;
+
+  const timeBadgeClasses = getTimeBadgeClasses(isCurrent);
+  const topicText = formatSentence(exp.topic);
+  const logoAlt = exp.company ? `${exp.company} logo` : 'Company logo';
+  const topicMarkup = topicText ? `<p class="mb-0">${topicText}</p>` : '';
+  const locationMarkup = exp.place ? `
+    <div class="flex items-center gap-1">
+      <i class='bx bx-map text-[8px] text-muted'></i>
+      <div class="text-xs-5 text-muted font-dm-sans">${exp.place}</div>
     </div>
-  `;
+  ` : '';
+
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/logo/${exp.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  contentDiv.innerHTML = `
+    <div class="flex-1">
+      <div class="flex justify-between items-start mb-1">
+        <div class="${isCurrent ? 'w-[100px]' : 'w-[178px]'}">
+          <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.company}</div>
+          <div class="text-xs-8 text-ink font-dm-sans font-medium">${exp.position}</div>
+        </div>
+        <div class="flex flex-col gap-0.5 items-end">
+          <div class="flex gap-2">
+            ${exp.link ? `<a href="${exp.link}" class="inline-flex items-center justify-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[10px]'></i></a>` : ''}
+            <span class="${timeBadgeClasses}">${exp.time_period}</span>
+          </div>
+          ${locationMarkup}
+        </div>
+      </div>
+      <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal">
+        ${topicMarkup}
+      </div>
+    `;
+  card.appendChild(contentDiv);
 
   return card;
 }
@@ -195,6 +263,26 @@ const SECTION_CONFIG = {
     timelineSelector: '[data-timeline="foreign"]',
     timelineId: 'foreign',
     createCard: createForeignContractCard,
+    isFirstSection: false,
+  },
+  research_and_technology_transfer: {
+    title: 'Research and technology transfer',
+    sectionId: 'research-and-technology-transfer',
+    sectionSelector: '[data-section="research-and-technology-transfer"]',
+    containerSelector: '#research-and-technology-transfer',
+    timelineSelector: '[data-timeline="research-transfer"]',
+    timelineId: 'research-transfer',
+    createCard: createResearchTransferCard,
+    isFirstSection: false,
+  },
+  entrepreneurial_initiatives: {
+    title: 'Entrepreneurial initiatives',
+    sectionId: 'entrepreneurial-initiatives',
+    sectionSelector: '[data-section="entrepreneurial-initiatives"]',
+    containerSelector: '#entrepreneurial-initiatives',
+    timelineSelector: '[data-timeline="entrepreneurial"]',
+    timelineId: 'entrepreneurial',
+    createCard: createResearchTransferCard,
     isFirstSection: false,
   },
 };
@@ -286,18 +374,23 @@ function calculateAvailableHeightInPage(page, previousSectionSelector) {
   return Math.max(availableHeight, 0);
 }
 
-function createSectionHTML(config, addMarginTop = false) {
+function createSectionHTML(config, addMarginTop = false, showTitle = true) {
   const marginTopClass = addMarginTop ? 'mt-8' : '';
-  return `
-    <div class="flex gap-4 pl-2 pr-6 py-0 ${marginTopClass}" data-section="${config.sectionId}">
-      <div class="flex flex-col items-center w-4 shrink-0 ml-4" data-timeline="${config.timelineId}">
+  const titleHTML = showTitle ? `<h2 class="text-xs-12 font-outfit font-medium text-ink">${config.title}</h2>` : '';
+  const gapClass = showTitle ? 'gap-4' : 'gap-0';
+  const circleHTML = showTitle ? `
         <div class="w-4 h-4 rounded-full bg-white shadow-lg flex items-center justify-center relative" data-pdf-no-shadow>
           <div class="w-2 h-2 rounded-full bg-gray-dark"></div>
         </div>
-        <div class="w-px bg-gray-300 flex-1"></div>
+      ` : '';
+  // La timeline globale è gestita a livello di section, qui solo il pallino
+  return `
+    <div class="flex gap-4 pl-2 pr-6 py-0 ${marginTopClass}" data-section="${config.sectionId}">
+      <div class="flex flex-col items-center w-4 shrink-0 ml-4 relative z-10" data-timeline="${config.timelineId}">
+        ${circleHTML}
       </div>
-      <div class="flex-1 flex flex-col gap-4">
-        <h2 class="text-xs-12 font-outfit font-medium text-ink">${config.title}</h2>
+      <div class="flex-1 flex flex-col ${gapClass}">
+        ${titleHTML}
         <div id="${config.sectionId}" class="flex flex-col gap-1">
           <!-- Cards will be generated here dynamically -->
         </div>
@@ -307,7 +400,7 @@ function createSectionHTML(config, addMarginTop = false) {
 }
 
 // Clone the first page to keep typography and layout identical across pages.
-function createNewPage(pageNumber, templatePage, pagesContainer, sectionType) {
+function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, isFirstPageOfSection = false) {
   const newPage = templatePage.cloneNode(true);
   newPage.id = `page-${pageNumber}`;
   newPage.classList.add('pdf-page');
@@ -327,6 +420,11 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType) {
     foreignContractsContainer.innerHTML = '';
   }
 
+  const researchTransferContainer = newPage.querySelector(SELECTORS.researchTransferContainer);
+  if (researchTransferContainer) {
+    researchTransferContainer.innerHTML = '';
+  }
+
   const researchSection = newPage.querySelector(SELECTORS.researchSection);
   if (researchSection) {
     researchSection.remove();
@@ -337,6 +435,27 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType) {
     if (sectionType === 'academic') {
       academicSection.classList.remove('py-0');
       academicSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = academicSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = academicSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = academicSection.querySelector('[data-timeline="academic"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
     } else {
       academicSection.remove();
     }
@@ -347,6 +466,27 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType) {
     if (sectionType === 'foreign') {
       foreignSection.classList.remove('py-0');
       foreignSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = foreignSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = foreignSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = foreignSection.querySelector('[data-timeline="foreign"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
     } else {
       foreignSection.remove();
     }
@@ -358,7 +498,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType) {
       const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
       
       const config = SECTION_CONFIG.foreign_research_contracts;
-      const foreignSectionHTML = createSectionHTML(config, true);
+      const foreignSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
       
       // Se c'è una sezione academic, aggiungi la foreign dopo di essa, altrimenti aggiungila alla fine
       if (academicSection) {
@@ -369,21 +509,133 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType) {
     }
   }
 
-  const timeline = newPage.querySelector(SELECTORS.academicTimeline);
-  if (timeline) {
-    const line = timeline.querySelector('.w-px.bg-gray-300');
-    if (line) {
-      line.classList.add('flex-1');
+  const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+  if (researchTransferSection) {
+    if (sectionType === 'research-transfer') {
+      researchTransferSection.classList.remove('py-0');
+      researchTransferSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = researchTransferSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = researchTransferSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = researchTransferSection.querySelector('[data-timeline="research-transfer"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      researchTransferSection.remove();
+    }
+  } else if (sectionType === 'research-transfer') {
+    // Se la sezione research-transfer non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      
+      const config = SECTION_CONFIG.research_and_technology_transfer;
+      const researchTransferSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', researchTransferSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', researchTransferSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', researchTransferSectionHTML);
+      }
     }
   }
 
-  const foreignTimeline = newPage.querySelector(SELECTORS.foreignTimeline);
-  if (foreignTimeline) {
-    const line = foreignTimeline.querySelector('.w-px.bg-gray-300');
-    if (line) {
-      line.classList.add('flex-1');
+  const entrepreneurialInitiativesSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+  if (entrepreneurialInitiativesSection) {
+    if (sectionType === 'entrepreneurial') {
+      entrepreneurialInitiativesSection.classList.remove('py-0');
+      entrepreneurialInitiativesSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = entrepreneurialInitiativesSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = entrepreneurialInitiativesSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = entrepreneurialInitiativesSection.querySelector('[data-timeline="entrepreneurial"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      entrepreneurialInitiativesSection.remove();
+    }
+  } else if (sectionType === 'entrepreneurial') {
+    // Se la sezione entrepreneurial non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      
+      const config = SECTION_CONFIG.entrepreneurial_initiatives;
+      const entrepreneurialSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', entrepreneurialSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', entrepreneurialSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', entrepreneurialSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', entrepreneurialSectionHTML);
+      }
     }
   }
+
+  // Assicurati che la section abbia la timeline globale
+  const section = newPage.querySelector('section');
+  if (section) {
+    section.classList.add('relative');
+    // Aggiungi la timeline globale se non esiste
+    if (!section.querySelector('[data-global-timeline]')) {
+      const globalTimeline = document.createElement('div');
+      globalTimeline.className = 'absolute left-[30px] top-0 bottom-0 w-px bg-gray-300';
+      globalTimeline.setAttribute('data-global-timeline', '');
+      section.insertBefore(globalTimeline, section.firstChild);
+    }
+  }
+
+  // Rimuovi le linee dalle timeline individuali (ora usiamo la timeline globale)
+  const allTimelines = newPage.querySelectorAll('[data-timeline]');
+  allTimelines.forEach(timeline => {
+    timeline.classList.add('relative', 'z-10');
+    const line = timeline.querySelector('.w-px.bg-gray-300');
+    if (line) {
+      line.remove();
+    }
+  });
 
   pagesContainer.appendChild(newPage);
   return newPage;
@@ -460,7 +712,7 @@ function renderSection(items, config, previousSectionSelector = null) {
         if (willCreateNewPage) {
           finalizePage(currentContainer, false);
           currentPageNumber += 1;
-          const newPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config.timelineId);
+          const newPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config.timelineId, false);
           const newContainer = newPage.querySelector(config.containerSelector);
           if (!newContainer) {
             throw new Error(`Missing ${config.title} container in new page`);
@@ -499,79 +751,48 @@ function renderSection(items, config, previousSectionSelector = null) {
     let isFirstInPage = true;
     let currentPageMaxHeight;
     
-    // Se c'è spazio sufficiente nella pagina corrente, aggiungi la sezione lì
-    if (availableHeight >= MIN_HEIGHT_NEEDED) {
+    // Misura l'altezza della prima card per verificare se c'è spazio sufficiente
+    const measureContainer = createMeasurementContainer(null);
+    let firstCardHeight = FALLBACK_CARD_HEIGHT_PX;
+    if (items.length > 0) {
+      const firstCard = config.createCard(items[0], { isCurrent: items[0].current === true });
+      firstCardHeight = measureCardHeight(firstCard, measureContainer);
+    }
+    
+    // Calcola l'altezza necessaria: titolo sezione + margine + prima card
+    // Il titolo e il margine occupano circa 60-80px
+    const sectionHeaderHeight = 80; // Titolo + margine mt-8 + gap
+    const requiredHeight = sectionHeaderHeight + firstCardHeight;
+    
+    // Se c'è spazio sufficiente per almeno la prima card nella pagina corrente, aggiungi la sezione lì
+    if (availableHeight >= requiredHeight) {
       const section = currentPage.querySelector('section');
       if (section) {
         const sectionHTML = createSectionHTML(config, true);
         section.insertAdjacentHTML('beforeend', sectionHTML);
-        
-        // Estendi la timeline della sezione precedente fino alla nuova sezione
-        // Usa setTimeout per dare tempo al browser di renderizzare
-        setTimeout(() => {
-          if (previousSectionSelector) {
-            const previousSection = currentPage.querySelector(previousSectionSelector);
-            if (previousSection) {
-              // Trova la timeline della sezione precedente
-              const previousTimeline = previousSection.querySelector('[data-timeline]');
-              if (previousTimeline) {
-                const previousLine = previousTimeline.querySelector('.w-px.bg-gray-300');
-                const previousCircle = previousTimeline.querySelector('.w-4.h-4');
-                if (previousLine && previousCircle) {
-                  // Trova il punto del cerchio della nuova sezione
-                  const newSection = currentPage.querySelector(config.sectionSelector);
-                  if (newSection) {
-                    const newTimeline = newSection.querySelector('[data-timeline]');
-                    if (newTimeline) {
-                      const newCircle = newTimeline.querySelector('.w-4.h-4');
-                      if (newCircle) {
-                        // Calcola la distanza tra il bottom della sezione precedente e il centro del cerchio della nuova sezione
-                        const previousSectionRect = previousSection.getBoundingClientRect();
-                        const newCircleRect = newCircle.getBoundingClientRect();
-                        const pageRect = currentPage.getBoundingClientRect();
-                        
-                        // Calcola la posizione del bottom della sezione precedente (fine effettiva del contenuto)
-                        const previousSectionBottom = previousSectionRect.bottom - pageRect.top;
-                        
-                        // Calcola la posizione del centro del cerchio nuovo (metà dell'altezza del cerchio)
-                        const newCircleCenter = newCircleRect.top - pageRect.top + (newCircleRect.height / 2);
-                        
-                        // L'altezza della linea è la distanza tra la fine della sezione precedente e il centro del cerchio nuovo
-                        // Questo include lo spazio del margine mt-8 e arriva fino al centro del cerchio
-                        const lineHeight = newCircleCenter - previousSectionBottom;
-                        
-                        // Imposta l'altezza della linea
-                        if (lineHeight > 0) {
-                          previousLine.classList.remove('flex-1');
-                          previousLine.style.height = `${lineHeight}px`;
-                          previousLine.style.flex = '0 0 auto';
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }, 10);
       }
       
       currentContainer = currentPage.querySelector(config.containerSelector);
       currentPageMaxHeight = availableHeight;
     } else {
-      // Crea una nuova pagina per la sezione
-      currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config.timelineId);
+      // Crea una nuova pagina per la sezione se non c'è spazio sufficiente
+      // Questa è la prima pagina della sezione
+      currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config.timelineId, true);
       currentContainer = currentPage.querySelector(config.containerSelector);
       currentPageNumber = allPages.length + 1;
       currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX;
     }
+    
+    // Rimuovi il measureContainer temporaneo usato per misurare la prima card
+    measureContainer.remove();
     
     if (!currentContainer) {
       console.error(`Missing ${config.title} container`);
       return;
     }
 
-    const measureContainer = createMeasurementContainer(currentContainer);
+    // Crea un nuovo measureContainer con la larghezza corretta del container
+    const finalMeasureContainer = createMeasurementContainer(currentContainer);
     
     let currentPageHeight = 0;
     
@@ -589,7 +810,7 @@ function renderSection(items, config, previousSectionSelector = null) {
         if (willCreateNewPage) {
           finalizePage(currentContainer, false);
           currentPageNumber += 1;
-          const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config.timelineId);
+          const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config.timelineId, false);
           currentPage = nextPage;
           const nextContainer = nextPage.querySelector(config.containerSelector);
           if (!nextContainer) {
@@ -616,7 +837,7 @@ function renderSection(items, config, previousSectionSelector = null) {
         finalizePage(currentContainer, true);
       }
     } finally {
-      measureContainer.remove();
+      finalMeasureContainer.remove();
     }
   }
 }
@@ -628,6 +849,10 @@ function renderAcademicExperiences(experiences) {
 
 function renderForeignResearchContracts(contracts) {
   renderSection(contracts, SECTION_CONFIG.foreign_research_contracts, SELECTORS.experiencesSection);
+}
+
+function renderResearchAndTechnologyTransfer(items) {
+  renderSection(items, SECTION_CONFIG.research_and_technology_transfer, SELECTORS.foreignContractsSection);
 }
 
 async function loadSection(sectionKey, config, previousSectionSelector = null) {
@@ -658,10 +883,21 @@ async function loadForeignResearchContracts() {
   await loadSection('foreign_research_contracts', SECTION_CONFIG.foreign_research_contracts, SELECTORS.experiencesSection);
 }
 
+async function loadResearchAndTechnologyTransfer() {
+  await loadSection('research_and_technology_transfer', SECTION_CONFIG.research_and_technology_transfer, SELECTORS.foreignContractsSection);
+}
+
+async function loadEntrepreneurialInitiatives() {
+  await loadSection('entrepreneurial_initiatives', SECTION_CONFIG.entrepreneurial_initiatives, SELECTORS.researchTransferSection);
+}
+
 async function init() {
   initPdfMode();
   await loadAcademicExperiences();
   await loadForeignResearchContracts();
+  await loadResearchAndTechnologyTransfer();
+  await loadEntrepreneurialInitiatives();
+  
   setPdfState({
     pageCount: document.querySelectorAll('.pdf-page').length,
     ready: true,
