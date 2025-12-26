@@ -1,1385 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Cremaschi - Academic CV</title>
+    <link href="./dist/output.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    spacing: {
-                        '18': '4.5rem',
-                    },
-                    colors: {
-                        'custom-lavender': '#F8F2FC',
-                        'gradient-purple': '#A478E8',
-                        'gradient-blue': '#516CF7',
-                        'primary': '#6366f1',
-                        'primary-hover': '#4f46e5',
-                        'text-dark': '#1f2937',
-                        'text-medium': '#4b5563',
-                        'text-light': '#6b7280',
-                        'text-lighter': '#9ca3af',
-                        'text-white': '#ffffff',
-                        'bg-main': '#ffffff',
-                        'bg-secondary': '#f9fafb',
-                        'bg-card': '#ffffff',
-                        'bg-icon': '#f3f4f6',
-                        'bg-lavender': '#F8F2FC',
-                        'border': '#e5e7eb',
-                        'border-light': '#f3f4f6',
-                        'linkedin': '#0077b5',
-                        'github': '#24292e',
-                        'italy-green': '#009246',
-                        'italy-white': '#ffffff',
-                        'italy-red': '#ce2b37',
-                        'uk-blue': '#00247d',
-                        'uk-white': '#ffffff',
-                        'uk-red': '#cf142b'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Only keeping essential custom styles that can't be easily replicated with Tailwind */
-        .gradient-text {
-            background: linear-gradient(90deg, #A478E8, #516CF7, #A478E8);
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
-            animation: gradient-shift 6s ease infinite;
-        }
-
-        .citation-gradient {
-            background: linear-gradient(135deg, #A478E8, #516CF7, #A478E8);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-fill-color: transparent;
-            animation: gradient-diagonal-shift 8s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes gradient-diagonal-shift {
-            0% {
-                background-position: 0% 0%;
-            }
-
-            25% {
-                background-position: 100% 0%;
-            }
-
-            50% {
-                background-position: 100% 100%;
-            }
-
-            75% {
-                background-position: 0% 100%;
-            }
-
-            100% {
-                background-position: 0% 0%;
-            }
-        }
-
-        .dark-theme {
-            --color-primary: #818cf8;
-            --color-primary-hover: #6366f1;
-            --color-text-dark: #f9fafb;
-            --color-text-medium: #e5e7eb;
-            --color-text-light: #d1d5db;
-            --color-text-lighter: #9ca3af;
-            --color-text-white: #ffffff;
-            --color-bg-main: #111827;
-            --color-bg-secondary: #1f2937;
-            --color-bg-card: #1f2937;
-            --color-bg-icon: #374151;
-            --color-bg-lavender: #2d2235;
-            --color-border: #374151;
-            --color-border-light: #4b5563;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<body>
+    <main class="flex min-h-screen font-inter bg-white">
+        <aside class="w-80 bg-sidebar-bg border-r border-line p-6 flex flex-col">
+            <div class="mb-8">
+                <img src="img/photo-profile.png" alt="Profile photo" class="w-24 h-24 rounded-full mb-4 object-cover">
+                <h1 class="text-2xl font-bold text-ink mb-1">Marco Cremaschi,</h1>
+                <div class="text-sm font-medium text-muted mb-1">PH.D</div>
+                <div class="text-sm text-muted">Research Assistant</div>
+            </div>
 
-<body class="bg-bg-main text-text-dark">
-    <div id="content" class="container mx-auto p-4 md:p-0 max-w-7xl">
-        <div class="flex flex-col md:flex-row gap-4">
-            <!-- Left Sidebar -->
-            <div class="w-full md:w-1/4 p-6">
-                <div class="flex flex-col items-center md:items-start">
-                    <!-- Profile Image -->
-                    <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-border-light">
-                        <img src="/img/photo-profile.png" alt="Profile Photo"
-                            class="w-full h-full object-cover">
+            <div class="mb-6">
+                <div class="flex items-start gap-3 mb-4">
+                    <div class="w-5 h-5 flex items-center justify-center text-accent mt-0.5"><i class='bx bx-envelope'></i></div>
+                    <div class="flex-1">
+                        <span class="block text-xs text-muted mb-0.5">Email</span>
+                        <span class="block text-sm text-ink">marco.cremaschi@unimib.it</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 mb-4">
+                    <div class="w-5 h-5 flex items-center justify-center text-accent mt-0.5"><i class='bx bx-globe'></i></div>
+                    <div class="flex-1">
+                        <span class="block text-xs text-muted mb-0.5">Website</span>
+                        <span class="block text-sm text-ink">cremarco.bitbucket.org</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 mb-4">
+                    <div class="w-5 h-5 flex items-center justify-center text-accent mt-0.5"><i class='bx bx-phone'></i></div>
+                    <div class="flex-1">
+                        <span class="block text-xs text-muted mb-0.5">Phone</span>
+                        <span class="block text-sm text-ink">(+39) 366 41 68 368</span>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-5 h-5 flex items-center justify-center text-accent mt-0.5"><i class='bx bx-map'></i></div>
+                    <div class="flex-1">
+                        <span class="block text-xs text-muted mb-0.5">Address</span>
+                        <span class="block text-sm text-ink">Milan, Italy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-px bg-line my-6"></div>
+
+            <div class="mb-6">
+                <div class="text-sm font-semibold text-ink mb-4">Socials</div>
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-8 h-8 flex items-center justify-center rounded bg-accent-soft text-accent"><i class='bx bxl-linkedin'></i></div>
+                    <div class="flex-1">
+                        <span class="block text-sm font-medium text-ink">LinkedIn</span>
+                        <span class="block text-xs text-muted">marco-cremaschi</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 flex items-center justify-center rounded bg-accent-soft text-accent"><i class='bx bxl-github'></i></div>
+                    <div class="flex-1">
+                        <span class="block text-sm font-medium text-ink">GitHub</span>
+                        <span class="block text-xs text-muted">cremarco</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-px bg-line my-6"></div>
+
+            <div>
+                <div class="text-sm font-semibold text-ink mb-4">Languages</div>
+                <div class="flex items-center gap-3 mb-3">
+                    <img class="w-6 h-4 object-cover rounded" src="img/flag/italian.svg" alt="Italian flag">
+                    <div class="flex-1">
+                        <span class="block text-sm font-medium text-ink">Italian</span>
+                        <span class="block text-xs text-muted">Native</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <img class="w-6 h-4 object-cover rounded" src="img/flag/english.svg" alt="English flag">
+                    <div class="flex-1">
+                        <span class="block text-sm font-medium text-ink">English</span>
+                        <span class="block text-xs text-muted">Professional working</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="flex-1 p-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-ink mb-6">Research</h2>
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-4 shadow-sm">
+                    <h3 class="text-lg font-semibold text-ink mb-3">Research Profile</h3>
+                    <p class="text-sm text-muted leading-relaxed mb-3">I am a PhD in Computer Science (University of Milan-Bicocca, 2020) and currently a researcher at the University of Milan-Bicocca (DISCo), working at the intersection of Semantic Web/Knowledge Graph technologies and AI/ML, with a specific focus on semantic table interpretation, data enrichment, and LLM-based systems for decision support.</p>
+                    <p class="text-sm text-muted leading-relaxed mb-3">My research spans end-to-end methods and tools for building high-quality semantic representations from heterogeneous data, and applying them to real-world domains including mental health and early risk detection, through clinical decision support and predictive modelling.</p>
+                    <p class="text-sm text-muted leading-relaxed mb-3">I have authored peer-reviewed publications in leading conferences and journals, with a solid research impact and international recognitions including ESWC Best Demo Award (2019) and ISWC Best Resource Award (2025).</p>
+                    <p class="text-sm text-muted leading-relaxed mb-3">I actively contribute to the research community through service and leadership roles (e.g., Chair of SemTab@ISWC, tutorial organisation, associate editor and PC/reviewer roles).</p>
+                    <p class="text-sm text-muted leading-relaxed mb-3">A key dimension of my profile is the continuous involvement in international research networks and projects: I hold responsibilities in COST Actions and I have contributed to EU-funded initiatives on open data exploitation and semantic enrichment.</p>
+                    <p class="text-sm text-muted leading-relaxed mb-3">I also gained international experience through research activity abroad at Bielefeld University (Semantic Computing Group) and through research contracts at Sofia University "St. Kliment Ohridski" focused on data enrichment for AI.</p>
+                    <p class="text-sm text-muted leading-relaxed">Alongside academia, I combine research with grant writing and R&amp;D project management and with technology transfer, including the role of co-founder/CTO of a university spin-off.</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-ink mb-3">Research Interest</h3>
+                    <p class="text-sm text-muted leading-relaxed">Semantic Web, Knowledge Graphs, Semantic Table Interpretation, Mental Health, Clinical Decision Support Systems, Disease Risk Prediction Models, Early Disease Detection Systems</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <div class="flex gap-6 mb-3">
+                            <div>
+                                <div class="text-3xl font-bold text-ink mb-1">475</div>
+                                <div class="text-xs text-muted">citations</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-ink mb-1">13</div>
+                                <div class="text-xs text-muted">h-index</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-ink mb-1">17</div>
+                                <div class="text-xs text-muted">i10-index</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-muted">Google Scholar</div>
+                    </div>
+                    <div class="w-48 bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <div class="mb-3">
+                            <div>
+                                <div class="text-3xl font-bold text-ink mb-1">9</div>
+                                <div class="text-xs text-muted">citations</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-muted">Scopus</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-ink mb-6">Academic experiences</h2>
+                <div class="flex flex-col gap-6">
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <div class="flex gap-4">
+                            <img src="img/logo/unimib.png" alt="Unimib logo" class="w-10 h-10 object-contain flex-shrink-0">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <div class="text-lg font-semibold text-ink">University of Milan-Bicocca</div>
+                                        <div class="text-sm text-muted">Research Assistant</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="flex gap-2 mb-2">
+                                            <span class="px-2 py-1 text-xs font-medium bg-accent-soft text-accent rounded">Link</span>
+                                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-muted rounded">Feb 2025 - Gen 2026</span>
+                                        </div>
+                                        <div class="text-xs text-muted flex items-center justify-end gap-1"><i class='bx bx-map'></i>Milan, Italy</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted leading-relaxed mb-2">Holder of a research grant (assegno di ricerca B) on the topic "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field", SSD INF/01.</p>
+                                <p class="text-sm text-muted leading-relaxed">Department of Informatics, Systems and Communication.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Name and Title -->
-                    <h1 class="text-2xl font-bold text-text-dark mb-1">Marco Cremaschi,</h1>
-                    <h2 class="text-lg font-semibold text-text-medium mb-4">PH.D</h2>
-                    <h3 class="text-lg font-medium gradient-text mb-8">Research Assistant</h3>
-
-                    <!-- Contact Information -->
-                    <div class="w-full space-y-5 mb-10">
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
-                                <i class='bx bx-envelope text-xl'></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-light font-light">Email</p>
-                                <a href="mailto:marco.cremaschi@unimib.it"
-                                    class="text-sm text-text-medium hover:text-primary">marco.cremaschi@unimib.it</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
-                                <i class='bx bx-globe text-xl'></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-light font-light">Website</p>
-                                <a href="https://cremarco.bitbucket.org"
-                                    class="text-sm text-text-medium hover:text-primary">cremarco.bitbucket.org</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
-                                <i class='bx bx-phone text-xl'></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-light font-light">Phone</p>
-                                <a href="tel:+393664168368" class="text-sm text-text-medium hover:text-primary">(+39)
-                                    366 41 68 368</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 flex items-center justify-center text-text-light">
-                                <i class='bx bx-map text-xl'></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-light font-light">Address</p>
-                                <p class="text-sm text-text-medium">Milan, Italy</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <div class="flex gap-4">
+                            <img src="img/logo/unimib.png" alt="Unimib logo" class="w-10 h-10 object-contain flex-shrink-0">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <div class="text-lg font-semibold text-ink">University of Milan-Bicocca</div>
+                                        <div class="text-sm text-muted">Assistant Professor (RTD/A)</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="flex gap-2 mb-2">
+                                            <span class="px-2 py-1 text-xs font-medium bg-accent-soft text-accent rounded">Link</span>
+                                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-muted rounded">Gen 2022 - Gen 2025</span>
+                                        </div>
+                                        <div class="text-xs text-muted flex items-center justify-end gap-1"><i class='bx bx-map'></i>Milan, Italy</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted leading-relaxed mb-2">Holder of a research grant (RTD/A) on the topic "Semantic and AI technologies for early digital intervention in psychiatric services", SSD INF/01, funded by the Italian Ministero dell'Universita e della Ricerca through the European project D.M. 1062/2021 - Piano Operativo Nazionale - PON "Ricerca e Innovazione" 2014-2020 Asse IV, azioni IV.4 "Dottorati e contratti di ricerca sulle tematiche dell'innovazione".</p>
+                                <p class="text-sm text-muted leading-relaxed">Department of Informatics, Systems and Communication.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Socials -->
-                    <h4 class="text-sm font-medium text-text-light mb-4 w-full">Socials</h4>
-                    <div class="w-full space-y-5 mb-10">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-linkedin flex items-center justify-center text-white">
-                                <i class='bx bxl-linkedin text-lg'></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-light font-light">LinkedIn</p>
-                                <a href="https://linkedin.com/in/marco-cremaschi"
-                                    class="text-sm text-text-medium hover:text-primary">marco-cremaschi</a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-github flex items-center justify-center text-white">
-                                <i class='bx bxl-github text-lg'></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-light font-light">GitHub</p>
-                                <a href="https://github.com/cremarco"
-                                    class="text-sm text-text-medium hover:text-primary">cremarco</a>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <div class="flex gap-4">
+                            <img src="img/logo/unimib.png" alt="Unimib logo" class="w-10 h-10 object-contain flex-shrink-0">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <div class="text-lg font-semibold text-ink">University of Milan-Bicocca</div>
+                                        <div class="text-sm text-muted">Research Assistant</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="flex gap-2 mb-2">
+                                            <span class="px-2 py-1 text-xs font-medium bg-accent-soft text-accent rounded">Link</span>
+                                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-muted rounded">Feb 2021 - Gen 2022</span>
+                                        </div>
+                                        <div class="text-xs text-muted flex items-center justify-end gap-1"><i class='bx bx-map'></i>Milan, Italy</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted leading-relaxed mb-2">Holder of a research grant (assegno di ricerca B) on the topic "Analysis and semantic annotation of data related to the nutritional components of food", SSD ING/INF-05.</p>
+                                <p class="text-sm text-muted leading-relaxed">Department of Informatics, Systems and Communication.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Languages -->
-                    <h4 class="text-sm font-medium text-text-light mb-4 w-full">Languages</h4>
-                    <div class="w-full space-y-5">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <img id="flag-italian" src="flag/italian.svg" alt="Italian Flag">
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-medium font-medium">Italian</p>
-                                <p class="text-xs text-text-light">Native</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <img id="flag-english" src="flag/english.svg" alt="English Flag">
-                            </div>
-                            <div>
-                                <p class="text-sm text-text-medium font-medium">English</p>
-                                <p class="text-xs text-text-light">Professional working</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+                        <div class="flex gap-4">
+                            <img src="img/logo/unimib.png" alt="Unimib logo" class="w-10 h-10 object-contain flex-shrink-0">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <div class="text-lg font-semibold text-ink">University of Milan-Bicocca</div>
+                                        <div class="text-sm text-muted">Research Assistant</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="flex gap-2 mb-2">
+                                            <span class="px-2 py-1 text-xs font-medium bg-accent-soft text-accent rounded">Link</span>
+                                            <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-muted rounded">Feb 2020 - Gen 2021</span>
+                                        </div>
+                                        <div class="text-xs text-muted flex items-center justify-end gap-1"><i class='bx bx-map'></i>Milan, Italy</div>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-muted leading-relaxed mb-2">Holder of a research grant (assegno di ricerca) on the topic "Analysis and semantic annotation of data related to the nutritional components of food", SSD ING/INF-05.</p>
+                                <p class="text-sm text-muted leading-relaxed">Department of Informatics, Systems and Communication.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Main Content -->
-            <div class="w-full md:w-3/4 bg-bg-secondary p-6 rounded-lg relative">
-                <!-- Timeline line -->
-                <div class="absolute left-0 top-0 bottom-0 w-px bg-border"></div>
-
-                <!-- Research Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Research</h2>
-                    </div>
-
-                    <div class="pl-6">
-                        <!-- Research Profile Card -->
-                        <div
-                            class="bg-bg-card rounded-t-lg shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
-                            <h3 class="text-lg font-medium text-text-dark mb-3">Research Profile</h3>
-                            <p class="text-text-medium mb-4 text-sm leading-relaxed">
-                                I am a <span class="font-medium">research assistant</span> at the <span class="font-medium">University of Milano-Bicocca</span>, 
-                                Department of <span class="font-medium">Informatics, Systems, and Communication</span> (DISCo) in <span class="font-medium">Italy</span>. 
-                                I hold a <span class="font-medium">PhD in Computer Science</span> from the same university (2020). During my doctoral studies, I spent 
-                                six months at <span class="font-medium">Bielefeld University</span> (Germany) in 2019, working within the <span class="font-medium">Semantic Computing Group</span>. 
-                                Prior to that, I earned both my <span class="font-medium">Bachelor's</span> and <span class="font-medium">Master's degrees</span> in Computer Science at the 
-                                <span class="font-medium">University of Milano-Bicocca</span>.
-                            </p>
-                            <p class="text-text-medium mb-4 text-sm leading-relaxed">
-                                My research interests include <span class="font-medium">knowledge graph construction</span>, <span class="font-medium">data enrichment</span>, and, more recently, 
-                                the application of <span class="font-medium">artificial intelligence</span> techniques for building <span class="font-medium">clinical decision support systems</span> 
-                                and <span class="font-medium">predictive models</span> in the field of <span class="font-medium">mental health</span>.
-                            </p>
-                            <p class="text-text-medium text-sm leading-relaxed">
-                                Over the years, I have actively contributed to the <span class="font-medium">Semantic Web</span> and <span class="font-medium">AI</span> communities by publishing 
-                                <span class="font-medium">scientific papers</span> in reputable <span class="font-medium">conferences</span> and <span class="font-medium">journals</span>. My involvement in the academic 
-                                community also includes serving on the <span class="font-medium">program committee</span> of several top-tier international conferences, 
-                                where I have taken on roles as <span class="font-medium">chair</span> and <span class="font-medium">reviewer</span>.
-                            </p>
-                            
-                        </div>
-
-                        <!-- Research Interest Card -->
-                        <div
-                            class="bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
-                            <h3 class="text-lg font-medium text-text-dark mb-4">Research Interest</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Web</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Knowledge Graphs</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Ontology Engineering</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Semantic Table Interpretation</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Data Integration</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">FAIR Data</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Explainable AI (XAI)</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Mental Health</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Clinical Decision Support Systems</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Disease Risk Prediction Models</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Early Disease Detection Systems</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Biomedical Informatics</span>
-                                <span class="px-3 py-1.5 bg-gray-100 text-text-medium text-sm rounded-full hover:bg-gray-200 transition-colors">Responsible AI</span>                                                                                              
-                            </div>
-                        </div>
-
-                        <!-- Citation Metrics Section -->
-                        <div class="flex flex-col md:flex-row gap-2">
-                            <!-- Google Scholar Card -->
-                            <div
-                                class="bg-bg-card rounded-bl-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
-                                <div class="flex items-center mb-4">
-                                    <i class='bx bxl-google text-xl text-text-light mr-2'></i>
-                                    <h3 class="text-lg font-medium text-text-dark">Google Scholar</h3>
-                                </div>
-
-                                <div class="grid grid-cols-3 gap-4">
-                                    <!-- Citations -->
-                                    <div class="flex flex-col items-center justify-center py-2 relative">
-                                        <p class="text-4xl font-semibold citation-gradient mb-1">382</p>
-                                        <p class="text-sm text-gray-500">citations</p>
-                                        <div class="absolute right-0 top-0 bottom-0 w-px bg-border"></div>
-                                    </div>
-
-                                    <!-- h-index -->
-                                    <div class="flex flex-col items-center justify-center py-2 relative">
-                                        <p class="text-4xl font-semibold citation-gradient mb-1">12</p>
-                                        <p class="text-sm text-gray-500">h-index</p>
-                                        <div class="absolute right-0 top-0 bottom-0 w-px bg-border"></div>
-                                    </div>
-
-                                    <!-- i10-index -->
-                                    <div class="flex flex-col items-center justify-center py-2">
-                                        <p class="text-4xl font-semibold citation-gradient mb-1">16</p>
-                                        <p class="text-sm text-gray-500">i10-index</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Scopus Card -->
-                            <div
-                                class="bg-bg-card rounded-br-lg shadow-sm p-6 flex-1 border border-border-light hover:shadow-md transition-shadow">
-                                <div class="flex items-center mb-4">
-                                    <i class='bx bx-book-open text-xl text-text-light mr-2'></i>
-                                    <h3 class="text-lg font-medium text-text-dark">Scopus</h3>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-4">
-                                    <!-- Citations -->
-                                    <div class="flex flex-col items-center justify-center py-2 relative">
-                                        <p class="text-4xl font-semibold citation-gradient mb-1">178</p>
-                                        <p class="text-sm text-gray-500">citations</p>
-                                        <div class="absolute right-0 top-0 bottom-0 w-px bg-border"></div>
-                                    </div>
-
-                                    <!-- h-index -->
-                                    <div class="flex flex-col items-center justify-center py-2 relative">
-                                        <p class="text-4xl font-semibold citation-gradient mb-1">8</p>
-                                        <p class="text-sm text-gray-500">h-index</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Academic Experiences Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Academic experiences</h2>
-                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">1</span>
-                    </div>
-
-                    <div class="pl-6">
-                        <div id="academic-experiences">
-                            <!-- Content will be populated by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research Contracts at Foreign Institutes Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Research contracts at foreign institutes</h2>
-                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">0</span>
-                    </div>
-                    <div class="pl-6">
-                        <p class="text-sm text-text-light">International research collaborations and visiting positions</p>
-                    </div>
-
-                    <div class="pl-6">
-                        <div id="international-experiences">
-                            <!-- International experiences will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research and Technology Transfer Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Research and technology transfer</h2>
-                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">4</span>
-                    </div>
-
-                    <div class="pl-6">
-                        <div id="research-transfer">
-                            <!-- Research and technology transfer cards will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entrepreneurial Initiatives Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Entrepreneurial initiatives</h2>
-                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">2</span>
-                    </div>
-
-                    <div class="pl-6">
-                        <div id="entrepreneurial-initiatives">
-                            <!-- Entrepreneurial initiatives cards will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Company Experiences Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Company experiences</h2>
-                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">4</span>
-                    </div>
-
-                    <div class="pl-6">
-                        <div id="company-experiences">
-                            <!-- Company experiences cards will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Education</h2>
-                        <span class="bg-primary/10 text-primary text-xs font-medium px-2 py-0.5 rounded-full">3</span>
-                    </div>
-
-                    <!-- Education cards container -->
-                    <div class="pl-6">
-                        <div>
-                            <!-- Ph.D. Card -->
-                            <div class="bg-bg-card shadow-sm p-6 mb-2 rounded-t-lg border border-border-light hover:shadow-md transition-shadow">
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            <i class='bx bxs-graduation text-2xl text-text-light'></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="text-lg font-medium text-text-dark">Ph.D. in Computer Science</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:text-right mt-2 md:mt-0">
-                                        <p class="text-sm text-text-light font-medium">Nov 2016 – Oct 2019</p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <h4 class="text-sm font-medium text-text-dark mb-1">Thesis Title:</h4>
-                                    <p class="text-sm text-text-medium">Enabling tabular data understanding by human and machines through semantic interpretation</p>
-                                    <a href="https://hdl.handle.net/10281/255365" class="text-sm text-primary hover:text-primary-hover mt-1 inline-flex items-center gap-1">
-                                        View thesis
-                                        <i class='bx bx-link-external'></i>
-                                    </a>
-                                </div>
-                                <div class="ml-16 mt-4">
-                                    <h4 class="text-sm font-medium text-text-dark mb-1">International Experience:</h4>
-                                    <p class="text-sm text-text-medium">Bielefeld University, Germany</p>
-                                </div>
-                                <div class="ml-16 mt-4">
-                                    <h4 class="text-sm font-medium text-text-dark mb-1">Courses:</h4>
-                                    <ul class="list-disc list-inside">
-                                        <li class="text-sm text-text-medium">Writing of Scientific papers</li>
-                                        <li class="text-sm text-text-medium">Big Data Technologies</li>
-                                        <li class="text-sm text-text-medium">Privacy and processing of personal data. Technical and legal aspects</li>
-                                        <li class="text-sm text-text-medium">Knowledge Graphs and Semantic Data Management: Models, Techniques and Applications</li>
-                                        <li class="text-sm text-text-medium">Internet of Things: a service-oriented perspective</li>
-                                    </ul>
-                                </div>
-                                <div class="ml-16 mt-4">
-                                    <h4 class="text-sm font-medium text-text-dark mb-1">Summer Schools:</h4>
-                                    <ul class="list-disc list-inside">
-                                        <li class="text-sm text-text-medium">Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience – Como, Italy, Sep 18 – 22, 2017</li>
-                                        <li class="text-sm text-text-medium">2nd International Summer School on Deep Learning 2018 – Genova, Italy, July 23 – 27, 2018</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- M.Sc. Card -->
-                            <div class="bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            <i class='bx bxs-graduation text-2xl text-text-light'></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="text-lg font-medium text-text-dark">M.Sc. in Computer Science</h3>
-                                            <p class="text-sm text-primary italic">magna cum laude</p>
-                                        </div>
-                                    </div>
-                                    <div class="md:text-right mt-2 md:mt-0">
-                                        <p class="text-sm text-text-light font-medium">Oct 2007 – Sep 2010</p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <h4 class="text-sm font-medium text-text-dark mb-1">Thesis Title:</h4>
-                                    <p class="text-sm text-text-medium">Framework di supporto alla pianificazione di servizi basato su un approccio multi-paradigma</p>
-                                </div>
-                            </div>
-
-                            <!-- B.Sc. Card -->
-                            <div class="bg-bg-card shadow-sm p-6 mb-2 rounded-b-lg border border-border-light hover:shadow-md transition-shadow">
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            <i class='bx bxs-graduation text-2xl text-text-light'></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="text-lg font-medium text-text-dark">B.Sc. in Computer Science</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:text-right mt-2 md:mt-0">
-                                        <p class="text-sm text-text-light font-medium">Oct 2002 – Oct 2007</p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <h4 class="text-sm font-medium text-text-dark mb-1">Thesis Title:</h4>
-                                    <p class="text-sm text-text-medium">Progettazione e realizzazione di una applicazione web per la gestione di un indirizzario dipartimentale</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teaching in PhD courses Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Teaching in PhD courses</h2>
-                    </div>
-
-                    <div class="pl-6">
-                        <div class="bg-bg-card shadow-sm p-6 mb-2 rounded-lg border border-border-light hover:shadow-md transition-shadow">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center shrink-0">
-                                    <img src="img/unimib.png" alt="University of Milan-Bicocca" class="w-8 h-8 object-contain">
-                                </div>
-                                <div class="flex-grow">
-                                    <p class="text-sm text-text-light font-light">University of Milan-Bicocca</p>
-                                    <h3 class="text-base text-text-dark mb-4">PHD in Computer Science</h3>
-                                    
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-sm text-text-medium">Introduction to Knowledge Graphs</span>
-                                        <div class="flex items-center gap-4">
-                                            <span class="text-xs text-text-light">20 hours</span>
-                                            <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                            <span class="text-xs text-text-light">2024 - 2025</span>
-                                        </div>
-                                    </div>
-
-                                    <p class="text-sm text-text-light mb-2">PHD in Intangible Heritage in Socio-Cultural Innovation</p>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm text-text-medium">Digital Futures for Intangible Heritage</span>
-                                        <div class="flex items-center gap-4">
-                                            <span class="text-xs text-text-light">8/4 hours</span>
-                                            <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                            <span class="text-xs text-text-light">2022 - current</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teaching Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6 flex items-center gap-2">
-                        <h2 class="text-xl font-semibold text-text-dark">Teaching</h2>
-                    </div>
-
-                    <div class="pl-6">
-                        <!-- University of Milan-Bicocca Card -->
-                        <div class="bg-bg-card shadow-sm p-6 mb-2 rounded-t-lg border border-border-light hover:shadow-md transition-shadow">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center shrink-0">
-                                    <img src="img/unimib.png" alt="University of Milan-Bicocca" class="w-8 h-8 object-contain">
-                                </div>
-                                <div class="flex-grow">
-                                    <p class="text-sm text-text-light font-light">University of Milan-Bicocca</p>
-                                    
-                                    <!-- MD Communication Theory and Technology -->
-                                    <div class="mt-4">
-                                        <h3 class="text-base text-text-dark mb-2">MD Communication Theory and Technology</h3>
-                                        <div class="space-y-2">
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Visual Communication and Interface Design</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">40/21 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                                    <span class="text-xs text-text-light">2019 - current</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Visual Communication Laboratory</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">48 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                                    <span class="text-xs text-text-light">2019 - 2020</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Technologies and Applications of Distributed Systems</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">24/36/18 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Teaching Assistant</span>
-                                                    <span class="text-xs text-text-light">2019 - 2020</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Service Science</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">20 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Teaching Assistant</span>
-                                                    <span class="text-xs text-text-light">2016 - 2018</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Information Systems</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">16 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Teaching Assistant</span>
-                                                    <span class="text-xs text-text-light">2015 - 2016</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- MD Data Science -->
-                                    <div class="mt-4">
-                                        <h3 class="text-base text-text-dark mb-2">MD Data Science</h3>
-                                        <div class="space-y-2">
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Data Visualisation</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">20 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                                    <span class="text-xs text-text-light">2023 - 2024</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- MD Computer Science -->
-                                    <div class="mt-4">
-                                        <h3 class="text-base text-text-dark mb-2">MD Computer Science</h3>
-                                        <div class="space-y-2">
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Data Architecture</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">16 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                                    <span class="text-xs text-text-light">2021 - 2023</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- BD Computer Science -->
-                                    <div class="mt-4">
-                                        <h3 class="text-base text-text-dark mb-2">BD Computer Science</h3>
-                                        <div class="space-y-2">
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Databases</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="text-xs text-text-light">20 hours</span>
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Teaching Assistant</span>
-                                                    <span class="text-xs text-text-light">2021 - current</span>
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-sm text-text-medium">Distributed Systems</span>
-                                                <div class="flex items-center gap-4">
-                                                    <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Teaching Assistant</span>
-                                                    <span class="text-xs text-text-light">2012 - 2013</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Università Cattolica del Sacro Cuore Card -->
-                    <div class="bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center shrink-0">
-                                <img src="img/unicatt.png" alt="Università Cattolica del Sacro Cuore" class="w-8 h-8 object-contain">
-                            </div>
-                            <div class="flex-grow">
-                                <p class="text-sm text-text-light font-light">Università Cattolica del Sacro Cuore</p>
-                                
-                                <!-- MD Linguistic Computing -->
-                                <div class="mt-4">
-                                    <h3 class="text-base text-text-dark mb-2">MD Linguistic Computing</h3>
-                                    <div class="space-y-2">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm text-text-medium">Data Structures and Database Systems</span>
-                                            <div class="flex items-center gap-4">
-                                                <span class="text-xs text-text-light">45 hours</span>
-                                                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                                <span class="text-xs text-text-light">2023 - current</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- University of Bergamo Card -->
-                    <div class="bg-bg-card shadow-sm p-6 mb-2 rounded-b-lg border border-border-light hover:shadow-md transition-shadow">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center shrink-0">
-                                <img src="img/unibg.png" alt="University of Bergamo" class="w-8 h-8 object-contain">
-                            </div>
-                            <div class="flex-grow">
-                                <p class="text-sm text-text-light font-light">University of Bergamo</p>
-                                
-                                <!-- Postgraduate School of Health Psychology -->
-                                <div class="mt-4">
-                                    <h3 class="text-base text-text-dark mb-2">Postgraduate School of Health Psychology</h3>
-                                    <div class="space-y-2">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-sm text-text-medium">Health Engineering for Health Promotion</span>
-                                            <div class="flex items-center gap-4">
-                                                <span class="text-xs text-text-light">18 hours</span>
-                                                <span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">Professor</span>
-                                                <span class="text-xs text-text-light">2024 - current</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pl-6 mb-6 flex items-center gap-2">
-                    <h2 class="text-xl font-semibold text-text-dark">Thesis supervisor</h2>
-                </div>
-
-                <div class="pl-6">
-                    <div class="flex flex-wrap justify-between gap-4">
-                        <!-- Computer Science UNIMIB Bachelor's -->
-                        <div class="flex-1 min-w-[150px] text-center">
-                            <p class="text-4xl font-semibold text-text-dark mb-2">38</p>
-                            <p class="text-sm text-text-medium mb-1">Computer Science@UNIMIB</p>
-                            <p class="text-sm text-text-light">Bachelor's thesis</p>
-                        </div>
-
-                        <!-- Computer Science UNIMIB Master's -->
-                        <div class="flex-1 min-w-[150px] text-center">
-                            <p class="text-4xl font-semibold text-text-dark mb-2">13</p>
-                            <p class="text-sm text-text-medium mb-1">Computer Science@UNIMIB</p>
-                            <p class="text-sm text-text-light">Master's thesis</p>
-                        </div>
-
-                        <!-- Communication Theory -->
-                        <div class="flex-1 min-w-[150px] text-center">
-                            <p class="text-4xl font-semibold text-text-dark mb-2">59</p>
-                            <p class="text-sm text-text-medium mb-1">Communication Theory and Technology@UNIMIB</p>
-                            <p class="text-sm text-text-light">Bachelor's thesis</p>
-                        </div>
-
-                        <!-- Data Science -->
-                        <div class="flex-1 min-w-[150px] text-center">
-                            <p class="text-4xl font-semibold text-text-dark mb-2">4</p>
-                            <p class="text-sm text-text-medium mb-1">Data science@UNIMIB</p>
-                            <p class="text-sm text-text-light">Master's thesis</p>
-                        </div>
-
-                        <!-- Linguistic Computing -->
-                        <div class="flex-1 min-w-[150px] text-center">
-                            <p class="text-4xl font-semibold text-text-dark mb-2">1</p>
-                            <p class="text-sm text-text-medium mb-1">Linguistic Computing@UNICATT</p>
-                            <p class="text-sm text-text-light">Master's thesis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Awards Section -->
-                <div class="mb-10 relative">
-                    <div class="pl-6 mb-6">
-                        <h2 class="text-xl font-semibold text-text-dark mb-2">Awards</h2>
-                        <p class="text-sm text-text-medium">Awards and recognitions for scientific activity</p>
-                    </div>
-
-                    <div class="pl-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <!-- Best Demo Award Card -->
-                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow overflow-hidden">
-                                <img src="https://placehold.co/600x400/eee/999?text=Best+Demo+Award+ESWC+2019" alt="Best Demo Award Certificate" class="w-full h-48 object-contain bg-white p-4">
-                                <div class="p-4">
-                                    <h3 class="text-lg font-medium text-text-dark mb-1">Best Demo Award</h3>
-                                    <p class="text-sm text-text-medium mb-2">Extended Semantic Web Conference 2019</p>
-                                    <a href="#" class="text-primary hover:text-primary-hover text-sm">Link</a>
-                                </div>
-                            </div>
-
-                            <!-- Outstanding Improvement Card -->
-                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow overflow-hidden">
-                                <img src="https://placehold.co/600x400/eee/999?text=Outstanding+Improvement+ISWC+2019" alt="Outstanding Improvement Certificate" class="w-full h-48 object-contain bg-white p-4">
-                                <div class="p-4">
-                                    <h3 class="text-lg font-medium text-text-dark mb-1">Outstanding Improvement</h3>
-                                    <p class="text-sm text-text-medium mb-2">SemTab Challenge 2019</p>
-                                    <a href="#" class="text-primary hover:text-primary-hover text-sm">Link</a>
-                                </div>
-                            </div>
-
-                            <!-- 3rd Place Card -->
-                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow overflow-hidden">
-                                <img src="https://placehold.co/600x400/eee/999?text=3rd+Place+MobiDataLab+2023" alt="3rd Place Certificate" class="w-full h-48 object-contain bg-white p-4">
-                                <div class="p-4">
-                                    <h3 class="text-lg font-medium text-text-dark mb-1">3rd Place</h3>
-                                    <p class="text-sm text-text-medium mb-2">MobiDataLab Codagon 2023</p>
-                                    <a href="#" class="text-primary hover:text-primary-hover text-sm">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                                <!-- Publications Section -->
-                                <div class="mb-10 relative">
-                                    <div class="pl-6 mb-6">
-                                        <h2 class="text-xl font-semibold text-text-dark mb-2">Publications</h2>
-                                        <p class="text-sm text-text-medium">Update date: March 5, 2025</p>
-                                    </div>
-                
-                                    <!-- Metrics and IDs -->
-                                    <div class="pl-6 mb-8">
-                                        <div class="flex flex-wrap items-center gap-4">
-                                            <div class="flex-1 flex items-center gap-4 min-w-0">
-                                                <!-- Google Scholar -->
-                                                <div class="bg-purple-50 rounded-lg px-4 py-2 flex items-center gap-2 flex-shrink-0">
-                                                    <img src="https://placehold.co/24/4285f4/fff?text=G" class="w-6 h-6 rounded" alt="Google Scholar">
-                                                    <a href="#" class="text-purple-600 hover:text-purple-700">Google Scholar</a>
-                                                    <span class="text-gray-600 whitespace-nowrap">cit: 382, h-index: 12, i10-index: 16</span>
-                                                </div>
-
-                                                <!-- Scopus -->
-                                                <div class="bg-purple-50 rounded-lg px-4 py-2 flex items-center gap-2 flex-shrink-0">
-                                                    <img src="https://placehold.co/24/ff7043/fff?text=S" class="w-6 h-6 rounded" alt="Scopus">
-                                                    <a href="#" class="text-purple-600 hover:text-purple-700">Scopus</a>
-                                                    <span class="text-gray-600 whitespace-nowrap">h-index: 8</span>
-                                                </div>
-
-                                                <!-- Orcid -->
-                                                <div class="bg-purple-50 rounded-lg px-4 py-2 flex items-center gap-2 flex-shrink-0">
-                                                    <img src="https://placehold.co/24/a6ce39/fff?text=O" class="w-6 h-6 rounded" alt="Orcid">
-                                                    <a href="#" class="text-purple-600 hover:text-purple-700">Orcid</a>
-                                                    <span class="text-gray-600 whitespace-nowrap">0000-0001-7840-6228</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                                    <!-- Publication Counts -->
-                                    <div class="pl-6 mb-8">
-                                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                                            <!-- Journal Papers Card -->
-                                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow p-6">
-                                                <div class="text-center">
-                                                    <p class="text-4xl font-semibold text-text-dark mb-2">9</p>
-                                                    <p class="text-sm text-text-medium">Journal Papers</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Conference Papers Card -->
-                                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow p-6">
-                                                <div class="text-center">
-                                                    <p class="text-4xl font-semibold text-text-dark mb-2">14</p>
-                                                    <p class="text-sm text-text-medium">Conference Papers</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Workshop Papers Card -->
-                                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow p-6">
-                                                <div class="text-center">
-                                                    <p class="text-4xl font-semibold text-text-dark mb-2">5</p>
-                                                    <p class="text-sm text-text-medium">Workshop Papers</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Challenge Papers Card -->
-                                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow p-6">
-                                                <div class="text-center">
-                                                    <p class="text-4xl font-semibold text-text-dark mb-2">6</p>
-                                                    <p class="text-sm text-text-medium">Challenge Papers</p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Book Chapter Card -->
-                                            <div class="bg-bg-card shadow-sm rounded-lg border border-border-light hover:shadow-md transition-shadow p-6">
-                                                <div class="text-center">
-                                                    <p class="text-4xl font-semibold text-text-dark mb-2">1</p>
-                                                    <p class="text-sm text-text-medium">Book Chapter</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                                    <!-- Publications List -->
-                                    <div class="pl-6">
-                                        <div class="space-y-6">
-                                            <!-- Latest Publication -->
-                                            <div class="bg-white rounded-lg p-6 border border-border-light">
-                                                <div class="flex items-start gap-4">
-                                                    <span class="text-text-light">0</span>
-                                                    <div class="flex-grow">
-                                                        <div class="flex flex-wrap items-center gap-2 mb-2">
-                                                            <span class="font-medium">Marco Cremaschi</span>
-                                                            <span class="text-text-medium">, Davide Ditolve, Cesare Curcio, Anna Panzeri, Andrea Spoto, Andrea Maurino.</span>
-                                                        </div>
-                                                        <p class="text-text-dark italic mb-2">Decoding the Mind: A RAG-LLM on ICD-11 for Decision Support in Psychology.</p>
-                                                        <p class="text-text-medium mb-2">Expert Systems With Applications, Elsevier Ltd, 2025 (accepted for publication).</p>
-                                                        <div class="flex flex-wrap gap-2">
-                                                            <span class="bg-gray-100 text-text-medium px-3 py-1 rounded-full text-sm">Journal paper</span>
-                                                            <span class="bg-gray-100 text-blue-600 px-3 py-1 rounded-full text-sm">QUARTILES: Q1 Artificial Intelligence</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        /**
-         * Creates the HTML for the courses list if courses are present
-         * @param {Array} courses - Array of course names
-         * @returns {string} HTML string for courses section
-         */
-        function createCoursesHTML(courses) {
-            if (!courses || courses.length === 0) return '';
-
-            return `
-                <div class="mt-4">
-                    <h4 class="text-sm font-medium text-text-dark mb-2">Courses:</h4>
-                    <ul class="list-disc list-inside">
-                        ${courses.map(course => `
-                            <li class="text-sm text-text-medium">${course}</li>
-                        `).join('')}
-                    </ul>
-                </div>
-            `;
-        }
-
-        /**
-         * Creates the HTML for the summer schools list if present
-         * @param {Array} schools - Array of summer school descriptions
-         * @returns {string} HTML string for summer schools section
-         */
-        function createSummerSchoolsHTML(schools) {
-            if (!schools || schools.length === 0) return '';
-
-            return `
-                <div class="mt-4">
-                    <h4 class="text-sm font-medium text-text-dark mb-2">Summer Schools:</h4>
-                    <ul class="list-disc list-inside">
-                        ${schools.map(school => `
-                            <li class="text-sm text-text-medium">${school}</li>
-                        `).join('')}
-                    </ul>
-                </div>
-            `;
-        }
-
-        /**
-         * Creates the HTML for the thesis section if thesis information is present
-         * @param {Object} edu - Education object containing thesis information
-         * @returns {string} HTML string for thesis section
-         */
-        function createThesisHTML(edu) {
-            if (!edu.thesis_title) return '';
-
-            return `
-                <div class="ml-16">
-                    <h4 class="text-sm font-medium text-text-dark mb-1">Thesis Title:</h4>
-                    <p class="text-sm text-text-medium">${edu.thesis_title}</p>
-                    ${edu.thesis_link ? `
-                        <a href="${edu.thesis_link}" 
-                           class="text-sm text-primary hover:text-primary-hover mt-1 inline-flex items-center gap-1">
-                            View thesis
-                            <i class='bx bx-link-external'></i>
-                        </a>
-                    ` : ''}
-                </div>
-            `;
-        }
-
-        /**
-         * Creates the HTML for the international experience section if present
-         * @param {string} experience - International experience description
-         * @returns {string} HTML string for international experience section
-         */
-        function createInternationalExperienceHTML(experience) {
-            if (!experience) return '';
-
-            return `
-                <div class="ml-16 mt-4">
-                    <h4 class="text-sm font-medium text-text-dark mb-1">International Experience:</h4>
-                    <p class="text-sm text-text-medium">${experience}</p>
-                </div>
-            `;
-        }
-
-        /**
-         * Creates an education card element
-         * @param {Object} edu - Education data object
-         * @returns {HTMLElement} The created card element
-         */
-        function createEducationCard(edu) {
-            const card = document.createElement('div');
-            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${edu.current ? 'bg-bg-lavender' : ''
-                } ${edu.isFirst ? 'rounded-t-lg' : ''
-                } ${edu.isLast ? 'rounded-b-lg' : ''
-                }`;
-
-            card.innerHTML = `
-                <!-- Header with degree and time period -->
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                    <div class="flex items-start">
-                        <!-- Degree icon -->
-                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                            <i class='bx bxs-graduation text-2xl text-text-light'></i>
-                        </div>
-                        <!-- Degree information -->
-                        <div>
-                            <h3 class="text-lg font-medium text-text-dark">${edu.degree}</h3>
-                            ${edu.honours ? `<p class="text-sm text-primary italic">${edu.honours}</p>` : ''}
-                        </div>
-                    </div>
-                    <!-- Time period -->
-                    <div class="md:text-right mt-2 md:mt-0">
-                        <p class="text-sm text-text-light font-medium">${edu.time_period}</p>
-                    </div>
-                </div>
-
-                <!-- Thesis information -->
-                ${createThesisHTML(edu)}
-
-                <!-- International experience -->
-                ${createInternationalExperienceHTML(edu.international_experience)}
-
-                <!-- Courses list -->
-                ${createCoursesHTML(edu.courses)}
-
-                <!-- Summer schools list -->
-                ${createSummerSchoolsHTML(edu.summer_schools)}
-            `;
-
-            return card;
-        }
-
-        // Main initialization when DOM is loaded
-        let hasInitialized = false; // Flag to track initialization
-        document.addEventListener('DOMContentLoaded', function () {
-            if (hasInitialized) {
-                console.log('Already initialized, skipping...');
-                return;
-            }
-            hasInitialized = true;
-            console.log('Initializing data loading...');
-
-            // Load data
-            fetch('data.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Data loaded successfully:', data);
-                    console.log('Number of academic experiences in data:', data.academic_experiences?.length || 0);
-
-                    // Update section count badges
-                    const updateSectionCount = (sectionTitle, count) => {
-                        console.log(`Updating count for section "${sectionTitle}": ${count}`);
-                        const sectionHeaders = document.querySelectorAll('.pl-6.mb-6.flex.items-center.gap-2');
-                        for (const header of sectionHeaders) {
-                            const titleElement = header.querySelector('h2');
-                            if (titleElement && titleElement.textContent === sectionTitle) {
-                                const badge = header.querySelector('.text-primary');
-                                if (badge) {
-                                    badge.textContent = count;
-                                    console.log(`Updated badge for "${sectionTitle}" to ${count}`);
-                                }
-                                break;
-                            }
-                        }
-                    };
-
-                    // Update all section counts
-                    updateSectionCount('Research', data.publications?.submitted_publications?.length || 0);
-                    updateSectionCount('Academic experiences', data.academic_experiences?.length || 0);
-                    updateSectionCount('Research contracts at foreign institutes', data.international_academic_experiences?.length || 0);
-                    updateSectionCount('Research and technology transfer', data.research_and_technology_transfer?.length || 0);
-                    updateSectionCount('Entrepreneurial initiatives', data.entrepreneurial_initiatives?.length || 0);
-                    updateSectionCount('Company experiences', data.company_experiences?.length || 0);
-
-                    // Load academic experiences
-                    const academicContainer = document.getElementById('academic-experiences');
-                    if (academicContainer && data.academic_experiences) {
-                        console.log('Before clearing academic container:', academicContainer.children.length, 'elements');
-                        academicContainer.innerHTML = '';
-                        console.log('After clearing academic container:', academicContainer.children.length, 'elements');
-                        
-                        data.academic_experiences.forEach((experience, index) => {
-                            console.log(`Adding academic experience ${index + 1}/${data.academic_experiences.length}`);
-                            const isFirst = index === 0;
-                            const isLast = index === data.academic_experiences.length - 1;
-
-                            const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
-                                } ${isFirst ? 'rounded-t-lg' : ''
-                                } ${isLast ? 'rounded-b-lg' : ''
-                                }`;
-
-                            card.innerHTML = `
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            ${experience.logo ? `<img src="${experience.logo}" alt="${experience.university} logo" class="w-8 h-8 object-contain">` : ''}
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-text-light font-light">${experience.university}</p>
-                                            <h3 class="text-lg font-medium text-text-dark">${experience.position}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:mt-0 flex flex-col md:items-end">
-                                        <div class="flex items-center gap-2">
-                                            ${experience.link ? `<a href="${experience.link}" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>` : ''}
-                                            <p class="text-sm ${experience.current ? 'text-primary' : 'text-text-light'} font-medium">${experience.time_period}</p>
-                                        </div>
-                                        <p class="text-xs text-text-light flex items-center mt-1">
-                                            <i class='bx bx-map-pin text-xs mr-1'></i>
-                                            ${experience.place}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <p class="text-text-medium text-sm leading-relaxed">
-                                        ${experience.topic}
-                                        ${experience.ssd ? `<p class="text-text-medium text-sm leading-relaxed mt-2">SSD: ${experience.ssd}</p>` : ''}
-                                    </p>
-                                    ${experience.department ? `<p class="text-text-medium text-sm leading-relaxed mt-2">${experience.department}</p>` : ''}
-                                </div>
-                            `;
-
-                            academicContainer.appendChild(card);
-                        });
-                    }
-
-                    // Load international experiences
-                    const internationalContainer = document.getElementById('international-experiences');
-                    if (internationalContainer && data.international_academic_experiences) {
-                        // Clear existing content
-                        internationalContainer.innerHTML = '';
-                        
-                        data.international_academic_experiences.forEach((experience, index) => {
-                            const isFirst = index === 0;
-                            const isLast = index === data.international_academic_experiences.length - 1;
-
-                            const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
-                                } ${isFirst ? 'rounded-t-lg' : ''
-                                } ${isLast ? 'rounded-b-lg' : ''
-                                }`;
-
-                            card.innerHTML = `
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            ${experience.logo ? `<img src="${experience.logo}" alt="${experience.university} logo" class="w-8 h-8 object-contain">` : ''}
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-text-light font-light">${experience.university}</p>
-                                            <h3 class="text-lg font-medium text-text-dark">${experience.position}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:mt-0 flex flex-col md:items-end">
-                                        <div class="flex items-center gap-2">
-                                            ${experience.link ? `<a href="${experience.link}" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>` : ''}
-                                            <p class="text-sm ${experience.current ? 'text-primary' : 'text-text-light'} font-medium">${experience.time_period}</p>
-                                        </div>
-                                        <p class="text-xs text-text-light flex items-center mt-1">
-                                            <i class='bx bx-map-pin text-xs mr-1'></i>
-                                            ${experience.place}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <p class="text-text-medium text-sm leading-relaxed">
-                                        ${experience.topic}
-                                    </p>
-                                    ${experience.department ? `<p class="text-text-medium text-sm leading-relaxed mt-2">${experience.department}</p>` : ''}
-                                    ${experience.ssd ? `<p class="text-text-medium text-sm leading-relaxed mt-2">SSD: ${experience.ssd}</p>` : ''}
-                                </div>
-                            `;
-
-                            internationalContainer.appendChild(card);
-                        });
-                    }
-
-                    // Load research and technology transfer experiences
-                    const researchTransferContainer = document.getElementById('research-transfer');
-                    if (researchTransferContainer && data.research_and_technology_transfer) {
-                        // Clear existing content
-                        researchTransferContainer.innerHTML = '';
-                        
-                        data.research_and_technology_transfer.forEach((experience, index) => {
-                            const isFirst = index === 0;
-                            const isLast = index === data.research_and_technology_transfer.length - 1;
-
-                            const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
-                                } ${isFirst ? 'rounded-t-lg' : ''
-                                } ${isLast ? 'rounded-b-lg' : ''
-                                }`;
-
-                            card.innerHTML = `
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            ${experience.logo ? `<img src="${experience.logo}" alt="${experience.institution} logo" class="w-8 h-8 object-contain">` : ''}
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-text-light font-light">${experience.institution}</p>
-                                            <h3 class="text-lg font-medium text-text-dark">${experience.position}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:mt-0 flex flex-col md:items-end">
-                                        <div class="flex items-center gap-2">
-                                            ${experience.link ? `<a href="${experience.link}" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>` : ''}
-                                            <p class="text-sm ${experience.current ? 'text-primary' : 'text-text-light'} font-medium">${experience.time_period}</p>
-                                        </div>
-                                        <p class="text-xs text-text-light flex items-center mt-1">
-                                            <i class='bx bx-map-pin text-xs mr-1'></i>
-                                            ${experience.place}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <p class="text-text-medium text-sm leading-relaxed">
-                                        ${experience.topic}
-                                    </p>
-                                </div>
-                            `;
-
-                            researchTransferContainer.appendChild(card);
-                        });
-                    }
-
-                    // Load entrepreneurial initiatives
-                    const entrepreneurialContainer = document.getElementById('entrepreneurial-initiatives');
-                    if (entrepreneurialContainer && data.entrepreneurial_initiatives) {
-                        // Clear existing content
-                        entrepreneurialContainer.innerHTML = '';
-                        
-                        data.entrepreneurial_initiatives.forEach((initiative, index) => {
-                            const isFirst = index === 0;
-                            const isLast = index === data.entrepreneurial_initiatives.length - 1;
-
-                            const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${initiative.current ? 'bg-bg-lavender' : ''
-                                } ${isFirst ? 'rounded-t-lg' : ''
-                                } ${isLast ? 'rounded-b-lg' : ''
-                                }`;
-
-                            card.innerHTML = `
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            ${initiative.logo ? `<img src="${initiative.logo}" alt="${initiative.institution} logo" class="w-8 h-8 object-contain">` : ''}
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-text-light font-light">${initiative.institution}</p>
-                                            <h3 class="text-lg font-medium text-text-dark">${initiative.position}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:mt-0 flex flex-col md:items-end">
-                                        <div class="flex items-center gap-2">
-                                            ${initiative.link ? `<a href="${initiative.link}" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>` : ''}
-                                            <p class="text-sm ${initiative.current ? 'text-primary' : 'text-text-light'} font-medium">${initiative.time_period}</p>
-                                        </div>
-                                        <p class="text-xs text-text-light flex items-center mt-1">
-                                            <i class='bx bx-map-pin text-xs mr-1'></i>
-                                            ${initiative.place}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <p class="text-text-medium text-sm leading-relaxed">
-                                        ${initiative.topic}
-                                    </p>
-                                </div>
-                            `;
-
-                            entrepreneurialContainer.appendChild(card);
-                        });
-                    }
-
-                    // Load company experiences
-                    const companyContainer = document.getElementById('company-experiences');
-                    if (companyContainer && data.company_experiences) {
-                        data.company_experiences.forEach((experience, index) => {
-                            const isFirst = index === 0;
-                            const isLast = index === data.company_experiences.length - 1;
-
-                            const card = document.createElement('div');
-                            card.className = `bg-bg-card shadow-sm p-6 mb-2 border border-border-light hover:shadow-md transition-shadow ${experience.current ? 'bg-bg-lavender' : ''
-                                } ${isFirst ? 'rounded-t-lg' : ''
-                                } ${isLast ? 'rounded-b-lg' : ''
-                                }`;
-
-                            card.innerHTML = `
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                                    <div class="flex items-start">
-                                        <div class="w-12 h-12 bg-bg-icon rounded-lg flex items-center justify-center mr-4 shrink-0">
-                                            ${experience.logo ? `<img src="${experience.logo}" alt="${experience.institution} logo" class="w-8 h-8 object-contain">` : ''}
-                                        </div>
-                                        <div>
-                                            <p class="text-sm text-text-light font-light">${experience.institution}</p>
-                                            <h3 class="text-lg font-medium text-text-dark">${experience.position}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="md:mt-0 flex flex-col md:items-end">
-                                        <div class="flex items-center gap-2">
-                                            ${experience.link ? `<a href="${experience.link}" class="bg-bg-icon text-text-medium rounded-md px-3 py-1 text-xs hover:bg-border transition-colors">Link</a>` : ''}
-                                            <p class="text-sm ${experience.current ? 'text-primary' : 'text-text-light'} font-medium">${experience.time_period}</p>
-                                        </div>
-                                        <p class="text-xs text-text-light flex items-center mt-1">
-                                            <i class='bx bx-map-pin text-xs mr-1'></i>
-                                            ${experience.place}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="ml-16">
-                                    <p class="text-text-medium text-sm leading-relaxed">
-                                        ${experience.topic}
-                                    </p>
-                                </div>
-                            `;
-
-                            companyContainer.appendChild(card);
-                        });
-                    }
-
-                    // Load education section
-                    const educationContainer = document.getElementById('education');
-                    if (educationContainer && data.education) {
-                        data.education.forEach(edu => {
-                            educationContainer.appendChild(createEducationCard(edu));
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading data:', error);
-                    alert('Error loading data. Please check the console for details.');
-                });
-        });
-    </script>
+            <div class="text-sm text-muted text-right">1</div>
+        </section>
+    </main>
 </body>
-
 </html>
