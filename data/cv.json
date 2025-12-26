@@ -224,5 +224,219 @@
       "time_period": "Jul 2012 - Dec 2012",
       "topic": "Designed, developed, and optimised backend systems, improving database efficiency and overall software performance."
     }
+  ],
+  "education": [
+    {
+      "degree": "PhD in Computer Science",
+      "logo": "unimib.png",
+      "time_period": "Nov 2016 - Oct 2019",
+      "thesis_title": "Enabling tabular data understanding by human and machines through semantic interpretation",
+      "thesis_link": "https://hdl.handle.net/10281/263555",
+      "international_experience": "Bielefeld University, Germany",
+      "courses": [
+        "Writing of Scientific papers",
+        "Big Data Technologies",
+        "Privacy and processing of personal data. Technical and legal aspects",
+        "Knowledge Graphs and Semantic Data Management: Models, Techniques and Applications",
+        "Internet of Things: a service-oriented perspective"
+      ],
+      "summer_schools": [
+        "Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience - Como, Italy, Sep 18 - 22, 2017",
+        "2nd International Summer School on Deep Learning 2018 - Genova, Italy, July 23 - 27, 2018"
+      ]
+    },
+    {
+      "degree": "M.Sc. in Computer Science",
+      "degree_honor": "magna cum laude",
+      "logo": "unimib.png",
+      "time_period": "Oct 2007 - Sep 2010",
+      "thesis_title": "Framework di supporto alla pianificazione di servizi basato su un approccio multi-paradigma"
+    },
+    {
+      "degree": "B.Sc. in Computer Science",
+      "logo": "unimib.png",
+      "time_period": "Oct 2002 - Oct 2007",
+      "thesis_title": "Progettazione e realizzazione di una applicazione web per la gestione di un indirizzario dipartimentale"
+    }
+  ],
+  "teaching_in_phd_courses": [
+    {
+      "university": "University of Milan-Bicocca",
+      "logo": "unimib.png",
+      "programs": [
+        {
+          "program_name": "PHD in Computer Science",
+          "courses": [
+            {
+              "course_name": "Introduction to Knowledge Graphs",
+              "hours": "20 hours",
+              "role": "Professor",
+              "time_period": "2024 - 2025"
+            }
+          ]
+        },
+        {
+          "program_name": "PHD in Intangible Heritage in Socio-Cultural Innovation",
+          "courses": [
+            {
+              "course_name": "Digital Futures for Intangible Heritage",
+              "hours": "8/4 hours",
+              "role": "Professor",
+              "time_period": "2022 - current"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "teaching": [
+    {
+      "university": "University of Milan-Bicocca",
+      "logo": "unimib.png",
+      "programs": [
+        {
+          "program_name": "MD Communication Theory and Technology",
+          "courses": [
+            {
+              "course_name": "Visual Communication and Interface Design",
+              "hours": "40/21 hours",
+              "role": "Professor",
+              "time_period": "2019 - current"
+            },
+            {
+              "course_name": "Visual Communication Laboratory",
+              "hours": "48 hours",
+              "role": "Professor",
+              "time_period": "2019 - 2020"
+            },
+            {
+              "course_name": "Technologies and Applications of Distributed Systems",
+              "hours": "24/36/18 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2019 - 2020"
+            },
+            {
+              "course_name": "Service Science",
+              "hours": "20 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2016 - 2018"
+            },
+            {
+              "course_name": "Information Systems",
+              "hours": "16 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2015 - 2016"
+            }
+          ]
+        },
+        {
+          "program_name": "MD Data Science",
+          "courses": [
+            {
+              "course_name": "Data Visualisation",
+              "hours": "20 hours",
+              "role": "Professor",
+              "time_period": "2023 - 2024"
+            }
+          ]
+        },
+        {
+          "program_name": "MD Computer Science",
+          "courses": [
+            {
+              "course_name": "Data Architecture",
+              "hours": "16 hours",
+              "role": "Professor",
+              "time_period": "2021 - 2023"
+            }
+          ]
+        },
+        {
+          "program_name": "BD Computer Science",
+          "courses": [
+            {
+              "course_name": "Databases",
+              "hours": "20 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2021 - current"
+            },
+            {
+              "course_name": "Distributed Systems",
+              "hours": null,
+              "role": "Teaching Assistant",
+              "time_period": "2012 - 2013"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "university": "Università Cattolica del Sacro Cuore",
+      "logo": "cattolica.png",
+      "programs": [
+        {
+          "program_name": "MD Linguistic Computing",
+          "courses": [
+            {
+              "course_name": "Data Structures and Database Systems",
+              "hours": "45 hours",
+              "role": "Professor",
+              "time_period": "2023 - current"
+            }
+          ]
+        },
+        {
+          "program_name": "MD Letters and Philosophy",
+          "courses": [
+            {
+              "course_name": "Information Management Online: Tools and Strategies",
+              "hours": "30 hours",
+              "role": "Professor",
+              "time_period": "2025 - current"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "university": "University of Bergamo",
+      "logo": "unibg.png",
+      "programs": [
+        {
+          "program_name": "Postgraduate School of Health Psychology",
+          "courses": [
+            {
+              "course_name": "Health Engineering for Health Promotion",
+              "hours": "18 hours",
+              "role": "Professor",
+              "time_period": "2024 - current"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "teaching_webinar": [
+    {
+      "title": "AI2MED",
+      "logo": "ai2med.png",
+      "link": "https://www.ai2med.eu/587-2/",
+      "date": "Sep 2024",
+      "activities": "Webinar \"AI and Nutrition: Innovation for a Healthy and Sustainable Future\" (AI2MED European project, University of Pavia, 27/09/2024), focused on the role of artificial intelligence and Large Language Models in personalised nutrition and sustainable food systems."
+    },
+    {
+      "title": "Edu on Air Higher Education EMEA",
+      "logo": "google.png",
+      "link": "https://educationonair.withgoogle.com/events/edu-on-air-emea-he",
+      "date": "Jun 2025",
+      "activities": "Edu on Air: Higher Education is an online Google for Education series (Feb–May 2025) offering monthly sessions on Gemini AI, NotebookLM and Google Workspace for Education to help universities and colleges across EMEA drive student success, foster academic innovation and build secure digital learning environments."
+    },
+    {
+      "title": "AICL Lectures 2025",
+      "logo": "aicl.png",
+      "link": "https://www.ai-lc.it/en/lectures-2/lectures-2025-ing/",
+      "date": "Jun 2025",
+      "activities": "\"Lectures on Computational Linguistics 2025\", a three-day training school (Milan, 18–20 June 2025) organised by the Italian Association for Computational Linguistics with Università Cattolica del Sacro Cuore and University of Milano-Bicocca, featuring tutorials, labs and student sessions on linguistic resources, Large Language Models and neuro-symbolic AI for PhD and Master's students."
+    }
   ]
 }

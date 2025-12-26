@@ -9,12 +9,24 @@ const SELECTORS = {
   researchTransferSection: '[data-section="research-and-technology-transfer"]',
   entrepreneurialInitiativesContainer: '#entrepreneurial-initiatives',
   entrepreneurialInitiativesSection: '[data-section="entrepreneurial-initiatives"]',
+  educationContainer: '#education',
+  educationSection: '[data-section="education"]',
+  teachingContainer: '#teaching-in-phd-courses',
+  teachingSection: '[data-section="teaching-in-phd-courses"]',
+  teachingGeneralContainer: '#teaching',
+  teachingGeneralSection: '[data-section="teaching"]',
+  teachingWebinarContainer: '#teaching-webinar',
+  teachingWebinarSection: '[data-section="teaching-webinar"]',
   researchSection: '[data-section="research"]',
   pageNumber: '[data-page-number]',
   academicTimeline: '[data-timeline="academic"]',
   foreignTimeline: '[data-timeline="foreign"]',
   researchTransferTimeline: '[data-timeline="research-transfer"]',
   entrepreneurialTimeline: '[data-timeline="entrepreneurial"]',
+  educationTimeline: '[data-timeline="education"]',
+  teachingTimeline: '[data-timeline="teaching"]',
+  teachingGeneralTimeline: '[data-timeline="teaching-general"]',
+  teachingWebinarTimeline: '[data-timeline="teaching-webinar"]',
 };
 
 const DATA_URL = './data/cv.json';
@@ -118,7 +130,7 @@ function createExperienceCard(exp, { isCurrent }) {
 
   // Crea l'elemento img direttamente per evitare problemi con i percorsi
   const img = document.createElement('img');
-  img.src = `img/logo/${exp.logo}`;
+  img.src = `img/mini-logo/${exp.logo}`;
   img.alt = logoAlt;
   img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
   card.appendChild(img);
@@ -163,7 +175,7 @@ function createForeignContractCard(exp, { isCurrent }) {
 
   // Crea l'elemento img direttamente per evitare problemi con i percorsi
   const img = document.createElement('img');
-  img.src = `img/logo/${exp.logo}`;
+  img.src = `img/mini-logo/${exp.logo}`;
   img.alt = logoAlt;
   img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
   card.appendChild(img);
@@ -213,7 +225,7 @@ function createResearchTransferCard(exp, { isCurrent }) {
 
   // Crea l'elemento img direttamente per evitare problemi con i percorsi
   const img = document.createElement('img');
-  img.src = `img/logo/${exp.logo}`;
+  img.src = `img/mini-logo/${exp.logo}`;
   img.alt = logoAlt;
   img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
   card.appendChild(img);
@@ -239,6 +251,354 @@ function createResearchTransferCard(exp, { isCurrent }) {
         ${topicMarkup}
       </div>
     `;
+  card.appendChild(contentDiv);
+
+  return card;
+}
+
+function createEducationCard(edu, { isCurrent }) {
+  const card = document.createElement('div');
+  card.className = CARD_BASE_CLASSES;
+
+  const timeBadgeClasses = getTimeBadgeClasses(false); // Education items are never "current"
+  const logoAlt = 'University logo';
+  
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/mini-logo/${edu.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  
+  // Build degree text with optional honor
+  let degreeText = edu.degree || '';
+  if (edu.degree_honor) {
+    degreeText += `, <span class="italic">${edu.degree_honor}</span>`;
+  }
+  
+  // Build thesis title (link is now shown as badge, not in text)
+  let thesisMarkup = '';
+  if (edu.thesis_title) {
+    thesisMarkup = `
+      <div class="flex gap-2 items-start w-full">
+        <div class="flex-shrink-0 w-[60px]">
+          <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Thesis Title:</p>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-xs-7 text-ink font-dm-sans leading-tight">${edu.thesis_title}</p>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Build international experience
+  let internationalMarkup = '';
+  if (edu.international_experience) {
+    internationalMarkup = `
+      <div class="flex gap-2 items-start w-full">
+        <div class="flex-shrink-0 w-[60px]">
+          <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">International Experience:</p>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-xs-7 text-ink font-dm-sans leading-tight">${edu.international_experience}</p>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Build courses list
+  let coursesMarkup = '';
+  if (edu.courses && edu.courses.length > 0) {
+    const coursesList = edu.courses.map(course => `<li class="mb-0 ml-2.5"><span class="text-xs-7 text-ink font-dm-sans leading-tight">${course}</span></li>`).join('');
+    coursesMarkup = `
+      <div class="flex gap-2 items-start w-full">
+        <div class="flex-shrink-0 w-[60px]">
+          <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Courses:</p>
+        </div>
+        <div class="flex-1 min-w-0">
+          <ul class="list-disc">
+            ${coursesList}
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Build summer schools
+  let summerSchoolsMarkup = '';
+  if (edu.summer_schools && edu.summer_schools.length > 0) {
+    const schoolsList = edu.summer_schools.map((school, index) => 
+      `<p class="text-xs-7 text-ink font-dm-sans leading-tight ${index === edu.summer_schools.length - 1 ? '' : 'mb-0'}">${school}</p>`
+    ).join('');
+    summerSchoolsMarkup = `
+      <div class="flex gap-2 items-start w-full">
+        <div class="flex-shrink-0 w-[60px]">
+          <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Summer Schools:</p>
+        </div>
+        <div class="flex-1 min-w-0">
+          ${schoolsList}
+        </div>
+      </div>
+    `;
+  }
+  
+  // Build link badge if thesis_link exists
+  const linkBadge = edu.thesis_link ? `
+    <a href="${edu.thesis_link}" class="inline-flex items-center justify-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[10px]'></i></a>
+  ` : '';
+
+  contentDiv.innerHTML = `
+    <div class="flex-1">
+      <div class="flex justify-between items-start mb-1">
+        <div class="w-[178px]">
+          <div class="text-xs-8 text-ink font-dm-sans font-medium">${degreeText}</div>
+        </div>
+        <div class="flex flex-col gap-0.5 items-end">
+          <div class="flex gap-2">
+            ${linkBadge}
+            <span class="${timeBadgeClasses}">${edu.time_period}</span>
+          </div>
+        </div>
+      </div>
+      <div class="pl-2 flex flex-col gap-0.5 items-start">
+        ${thesisMarkup}
+        ${internationalMarkup}
+        ${coursesMarkup}
+        ${summerSchoolsMarkup}
+      </div>
+    </div>
+  `;
+  card.appendChild(contentDiv);
+
+  return card;
+}
+
+function createTeachingCard(teaching, { isCurrent }) {
+  const card = document.createElement('div');
+  card.className = CARD_BASE_CLASSES;
+
+  const logoAlt = teaching.university ? `${teaching.university} logo` : 'University logo';
+  
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/mini-logo/${teaching.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  
+  // Build university name
+  const universityMarkup = teaching.university ? `
+    <div class="text-xs-7 text-muted font-dm-sans mb-1">${teaching.university}</div>
+  ` : '';
+  
+  // Build programs and courses
+  let programsMarkup = '';
+  if (teaching.programs && teaching.programs.length > 0) {
+    programsMarkup = teaching.programs.map(program => {
+      const coursesMarkup = program.courses.map(course => {
+        const roleBadge = course.role ? `
+          <div class="inline-flex items-center justify-center px-0.5 py-0 h-2 bg-purple-100 text-purple-700 rounded text-[6px] font-dm-sans">
+            ${course.role}
+          </div>
+        ` : '';
+        
+        return `
+          <div class="flex items-center justify-between h-2.5 mb-0.5 last:mb-0">
+            <div class="flex gap-2 items-end pl-2">
+              <div class="text-xs-8 text-ink font-dm-sans font-medium whitespace-nowrap">${course.course_name}</div>
+              <div class="text-xs-6 text-muted font-dm-sans italic whitespace-nowrap">${course.hours}</div>
+            </div>
+            <div class="flex items-center justify-between w-[120px]">
+              ${roleBadge}
+              <div class="text-xs-6 text-purple-600 font-dm-sans text-right whitespace-nowrap">${course.time_period}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      // Extract program name without "PHD in" prefix if it's already in the name
+      let programDisplayName = program.program_name;
+      if (programDisplayName.startsWith('PHD in ')) {
+        programDisplayName = programDisplayName.substring(7);
+      }
+      
+      return `
+        <div class="mb-2 last:mb-0">
+          <div class="text-xs-7 text-ink font-dm-sans mb-1">
+            <span class="font-bold">PHD</span> in ${programDisplayName}
+          </div>
+          <div class="flex flex-col gap-0.5">
+            ${coursesMarkup}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+  
+  contentDiv.innerHTML = `
+    <div class="flex-1">
+      ${universityMarkup}
+      <div class="flex flex-col gap-2">
+        ${programsMarkup}
+      </div>
+    </div>
+  `;
+  card.appendChild(contentDiv);
+
+  return card;
+}
+
+function createTeachingGeneralCard(teaching, { isCurrent }) {
+  const card = document.createElement('div');
+  card.className = CARD_BASE_CLASSES;
+
+  const logoAlt = teaching.university ? `${teaching.university} logo` : 'University logo';
+  
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/mini-logo/${teaching.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-5 h-5 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  
+  // Build university name
+  const universityMarkup = teaching.university ? `
+    <div class="text-xs-7 text-muted font-dm-sans mb-1">${teaching.university}</div>
+  ` : '';
+  
+  // Build programs and courses
+  let programsMarkup = '';
+  if (teaching.programs && teaching.programs.length > 0) {
+    programsMarkup = teaching.programs.map(program => {
+      const coursesMarkup = program.courses.map(course => {
+        const roleBadge = course.role ? `
+          <div class="inline-flex items-center justify-center px-0.5 py-0 h-2 bg-purple-100 text-purple-700 rounded text-[6px] font-dm-sans">
+            ${course.role}
+          </div>
+        ` : '';
+        
+        // Determine period color: purple if contains "current", gray otherwise
+        const periodColor = course.time_period && course.time_period.includes('current') 
+          ? 'text-purple-600' 
+          : 'text-gray-dark';
+        
+        const hoursMarkup = course.hours ? `
+          <div class="text-xs-6 text-muted font-dm-sans italic whitespace-nowrap">${course.hours}</div>
+        ` : '';
+        
+        return `
+          <div class="flex items-center justify-between h-2.5 mb-0.5 last:mb-0">
+            <div class="flex gap-2 items-end pl-2">
+              <div class="text-xs-8 text-ink font-dm-sans font-medium whitespace-nowrap">${course.course_name}</div>
+              ${hoursMarkup}
+            </div>
+            <div class="flex items-center justify-between w-[120px]">
+              ${roleBadge}
+              <div class="text-xs-6 ${periodColor} font-dm-sans text-right whitespace-nowrap">${course.time_period || ''}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      
+      // Extract program type (MD, BD, Postgraduate, etc.) and name
+      let programType = '';
+      let programDisplayName = program.program_name;
+      
+      if (programDisplayName.startsWith('MD ')) {
+        programType = 'MD';
+        programDisplayName = programDisplayName.substring(3);
+      } else if (programDisplayName.startsWith('BD ')) {
+        programType = 'BD';
+        programDisplayName = programDisplayName.substring(3);
+      } else if (programDisplayName.startsWith('Postgraduate ')) {
+        programType = 'Postgraduate';
+        programDisplayName = programDisplayName.substring(13);
+      }
+      
+      return `
+        <div class="mb-2 last:mb-0">
+          <div class="text-xs-7 text-ink font-dm-sans mb-1">
+            <span class="font-bold">${programType}</span> ${programDisplayName}
+          </div>
+          <div class="flex flex-col gap-0.5">
+            ${coursesMarkup}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+  
+  contentDiv.innerHTML = `
+    <div class="flex-1">
+      ${universityMarkup}
+      <div class="flex flex-col gap-2">
+        ${programsMarkup}
+      </div>
+    </div>
+  `;
+  card.appendChild(contentDiv);
+
+  return card;
+}
+
+function createTeachingWebinarCard(item, { isCurrent }) {
+  const card = document.createElement('div');
+  card.className = CARD_BASE_CLASSES;
+
+  const logoAlt = item.title ? `${item.title} logo` : 'Logo';
+  
+  // Crea l'elemento img direttamente per evitare problemi con i percorsi
+  const img = document.createElement('img');
+  img.src = `img/mini-logo/${item.logo}`;
+  img.alt = logoAlt;
+  img.className = 'w-6 h-6 object-contain flex-shrink-0 rounded';
+  card.appendChild(img);
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'flex-1';
+  
+  // Build link badge
+  const linkBadge = item.link ? `
+    <a href="${item.link}" class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded hover:bg-gray-300 underline" aria-label="Link">Link</a>
+  ` : '';
+  
+  // Build date
+  const dateMarkup = item.date ? `
+    <div class="text-xs-6 text-gray-dark font-dm-sans text-right whitespace-nowrap">${item.date}</div>
+  ` : '';
+  
+  contentDiv.innerHTML = `
+    <div class="flex-1">
+      <div class="flex justify-between items-start mb-1">
+        <div class="flex-1">
+          <div class="text-xs-8 text-ink font-dm-sans font-medium">${item.title || ''}</div>
+        </div>
+        <div class="flex gap-2 items-center">
+          ${linkBadge}
+          ${dateMarkup}
+        </div>
+      </div>
+      <div class="pl-2 flex flex-col gap-0.5">
+        <div class="flex gap-2 items-start w-full">
+          <div class="flex-shrink-0 w-[60px]">
+            <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Activities:</p>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="text-xs-7 text-ink font-dm-sans leading-tight">${item.activities || ''}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
   card.appendChild(contentDiv);
 
   return card;
@@ -284,6 +644,46 @@ const SECTION_CONFIG = {
     timelineSelector: '[data-timeline="entrepreneurial"]',
     timelineId: 'entrepreneurial',
     createCard: createResearchTransferCard,
+    isFirstSection: false,
+  },
+  education: {
+    title: 'Education',
+    sectionId: 'education',
+    sectionSelector: '[data-section="education"]',
+    containerSelector: '#education',
+    timelineSelector: '[data-timeline="education"]',
+    timelineId: 'education',
+    createCard: createEducationCard,
+    isFirstSection: false,
+  },
+  teaching_in_phd_courses: {
+    title: 'Teaching in PhD courses',
+    sectionId: 'teaching-in-phd-courses',
+    sectionSelector: '[data-section="teaching-in-phd-courses"]',
+    containerSelector: '#teaching-in-phd-courses',
+    timelineSelector: '[data-timeline="teaching"]',
+    timelineId: 'teaching',
+    createCard: createTeachingCard,
+    isFirstSection: false,
+  },
+  teaching: {
+    title: 'Teaching',
+    sectionId: 'teaching',
+    sectionSelector: '[data-section="teaching"]',
+    containerSelector: '#teaching',
+    timelineSelector: '[data-timeline="teaching-general"]',
+    timelineId: 'teaching-general',
+    createCard: createTeachingGeneralCard,
+    isFirstSection: false,
+  },
+  teaching_webinar: {
+    title: 'Teaching/Webinar',
+    sectionId: 'teaching-webinar',
+    sectionSelector: '[data-section="teaching-webinar"]',
+    containerSelector: '#teaching-webinar',
+    timelineSelector: '[data-timeline="teaching-webinar"]',
+    timelineId: 'teaching-webinar',
+    createCard: createTeachingWebinarCard,
     isFirstSection: false,
   },
 };
@@ -424,6 +824,26 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
   const researchTransferContainer = newPage.querySelector(SELECTORS.researchTransferContainer);
   if (researchTransferContainer) {
     researchTransferContainer.innerHTML = '';
+  }
+
+  const educationContainer = newPage.querySelector(SELECTORS.educationContainer);
+  if (educationContainer) {
+    educationContainer.innerHTML = '';
+  }
+
+  const teachingContainer = newPage.querySelector(SELECTORS.teachingContainer);
+  if (teachingContainer) {
+    teachingContainer.innerHTML = '';
+  }
+
+  const teachingGeneralContainer = newPage.querySelector(SELECTORS.teachingGeneralContainer);
+  if (teachingGeneralContainer) {
+    teachingGeneralContainer.innerHTML = '';
+  }
+
+  const teachingWebinarContainer = newPage.querySelector(SELECTORS.teachingWebinarContainer);
+  if (teachingWebinarContainer) {
+    teachingWebinarContainer.innerHTML = '';
   }
 
   const researchSection = newPage.querySelector(SELECTORS.researchSection);
@@ -611,6 +1031,252 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
         academicSection.insertAdjacentHTML('afterend', entrepreneurialSectionHTML);
       } else {
         section.insertAdjacentHTML('beforeend', entrepreneurialSectionHTML);
+      }
+    }
+  }
+
+  const educationSection = newPage.querySelector(SELECTORS.educationSection);
+  if (educationSection) {
+    if (sectionType === 'education') {
+      educationSection.classList.remove('py-0');
+      educationSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = educationSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = educationSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = educationSection.querySelector('[data-timeline="education"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      educationSection.remove();
+    }
+  } else if (sectionType === 'education') {
+    // Se la sezione education non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      const entrepreneurialSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+      
+      const config = SECTION_CONFIG.education;
+      const educationSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (entrepreneurialSection) {
+        entrepreneurialSection.insertAdjacentHTML('afterend', educationSectionHTML);
+      } else if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', educationSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', educationSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', educationSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', educationSectionHTML);
+      }
+    }
+  }
+
+  const teachingSection = newPage.querySelector(SELECTORS.teachingSection);
+  if (teachingSection) {
+    if (sectionType === 'teaching') {
+      teachingSection.classList.remove('py-0');
+      teachingSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = teachingSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = teachingSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = teachingSection.querySelector('[data-timeline="teaching"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      teachingSection.remove();
+    }
+  } else if (sectionType === 'teaching') {
+    // Se la sezione teaching non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      const entrepreneurialSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+      const educationSection = newPage.querySelector(SELECTORS.educationSection);
+      
+      const config = SECTION_CONFIG.teaching_in_phd_courses;
+      const teachingSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (educationSection) {
+        educationSection.insertAdjacentHTML('afterend', teachingSectionHTML);
+      } else if (entrepreneurialSection) {
+        entrepreneurialSection.insertAdjacentHTML('afterend', teachingSectionHTML);
+      } else if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', teachingSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', teachingSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', teachingSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', teachingSectionHTML);
+      }
+    }
+  }
+
+  const teachingGeneralSection = newPage.querySelector(SELECTORS.teachingGeneralSection);
+  if (teachingGeneralSection) {
+    if (sectionType === 'teaching-general') {
+      teachingGeneralSection.classList.remove('py-0');
+      teachingGeneralSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = teachingGeneralSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = teachingGeneralSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = teachingGeneralSection.querySelector('[data-timeline="teaching-general"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      teachingGeneralSection.remove();
+    }
+  } else if (sectionType === 'teaching-general') {
+    // Se la sezione teaching-general non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      const entrepreneurialSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+      const educationSection = newPage.querySelector(SELECTORS.educationSection);
+      const teachingSection = newPage.querySelector(SELECTORS.teachingSection);
+      
+      const config = SECTION_CONFIG.teaching;
+      const teachingGeneralSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (teachingSection) {
+        teachingSection.insertAdjacentHTML('afterend', teachingGeneralSectionHTML);
+      } else if (educationSection) {
+        educationSection.insertAdjacentHTML('afterend', teachingGeneralSectionHTML);
+      } else if (entrepreneurialSection) {
+        entrepreneurialSection.insertAdjacentHTML('afterend', teachingGeneralSectionHTML);
+      } else if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', teachingGeneralSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', teachingGeneralSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', teachingGeneralSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', teachingGeneralSectionHTML);
+      }
+    }
+  }
+
+  const teachingWebinarSection = newPage.querySelector(SELECTORS.teachingWebinarSection);
+  if (teachingWebinarSection) {
+    if (sectionType === 'teaching-webinar') {
+      teachingWebinarSection.classList.remove('py-0');
+      teachingWebinarSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = teachingWebinarSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = teachingWebinarSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = teachingWebinarSection.querySelector('[data-timeline="teaching-webinar"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      teachingWebinarSection.remove();
+    }
+  } else if (sectionType === 'teaching-webinar') {
+    // Se la sezione teaching-webinar non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      const entrepreneurialSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+      const educationSection = newPage.querySelector(SELECTORS.educationSection);
+      const teachingSection = newPage.querySelector(SELECTORS.teachingSection);
+      const teachingGeneralSection = newPage.querySelector(SELECTORS.teachingGeneralSection);
+      
+      const config = SECTION_CONFIG.teaching_webinar;
+      const teachingWebinarSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (teachingGeneralSection) {
+        teachingGeneralSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else if (teachingSection) {
+        teachingSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else if (educationSection) {
+        educationSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else if (entrepreneurialSection) {
+        entrepreneurialSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', teachingWebinarSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', teachingWebinarSectionHTML);
       }
     }
   }
@@ -803,7 +1469,7 @@ function renderSection(items, config, previousSectionSelector = null) {
         const isFirstInSection = index === 0;
         const isLastInSection = index === items.length - 1;
         const card = config.createCard(item, { isCurrent });
-        const cardHeight = measureCardHeight(card, measureContainer);
+        const cardHeight = measureCardHeight(card, finalMeasureContainer);
 
         const willCreateNewPage = currentPageHeight > 0 && 
                                    currentPageHeight + cardHeight > currentPageMaxHeight;
@@ -892,6 +1558,22 @@ async function loadEntrepreneurialInitiatives() {
   await loadSection('entrepreneurial_initiatives', SECTION_CONFIG.entrepreneurial_initiatives, SELECTORS.researchTransferSection);
 }
 
+async function loadEducation() {
+  await loadSection('education', SECTION_CONFIG.education, SELECTORS.entrepreneurialInitiativesSection);
+}
+
+async function loadTeaching() {
+  await loadSection('teaching_in_phd_courses', SECTION_CONFIG.teaching_in_phd_courses, SELECTORS.educationSection);
+}
+
+async function loadTeachingGeneral() {
+  await loadSection('teaching', SECTION_CONFIG.teaching, SELECTORS.teachingSection);
+}
+
+async function loadTeachingWebinar() {
+  await loadSection('teaching_webinar', SECTION_CONFIG.teaching_webinar, SELECTORS.teachingGeneralSection);
+}
+
 function updatePageNumbers() {
   // Assicura che ogni pagina abbia un elemento per il numero di pagina con il numero corretto
   const pages = document.querySelectorAll('.pdf-page');
@@ -916,6 +1598,10 @@ async function init() {
   await loadForeignResearchContracts();
   await loadResearchAndTechnologyTransfer();
   await loadEntrepreneurialInitiatives();
+  await loadEducation();
+  await loadTeaching();
+  await loadTeachingGeneral();
+  await loadTeachingWebinar();
   
   // Aggiorna i numeri di pagina
   updatePageNumbers();
