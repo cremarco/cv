@@ -7,9 +7,12 @@
     <link href="./dist/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<body class="bg-gray-lightest flex justify-center items-center p-6">
-    <main class="a4-page flex bg-white">
+<body class="bg-gray-lightest flex flex-col items-center p-6 gap-6">
+    <div id="pages-container" class="flex flex-col gap-6 items-center">
+    <main class="a4-page flex bg-white page-break">
         <aside class="w-[220px] bg-white p-6 flex flex-col">
             <div class="mb-4">
                 <img src="img/photo-profile.png" alt="Profile photo" class="w-12 h-12 rounded-full mb-2 object-cover">
@@ -107,6 +110,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-auto pt-3">
+                <div class="h-px bg-line mb-3"></div>
+                <button id="download-pdf" class="w-full inline-flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-xs-7 font-dm-sans font-medium text-gray-dark shadow-sm hover:bg-gray-100 cursor-pointer" aria-label="Download PDF">
+                    <i class='bx bx-download text-[14px] text-gray-dark' id="download-icon"></i>
+                    <span id="download-text">Download PDF</span>
+                </button>
+            </div>
         </aside>
 
         <section class="flex-1 flex flex-col bg-gray-50">
@@ -179,66 +190,425 @@
                 </div>
                 <div class="flex-1 flex flex-col gap-4">
                     <h2 class="text-xs-12 font-outfit font-medium text-ink">Academic experiences</h2>
-                    <div class="flex flex-col gap-1">
-                        <div class="bg-accent-lightest border border-accent-soft border-b-0 rounded-t-md px-4 py-3 flex gap-3 shadow">
-                            <img src="img/logo/unimib.png" alt="Unimib logo" class="w-5 h-5 object-contain flex-shrink-0 rounded">
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="w-[100px]">
-                                        <div class="text-xs-7 text-muted font-dm-sans mb-0.5">University of Milan-Bicocca</div>
-                                        <div class="text-xs-8 text-ink font-dm-sans font-medium">Research Assistant</div>
-                                    </div>
-                                    <div class="flex flex-col gap-0.5 items-end">
-                                        <div class="flex gap-2">
-                                            <a href="https://drive.google.com/file/d/1DGNlKqHZpI-ng4UJY1wt8IESgqY2uqYt/view?usp=sharing" class="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 underline">Link</a>
-                                            <span class="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium bg-purple-100 text-purple-700 rounded-md">Feb 2025 - Gen 2026</span>
-                                        </div>
-                                        <div class="flex items-center gap-1">
-                                            <i class='bx bx-map text-[8px] text-muted'></i>
-                                            <div class="text-xs-5 text-muted font-dm-sans">Milan, Italy</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal">
-                                    <p class="mb-0">Holder of a research grant (assegno di ricerca B) on the topic "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field", SSD INF/01.</p>
-                                    <p>Department of Informatics, Systems and Communication.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white border border-gray-200 border-t-0 rounded-b-md px-4 py-3 flex gap-3 shadow">
-                            <img src="img/logo/unimib.png" alt="Unimib logo" class="w-5 h-5 object-contain flex-shrink-0 rounded">
-                            <div class="flex-1">
-                                <div class="flex justify-between items-start mb-1">
-                                    <div class="w-[178px]">
-                                        <div class="text-xs-7 text-muted font-dm-sans mb-0.5">University of Milan-Bicocca</div>
-                                        <div class="text-xs-8 text-ink font-dm-sans font-medium">Assistant Professor (RTD/A)</div>
-                                    </div>
-                                    <div class="flex flex-col gap-0.5 items-end">
-                                        <div class="flex gap-2">
-                                            <a href="https://drive.google.com/file/d/1cJRHK9w0Oqc45Xd8Z7uh7AiyFetzUR9K/view?usp=sharing" class="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 underline">Link</a>
-                                            <span class="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-100 text-gray-700 rounded-md">Gen 2022 - Gen 2025</span>
-                                        </div>
-                                        <div class="flex items-center gap-1">
-                                            <i class='bx bx-map text-[8px] text-muted'></i>
-                                            <div class="text-xs-5 text-muted font-dm-sans">Milan, Italy</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal">
-                                    <p>Holder of a research grant (RTD/A) on the topic "Semantic and AI technologies for early digital intervention in psychiatric services", SSD INF/01, funded by the Italian Ministero dell'Universita e della Ricerca through the European project D.M. 1062/2021 - Piano Operativo Nazionale - PON "Ricerca e Innovazione" 2014-2020 Asse IV, azioni IV.4 "Dottorati e contratti di ricerca sulle tematiche dell'innovazione".<br>Department of Informatics, Systems and Communication.</p>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div id="academic-experiences" class="flex flex-col gap-1">
+                        <!-- Cards will be generated here dynamically -->
                     </div>
-                    <div class="flex justify-end pb-2">
+                    <div class="flex justify-end pb-2 mt-auto">
                         <div class="text-xs-6 text-gray-dark font-dm-sans font-bold">1</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    </div>
+
+    <script>
+        // Create a new page structure
+        function createNewPage(pageNumber) {
+            const pagesContainer = document.getElementById('pages-container');
+            const firstPage = document.querySelector('.a4-page');
+            
+            const newPage = firstPage.cloneNode(true);
+            newPage.id = `page-${pageNumber}`;
+            
+            // Remove the aside (sidebar) from new pages - only first page should have it
+            const aside = newPage.querySelector('aside');
+            if (aside) {
+                aside.remove();
+            }
+            
+            // Clear the academic experiences section in the new page
+            const newSection = newPage.querySelector('#academic-experiences');
+            if (newSection) {
+                newSection.innerHTML = '';
+            }
+            
+            // Update page number
+            const pageNumberEl = newPage.querySelector('.flex.justify-end.pb-2.mt-auto .text-xs-6');
+            if (pageNumberEl) {
+                pageNumberEl.textContent = pageNumber;
+            }
+            
+            // Remove the Research section from new pages (keep only Academic experiences)
+            const researchSection = newPage.querySelector('.flex.gap-4.pt-8.pl-2.pr-6.pb-0');
+            if (researchSection) {
+                researchSection.remove();
+            }
+            
+            // Add pt-8 to Academic experiences section to match first page spacing
+            const academicSection = newPage.querySelector('.flex.gap-4.pl-2.pr-6.py-0.flex-1');
+            if (academicSection) {
+                academicSection.classList.remove('py-0');
+                academicSection.classList.add('pt-8', 'pb-0');
+            }
+            
+            // Update the timeline to start from top
+            const timelineContainer = newPage.querySelector('.flex.flex-col.items-center.w-4.shrink-0');
+            if (timelineContainer) {
+                const line = timelineContainer.querySelector('.w-px.bg-gray-300');
+                if (line) {
+                    line.classList.add('flex-1');
+                }
+            }
+            
+            pagesContainer.appendChild(newPage);
+            return newPage;
+        }
+
+        // Load and render academic experiences from JSON with pagination
+        async function loadAcademicExperiences() {
+            try {
+                const response = await fetch('./data.json');
+                const data = await response.json();
+                
+                if (!data.academic_experiences) {
+                    return;
+                }
+
+                const experiences = data.academic_experiences;
+                let currentContainer = document.getElementById('academic-experiences');
+                
+                if (!currentContainer) {
+                    return;
+                }
+
+                // Clear initial container
+                currentContainer.innerHTML = '';
+
+                // First, render all cards to measure them
+                const tempContainer = document.createElement('div');
+                tempContainer.style.position = 'absolute';
+                tempContainer.style.visibility = 'hidden';
+                tempContainer.className = 'flex flex-col gap-1';
+                document.body.appendChild(tempContainer);
+
+                experiences.forEach((exp, index) => {
+                    const isFirst = index === 0;
+                    const isLast = index === experiences.length - 1;
+                    const isCurrent = exp.current === true;
+
+                    let cardClasses = 'px-4 py-3 flex gap-3 shadow';
+                    if (isFirst && isCurrent) {
+                        cardClasses += ' bg-accent-lightest border border-accent-soft border-b-0 rounded-t-md';
+                    } else if (isFirst && !isCurrent) {
+                        cardClasses += ' bg-white border border-gray-200 border-b-0 rounded-t-md';
+                    } else if (isLast) {
+                        cardClasses += ' bg-white border border-gray-200 border-t-0 rounded-b-md';
+                    } else {
+                        cardClasses += ' bg-white border border-gray-200 border-t-0';
+                    }
+
+                    const timeBadgeClasses = isCurrent 
+                        ? 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium bg-purple-100 text-purple-700 rounded-md'
+                        : 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-100 text-gray-700 rounded-md';
+
+                    let topicText = exp.topic || '';
+                    if (exp.ssd) {
+                        topicText += topicText ? `, SSD ${exp.ssd}` : `SSD ${exp.ssd}`;
+                    }
+
+                    const cardHTML = `
+                        <div class="${cardClasses}">
+                            <img src="img/logo/${exp.logo}" alt="${exp.university} logo" class="w-5 h-5 object-contain flex-shrink-0 rounded">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-1">
+                                    <div class="${isCurrent ? 'w-[100px]' : 'w-[178px]'}">
+                                        <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.university}</div>
+                                        <div class="text-xs-8 text-ink font-dm-sans font-medium">${exp.position}</div>
+                                    </div>
+                                    <div class="flex flex-col gap-0.5 items-end">
+                                        <div class="flex gap-2">
+                                            ${exp.link ? `<a href="${exp.link}" class="inline-flex items-center justify-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[10px]'></i></a>` : ''}
+                                            <span class="${timeBadgeClasses}">${exp.time_period}</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <i class='bx bx-map text-[8px] text-muted'></i>
+                                            <div class="text-xs-5 text-muted font-dm-sans">${exp.place}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal">
+                                    ${topicText ? `<p class="mb-0">${topicText}.</p>` : ''}
+                                    ${exp.department ? `<p class="text-xs-6 text-muted italic mt-1">${exp.department}.</p>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    tempContainer.insertAdjacentHTML('beforeend', cardHTML);
+                });
+
+                // Wait for images to load, then measure
+                await new Promise(resolve => setTimeout(resolve, 100));
+                
+                // Now distribute cards between pages
+                const cards = Array.from(tempContainer.children);
+                document.body.removeChild(tempContainer);
+
+                let currentPageNumber = 1;
+                let currentPageHeight = 0;
+                const maxPageHeight = 180 * 3.779527559; // ~180mm in pixels (space for experiences section)
+                let isFirstInPage = true;
+
+                cards.forEach((card, index) => {
+                    const cardHeight = card.offsetHeight || 150; // fallback height
+                    const isFirst = index === 0;
+                    const isLast = index === cards.length - 1;
+                    const exp = experiences[index];
+                    const isCurrent = exp.current === true;
+
+                    // Check if we need a new page
+                    if (currentPageHeight > 0 && (currentPageHeight + cardHeight) > maxPageHeight) {
+                        // Close current page
+                        const lastCard = currentContainer.lastElementChild;
+                        if (lastCard) {
+                            lastCard.classList.remove('border-t-0');
+                            lastCard.classList.add('rounded-b-md');
+                        }
+
+                        // Create new page
+                        currentPageNumber++;
+                        const newPage = createNewPage(currentPageNumber);
+                        currentContainer = newPage.querySelector('#academic-experiences');
+                        currentPageHeight = 0;
+                        isFirstInPage = true;
+                    }
+
+                    // Update card classes for new page
+                    let cardClasses = 'px-4 py-3 flex gap-3 shadow';
+                    if (isFirstInPage && isCurrent) {
+                        cardClasses = 'px-4 py-3 flex gap-3 shadow bg-accent-lightest border border-accent-soft border-b-0 rounded-t-md';
+                    } else if (isFirstInPage && !isCurrent) {
+                        cardClasses = 'px-4 py-3 flex gap-3 shadow bg-white border border-gray-200 border-b-0 rounded-t-md';
+                    } else if (isLast && currentPageHeight === 0) {
+                        cardClasses = 'px-4 py-3 flex gap-3 shadow bg-white border border-gray-200 border-t-0 rounded-b-md';
+                    } else {
+                        cardClasses = 'px-4 py-3 flex gap-3 shadow bg-white border border-gray-200 border-t-0';
+                    }
+
+                    // Clone and update card
+                    const clonedCard = card.cloneNode(true);
+                    clonedCard.className = cardClasses;
+                    currentContainer.appendChild(clonedCard);
+                    
+                    currentPageHeight += cardHeight;
+                    isFirstInPage = false;
+                });
+
+                // Close last page
+                if (currentContainer) {
+                    const lastCard = currentContainer.lastElementChild;
+                    if (lastCard) {
+                        lastCard.classList.remove('border-t-0');
+                        lastCard.classList.add('rounded-b-md');
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading academic experiences:', error);
+            }
+        }
+
+        // PDF generation function
+        async function generatePDF() {
+            const downloadBtn = document.getElementById('download-pdf');
+            const downloadIcon = document.getElementById('download-icon');
+            const downloadText = document.getElementById('download-text');
+            
+            // Show loading state
+            downloadBtn.disabled = true;
+            downloadIcon.className = 'bx bx-loader-alt bx-spin text-[14px] text-gray-dark';
+            downloadText.textContent = 'Generating...';
+            
+            // Hide the download button container for PDF generation
+            const downloadContainer = downloadBtn.parentElement;
+            const originalDisplay = downloadContainer.style.display;
+            downloadContainer.style.display = 'none';
+            
+            // Add temporary styles to fix rendering issues for PDF generation
+            const pdfStyles = document.createElement('style');
+            pdfStyles.id = 'pdf-generation-styles';
+            pdfStyles.textContent = `
+                /* Fix gradient text - use solid purple color instead */
+                .bg-gradient-to-r.bg-clip-text.text-transparent {
+                    background: none !important;
+                    -webkit-background-clip: unset !important;
+                    background-clip: unset !important;
+                    -webkit-text-fill-color: #7c3aed !important;
+                    color: #7c3aed !important;
+                }
+                
+                /* Fix icon positioning */
+                .bx {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    vertical-align: middle !important;
+                    line-height: 1 !important;
+                }
+                
+                /* Ensure all elements have explicit backgrounds for PDF */
+                .bg-white {
+                    background-color: #ffffff !important;
+                }
+                
+                .bg-gray-50 {
+                    background-color: #f9fafb !important;
+                }
+                
+                /* Fix shadows for PDF - convert to borders for better rendering */
+                .shadow, .shadow-sm, .shadow-lg {
+                    box-shadow: none !important;
+                    border: 1px solid #e5e7eb !important;
+                }
+                
+                /* Ensure rounded corners are visible */
+                .rounded-md {
+                    border-radius: 6px !important;
+                    overflow: hidden !important;
+                }
+                
+                .rounded-t-md {
+                    border-top-left-radius: 6px !important;
+                    border-top-right-radius: 6px !important;
+                    overflow: hidden !important;
+                }
+                
+                .rounded-b-md {
+                    border-bottom-left-radius: 6px !important;
+                    border-bottom-right-radius: 6px !important;
+                    overflow: hidden !important;
+                }
+                
+                .rounded-full {
+                    border-radius: 9999px !important;
+                    overflow: hidden !important;
+                }
+            `;
+            document.head.appendChild(pdfStyles);
+            
+            // Wait for styles to apply
+            await new Promise(resolve => setTimeout(resolve, 150));
+            
+            try {
+                const { jsPDF } = window.jspdf;
+                const pagesContainer = document.getElementById('pages-container');
+                const pages = Array.from(pagesContainer.querySelectorAll('.a4-page'));
+                
+                if (pages.length === 0) {
+                    throw new Error('No pages found');
+                }
+                
+                // Wait for fonts to be ready
+                await document.fonts.ready;
+                
+                // Create new PDF (A4 format)
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                
+                // Process each page
+                for (let i = 0; i < pages.length; i++) {
+                    if (i > 0) {
+                        pdf.addPage();
+                    }
+                    
+                    const pageElement = pages[i];
+                    
+                    const canvas = await html2canvas(pageElement, {
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        logging: false,
+                        backgroundColor: '#ffffff',
+                        imageTimeout: 15000,
+                        onclone: function(clonedDoc, element) {
+                            // Remove box shadow from the page element
+                            element.style.boxShadow = 'none';
+                            element.style.margin = '0';
+                            
+                            // Ensure icons are properly rendered
+                            const icons = clonedDoc.querySelectorAll('.bx');
+                            icons.forEach(icon => {
+                                icon.style.fontFamily = 'boxicons';
+                                icon.style.display = 'inline-flex';
+                                icon.style.alignItems = 'center';
+                                icon.style.justifyContent = 'center';
+                                icon.style.lineHeight = '1';
+                            });
+                            
+                            // Fix gradient text elements
+                            const gradientTexts = clonedDoc.querySelectorAll('.bg-gradient-to-r.bg-clip-text');
+                            gradientTexts.forEach(el => {
+                                el.style.background = 'none';
+                                el.style.webkitBackgroundClip = 'unset';
+                                el.style.backgroundClip = 'unset';
+                                el.style.webkitTextFillColor = '#7c3aed';
+                                el.style.color = '#7c3aed';
+                            });
+                            
+                            // Ensure white backgrounds are explicit
+                            const whiteBgs = clonedDoc.querySelectorAll('.bg-white');
+                            whiteBgs.forEach(el => {
+                                el.style.backgroundColor = '#ffffff';
+                            });
+                            
+                            // Ensure gray backgrounds are explicit
+                            const grayBgs = clonedDoc.querySelectorAll('.bg-gray-50');
+                            grayBgs.forEach(el => {
+                                el.style.backgroundColor = '#f9fafb';
+                            });
+                            
+                            // Fix cards with borders - ensure border is visible
+                            const borderedElements = clonedDoc.querySelectorAll('.border, .border-gray-200, .border-accent-soft');
+                            borderedElements.forEach(el => {
+                                el.style.borderStyle = 'solid';
+                                el.style.borderWidth = '1px';
+                            });
+                        }
+                    });
+                    
+                    // Add image to fill the entire PDF page
+                    const imgData = canvas.toDataURL('image/png');
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+                }
+                
+                pdf.save('marco-cremaschi-cv.pdf');
+                
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('Error generating PDF. Please try again.');
+            } finally {
+                // Remove temporary styles
+                const tempStyles = document.getElementById('pdf-generation-styles');
+                if (tempStyles) {
+                    tempStyles.remove();
+                }
+                
+                // Restore download button container visibility
+                downloadContainer.style.display = originalDisplay;
+                
+                // Reset button state
+                downloadBtn.disabled = false;
+                downloadIcon.className = 'bx bx-download text-[14px] text-gray-dark';
+                downloadText.textContent = 'Download PDF';
+            }
+        }
+        
+        // Load experiences when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                loadAcademicExperiences();
+                document.getElementById('download-pdf').addEventListener('click', generatePDF);
+            });
+        } else {
+            loadAcademicExperiences();
+            document.getElementById('download-pdf').addEventListener('click', generatePDF);
+        }
+    </script>
 </body>
 </html>
-
