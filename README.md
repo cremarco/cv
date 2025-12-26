@@ -90,4 +90,6 @@ Endpoint: `http://localhost:8787/api/pdf`
 
 - Le pagine A4 sono identificabili tramite `.pdf-page`.
 - Le regole CSS per la modalita PDF sono in `src/input.css`.
+- La logica client (PDF mode + impaginazione) e in `src/app.js`.
+- I dati del CV sono in `data/cv.json`.
 - Il renderer Playwright e in `scripts/pdf-renderer.js`.

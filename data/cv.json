@@ -1,0 +1,132 @@
+{
+  "academic_experiences": [
+    {
+      "current": true,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1DGNlKqHZpI-ng4UJY1wt8IESgqY2uqYt/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "INF/01",
+      "time_period": "Feb 2025 - Gen 2026",
+      "topic": "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1cJRHK9w0Oqc45Xd8Z7uh7AiyFetzUR9K/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Assistant Professor (RTD/A)",
+      "ssd": "INF/01",
+      "time_period": "Gen 2022 - Gen 2025",
+      "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, funded by the Italian Ministero dell'Università e della Ricerca through the European project D.M. 1062/2021 – Piano Operativo Nazionale - PON \"Ricerca e Innovazione\" 2014- 2020 Asse IV, azioni IV.4 \"Dottorati e contratti di ricerca sulle tematiche dell'innovazione\"",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1PBw2p5WyjVyqQ4Gi4OhN5_ZkRyH_ANqA/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Feb 2021 - Gen 2022",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/13qIkC1_a5zSGn5Q-O4T9mzoCtStLTkzZ/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Feb 2020 - Gen 2021",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1GmgEBWVp9xuuxplpP_sLmW__93C1A-Qv/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Nov 2015 - Oct 2016",
+      "topic": "Definition and implementation of the UniData center's data architecture",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1UhYDI21z-RG1_exk-23Tm4_NHL0E8mTF/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Sep 2014 - Ago 2015",
+      "topic": "Definition of tools for the population of semantic services for public administration",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1d_HX-kI4c8404zpAuHZDp4yvV3Wtmrv4/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant",
+      "ssd": "ING-INF/05",
+      "time_period": "Sep 2013 - Ago 2014",
+      "topic": "Development Methodologies for Value-Added Services in Agriculture",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "current": false,
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "https://drive.google.com/file/d/1WaFTG4rQ44slXfMWjkp7kQ49CcpwqwCU/view?usp=sharing",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research fellow",
+      "ssd": "ING-INF/09",
+      "time_period": "Feb 2011 - Gen 2012",
+      "topic": "Development Methodologies for Value-Added Services in Agriculture",
+      "university": "University of Milan-Bicocca"
+    }
+  ],
+  "foreign_research_contracts": [
+    {
+      "current": false,
+      "link": "https://drive.google.com/file/d/1nyLv-4-TaxBfusZd8uOcQf0n5Q53uFBy/view?usp=sharing",
+      "logo": "sofia.png",
+      "place": "Sofia, Bulgaria",
+      "position": "Researcher",
+      "time_period": "Apr 2022 - Mar 2024",
+      "topic": "Holder of a research contract on the topic \"Building competence in data enrichment for artificial intelligence,\" financed by the Bulgarian Ministry of Education and Science, as part of the implementation of the national program \"European Science Network.\" Big Data for Smart Society Institute.",
+      "university": "Sofia University \"St. Kliment Ohridski\""
+    },
+    {
+      "current": false,
+      "link": "https://drive.google.com/file/d/1bzwiGd6uK4WRjRuw6ZOQ1jlpd1puxXtq/view?usp=sharing",
+      "logo": "sofia.png",
+      "place": "Sofia, Bulgaria",
+      "position": "Researcher",
+      "time_period": "Jul 2021 - Mar 2022",
+      "topic": "Holder of a research contract on the topic \"Building competence in data enrichment for artificial intelligence,\" financed by the Bulgarian Ministry of Education and Science, as part of the implementation of the national program \"European Science Network.\" Big Data for Smart Society Institute.",
+      "university": "Sofia University \"St. Kliment Ohridski\""
+    },
+    {
+      "current": false,
+      "link": "https://drive.google.com/file/d/1bzwiGd6uK4WRjRuw6ZOQ1jlpd1puxXtq/view?usp=sharing",
+      "logo": "bielefeld.png",
+      "place": "Bielefeld, Germany",
+      "position": "Researcher",
+      "time_period": "Nov 2018 - Apr 2019",
+      "topic": "Research internship abroad through the Erasmus+ Traineeship program. Semantic Computing Group.",
+      "university": "Bielefeld University"
+    }
+  ]
+}
