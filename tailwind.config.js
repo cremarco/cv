@@ -31,12 +31,12 @@ module.exports = {
         'github': '#030943',
       },
       fontSize: {
-        'xs-6': ['6px', { lineHeight: '8px', letterSpacing: '0.06px' }],
-        'xs-5': ['5px', { lineHeight: 'normal', letterSpacing: '0.05px' }],
-        'xs-7': ['7px', { lineHeight: '9px', letterSpacing: '0.07px' }],
-        'xs-8': ['8px', { lineHeight: '10px', letterSpacing: '0' }],
-        'xs-12': ['12px', { lineHeight: '16px', letterSpacing: '0.12px' }],
-        'xs-16': ['16px', { lineHeight: '20px', letterSpacing: '-0.32px' }],
+        'xs-6': ['9px', { lineHeight: '12px', letterSpacing: '0.06px' }],
+        'xs-5': ['8px', { lineHeight: 'normal', letterSpacing: '0.05px' }],
+        'xs-7': ['10px', { lineHeight: '13px', letterSpacing: '0.07px' }],
+        'xs-8': ['11px', { lineHeight: '14px', letterSpacing: '0' }],
+        'xs-12': ['14px', { lineHeight: '18px', letterSpacing: '0.12px' }],
+        'xs-16': ['18px', { lineHeight: '22px', letterSpacing: '-0.32px' }],
       }
     },
   },
