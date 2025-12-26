@@ -20,7 +20,8 @@ const SELECTORS = {
 const DATA_URL = './data/cv.json';
 
 const MM_TO_PX = 3.7795275591;
-const MAX_EXPERIENCE_SECTION_HEIGHT_MM = 180;
+const PAGE_NUMBER_RESERVED_HEIGHT_PX = 20 * MM_TO_PX; // 20mm riservati per il numero di pagina
+const MAX_EXPERIENCE_SECTION_HEIGHT_MM = 170; // Ridotto per lasciare spazio al numero di pagina
 const MAX_EXPERIENCE_SECTION_HEIGHT_PX = MAX_EXPERIENCE_SECTION_HEIGHT_MM * MM_TO_PX;
 const FALLBACK_CARD_HEIGHT_PX = 150;
 const MIN_HEIGHT_NEEDED = 200; // Altezza minima necessaria per almeno una card
@@ -368,8 +369,8 @@ function calculateAvailableHeightInPage(page, previousSectionSelector) {
     return MAX_EXPERIENCE_SECTION_HEIGHT_PX;
   }
   
-  // Calcola lo spazio disponibile: altezza pagina - bottom ultima sezione - padding
-  const availableHeight = pageHeightPx - lastBottom - 30; // 30px per margini
+  // Calcola lo spazio disponibile: altezza pagina - bottom ultima sezione - spazio per numero pagina
+  const availableHeight = pageHeightPx - lastBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX;
   
   return Math.max(availableHeight, 0);
 }
@@ -662,7 +663,7 @@ function calculateAvailableHeight(firstPage, experiencesSection) {
   // Calcola lo spazio disponibile: altezza pagina - posizione top experiences - padding bottom - spazio per numero pagina
   const sectionStyle = window.getComputedStyle(experiencesSection);
   const paddingBottom = parseFloat(sectionStyle.paddingBottom) || 0;
-  const availableHeight = pageHeightPx - experiencesTop - paddingBottom - 30; // 30px per il numero di pagina
+  const availableHeight = pageHeightPx - experiencesTop - paddingBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX;
   
   // Usa un valore più conservativo per evitare overflow
   return Math.max(availableHeight * 0.95, MAX_EXPERIENCE_SECTION_HEIGHT_PX * 0.6);
@@ -891,12 +892,33 @@ async function loadEntrepreneurialInitiatives() {
   await loadSection('entrepreneurial_initiatives', SECTION_CONFIG.entrepreneurial_initiatives, SELECTORS.researchTransferSection);
 }
 
+function updatePageNumbers() {
+  // Assicura che ogni pagina abbia un elemento per il numero di pagina con il numero corretto
+  const pages = document.querySelectorAll('.pdf-page');
+  const totalPages = pages.length;
+  
+  pages.forEach((page, index) => {
+    let pageNumberElement = page.querySelector('[data-page-number]');
+    if (!pageNumberElement) {
+      pageNumberElement = document.createElement('div');
+      pageNumberElement.className = 'page-number';
+      pageNumberElement.setAttribute('data-page-number', '');
+      page.appendChild(pageNumberElement);
+    }
+    // Imposta il numero di pagina direttamente come testo
+    pageNumberElement.textContent = `${index + 1} / ${totalPages}`;
+  });
+}
+
 async function init() {
   initPdfMode();
   await loadAcademicExperiences();
   await loadForeignResearchContracts();
   await loadResearchAndTechnologyTransfer();
   await loadEntrepreneurialInitiatives();
+  
+  // Aggiorna i numeri di pagina
+  updatePageNumbers();
   
   setPdfState({
     pageCount: document.querySelectorAll('.pdf-page').length,
