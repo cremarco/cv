@@ -9,6 +9,42 @@
     overflow-y: auto;
   }
 
+  body.pdf-mode {
+    padding: 0;
+    gap: 0;
+    background: #ffffff;
+    align-items: stretch;
+    overflow: visible;
+  }
+
+  body.pdf-mode #pages-container {
+    gap: 0;
+  }
+
+  body.pdf-mode .a4-page {
+    margin: 0;
+    box-shadow: none;
+  }
+
+  body.pdf-mode [data-pdf-hide] {
+    display: none !important;
+  }
+
+  body.pdf-mode [data-pdf-no-shadow] {
+    box-shadow: none !important;
+  }
+
+  body.pdf-mode :is(.shadow, .shadow-sm, .shadow-lg).border {
+    box-shadow: none !important;
+  }
+
+  body.pdf-mode *,
+  body.pdf-mode *::before,
+  body.pdf-mode *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
   .a4-page {
     width: 210mm;
     height: 297mm;
@@ -46,6 +82,16 @@
     .a4-page:last-child {
       page-break-after: auto;
       break-after: auto;
+    }
+
+    [data-pdf-no-shadow] {
+      box-shadow: none !important;
+    }
+
+    .border.shadow,
+    .border.shadow-sm,
+    .border.shadow-lg {
+      box-shadow: none !important;
     }
   }
 }
