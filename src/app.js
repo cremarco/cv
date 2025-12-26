@@ -17,6 +17,8 @@ const SELECTORS = {
   teachingGeneralSection: '[data-section="teaching"]',
   teachingWebinarContainer: '#teaching-webinar',
   teachingWebinarSection: '[data-section="teaching-webinar"]',
+  thesisSupervisorContainer: '#thesis-supervisor',
+  thesisSupervisorSection: '[data-section="thesis-supervisor"]',
   researchSection: '[data-section="research"]',
   pageNumber: '[data-page-number]',
   academicTimeline: '[data-timeline="academic"]',
@@ -27,6 +29,7 @@ const SELECTORS = {
   teachingTimeline: '[data-timeline="teaching"]',
   teachingGeneralTimeline: '[data-timeline="teaching-general"]',
   teachingWebinarTimeline: '[data-timeline="teaching-webinar"]',
+  thesisSupervisorTimeline: '[data-timeline="thesis-supervisor"]',
 };
 
 const DATA_URL = './data/cv.json';
@@ -604,6 +607,72 @@ function createTeachingWebinarCard(item, { isCurrent }) {
   return card;
 }
 
+function createThesisSupervisorCard(data) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'flex gap-1';
+  
+  // Bachelor's thesis section - single card
+  if (data.bachelor_thesis && data.bachelor_thesis.length > 0) {
+    const bachelorItem = data.bachelor_thesis[0];
+    const bachelorCard = document.createElement('div');
+    bachelorCard.className = 'bg-white px-3 py-2 rounded flex flex-col items-center justify-center';
+    bachelorCard.innerHTML = `
+      <div class="flex flex-col items-center justify-center">
+        <p class="leading-[20px] text-ink text-[16px] tracking-[-0.32px] font-dm-sans font-normal mb-0">${bachelorItem.count}</p>
+        <div class="flex flex-col justify-center text-muted text-[5px] text-center tracking-[0.05px] font-dm-sans font-normal">
+          <p class="mb-0">${bachelorItem.program}</p>
+          <p>@${bachelorItem.university}</p>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center text-muted text-[7px] text-center tracking-[0.07px] font-dm-sans font-normal leading-[9px] mt-1">
+        <p>Bachelor's thesis</p>
+      </div>
+    `;
+    wrapper.appendChild(bachelorCard);
+  }
+  
+  // Master's thesis section - single larger card with multiple values
+  if (data.master_thesis && data.master_thesis.length > 0) {
+    const masterCards = data.master_thesis.map((item, index) => {
+      const divider = index > 0 ? '<div class="border border-[rgba(0,0,0,0.05)] border-solid h-[25px] shrink-0 w-[0.5px]"></div>' : '';
+      const programParts = item.program.split(' ');
+      const needsLineBreak = programParts.length > 2;
+      
+      return `
+        ${divider}
+        <div class="flex flex-col items-center justify-center">
+          <p class="leading-[20px] text-ink text-[16px] tracking-[-0.32px] font-dm-sans font-normal mb-0">${item.count}</p>
+          <div class="flex flex-col justify-center text-muted text-[5px] text-center tracking-[0.05px] font-dm-sans font-normal">
+            ${needsLineBreak ? `
+              <p class="mb-0">${programParts.slice(0, 2).join(' ')}</p>
+              <p>${programParts.slice(2).join(' ')}@${item.university}</p>
+            ` : `
+              <p class="mb-0">${item.program}</p>
+              <p>@${item.university}</p>
+            `}
+          </div>
+        </div>
+      `;
+    }).join('');
+    
+    const masterCard = document.createElement('div');
+    masterCard.className = 'bg-white px-3 py-2 rounded flex-1';
+    masterCard.innerHTML = `
+      <div class="flex flex-col gap-1 items-center justify-center">
+        <div class="flex gap-4 items-center justify-center">
+          ${masterCards}
+        </div>
+        <div class="flex flex-col justify-center text-muted text-[7px] text-center tracking-[0.07px] font-dm-sans font-normal leading-[9px]">
+          <p>Master's thesis</p>
+        </div>
+      </div>
+    `;
+    wrapper.appendChild(masterCard);
+  }
+  
+  return wrapper;
+}
+
 // Configurazione delle sezioni (definita dopo le funzioni di creazione card)
 const SECTION_CONFIG = {
   academic_experiences: {
@@ -684,6 +753,16 @@ const SECTION_CONFIG = {
     timelineSelector: '[data-timeline="teaching-webinar"]',
     timelineId: 'teaching-webinar',
     createCard: createTeachingWebinarCard,
+    isFirstSection: false,
+  },
+  thesis_supervisor: {
+    title: 'Thesis supervisor',
+    sectionId: 'thesis-supervisor',
+    sectionSelector: '[data-section="thesis-supervisor"]',
+    containerSelector: '#thesis-supervisor',
+    timelineSelector: '[data-timeline="thesis-supervisor"]',
+    timelineId: 'thesis-supervisor',
+    createCard: null, // Special rendering function
     isFirstSection: false,
   },
 };
@@ -844,6 +923,11 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
   const teachingWebinarContainer = newPage.querySelector(SELECTORS.teachingWebinarContainer);
   if (teachingWebinarContainer) {
     teachingWebinarContainer.innerHTML = '';
+  }
+
+  const thesisSupervisorContainer = newPage.querySelector(SELECTORS.thesisSupervisorContainer);
+  if (thesisSupervisorContainer) {
+    thesisSupervisorContainer.innerHTML = '';
   }
 
   const researchSection = newPage.querySelector(SELECTORS.researchSection);
@@ -1281,6 +1365,75 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     }
   }
 
+  const thesisSupervisorSection = newPage.querySelector(SELECTORS.thesisSupervisorSection);
+  if (thesisSupervisorSection) {
+    if (sectionType === 'thesis-supervisor') {
+      thesisSupervisorSection.classList.remove('py-0');
+      thesisSupervisorSection.classList.add('pt-8', 'pb-0');
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = thesisSupervisorSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = thesisSupervisorSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = thesisSupervisorSection.querySelector('[data-timeline="thesis-supervisor"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      thesisSupervisorSection.remove();
+    }
+  } else if (sectionType === 'thesis-supervisor') {
+    // Se la sezione thesis-supervisor non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      const entrepreneurialSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+      const educationSection = newPage.querySelector(SELECTORS.educationSection);
+      const teachingSection = newPage.querySelector(SELECTORS.teachingSection);
+      const teachingGeneralSection = newPage.querySelector(SELECTORS.teachingGeneralSection);
+      const teachingWebinarSection = newPage.querySelector(SELECTORS.teachingWebinarSection);
+      
+      const config = SECTION_CONFIG.thesis_supervisor;
+      const thesisSupervisorSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (teachingWebinarSection) {
+        teachingWebinarSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (teachingGeneralSection) {
+        teachingGeneralSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (teachingSection) {
+        teachingSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (educationSection) {
+        educationSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (entrepreneurialSection) {
+        entrepreneurialSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', thesisSupervisorSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', thesisSupervisorSectionHTML);
+      }
+    }
+  }
+
   // Assicurati che la section abbia la timeline globale
   const section = newPage.querySelector('section');
   if (section) {
@@ -1574,6 +1727,79 @@ async function loadTeachingWebinar() {
   await loadSection('teaching_webinar', SECTION_CONFIG.teaching_webinar, SELECTORS.teachingGeneralSection);
 }
 
+async function loadThesisSupervisor() {
+  try {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${DATA_URL}`);
+    }
+
+    const data = await response.json();
+    const thesisData = data.thesis_supervisor;
+    if (!thesisData) {
+      return;
+    }
+
+    const pagesContainer = document.querySelector(SELECTORS.pagesContainer);
+    const templatePage = document.querySelector(SELECTORS.pageTemplate);
+
+    if (!pagesContainer || !templatePage) {
+      console.error('Missing pagesContainer or templatePage');
+      return;
+    }
+
+    const config = SECTION_CONFIG.thesis_supervisor;
+    
+    // Trova l'ultima pagina o crea una nuova sezione nella pagina corrente
+    const allPages = document.querySelectorAll('.pdf-page');
+    const lastPage = allPages[allPages.length - 1];
+    
+    const availableHeight = calculateAvailableHeightInPage(lastPage, SELECTORS.teachingWebinarSection);
+    
+    let currentPage = lastPage;
+    let currentContainer;
+    let isFirstInPage = true;
+    
+    // Calcola l'altezza necessaria per la card
+    const measureContainer = createMeasurementContainer(null);
+    const card = createThesisSupervisorCard(thesisData);
+    const cardHeight = measureCardHeight(card, measureContainer);
+    measureContainer.remove();
+    
+    // Calcola l'altezza necessaria: titolo sezione + margine + card
+    const sectionHeaderHeight = 80;
+    const requiredHeight = sectionHeaderHeight + cardHeight;
+    
+    // Se c'è spazio sufficiente nella pagina corrente, aggiungi la sezione lì
+    if (availableHeight >= requiredHeight) {
+      const section = currentPage.querySelector('section');
+      if (section) {
+        const sectionHTML = createSectionHTML(config, true);
+        section.insertAdjacentHTML('beforeend', sectionHTML);
+      }
+      
+      currentContainer = currentPage.querySelector(config.containerSelector);
+    } else {
+      // Crea una nuova pagina per la sezione
+      const currentPageNumber = allPages.length;
+      currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config.timelineId, true);
+      currentContainer = currentPage.querySelector(config.containerSelector);
+    }
+    
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+
+    // Aggiungi la card al container
+    const finalCard = createThesisSupervisorCard(thesisData);
+    currentContainer.appendChild(finalCard);
+  } catch (error) {
+    console.error(`Error loading ${SECTION_CONFIG.thesis_supervisor.title}:`, error);
+    setPdfState({ error: `Error loading ${SECTION_CONFIG.thesis_supervisor.title}` });
+  }
+}
+
 function updatePageNumbers() {
   // Assicura che ogni pagina abbia un elemento per il numero di pagina con il numero corretto
   const pages = document.querySelectorAll('.pdf-page');
@@ -1592,8 +1818,50 @@ function updatePageNumbers() {
   });
 }
 
+async function loadResearchMetrics() {
+  try {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${DATA_URL}`);
+    }
+
+    const data = await response.json();
+    const metrics = data.research_metrics;
+    
+    if (!metrics) {
+      return;
+    }
+
+    // Update Google Scholar metrics
+    if (metrics.google_scholar) {
+      const gsContainer = document.getElementById('google-scholar-metrics');
+      if (gsContainer) {
+        const citationsEl = gsContainer.querySelector('[data-metric="citations"]');
+        const hIndexEl = gsContainer.querySelector('[data-metric="h-index"]');
+        const i10IndexEl = gsContainer.querySelector('[data-metric="i10-index"]');
+        
+        if (citationsEl) citationsEl.textContent = metrics.google_scholar.citations || '-';
+        if (hIndexEl) hIndexEl.textContent = metrics.google_scholar.h_index || '-';
+        if (i10IndexEl) i10IndexEl.textContent = metrics.google_scholar.i10_index || '-';
+      }
+    }
+
+    // Update Scopus metrics
+    if (metrics.scopus) {
+      const scopusContainer = document.getElementById('scopus-metrics');
+      if (scopusContainer) {
+        const citationsEl = scopusContainer.querySelector('[data-metric="citations"]');
+        if (citationsEl) citationsEl.textContent = metrics.scopus.citations || '-';
+      }
+    }
+  } catch (error) {
+    console.error('Error loading research metrics:', error);
+  }
+}
+
 async function init() {
   initPdfMode();
+  await loadResearchMetrics();
   await loadAcademicExperiences();
   await loadForeignResearchContracts();
   await loadResearchAndTechnologyTransfer();
@@ -1602,6 +1870,7 @@ async function init() {
   await loadTeaching();
   await loadTeachingGeneral();
   await loadTeachingWebinar();
+  await loadThesisSupervisor();
   
   // Aggiorna i numeri di pagina
   updatePageNumbers();

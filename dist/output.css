@@ -889,6 +889,10 @@ body.pdf-mode *,
   margin-left: 0.5rem;
 }
 
+.ml-2\.5 {
+  margin-left: 0.625rem;
+}
+
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -945,14 +949,6 @@ body.pdf-mode *,
   margin-top: 2rem;
 }
 
-.ms-\[10\.5px\] {
-  margin-inline-start: 10.5px;
-}
-
-.ml-2\.5 {
-  margin-left: 0.625rem;
-}
-
 .block {
   display: block;
 }
@@ -989,6 +985,10 @@ body.pdf-mode *,
   height: 0.5rem;
 }
 
+.h-2\.5 {
+  height: 0.625rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1005,12 +1005,8 @@ body.pdf-mode *,
   height: 1px;
 }
 
-.h-2\.5 {
-  height: 0.625rem;
-}
-
-.min-h-px {
-  min-height: 1px;
+.h-\[25px\] {
+  height: 25px;
 }
 
 .w-10 {
@@ -1037,8 +1033,16 @@ body.pdf-mode *,
   width: 1.25rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-\[100px\] {
   width: 100px;
+}
+
+.w-\[120px\] {
+  width: 120px;
 }
 
 .w-\[178px\] {
@@ -1049,10 +1053,6 @@ body.pdf-mode *,
   width: 220px;
 }
 
-.w-px {
-  width: 1px;
-}
-
 .w-\[60px\] {
   width: 60px;
 }
@@ -1061,28 +1061,20 @@ body.pdf-mode *,
   width: 100%;
 }
 
-.w-\[50px\] {
-  width: 50px;
+.w-px {
+  width: 1px;
 }
 
-.w-\[110px\] {
-  width: 110px;
+.w-\[0\.5px\] {
+  width: 0.5px;
 }
 
-.w-\[120px\] {
-  width: 120px;
-}
-
-.w-6 {
-  width: 1.5rem;
+.w-auto {
+  width: auto;
 }
 
 .min-w-0 {
   min-width: 0px;
-}
-
-.min-w-px {
-  min-width: 1px;
 }
 
 .flex-1 {
@@ -1097,14 +1089,6 @@ body.pdf-mode *,
   flex-shrink: 0;
 }
 
-.grow {
-  flex-grow: 1;
-}
-
-.basis-0 {
-  flex-basis: 0px;
-}
-
 .rotate-12 {
   --tw-rotate: 12deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1112,10 +1096,6 @@ body.pdf-mode *,
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
 
 .resize {
@@ -1128,10 +1108,6 @@ body.pdf-mode *,
 
 .flex-col {
   flex-direction: column;
-}
-
-.content-stretch {
-  align-content: stretch;
 }
 
 .items-start {
@@ -1180,14 +1156,6 @@ body.pdf-mode *,
 
 .gap-6 {
   gap: 1.5rem;
-}
-
-.gap-\[2px\] {
-  gap: 2px;
-}
-
-.gap-\[8px\] {
-  gap: 8px;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1242,6 +1210,10 @@ body.pdf-mode *,
   border-top-width: 0px;
 }
 
+.border-solid {
+  border-style: solid;
+}
+
 .border-accent-soft {
   --tw-border-opacity: 1;
   border-color: rgb(239 226 249 / var(--tw-border-opacity, 1));
@@ -1250,6 +1222,10 @@ body.pdf-mode *,
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+
+.border-\[rgba\(0\2c 0\2c 0\2c 0\.05\)\] {
+  border-color: rgba(0,0,0,0.05);
 }
 
 .bg-accent-lightest {
@@ -1365,6 +1341,11 @@ body.pdf-mode *,
   padding: 1.5rem;
 }
 
+.px-0\.5 {
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1428,11 +1409,6 @@ body.pdf-mode *,
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.px-0\.5 {
-  padding-left: 0.125rem;
-  padding-right: 0.125rem;
 }
 
 .pb-0 {
@@ -1551,20 +1527,16 @@ body.pdf-mode *,
   font-family: Outfit, sans-serif;
 }
 
-.font-\[\'DM_Sans\:Bold\'\2c sans-serif\] {
-  font-family: 'DM Sans:Bold',sans-serif;
-}
-
-.font-\[\'DM_Sans\:Regular\'\2c sans-serif\] {
-  font-family: 'DM Sans:Regular',sans-serif;
-}
-
 .text-\[10px\] {
   font-size: 10px;
 }
 
 .text-\[12px\] {
   font-size: 12px;
+}
+
+.text-\[6px\] {
+  font-size: 6px;
 }
 
 .text-\[8px\] {
@@ -1616,20 +1588,24 @@ body.pdf-mode *,
   letter-spacing: 0;
 }
 
+.text-\[16px\] {
+  font-size: 16px;
+}
+
+.text-\[5px\] {
+  font-size: 5px;
+}
+
 .text-\[7px\] {
   font-size: 7px;
 }
 
-.text-\[6px\] {
-  font-size: 6px;
+.font-bold {
+  font-weight: 700;
 }
 
 .font-medium {
   font-weight: 500;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .font-normal {
@@ -1648,8 +1624,8 @@ body.pdf-mode *,
   line-height: 1.25;
 }
 
-.leading-\[0\] {
-  line-height: 0;
+.leading-\[20px\] {
+  line-height: 20px;
 }
 
 .leading-\[9px\] {
@@ -1658,6 +1634,14 @@ body.pdf-mode *,
 
 .tracking-tight {
   letter-spacing: -0.025em;
+}
+
+.tracking-\[-0\.32px\] {
+  letter-spacing: -0.32px;
+}
+
+.tracking-\[0\.05px\] {
+  letter-spacing: 0.05px;
 }
 
 .tracking-\[0\.07px\] {
@@ -1689,6 +1673,11 @@ body.pdf-mode *,
   color: rgb(121 129 154 / var(--tw-text-opacity, 1));
 }
 
+.text-purple-600 {
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity, 1));
+}
+
 .text-purple-700 {
   --tw-text-opacity: 1;
   color: rgb(126 34 206 / var(--tw-text-opacity, 1));
@@ -1703,16 +1692,6 @@ body.pdf-mode *,
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.text-\[\#2e2e48\] {
-  --tw-text-opacity: 1;
-  color: rgb(46 46 72 / var(--tw-text-opacity, 1));
-}
-
-.text-purple-600 {
-  --tw-text-opacity: 1;
-  color: rgb(147 51 234 / var(--tw-text-opacity, 1));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -1723,10 +1702,6 @@ body.pdf-mode *,
 
 .line-through {
   text-decoration-line: line-through;
-}
-
-.decoration-solid {
-  text-decoration-style: solid;
 }
 
 .shadow {
@@ -1760,10 +1735,6 @@ body.pdf-mode *,
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.\[text-underline-position\:from-font\] {
-  text-underline-position: from-font;
 }
 
 .last\:mb-0:last-child {

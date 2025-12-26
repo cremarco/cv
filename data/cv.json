@@ -438,5 +438,47 @@
       "date": "Jun 2025",
       "activities": "\"Lectures on Computational Linguistics 2025\", a three-day training school (Milan, 18–20 June 2025) organised by the Italian Association for Computational Linguistics with Università Cattolica del Sacro Cuore and University of Milano-Bicocca, featuring tutorials, labs and student sessions on linguistic resources, Large Language Models and neuro-symbolic AI for PhD and Master's students."
     }
-  ]
+  ],
+  "thesis_supervisor": {
+    "bachelor_thesis": [
+      {
+        "count": 38,
+        "program": "Computer Science",
+        "university": "UNIMIB"
+      }
+    ],
+    "master_thesis": [
+      {
+        "count": 13,
+        "program": "Computer Science",
+        "university": "UNIMIB"
+      },
+      {
+        "count": 59,
+        "program": "Communication Theory and Technology",
+        "university": "UNIMIB"
+      },
+      {
+        "count": 4,
+        "program": "Data science",
+        "university": "UNIMIB"
+      },
+      {
+        "count": 1,
+        "program": "Linguistic Computing",
+        "university": "UNICATT"
+      }
+    ]
+  },
+  "research_metrics": {
+    "google_scholar": {
+      "citations": 475,
+      "h_index": 13,
+      "i10_index": 17,
+      "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ&hl=it&oi=ao"
+    },
+    "scopus": {
+      "citations": 9
+    }
+  }
 }
