@@ -19,6 +19,8 @@ const SELECTORS = {
   teachingWebinarSection: '[data-section="teaching-webinar"]',
   thesisSupervisorContainer: '#thesis-supervisor',
   thesisSupervisorSection: '[data-section="thesis-supervisor"]',
+  awardsContainer: '#awards',
+  awardsSection: '[data-section="awards"]',
   researchSection: '[data-section="research"]',
   pageNumber: '[data-page-number]',
   academicTimeline: '[data-timeline="academic"]',
@@ -30,14 +32,17 @@ const SELECTORS = {
   teachingGeneralTimeline: '[data-timeline="teaching-general"]',
   teachingWebinarTimeline: '[data-timeline="teaching-webinar"]',
   thesisSupervisorTimeline: '[data-timeline="thesis-supervisor"]',
+  awardsTimeline: '[data-timeline="awards"]',
 };
 
 const DATA_URL = './data/cv.json';
 
 const MM_TO_PX = 3.7795275591;
-const PAGE_NUMBER_RESERVED_HEIGHT_PX = 20 * MM_TO_PX; // 20mm riservati per il numero di pagina
+const PAGE_NUMBER_RESERVED_HEIGHT_PX = 25 * MM_TO_PX; // 25mm riservati per il numero di pagina (8mm bottom + 17mm per sicurezza)
 const MAX_EXPERIENCE_SECTION_HEIGHT_MM = 170; // Ridotto per lasciare spazio al numero di pagina
 const MAX_EXPERIENCE_SECTION_HEIGHT_PX = MAX_EXPERIENCE_SECTION_HEIGHT_MM * MM_TO_PX;
+const SECTION_PADDING_BOTTOM_MM = 20; // Padding bottom per le sezioni per evitare sovrapposizione con numero pagina
+const SECTION_PADDING_BOTTOM_PX = SECTION_PADDING_BOTTOM_MM * MM_TO_PX;
 const FALLBACK_CARD_HEIGHT_PX = 150;
 const MIN_HEIGHT_NEEDED = 200; // Altezza minima necessaria per almeno una card
 
@@ -673,6 +678,78 @@ function createThesisSupervisorCard(data) {
   return wrapper;
 }
 
+function createAwardCard(award) {
+  const card = document.createElement('div');
+  card.className = 'flex flex-col gap-0.5 items-center relative shrink-0';
+  
+  // Immagine del certificato
+  const imgContainer = document.createElement('div');
+  imgContainer.className = 'h-[115px] relative shrink-0 w-[160px] flex items-center justify-center';
+  const img = document.createElement('img');
+  img.src = `img/awards/${award.image}`;
+  img.alt = `${award.title} - ${award.event} ${award.year}`;
+  img.className = 'max-w-full max-h-full object-contain pointer-events-none';
+  img.style.width = '100%';
+  img.style.height = '100%';
+  imgContainer.appendChild(img);
+  card.appendChild(imgContainer);
+  
+  // Titolo e badge link
+  const titleContainer = document.createElement('div');
+  titleContainer.className = 'flex gap-1 items-start relative shrink-0 w-full';
+  const title = document.createElement('p');
+  title.className = 'font-dm-sans font-medium leading-[9px] relative shrink-0 text-gray-dark text-[7px] whitespace-nowrap';
+  title.textContent = award.title;
+  titleContainer.appendChild(title);
+  
+  if (award.link) {
+    const badge = document.createElement('div');
+    badge.className = 'bg-accent-soft flex h-[10px] items-center justify-center px-0.5 py-0 relative rounded-[2px] shrink-0';
+    const link = document.createElement('a');
+    link.href = award.link;
+    link.className = 'block cursor-pointer font-dm-sans font-normal leading-[8px] relative shrink-0 text-accent text-xs-6 text-center whitespace-nowrap underline';
+    link.textContent = 'Link';
+    badge.appendChild(link);
+    titleContainer.appendChild(badge);
+  }
+  card.appendChild(titleContainer);
+  
+  // Evento e anno
+  const eventText = document.createElement('p');
+  eventText.className = 'font-dm-sans font-normal leading-[8px] min-w-full relative shrink-0 text-muted text-xs-6';
+  const eventSpan = document.createElement('span');
+  eventSpan.textContent = `${award.event} `;
+  const yearSpan = document.createElement('span');
+  yearSpan.className = 'font-dm-sans font-bold';
+  yearSpan.textContent = award.year;
+  eventText.appendChild(eventSpan);
+  eventText.appendChild(yearSpan);
+  card.appendChild(eventText);
+  
+  return card;
+}
+
+function createAwardsCard(awards) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'flex flex-col gap-4';
+  
+  if (!awards || awards.length === 0) {
+    return wrapper;
+  }
+  
+  // Tutti gli awards su un'unica riga
+  const row = document.createElement('div');
+  row.className = 'flex gap-3 h-[137px] items-center justify-center relative shrink-0 w-full';
+  
+  awards.forEach(award => {
+    const card = createAwardCard(award);
+    row.appendChild(card);
+  });
+  wrapper.appendChild(row);
+  
+  return wrapper;
+}
+
 // Configurazione delle sezioni (definita dopo le funzioni di creazione card)
 const SECTION_CONFIG = {
   academic_experiences: {
@@ -765,6 +842,17 @@ const SECTION_CONFIG = {
     createCard: null, // Special rendering function
     isFirstSection: false,
   },
+  awards: {
+    title: 'Awards',
+    subtitle: 'Awards and recognitions for scientific activity',
+    sectionId: 'awards',
+    sectionSelector: '[data-section="awards"]',
+    containerSelector: '#awards',
+    timelineSelector: '[data-timeline="awards"]',
+    timelineId: 'awards',
+    createCard: null, // Special rendering function
+    isFirstSection: false,
+  },
 };
 
 function createMeasurementContainer(referenceElement) {
@@ -845,18 +933,19 @@ function calculateAvailableHeightInPage(page, previousSectionSelector) {
   
   // Se non c'è una sezione precedente, usa tutta l'altezza disponibile
   if (!lastSection) {
-    return MAX_EXPERIENCE_SECTION_HEIGHT_PX;
+    return pageHeightPx - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
   }
   
-  // Calcola lo spazio disponibile: altezza pagina - bottom ultima sezione - spazio per numero pagina
-  const availableHeight = pageHeightPx - lastBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX;
+  // Calcola lo spazio disponibile: altezza pagina - bottom ultima sezione - spazio per numero pagina - padding bottom sezione
+  const availableHeight = pageHeightPx - lastBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
   
   return Math.max(availableHeight, 0);
 }
 
 function createSectionHTML(config, addMarginTop = false, showTitle = true) {
   const marginTopClass = addMarginTop ? 'mt-8' : '';
-  const titleHTML = showTitle ? `<h2 class="text-xs-12 font-outfit font-medium text-ink">${config.title}</h2>` : '';
+  const subtitleHTML = config.subtitle && showTitle ? `<div class="text-xs-8 font-dm-sans text-ink -mt-1 mb-2">${config.subtitle}</div>` : '';
+  const titleHTML = showTitle ? `<h2 class="text-xs-12 font-outfit font-medium text-ink ${config.subtitle ? 'mb-0' : 'mb-0.5'}">${config.title}</h2>` : '';
   const gapClass = showTitle ? 'gap-4' : 'gap-0';
   const circleHTML = showTitle ? `
         <div class="w-4 h-4 rounded-full bg-white shadow-lg flex items-center justify-center relative" data-pdf-no-shadow>
@@ -864,13 +953,15 @@ function createSectionHTML(config, addMarginTop = false, showTitle = true) {
         </div>
       ` : '';
   // La timeline globale è gestita a livello di section, qui solo il pallino
+  // Aggiungiamo padding bottom per evitare sovrapposizione con il numero di pagina
   return `
-    <div class="flex gap-4 pl-2 pr-6 py-0 ${marginTopClass}" data-section="${config.sectionId}">
+    <div class="flex gap-4 pl-2 pr-6 pt-0 pb-0 ${marginTopClass}" data-section="${config.sectionId}" style="padding-bottom: ${SECTION_PADDING_BOTTOM_PX}px;">
       <div class="flex flex-col items-center w-4 shrink-0 ml-4 relative z-10" data-timeline="${config.timelineId}">
         ${circleHTML}
       </div>
       <div class="flex-1 flex flex-col ${gapClass}">
         ${titleHTML}
+        ${subtitleHTML}
         <div id="${config.sectionId}" class="flex flex-col gap-1">
           <!-- Cards will be generated here dynamically -->
         </div>
@@ -930,6 +1021,11 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     thesisSupervisorContainer.innerHTML = '';
   }
 
+  const awardsContainer = newPage.querySelector(SELECTORS.awardsContainer);
+  if (awardsContainer) {
+    awardsContainer.innerHTML = '';
+  }
+
   const researchSection = newPage.querySelector(SELECTORS.researchSection);
   if (researchSection) {
     researchSection.remove();
@@ -940,6 +1036,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'academic') {
       academicSection.classList.remove('py-0');
       academicSection.classList.add('pt-8', 'pb-0');
+      academicSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = academicSection.querySelector('h2');
@@ -971,6 +1068,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'foreign') {
       foreignSection.classList.remove('py-0');
       foreignSection.classList.add('pt-8', 'pb-0');
+      foreignSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = foreignSection.querySelector('h2');
@@ -1019,6 +1117,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'research-transfer') {
       researchTransferSection.classList.remove('py-0');
       researchTransferSection.classList.add('pt-8', 'pb-0');
+      researchTransferSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = researchTransferSection.querySelector('h2');
@@ -1070,6 +1169,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'entrepreneurial') {
       entrepreneurialInitiativesSection.classList.remove('py-0');
       entrepreneurialInitiativesSection.classList.add('pt-8', 'pb-0');
+      entrepreneurialInitiativesSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = entrepreneurialInitiativesSection.querySelector('h2');
@@ -1124,6 +1224,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'education') {
       educationSection.classList.remove('py-0');
       educationSection.classList.add('pt-8', 'pb-0');
+      educationSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = educationSection.querySelector('h2');
@@ -1181,6 +1282,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'teaching') {
       teachingSection.classList.remove('py-0');
       teachingSection.classList.add('pt-8', 'pb-0');
+      teachingSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = teachingSection.querySelector('h2');
@@ -1241,6 +1343,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'teaching-general') {
       teachingGeneralSection.classList.remove('py-0');
       teachingGeneralSection.classList.add('pt-8', 'pb-0');
+      teachingGeneralSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = teachingGeneralSection.querySelector('h2');
@@ -1304,6 +1407,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'teaching-webinar') {
       teachingWebinarSection.classList.remove('py-0');
       teachingWebinarSection.classList.add('pt-8', 'pb-0');
+      teachingWebinarSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = teachingWebinarSection.querySelector('h2');
@@ -1370,6 +1474,7 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     if (sectionType === 'thesis-supervisor') {
       thesisSupervisorSection.classList.remove('py-0');
       thesisSupervisorSection.classList.add('pt-8', 'pb-0');
+      thesisSupervisorSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
       // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
       if (!isFirstPageOfSection) {
         const title = thesisSupervisorSection.querySelector('h2');
@@ -1434,6 +1539,83 @@ function createNewPage(pageNumber, templatePage, pagesContainer, sectionType, is
     }
   }
 
+  const awardsSection = newPage.querySelector(SELECTORS.awardsSection);
+  if (awardsSection) {
+    if (sectionType === 'awards') {
+      awardsSection.classList.remove('py-0');
+      awardsSection.classList.add('pt-8', 'pb-0');
+      awardsSection.style.paddingBottom = `${SECTION_PADDING_BOTTOM_PX}px`;
+      // Rimuovi il titolo e il pallino se non è la prima pagina della sezione
+      if (!isFirstPageOfSection) {
+        const title = awardsSection.querySelector('h2');
+        if (title) {
+          title.remove();
+        }
+        const subtitle = awardsSection.querySelector('.text-xs-8');
+        if (subtitle) {
+          subtitle.remove();
+        }
+        // Rimuovi anche il gap-4 dal flex container se non c'è più il titolo
+        const contentDiv = awardsSection.querySelector('.flex-1.flex.flex-col');
+        if (contentDiv) {
+          contentDiv.classList.remove('gap-4');
+          contentDiv.classList.add('gap-0');
+        }
+        // Rimuovi il pallino della timeline (la linea è gestita globalmente)
+        const timeline = awardsSection.querySelector('[data-timeline="awards"]');
+        if (timeline) {
+          const circle = timeline.querySelector('.w-4.h-4.rounded-full');
+          if (circle) {
+            circle.remove();
+          }
+        }
+      }
+    } else {
+      awardsSection.remove();
+    }
+  } else if (sectionType === 'awards') {
+    // Se la sezione awards non esiste nel template, creala
+    const section = newPage.querySelector('section');
+    if (section) {
+      // Cerca se ci sono altre sezioni nella pagina
+      const academicSection = newPage.querySelector(SELECTORS.experiencesSection);
+      const foreignSection = newPage.querySelector(SELECTORS.foreignContractsSection);
+      const researchTransferSection = newPage.querySelector(SELECTORS.researchTransferSection);
+      const entrepreneurialSection = newPage.querySelector(SELECTORS.entrepreneurialInitiativesSection);
+      const educationSection = newPage.querySelector(SELECTORS.educationSection);
+      const teachingSection = newPage.querySelector(SELECTORS.teachingSection);
+      const teachingGeneralSection = newPage.querySelector(SELECTORS.teachingGeneralSection);
+      const teachingWebinarSection = newPage.querySelector(SELECTORS.teachingWebinarSection);
+      const thesisSupervisorSection = newPage.querySelector(SELECTORS.thesisSupervisorSection);
+      
+      const config = SECTION_CONFIG.awards;
+      const awardsSectionHTML = createSectionHTML(config, true, isFirstPageOfSection);
+      
+      // Aggiungi la sezione dopo l'ultima sezione esistente
+      if (thesisSupervisorSection) {
+        thesisSupervisorSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (teachingWebinarSection) {
+        teachingWebinarSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (teachingGeneralSection) {
+        teachingGeneralSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (teachingSection) {
+        teachingSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (educationSection) {
+        educationSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (entrepreneurialSection) {
+        entrepreneurialSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (researchTransferSection) {
+        researchTransferSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (foreignSection) {
+        foreignSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else if (academicSection) {
+        academicSection.insertAdjacentHTML('afterend', awardsSectionHTML);
+      } else {
+        section.insertAdjacentHTML('beforeend', awardsSectionHTML);
+      }
+    }
+  }
+
   // Assicurati che la section abbia la timeline globale
   const section = newPage.querySelector('section');
   if (section) {
@@ -1481,7 +1663,7 @@ function calculateAvailableHeight(firstPage, experiencesSection) {
   
   // Calcola lo spazio disponibile: altezza pagina - posizione top experiences - padding bottom - spazio per numero pagina
   const sectionStyle = window.getComputedStyle(experiencesSection);
-  const paddingBottom = parseFloat(sectionStyle.paddingBottom) || 0;
+  const paddingBottom = parseFloat(sectionStyle.paddingBottom) || SECTION_PADDING_BOTTOM_PX;
   const availableHeight = pageHeightPx - experiencesTop - paddingBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX;
   
   // Usa un valore più conservativo per evitare overflow
@@ -1800,6 +1982,78 @@ async function loadThesisSupervisor() {
   }
 }
 
+async function loadAwards() {
+  try {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${DATA_URL}`);
+    }
+
+    const data = await response.json();
+    const awardsData = data.awards;
+    if (!awardsData || !Array.isArray(awardsData) || awardsData.length === 0) {
+      return;
+    }
+
+    const pagesContainer = document.querySelector(SELECTORS.pagesContainer);
+    const templatePage = document.querySelector(SELECTORS.pageTemplate);
+
+    if (!pagesContainer || !templatePage) {
+      console.error('Missing pagesContainer or templatePage');
+      return;
+    }
+
+    const config = SECTION_CONFIG.awards;
+    
+    // Trova l'ultima pagina o crea una nuova sezione nella pagina corrente
+    const allPages = document.querySelectorAll('.pdf-page');
+    const lastPage = allPages[allPages.length - 1];
+    
+    const availableHeight = calculateAvailableHeightInPage(lastPage, SELECTORS.thesisSupervisorSection);
+    
+    let currentPage = lastPage;
+    let currentContainer;
+    
+    // Calcola l'altezza necessaria per la card
+    const measureContainer = createMeasurementContainer(null);
+    const card = createAwardsCard(awardsData);
+    const cardHeight = measureCardHeight(card, measureContainer);
+    measureContainer.remove();
+    
+    // Calcola l'altezza necessaria: titolo sezione + sottotitolo + margine + card
+    const sectionHeaderHeight = 100; // Titolo + sottotitolo + margine
+    const requiredHeight = sectionHeaderHeight + cardHeight;
+    
+    // Se c'è spazio sufficiente nella pagina corrente, aggiungi la sezione lì
+    if (availableHeight >= requiredHeight) {
+      const section = currentPage.querySelector('section');
+      if (section) {
+        const sectionHTML = createSectionHTML(config, true);
+        section.insertAdjacentHTML('beforeend', sectionHTML);
+      }
+      
+      currentContainer = currentPage.querySelector(config.containerSelector);
+    } else {
+      // Crea una nuova pagina per la sezione
+      const currentPageNumber = allPages.length;
+      currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config.timelineId, true);
+      currentContainer = currentPage.querySelector(config.containerSelector);
+    }
+    
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+
+    // Aggiungi la card al container
+    const finalCard = createAwardsCard(awardsData);
+    currentContainer.appendChild(finalCard);
+  } catch (error) {
+    console.error(`Error loading ${SECTION_CONFIG.awards.title}:`, error);
+    setPdfState({ error: `Error loading ${SECTION_CONFIG.awards.title}` });
+  }
+}
+
 function updatePageNumbers() {
   // Assicura che ogni pagina abbia un elemento per il numero di pagina con il numero corretto
   const pages = document.querySelectorAll('.pdf-page');
@@ -1871,6 +2125,7 @@ async function init() {
   await loadTeachingGeneral();
   await loadTeachingWebinar();
   await loadThesisSupervisor();
+  await loadAwards();
   
   // Aggiorna i numeri di pagina
   updatePageNumbers();

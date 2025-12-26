@@ -45,6 +45,11 @@
     transition: none !important;
   }
 
+  /* Assicura che tutte le sezioni abbiano padding bottom sufficiente per evitare sovrapposizione con numero pagina */
+  body.pdf-mode [data-section] {
+    padding-bottom: 75.59px !important; /* 20mm in px */
+  }
+
   .a4-page {
     width: 210mm;
     height: 297mm;

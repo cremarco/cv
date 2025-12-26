@@ -654,6 +654,13 @@ body.pdf-mode *,
   transition: none !important;
 }
 
+/* Assicura che tutte le sezioni abbiano padding bottom sufficiente per evitare sovrapposizione con numero pagina */
+
+body.pdf-mode [data-section] {
+  padding-bottom: 75.59px !important;
+  /* 20mm in px */
+}
+
 .a4-page {
   width: 210mm;
   height: 297mm;
@@ -735,6 +742,10 @@ body.pdf-mode *,
   }
 }
 
+.pointer-events-none {
+  pointer-events: none;
+}
+
 .visible {
   visibility: visible;
 }
@@ -753,6 +764,10 @@ body.pdf-mode *,
 
 .relative {
   position: relative;
+}
+
+.inset-0 {
+  inset: 0px;
 }
 
 .bottom-0 {
@@ -949,6 +964,10 @@ body.pdf-mode *,
   margin-top: 2rem;
 }
 
+.-mt-1 {
+  margin-top: -0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -971,6 +990,11 @@ body.pdf-mode *,
 
 .hidden {
   display: none;
+}
+
+.size-full {
+  width: 100%;
+  height: 100%;
 }
 
 .h-10 {
@@ -1001,12 +1025,32 @@ body.pdf-mode *,
   height: 1.5rem;
 }
 
+.h-\[25px\] {
+  height: 25px;
+}
+
 .h-px {
   height: 1px;
 }
 
-.h-\[25px\] {
-  height: 25px;
+.h-\[10px\] {
+  height: 10px;
+}
+
+.h-\[115px\] {
+  height: 115px;
+}
+
+.h-\[137px\] {
+  height: 137px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.max-h-full {
+  max-height: 100%;
 }
 
 .w-10 {
@@ -1037,6 +1081,10 @@ body.pdf-mode *,
   width: 1.5rem;
 }
 
+.w-\[0\.5px\] {
+  width: 0.5px;
+}
+
 .w-\[100px\] {
   width: 100px;
 }
@@ -1065,16 +1113,24 @@ body.pdf-mode *,
   width: 1px;
 }
 
-.w-\[0\.5px\] {
-  width: 0.5px;
-}
-
-.w-auto {
-  width: auto;
+.w-\[160px\] {
+  width: 160px;
 }
 
 .min-w-0 {
   min-width: 0px;
+}
+
+.min-w-full {
+  min-width: 100%;
+}
+
+.max-w-none {
+  max-width: none;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-1 {
@@ -1096,6 +1152,10 @@ body.pdf-mode *,
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .resize {
@@ -1158,6 +1218,14 @@ body.pdf-mode *,
   gap: 1.5rem;
 }
 
+.gap-\[2px\] {
+  gap: 2px;
+}
+
+.gap-\[4px\] {
+  gap: 4px;
+}
+
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1188,6 +1256,10 @@ body.pdf-mode *,
   border-radius: 0.375rem;
 }
 
+.rounded-\[2px\] {
+  border-radius: 2px;
+}
+
 .rounded-b-md {
   border-bottom-right-radius: 0.375rem;
   border-bottom-left-radius: 0.375rem;
@@ -1214,6 +1286,10 @@ body.pdf-mode *,
   border-style: solid;
 }
 
+.border-\[rgba\(0\2c 0\2c 0\2c 0\.05\)\] {
+  border-color: rgba(0,0,0,0.05);
+}
+
 .border-accent-soft {
   --tw-border-opacity: 1;
   border-color: rgb(239 226 249 / var(--tw-border-opacity, 1));
@@ -1222,10 +1298,6 @@ body.pdf-mode *,
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
-}
-
-.border-\[rgba\(0\2c 0\2c 0\2c 0\.05\)\] {
-  border-color: rgba(0,0,0,0.05);
 }
 
 .bg-accent-lightest {
@@ -1286,6 +1358,16 @@ body.pdf-mode *,
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#efe2f9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 226 249 / var(--tw-bg-opacity, 1));
+}
+
+.bg-accent-soft {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 226 249 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-r {
@@ -1411,6 +1493,11 @@ body.pdf-mode *,
   padding-bottom: 1.25rem;
 }
 
+.px-\[2px\] {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -1483,6 +1570,10 @@ body.pdf-mode *,
   padding-right: 1.5rem;
 }
 
+.pt-0 {
+  padding-top: 0px;
+}
+
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -1535,8 +1626,20 @@ body.pdf-mode *,
   font-size: 12px;
 }
 
+.text-\[16px\] {
+  font-size: 16px;
+}
+
+.text-\[5px\] {
+  font-size: 5px;
+}
+
 .text-\[6px\] {
   font-size: 6px;
+}
+
+.text-\[7px\] {
+  font-size: 7px;
 }
 
 .text-\[8px\] {
@@ -1588,18 +1691,6 @@ body.pdf-mode *,
   letter-spacing: 0;
 }
 
-.text-\[16px\] {
-  font-size: 16px;
-}
-
-.text-\[5px\] {
-  font-size: 5px;
-}
-
-.text-\[7px\] {
-  font-size: 7px;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1616,14 +1707,6 @@ body.pdf-mode *,
   font-style: italic;
 }
 
-.leading-normal {
-  line-height: 1.5;
-}
-
-.leading-tight {
-  line-height: 1.25;
-}
-
 .leading-\[20px\] {
   line-height: 20px;
 }
@@ -1632,8 +1715,16 @@ body.pdf-mode *,
   line-height: 9px;
 }
 
-.tracking-tight {
-  letter-spacing: -0.025em;
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-\[8px\] {
+  line-height: 8px;
 }
 
 .tracking-\[-0\.32px\] {
@@ -1646,6 +1737,14 @@ body.pdf-mode *,
 
 .tracking-\[0\.07px\] {
   letter-spacing: 0.07px;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.tracking-\[0\.06px\] {
+  letter-spacing: 0.06px;
 }
 
 .text-gray-700 {
@@ -1690,6 +1789,26 @@ body.pdf-mode *,
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#47516b\] {
+  --tw-text-opacity: 1;
+  color: rgb(71 81 107 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#79819a\] {
+  --tw-text-opacity: 1;
+  color: rgb(121 129 154 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#9251f7\] {
+  --tw-text-opacity: 1;
+  color: rgb(146 81 247 / var(--tw-text-opacity, 1));
+}
+
+.text-accent {
+  --tw-text-opacity: 1;
+  color: rgb(146 81 247 / var(--tw-text-opacity, 1));
 }
 
 .underline {
