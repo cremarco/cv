@@ -4,7 +4,7 @@
 
 import { createLogoImage } from './shared.js';
 import { createLinkBadge } from './shared.js';
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 
 /**
  * Creates a single project card
@@ -17,7 +17,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   const roundedClass = isFirstInSection ? 'rounded-t-md' : (isLast ? 'rounded-b-md' : '');
   
   const card = document.createElement('div');
-  card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} gap-2 px-3 py-2 ${roundedClass} w-full`;
+  card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
   
   // Add project icon
   if (project.logo) {
@@ -25,7 +25,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   }
   
   const contentDiv = document.createElement('div');
-  contentDiv.className = 'basis-0 flex flex-col gap-1 grow items-start min-h-px min-w-px relative shrink-0';
+  contentDiv.className = `basis-0 flex flex-col ${CARD_INTERNAL_GAP} grow items-start min-h-px min-w-px relative shrink-0`;
   
   // Header row with name, funding agency, link and period
   const headerRow = document.createElement('div');
@@ -109,7 +109,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   
   // Description and activities text box
   const textBox = document.createElement('div');
-  textBox.className = 'flex flex-col gap-0.5 items-start pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full';
+  textBox.className = `flex flex-col ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
   
   // Description
   if (project.description) {
@@ -125,7 +125,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   // Activities section
   if (project.activities) {
     const activitiesDiv = document.createElement('div');
-    activitiesDiv.className = 'flex flex-col gap-0.5 items-start relative shrink-0 w-full';
+    activitiesDiv.className = `flex flex-col ${CARD_TEXT_GAP} items-start relative shrink-0 w-full`;
     const activitiesRow = document.createElement('div');
     activitiesRow.className = 'flex font-dm-sans font-medium items-start leading-[0] relative shrink-0 text-ink w-full';
     
@@ -161,7 +161,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
  */
 export function createProjectsCard(projects) {
   const wrapper = document.createElement('div');
-  wrapper.className = 'flex flex-col gap-1 items-start justify-center relative shrink-0 w-full';
+  wrapper.className = `flex flex-col ${CARD_INTERNAL_GAP} items-start justify-center relative shrink-0 w-full`;
   
   if (!projects?.length) return wrapper;
   
@@ -181,4 +181,3 @@ export function createProjectsCard(projects) {
   
   return wrapper;
 }
-

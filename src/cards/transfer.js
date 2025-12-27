@@ -2,7 +2,7 @@
 // CARD CREATION - TRANSFER CARDS (Research/Technology Transfer & Entrepreneurial)
 // =============================================================================
 
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 import { formatSentence } from '../utils/text.js';
 import { getTimeBadgeClasses } from '../utils/css-classes.js';
 import { createLogoImage, createLinkBadge, createLocationMarkup } from './shared.js';
@@ -23,8 +23,8 @@ export function createTransferCard(exp, { isCurrent }) {
   const contentDiv = document.createElement('div');
   contentDiv.className = 'flex-1';
   contentDiv.innerHTML = `
-    <div class="flex-1">
-      <div class="flex justify-between items-start mb-1">
+    <div class="flex flex-col ${CARD_INTERNAL_GAP}">
+      <div class="flex justify-between items-start">
         <div class="${titleWidth}">
           <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.company}</div>
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${exp.position}</div>
@@ -37,7 +37,7 @@ export function createTransferCard(exp, { isCurrent }) {
           ${createLocationMarkup(exp.place)}
         </div>
       </div>
-      <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal">
+      <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal flex flex-col ${CARD_TEXT_GAP}">
         ${topicText ? `<p class="mb-0">${topicText}</p>` : ''}
       </div>
     </div>
@@ -46,5 +46,4 @@ export function createTransferCard(exp, { isCurrent }) {
 
   return card;
 }
-
 

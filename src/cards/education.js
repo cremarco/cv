@@ -2,7 +2,7 @@
 // CARD CREATION - EDUCATION CARD
 // =============================================================================
 
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 import { getTimeBadgeClasses } from '../utils/css-classes.js';
 import { createLogoImage, createLinkBadge } from './shared.js';
 
@@ -82,8 +82,8 @@ export function createEducationCard(edu) {
   ` : '';
 
   contentDiv.innerHTML = `
-    <div class="flex-1">
-      <div class="flex justify-between items-start mb-1">
+    <div class="flex flex-col ${CARD_INTERNAL_GAP}">
+      <div class="flex justify-between items-start">
         <div class="w-[178px]">
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${degreeText}</div>
         </div>
@@ -93,7 +93,7 @@ export function createEducationCard(edu) {
           </div>
         </div>
       </div>
-      <div class="pl-1.5 flex flex-col gap-0.5 items-start">
+      <div class="pl-1.5 flex flex-col ${CARD_TEXT_GAP} items-start">
         ${thesisMarkup}
         ${internationalMarkup}
         ${coursesMarkup}
@@ -105,5 +105,4 @@ export function createEducationCard(edu) {
 
   return card;
 }
-
 

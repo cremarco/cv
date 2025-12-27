@@ -3,6 +3,7 @@
 // =============================================================================
 
 import { getCardClasses } from '../utils/css-classes.js';
+import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES, CARD_TEXT_GAP } from '../config.js';
 
 const formatMetricValue = (value) => (value ?? '—');
 
@@ -134,7 +135,7 @@ export function createPublicationsSummaryCards(counts) {
   
   items.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'flex-1 bg-white border border-gray-200 rounded-md shadow px-4 py-3 flex flex-col gap-1 items-start';
+    card.className = `flex-1 ${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} rounded-md flex flex-col ${CARD_INTERNAL_GAP} items-start`;
     card.innerHTML = `
       <div class="flex h-[15px] items-center justify-center w-full">
         <span class="text-ink text-[20px] font-dm-sans leading-[10px] text-center w-full">${item.count}</span>
@@ -230,9 +231,11 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   
   // CEUR badge
   if (paper.ceur) {
+    const ceurId = String(paper.ceur).trim();
+    const ceurUrl = paper.ceur_url || `https://ceur-ws.org/${encodeURIComponent(ceurId)}/`;
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">CEUR:</span> ${paper.ceur}</span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" class="underline">${ceurId}</a></span>
       </div>
     `;
   }
@@ -280,7 +283,7 @@ export function createPublicationsContainer(pubData, metrics) {
   
   // Papers list - reduced gap to optimise page space usage
   const papersContainer = document.createElement('div');
-  papersContainer.className = 'flex flex-col gap-0.5 items-start w-full';
+  papersContainer.className = `flex flex-col ${CARD_TEXT_GAP} items-start w-full`;
   
   pubData.papers.forEach((paper, index) => {
     const isFirstInSection = index === 0;

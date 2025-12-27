@@ -2,7 +2,7 @@
 // CARD CREATION - TEACHING CARDS (PhD & General)
 // =============================================================================
 
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 import { createLogoImage } from './shared.js';
 
 /**
@@ -76,7 +76,7 @@ export function createTeachingCard(teaching, { isPhd = true }) {
   contentDiv.className = 'flex-1';
   
   const universityMarkup = teaching.university ? `
-    <div class="text-xs-7 text-muted font-dm-sans mb-1">${teaching.university}</div>
+    <div class="text-xs-7 text-muted font-dm-sans">${teaching.university}</div>
   ` : '';
   
   const programsMarkup = (teaching.programs?.length > 0) 
@@ -85,25 +85,24 @@ export function createTeachingCard(teaching, { isPhd = true }) {
         const coursesHtml = program.courses.map(c => renderCourseRow(c, isPhd)).join('');
         
         return `
-          <div class="mb-2 last:mb-0">
-            <div class="text-xs-7 text-ink font-dm-sans mb-1">
+          <div class="flex flex-col ${CARD_TEXT_GAP}">
+            <div class="text-xs-7 text-ink font-dm-sans">
               <span class="font-bold">${type}</span> ${isPhd ? 'in ' : ''}${name}
             </div>
-            <div class="flex flex-col gap-0.5">${coursesHtml}</div>
+            <div class="flex flex-col ${CARD_TEXT_GAP}">${coursesHtml}</div>
           </div>
         `;
       }).join('')
     : '';
   
   contentDiv.innerHTML = `
-    <div class="flex-1">
+    <div class="flex flex-col ${CARD_INTERNAL_GAP}">
       ${universityMarkup}
-      <div class="flex flex-col gap-2">${programsMarkup}</div>
+      <div class="flex flex-col ${CARD_INTERNAL_GAP}">${programsMarkup}</div>
     </div>
   `;
   card.appendChild(contentDiv);
 
   return card;
 }
-
 

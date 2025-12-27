@@ -2,7 +2,7 @@
 // CARD CREATION - WEBINAR CARD
 // =============================================================================
 
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 import { createLogoImage, createLinkBadge } from './shared.js';
 
 /**
@@ -24,8 +24,8 @@ export function createWebinarCard(item) {
   ` : '';
   
   contentDiv.innerHTML = `
-    <div class="flex-1">
-      <div class="flex justify-between items-start mb-1">
+    <div class="flex flex-col ${CARD_INTERNAL_GAP}">
+      <div class="flex justify-between items-start">
         <div class="flex-1">
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${item.title || ''}</div>
         </div>
@@ -34,7 +34,7 @@ export function createWebinarCard(item) {
           ${dateMarkup}
         </div>
       </div>
-      <div class="pl-1.5 flex flex-col gap-0.5">
+      <div class="pl-1.5 flex flex-col ${CARD_TEXT_GAP}">
         <div class="flex gap-2 items-start w-full">
           <div class="flex-shrink-0 w-[60px]">
             <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Activities:</p>
@@ -50,5 +50,4 @@ export function createWebinarCard(item) {
 
   return card;
 }
-
 

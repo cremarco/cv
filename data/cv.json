@@ -568,7 +568,8 @@
         "title": "Decoding the Mind: A RAG-LLM on ICD-11 for Decision Support in Psychology",
         "venue": "Expert Systems With Applications, Elsevier Ltd, 2025 (accepted for publication)",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}]
+        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}],
+        "doi":"10.1016/j.eswa.2025.127191"
       },
       {
         "number": 5,
@@ -697,7 +698,7 @@
       {
         "number": 19,
         "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Fabio D'Adda, Flavio De Paoli, Matteo Palmonari",
-        "title": "LamAPI: a comprehensive tool for string-based ntity retrieval with type-base filters",
+        "title": "LamAPI: a comprehensive tool for string-based entity retrieval with type-base filters",
         "venue": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 3324, CEUR Workshop Proceedings, 2022",
         "type": "workshop",
         "speaker": true,
@@ -750,7 +751,7 @@
       },
       {
         "number": 25,
-        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, Andrea Barazzetti, David Chieregato, Ernesto Jiménez-Ruiz",
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, Andrea Barazzetti, David Chieregato",
         "title": "MantisTable SE: an efficient approach for the Semantic Table Interpretation",
         "venue": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2775, CEUR Workshop Proceedings, 2020",
         "type": "challenge",
@@ -878,6 +879,12 @@
   },
   "community_service": {
     "chair": [
+      {
+        "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
+        "description": "SemTab@International Semantic Web Conference 2025 - ICORE rank: A - attended",
+        "year": "2025",
+        "link": "https://sem-tab-challenge.github.io/2025/"
+      },
       {
         "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
         "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",

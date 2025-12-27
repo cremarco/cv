@@ -2,6 +2,8 @@
 // CARD CREATION - EDITORIAL COMMUNITY SERVICE CARD
 // =============================================================================
 
+import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES } from '../config.js';
+
 /**
  * Creates a single editorial community service item card
  */
@@ -107,13 +109,13 @@ function createCategoryLabel(label) {
  */
 export function createEditorialCommunityServiceCard(data) {
   const wrapper = document.createElement('div');
-  wrapper.className = 'bg-white flex flex-col items-start justify-center p-2 relative rounded-md shrink-0 w-full';
+  wrapper.className = `${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} flex flex-col items-start justify-center relative rounded-md shrink-0 w-full`;
   
   const innerWrapper = document.createElement('div');
   innerWrapper.className = 'flex items-start relative shrink-0 w-full';
   
   const contentDiv = document.createElement('div');
-  contentDiv.className = 'basis-0 flex flex-col gap-1 grow items-start min-h-px min-w-px relative shrink-0';
+  contentDiv.className = `basis-0 flex flex-col ${CARD_INTERNAL_GAP} grow items-start min-h-px min-w-px relative shrink-0`;
   
   // Add Associate Editor section
   if (data.associate_editor && data.associate_editor.length > 0) {
@@ -150,4 +152,3 @@ export function createEditorialCommunityServiceCard(data) {
   
   return wrapper;
 }
-

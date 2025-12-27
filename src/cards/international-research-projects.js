@@ -4,7 +4,7 @@
 
 import { createLogoImage } from './shared.js';
 import { createLinkBadge } from './shared.js';
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 
 /**
  * Creates a single international research project card
@@ -18,13 +18,13 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   const roundedClass = project.isFirst ? 'rounded-t-md' : 'rounded-b-md';
   
   const card = document.createElement('div');
-  card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} gap-2 px-3 py-2 ${roundedClass} w-full`;
+  card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
   
   // Add COST icon
   card.appendChild(createLogoImage('cost.png', 'COST Action', 'w-5 h-5'));
   
   const contentDiv = document.createElement('div');
-  contentDiv.className = 'basis-0 flex flex-col gap-1 grow items-start min-h-px min-w-px relative shrink-0';
+  contentDiv.className = `basis-0 flex flex-col ${CARD_INTERNAL_GAP} grow items-start min-h-px min-w-px relative shrink-0`;
   
   // Header row with name, title, link and period
   const headerRow = document.createElement('div');
@@ -93,7 +93,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   
   // Description and role text box
   const textBox = document.createElement('div');
-  textBox.className = 'flex flex-col font-dm-sans font-normal gap-0.5 items-start leading-[0] pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full';
+  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start leading-[0] pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
   
   // Description
   if (project.description) {
@@ -142,7 +142,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
  */
 export function createInternationalResearchProjectsCard(projects) {
   const wrapper = document.createElement('div');
-  wrapper.className = 'flex flex-col gap-1 items-start justify-center relative shrink-0 w-full';
+  wrapper.className = `flex flex-col ${CARD_INTERNAL_GAP} items-start justify-center relative shrink-0 w-full`;
   
   if (!projects?.length) return wrapper;
   
@@ -162,4 +162,3 @@ export function createInternationalResearchProjectsCard(projects) {
   
   return wrapper;
 }
-

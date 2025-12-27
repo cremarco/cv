@@ -2,18 +2,20 @@
 // CARD CREATION - THESIS SUPERVISOR CARD
 // =============================================================================
 
+import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES } from '../config.js';
+
 /**
  * Creates a thesis supervisor statistics card
  */
 export function createThesisSupervisorCard(data) {
   const wrapper = document.createElement('div');
-  wrapper.className = 'flex gap-1';
+  wrapper.className = `flex ${CARD_INTERNAL_GAP}`;
   
   // Bachelor's thesis section
   if (data.bachelor_thesis?.length > 0) {
     const item = data.bachelor_thesis[0];
     const bachelorCard = document.createElement('div');
-    bachelorCard.className = 'bg-white border border-gray-200 rounded-md shadow px-4 py-3 flex flex-col items-center justify-center';
+    bachelorCard.className = `${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} rounded-md flex flex-col items-center justify-center`;
     bachelorCard.innerHTML = `
       <div class="flex flex-col items-center justify-center">
         <p class="text-ink text-xs-16 font-dm-sans font-normal mb-0">${item.count}</p>
@@ -54,7 +56,7 @@ export function createThesisSupervisorCard(data) {
     }).join('');
     
     const masterCard = document.createElement('div');
-    masterCard.className = 'bg-white border border-gray-200 rounded-md shadow px-4 py-3 flex-1';
+    masterCard.className = `${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} rounded-md flex-1`;
     masterCard.innerHTML = `
       <div class="flex flex-col gap-1 items-center justify-center">
         <div class="flex gap-4 items-center justify-center">${masterCards}</div>
@@ -68,4 +70,3 @@ export function createThesisSupervisorCard(data) {
   
   return wrapper;
 }
-
