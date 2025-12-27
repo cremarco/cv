@@ -18,6 +18,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   
   const card = document.createElement('div');
   card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
+  card.dataset.card = 'projects';
   
   // Add project icon
   if (project.logo) {
@@ -85,6 +86,8 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
     const periodBadge = document.createElement('span');
     periodBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
     periodBadge.textContent = project.period;
+    periodBadge.dataset.timePeriod = project.period;
+    periodBadge.dataset.timeKind = 'badge';
     badgesRow.appendChild(periodBadge);
   }
   

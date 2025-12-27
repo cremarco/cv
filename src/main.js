@@ -21,8 +21,18 @@ import {
 } from './data/loader.js';
 import { highlightActiveItems } from './utils/active-highlighter.js';
 
+async function waitForFonts(timeoutMs = 1500) {
+  if (!document.fonts?.ready) return;
+  await Promise.race([
+    document.fonts.ready,
+    new Promise(resolve => setTimeout(resolve, timeoutMs))
+  ]);
+}
+
 async function init() {
   initPdfMode();
+  
+  await waitForFonts();
   
   await loadResearchMetrics();
   
@@ -72,5 +82,4 @@ async function init() {
 }
 
 init();
-
 

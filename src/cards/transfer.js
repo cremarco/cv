@@ -13,6 +13,7 @@ import { createLogoImage, createLinkBadge, createLocationMarkup } from './shared
 export function createTransferCard(exp, { isCurrent }) {
   const card = document.createElement('div');
   card.className = CARD_BASE_CLASSES;
+  card.dataset.card = 'transfer';
 
   const topicText = formatSentence(exp.topic);
   const logoAlt = exp.company ? `${exp.company} logo` : 'Company logo';
@@ -32,7 +33,7 @@ export function createTransferCard(exp, { isCurrent }) {
         <div class="flex flex-col gap-0.5 items-end">
           <div class="flex gap-2 items-center">
             ${createLinkBadge(exp.link)}
-            <span class="${getTimeBadgeClasses(isCurrent)}">${exp.time_period}</span>
+            <span class="${getTimeBadgeClasses(isCurrent)}" data-time-period="${exp.time_period}" data-time-kind="badge">${exp.time_period}</span>
           </div>
           ${createLocationMarkup(exp.place)}
         </div>
@@ -46,4 +47,3 @@ export function createTransferCard(exp, { isCurrent }) {
 
   return card;
 }
-

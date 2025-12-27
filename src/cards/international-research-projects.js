@@ -19,6 +19,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   
   const card = document.createElement('div');
   card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
+  card.dataset.card = 'international-research-projects';
   
   // Add COST icon
   card.appendChild(createLogoImage('cost.png', 'COST Action', 'w-5 h-5'));
@@ -76,6 +77,8 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
       periodBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
     }
     periodBadge.textContent = project.period;
+    periodBadge.dataset.timePeriod = project.period;
+    periodBadge.dataset.timeKind = 'badge';
     badgesRow.appendChild(periodBadge);
   }
   

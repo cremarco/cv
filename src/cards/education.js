@@ -12,6 +12,7 @@ import { createLogoImage, createLinkBadge } from './shared.js';
 export function createEducationCard(edu) {
   const card = document.createElement('div');
   card.className = CARD_BASE_CLASSES;
+  card.dataset.card = 'education';
 
   const timeBadgeClasses = getTimeBadgeClasses(false);
   
@@ -89,7 +90,7 @@ export function createEducationCard(edu) {
         </div>
         <div class="flex flex-col gap-0.5 items-end">
           <div class="flex gap-2 items-center">
-            <span class="${timeBadgeClasses}">${edu.time_period}</span>
+            <span class="${timeBadgeClasses}" data-time-period="${edu.time_period}" data-time-kind="badge">${edu.time_period}</span>
           </div>
         </div>
       </div>
@@ -105,4 +106,3 @@ export function createEducationCard(edu) {
 
   return card;
 }
-

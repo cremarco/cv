@@ -19,6 +19,7 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
   
   const card = document.createElement('div');
   card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
+  card.dataset.card = 'italian-research-projects';
   
   // Add project icon
   if (project.logo) {
@@ -83,6 +84,8 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
     const periodBadge = document.createElement('span');
     periodBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-purple-100 text-purple-700';
     periodBadge.textContent = project.period;
+    periodBadge.dataset.timePeriod = project.period;
+    periodBadge.dataset.timeKind = 'badge';
     badgesRow.appendChild(periodBadge);
   }
   

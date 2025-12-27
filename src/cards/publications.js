@@ -3,7 +3,7 @@
 // =============================================================================
 
 import { getCardClasses } from '../utils/css-classes.js';
-import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES, CARD_TEXT_GAP } from '../config.js';
+import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES } from '../config.js';
 
 const formatMetricValue = (value) => (value ?? '—');
 
@@ -38,7 +38,7 @@ export function createPublicationsHeader(data, metrics) {
     gsBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     gsBadge.innerHTML = `
       <img src="img/logo/google_scholar.png" alt="Google Scholar" class="w-3 h-3 object-contain rounded shadow-sm">
-      <a href="${googleScholarUrl}" target="_blank" class="underline">Google Scholar</a>
+      <a href="${googleScholarUrl}" target="_blank" rel="noopener noreferrer" class="underline">Google Scholar</a>
       <span>cit: ${formatMetricValue(gs.citations)}, h-index: ${formatMetricValue(gs.h_index)}, i10-index: ${formatMetricValue(gs.i10_index)}</span>
     `;
     linksGroup.appendChild(gsBadge);
@@ -51,7 +51,7 @@ export function createPublicationsHeader(data, metrics) {
     scopusBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     scopusBadge.innerHTML = `
       <img src="img/logo/scopus.png" alt="Scopus" class="w-3 h-3 object-contain">
-      <a href="${scopusUrl}" target="_blank" class="underline">Scopus</a>
+      <a href="${scopusUrl}" target="_blank" rel="noopener noreferrer" class="underline">Scopus</a>
       <span>cit: ${formatMetricValue(metrics.scopus.citations)}, h-index: ${formatMetricValue(metrics.scopus.h_index)}</span>
     `;
     linksGroup.appendChild(scopusBadge);
@@ -94,6 +94,10 @@ export function calculatePublicationCounts(papers) {
     challenge_papers: 0,
     book_chapters: 0,
   };
+  
+  if (!Array.isArray(papers)) {
+    return counts;
+  }
   
   papers.forEach(paper => {
     switch (paper.type) {
@@ -163,6 +167,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   
   const card = document.createElement('div');
   card.className = `${cardClasses} w-full`;
+  card.dataset.card = 'publications';
   
   // Add rounded-b-md to last card
   if (isLast) {
@@ -224,7 +229,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.doi) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" class="underline">${paper.doi}</a></span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" rel="noopener noreferrer" class="underline">${paper.doi}</a></span>
       </div>
     `;
   }
@@ -235,7 +240,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
     const ceurUrl = paper.ceur_url || `https://ceur-ws.org/${encodeURIComponent(ceurId)}/`;
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" class="underline">${ceurId}</a></span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" rel="noopener noreferrer" class="underline">${ceurId}</a></span>
       </div>
     `;
   }
@@ -260,47 +265,4 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   card.appendChild(contentDiv);
   
   return card;
-}
-
-/**
- * Creates the publications section container
- */
-export function createPublicationsContainer(pubData, metrics) {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'flex flex-col gap-4 items-start w-full';
-  
-  // Calculate counts dynamically from papers
-  const counts = calculatePublicationCounts(pubData.papers);
-  
-  // Header with links
-  const headerContainer = document.createElement('div');
-  headerContainer.className = 'flex flex-col gap-4 w-full';
-  headerContainer.appendChild(createPublicationsHeader(pubData, metrics));
-  
-  // Summary cards with dynamically calculated counts
-  headerContainer.appendChild(createPublicationsSummaryCards(counts));
-  wrapper.appendChild(headerContainer);
-  
-  // Papers list - reduced gap to optimise page space usage
-  const papersContainer = document.createElement('div');
-  papersContainer.className = `flex flex-col ${CARD_TEXT_GAP} items-start w-full`;
-  
-  pubData.papers.forEach((paper, index) => {
-    const isFirstInSection = index === 0;
-    const isLast = index === pubData.papers.length - 1;
-    // For publications, we assume they're all on the same page initially
-    // The page break logic will handle it if needed
-    const isFirstInPage = isFirstInSection;
-    
-    papersContainer.appendChild(createPublicationCard(paper, { 
-      isFirstInPage, 
-      isFirstInSection, 
-      isLast,
-      index
-    }));
-  });
-  
-  wrapper.appendChild(papersContainer);
-  
-  return wrapper;
 }

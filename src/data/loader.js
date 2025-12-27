@@ -165,7 +165,7 @@ export async function loadAwards() {
 export async function loadPublications() {
   try {
     const data = await loadCVData();
-    if (!data.publications) return;
+    if (!data.publications?.papers?.length) return;
     
     const config = SECTION_CONFIG.publications;
     const metrics = getResearchMetrics(data.research_metrics);

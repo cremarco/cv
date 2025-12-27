@@ -11,6 +11,7 @@ import { createLogoImage, createLinkBadge } from './shared.js';
 export function createWebinarCard(item) {
   const card = document.createElement('div');
   card.className = CARD_BASE_CLASSES;
+  card.dataset.card = 'webinar';
 
   const logoAlt = item.title ? `${item.title} logo` : 'Logo';
   
@@ -20,7 +21,7 @@ export function createWebinarCard(item) {
   contentDiv.className = 'flex-1';
   
   const dateMarkup = item.date ? `
-    <span class="inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700">${item.date}</span>
+    <span class="inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700" data-time-period="${item.date}" data-time-kind="badge">${item.date}</span>
   ` : '';
   
   contentDiv.innerHTML = `
@@ -50,4 +51,3 @@ export function createWebinarCard(item) {
 
   return card;
 }
-

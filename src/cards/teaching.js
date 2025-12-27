@@ -25,7 +25,7 @@ function renderCourseRow(course, isPhd = true) {
     <div class="text-xs-6 text-muted font-dm-sans italic whitespace-nowrap">${course.hours}</div>
   ` : '';
   
-  const periodBadge = course.time_period ? `<span class="${periodBadgeClasses}">${course.time_period}</span>` : '';
+  const periodBadge = course.time_period ? `<span class="${periodBadgeClasses}" data-time-period="${course.time_period}" data-time-kind="badge">${course.time_period}</span>` : '';
   
   return `
     <div class="flex items-center justify-between h-2.5 mb-0.5 last:mb-0">
@@ -68,6 +68,7 @@ function parseProgramName(programName, isPhd = true) {
 export function createTeachingCard(teaching, { isPhd = true }) {
   const card = document.createElement('div');
   card.className = CARD_BASE_CLASSES;
+  card.dataset.card = isPhd ? 'teaching-phd' : 'teaching';
 
   const logoAlt = teaching.university ? `${teaching.university} logo` : 'University logo';
   
@@ -106,4 +107,3 @@ export function createTeachingCard(teaching, { isPhd = true }) {
 
   return card;
 }
-

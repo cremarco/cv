@@ -53,6 +53,7 @@ export const SECTION_CONFIG = {
     timelineId: 'academic',
     cardType: 'experience',
     isFirstSection: true,
+    highlightActiveBackground: true,
   },
   foreign_research_contracts: {
     title: 'Foreign Research Contracts',
@@ -67,6 +68,7 @@ export const SECTION_CONFIG = {
     timelineId: 'research-transfer',
     cardType: 'transfer',
     previousSectionId: 'foreign-research-contracts',
+    highlightActiveBackground: true,
   },
   entrepreneurial_initiatives: {
     title: 'Entrepreneurial initiatives',
@@ -148,6 +150,7 @@ export const SECTION_CONFIG = {
     timelineId: 'international-research-projects',
     cardType: 'international-research-projects',
     previousSectionId: 'community-service-editorial',
+    highlightActiveBackground: true,
   },
   italian_research_projects: {
     title: 'Italian research projects/groups',
@@ -156,6 +159,7 @@ export const SECTION_CONFIG = {
     timelineId: 'italian-research-projects',
     cardType: 'italian-research-projects',
     previousSectionId: 'international-research-projects',
+    highlightActiveBackground: true,
   },
   projects: {
     title: 'Projects',

@@ -24,6 +24,16 @@ import {
   createNewPage,
 } from './page-utils.js';
 
+function getMeasurementReference(templatePage, currentPage, config) {
+  return currentPage?.querySelector(config.containerSelector)
+    || templatePage.querySelector(config.containerSelector)
+    || templatePage.querySelector('#academic-experiences')
+    || templatePage.querySelector('[data-section] [id]')
+    || currentPage?.querySelector('section')
+    || templatePage.querySelector('section')
+    || null;
+}
+
 /**
  * Renders a section with cards and handles page breaks
  */
@@ -124,7 +134,7 @@ export function renderSection(items, config, previousSectionSelector = null) {
   let currentPageMaxHeight;
   
   // Measure first card height
-  const measureContainer = createMeasurementContainer(null);
+  const measureContainer = createMeasurementContainer(getMeasurementReference(templatePage, lastPage, config));
   let firstCardHeight = FALLBACK_CARD_HEIGHT_PX;
   if (items.length > 0) {
     // isCurrent is now determined automatically by the active-highlighter script
@@ -235,7 +245,7 @@ export function renderSpecialSection(config, data, createCardFn, previousSection
   const availableHeight = calculateAvailableHeightInPage(lastPage, previousSectionSelector);
   
   // Measure card height
-  const measureContainer = createMeasurementContainer(null);
+  const measureContainer = createMeasurementContainer(getMeasurementReference(templatePage, lastPage, config));
   const card = createCardFn(data);
   const cardHeight = measureCardHeight(card, measureContainer);
   measureContainer.remove();
@@ -303,7 +313,7 @@ export function renderSpecialSectionWithPageBreaks(config, items, createCardFn, 
   const availableHeight = calculateAvailableHeightInPage(lastPage, previousSectionSelector);
   
   // Measure first card height (only the first item, not all items)
-  const measureContainer = createMeasurementContainer(null);
+  const measureContainer = createMeasurementContainer(getMeasurementReference(templatePage, lastPage, config));
   const firstCard = createCardFn([items[0]]); // Pass only first item, not all items
   const firstCardHeight = measureCardHeight(firstCard, measureContainer);
   measureContainer.remove();
@@ -422,6 +432,7 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
     console.error('Missing pagesContainer or templatePage');
     return;
   }
+  if (!pubData?.papers?.length) return;
 
   const allPages = document.querySelectorAll('.pdf-page');
   const lastPage = allPages[allPages.length - 1];
@@ -436,7 +447,7 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
   headerContainer.appendChild(createPublicationsSummaryCards(counts));
   
   // Measure header height and first paper card height
-  const measureContainer = createMeasurementContainer(null);
+  const measureContainer = createMeasurementContainer(getMeasurementReference(templatePage, lastPage, config));
   const headerHeight = measureCardHeight(headerContainer, measureContainer);
   
   // Measure first paper card height
@@ -574,4 +585,3 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
     finalMeasureContainer.remove();
   }
 }
-

@@ -4,6 +4,7 @@
 // based on date analysis
 // =============================================================================
 
+import { SECTION_CONFIG } from '../config.js';
 import { parseMonthYear } from './date.js';
 
 /**
@@ -111,135 +112,42 @@ function isTimePeriodActive(timePeriod) {
   return false;
 }
 
+const ACTIVE_BACKGROUND_SECTIONS = Object.values(SECTION_CONFIG)
+  .filter(config => config.highlightActiveBackground)
+  .map(config => config.sectionId);
+
+function getTimePeriodFromElement(element) {
+  return element.dataset.timePeriod || element.textContent.trim();
+}
+
+function applyActiveBadgeStyles(badge) {
+  badge.classList.remove('bg-gray-100', 'text-gray-700');
+  badge.classList.add('bg-purple-100', 'text-purple-700');
+}
+
+function applyActiveTextStyles(element) {
+  element.classList.remove('text-gray-dark', 'text-ink');
+  if (!element.classList.contains('text-purple-600')) {
+    element.classList.add('text-purple-600');
+  }
+}
+
 /**
  * Finds all time period badges in cards and highlights active ones
  */
 function highlightActiveTimeBadges() {
-  // Find all cards - they have px-4 py-3 (card padding) and shadow classes
-  // Use a more flexible approach: find elements that contain all these classes
-  const allElements = document.querySelectorAll('*');
-  const cards = Array.from(allElements).filter(el => {
-    const classes = el.className || '';
-    // Check if element has the card classes (px-4, py-3, and shadow)
-    return typeof classes === 'string' && 
-           classes.includes('px-4') && 
-           classes.includes('py-3') && 
-           classes.includes('shadow') &&
-           classes.includes('flex') &&
-           classes.includes('gap-3');
-  });
+  const timeElements = document.querySelectorAll('[data-time-period]');
   
-  cards.forEach(card => {
-    // Find time period badge - spans with inline-flex and px-1.5 (time badge pattern)
-    // Use a more flexible selector
-    const timeBadges = Array.from(card.querySelectorAll('span')).filter(span => {
-      const classes = span.className;
-      return classes.includes('inline-flex') && 
-             classes.includes('items-center') && 
-             (classes.includes('px-1.5') || classes.includes('px-1') || classes.includes('px-0.5'));
-    });
+  timeElements.forEach(element => {
+    const timePeriod = getTimePeriodFromElement(element);
+    if (!isTimePeriodActive(timePeriod)) return;
     
-    timeBadges.forEach(badge => {
-      const timePeriod = badge.textContent.trim();
-      
-      if (isTimePeriodActive(timePeriod)) {
-        // Apply active styling to the badge
-        badge.classList.remove('bg-gray-100', 'text-gray-700');
-        badge.classList.add('bg-purple-100', 'text-purple-700');
-      }
-    });
-    
-    // Also check for date elements in teaching cards and other cards
-    // Look for elements with text-xs-6 or text-[7px] that might contain dates
-    const dateElements = Array.from(card.querySelectorAll('[class*="text-xs-6"], [class*="text-[7px]"]')).filter(el => {
-      const text = el.textContent.trim();
-      // Check if it looks like a date (contains month names or year patterns)
-      return /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|\d{4}|Present|Current)/i.test(text);
-    });
-    
-    dateElements.forEach(dateEl => {
-      const timePeriod = dateEl.textContent.trim();
-      
-      if (isTimePeriodActive(timePeriod)) {
-        // Apply active styling to the date
-        dateEl.classList.remove('text-gray-dark', 'text-ink');
-        if (!dateEl.classList.contains('text-purple-600')) {
-          dateEl.classList.add('text-purple-600');
-        }
-      }
-    });
-    
-    // Also check for period text in project cards (they use different structure)
-    const periodElements = Array.from(card.querySelectorAll('p, div')).filter(el => {
-      const text = el.textContent.trim();
-      const classes = el.className;
-      // Look for elements that contain date-like text and are styled as dates
-      return /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|\d{4}.*\d{4}|Present|Current)/i.test(text) &&
-             (classes.includes('text-xs-6') || classes.includes('text-gray-dark'));
-    });
-    
-    periodElements.forEach(periodEl => {
-      const timePeriod = periodEl.textContent.trim();
-      
-      if (isTimePeriodActive(timePeriod)) {
-        periodEl.classList.remove('text-gray-dark');
-        if (!periodEl.classList.contains('text-purple-600')) {
-          periodEl.classList.add('text-purple-600');
-        }
-      }
-    });
+    if (element.dataset.timeKind === 'text') {
+      applyActiveTextStyles(element);
+    } else {
+      applyActiveBadgeStyles(element);
+    }
   });
-}
-
-/**
- * Gets the section ID for a card by finding the nearest parent with data-section attribute
- * or container with matching ID
- */
-function getCardSectionId(card) {
-  let element = card;
-  let maxDepth = 20; // Safety limit
-  let depth = 0;
-  
-  // Traverse up the DOM tree to find the section
-  while (element && element !== document.body && depth < maxDepth) {
-    // First check for data-section attribute
-    if (element.hasAttribute && element.hasAttribute('data-section')) {
-      return element.getAttribute('data-section');
-    }
-    
-    // Also check if we're inside a container with an ID that matches a section
-    if (element.id) {
-      // Section containers have IDs like "academic-experiences", "research-and-technology-transfer", etc.
-      // Check if this ID matches known section IDs
-      const knownSectionIds = [
-        'academic-experiences',
-        'foreign-research-contracts',
-        'research-and-technology-transfer',
-        'entrepreneurial-initiatives',
-        'education',
-        'teaching-in-phd-courses',
-        'teaching',
-        'teaching-webinar',
-        'thesis-supervisor',
-        'awards',
-        'publications',
-        'community-service',
-        'community-service-editorial',
-        'international-research-projects',
-        'italian-research-projects',
-        'projects',
-        'tender-commissions'
-      ];
-      
-      if (knownSectionIds.includes(element.id)) {
-        return element.id;
-      }
-    }
-    
-    element = element.parentElement;
-    depth++;
-  }
-  return null;
 }
 
 /**
@@ -248,96 +156,43 @@ function getCardSectionId(card) {
  * international-research-projects, italian-research-projects
  */
 function highlightActiveCardBackgrounds() {
-  // Sections that should have background highlighting
-  const sectionsWithBackground = [
-    'academic-experiences',
-    'research-and-technology-transfer',
-    'international-research-projects',
-    'italian-research-projects'
-  ];
-  
-  // Find cards directly within the specified sections
-  sectionsWithBackground.forEach(sectionId => {
-    // Find the section container by ID or data-section
-    const sectionContainer = document.getElementById(sectionId) || 
-                            document.querySelector(`[data-section="${sectionId}"]`);
+  ACTIVE_BACKGROUND_SECTIONS.forEach(sectionId => {
+    const sectionContainer = document.querySelector(`[data-section="${sectionId}"]`);
     
     if (!sectionContainer) {
-      return; // Section not found
+      return;
     }
     
-    // Find all cards within this section - they have px-4 py-3 (card padding) and shadow classes
-    const allElements = sectionContainer.querySelectorAll('*');
-    const cards = Array.from(allElements).filter(el => {
-      const classes = el.className || '';
-      // Check if element has the card classes (px-4, py-3, shadow, flex, gap-3)
-      return typeof classes === 'string' && 
-             classes.includes('px-4') && 
-             classes.includes('py-3') && 
-             classes.includes('shadow') &&
-             classes.includes('flex') &&
-             classes.includes('gap-3');
-    });
+    const cards = sectionContainer.querySelectorAll('[data-card]');
     
     cards.forEach(card => {
-    
-    // Find time period badge or date element
-    const timeBadges = Array.from(card.querySelectorAll('span')).filter(span => {
-      const classes = span.className;
-      return classes.includes('inline-flex') && 
-             classes.includes('items-center') && 
-             (classes.includes('px-1.5') || classes.includes('px-1') || classes.includes('px-0.5'));
-    });
-    
-    // Find all potential date elements
-    const allElements = Array.from(card.querySelectorAll('*'));
-    const dateElements = allElements.filter(el => {
-      const text = el.textContent.trim();
-      // Check if it looks like a date
-      return /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|\d{4}.*\d{4}|\d{4}.*Present|Present|Current)/i.test(text) &&
-             text.length < 50; // Reasonable date length
-    });
-    
-    let isActive = false;
-    
-    // Check badges
-    timeBadges.forEach(badge => {
-      const timePeriod = badge.textContent.trim();
-      if (isTimePeriodActive(timePeriod)) {
-        isActive = true;
+      const timeElements = card.querySelectorAll('[data-time-period]');
+      if (!timeElements.length) {
+        return;
       }
-    });
-    
-    // Check date elements
-    if (!isActive) {
-      dateElements.forEach(dateEl => {
-        const timePeriod = dateEl.textContent.trim();
+      
+      let isActive = false;
+      timeElements.forEach(element => {
+        const timePeriod = getTimePeriodFromElement(element);
         if (isTimePeriodActive(timePeriod)) {
           isActive = true;
         }
       });
-    }
-    
-      // Apply background highlight if active
-      if (isActive) {
-        // Check if it's already highlighted (first in page with current)
-        if (!card.classList.contains('bg-accent-lightest')) {
-          // Remove bg-white to allow bg-purple-50 to show
-          // Remove all instances of bg-white (in case it appears multiple times)
-          while (card.classList.contains('bg-white')) {
-            card.classList.remove('bg-white');
-          }
-          // Apply subtle background highlight
-          card.classList.add('bg-purple-50');
-          // Also update border if needed
-          if (card.classList.contains('border-gray-200')) {
-            card.classList.remove('border-gray-200');
-            card.classList.add('border-purple-200');
-          }
+      
+      if (!isActive) {
+        return;
+      }
+      
+      if (!card.classList.contains('bg-accent-lightest')) {
+        card.classList.remove('bg-white');
+        card.classList.add('bg-purple-50');
+        if (card.classList.contains('border-gray-200')) {
+          card.classList.remove('border-gray-200');
+          card.classList.add('border-purple-200');
         }
       }
-    }); // End cards.forEach
-  }); // End sectionsWithBackground.forEach
+    });
+  });
 }
 
 /**
@@ -360,18 +215,3 @@ export function highlightActiveItems(options = {}) {
     highlightActiveCardBackgrounds();
   }
 }
-
-/**
- * Automatically runs the highlighter after a short delay to ensure DOM is ready
- */
-export function autoHighlightActiveItems(options = {}) {
-  // Wait for DOM to be fully rendered
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => highlightActiveItems(options), 100);
-    });
-  } else {
-    setTimeout(() => highlightActiveItems(options), 100);
-  }
-}
-

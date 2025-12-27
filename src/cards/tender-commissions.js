@@ -11,6 +11,7 @@ import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES } from '.
 function createTenderCommissionItemCard(item) {
   const card = document.createElement('div');
   card.className = 'flex items-start relative rounded-tl-[4px] rounded-tr-[4px] shrink-0 w-full';
+  card.dataset.card = 'tender-commissions';
   
   const contentDiv = document.createElement('div');
   contentDiv.className = 'basis-0 flex flex-col grow items-start min-h-px min-w-px relative shrink-0';
@@ -59,6 +60,8 @@ function createTenderCommissionItemCard(item) {
       const yearBadge = document.createElement('span');
       yearBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
       yearBadge.textContent = item.year;
+      yearBadge.dataset.timePeriod = item.year;
+      yearBadge.dataset.timeKind = 'badge';
       badgesDiv.appendChild(yearBadge);
     }
     
