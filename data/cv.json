@@ -270,7 +270,7 @@
               "course_name": "Introduction to Knowledge Graphs",
               "hours": "20 hours",
               "role": "Professor",
-              "time_period": "2024 - 2025"
+              "time_period": "2025"
             }
           ]
         },
@@ -279,9 +279,9 @@
           "courses": [
             {
               "course_name": "Digital Futures for Intangible Heritage",
-              "hours": "8/4/4 hours",
+              "hours": "8/4/4",
               "role": "Professor",
-              "time_period": "2022 - Present"
+              "time_period": "2023 - 2025"
             }
           ]
         }
@@ -422,6 +422,12 @@
       "link": "https://www.ai2med.eu/587-2/",
       "date": "Sep 2024",
       "activities": "Webinar \"AI and Nutrition: Innovation for a Healthy and Sustainable Future\" (AI2MED European project, University of Pavia, 27/09/2024), focused on the role of artificial intelligence and Large Language Models in personalised nutrition and sustainable food systems."
+    },
+    {
+      "title": "NODES: Nord Ovest Digitale E Sostenibile",
+      "logo": "nodes.png",
+      "date": "Nov 2024",
+      "activities": "Intervention in the modular training course Artificial Intelligence in support of AgriFood designed within Spoke 7 Secondary Agroindustry of the Innovation Ecosystem NODES Nord Ovest Digitale e Sostenibile."
     },
     {
       "title": "Edu on Air Higher Education EMEA",

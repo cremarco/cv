@@ -15,9 +15,12 @@ function renderCourseRow(course, isPhd = true) {
     </div>
   ` : '';
   
+  const hasPresent = course.time_period?.toLowerCase().includes('present');
   const periodColor = (!isPhd && course.time_period?.includes('current'))
     ? 'text-purple-600'
-    : isPhd ? 'text-purple-600' : 'text-gray-dark';
+    : hasPresent
+    ? 'text-purple-600'
+    : isPhd ? 'text-ink' : 'text-gray-dark';
   
   const hoursMarkup = course.hours ? `
     <div class="text-xs-6 text-muted font-dm-sans italic whitespace-nowrap">${course.hours}</div>

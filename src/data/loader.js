@@ -4,6 +4,7 @@
 
 import { DATA_URL, SECTION_CONFIG } from '../config.js';
 import { setPdfState } from '../utils/pdf-state.js';
+import { compareDatesDesc } from '../utils/date.js';
 import { renderSection, renderSpecialSection, renderSpecialSectionWithPageBreaks, renderPublications } from '../layout/section-renderer.js';
 import { createThesisSupervisorCard } from '../cards/thesis.js';
 import { createAwardsCard } from '../cards/awards.js';
@@ -100,8 +101,14 @@ function updateMetricValues(container, metricsMap) {
 export async function loadSection(sectionKey, config, previousSectionSelector = null) {
   try {
     const data = await loadCVData();
-    const items = data[sectionKey];
+    let items = data[sectionKey];
     if (!Array.isArray(items) || items.length === 0) return;
+    
+    // Sort teaching_webinar items by date (most recent first)
+    if (sectionKey === 'teaching_webinar') {
+      items = [...items].sort((a, b) => compareDatesDesc(a.date, b.date));
+    }
+    
     renderSection(items, config, previousSectionSelector);
   } catch (error) {
     console.error(`Error loading ${config.title}:`, error);
