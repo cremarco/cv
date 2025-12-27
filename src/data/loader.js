@@ -4,10 +4,9 @@
 
 import { DATA_URL, SECTION_CONFIG } from '../config.js';
 import { setPdfState } from '../utils/pdf-state.js';
-import { renderSection, renderSpecialSection } from '../layout/section-renderer.js';
+import { renderSection, renderSpecialSection, renderPublications } from '../layout/section-renderer.js';
 import { createThesisSupervisorCard } from '../cards/thesis.js';
 import { createAwardsCard } from '../cards/awards.js';
-import { createPublicationsContainer } from '../cards/publications.js';
 
 /**
  * Loads CV data from JSON file
@@ -86,10 +85,10 @@ export async function loadPublications() {
     const config = SECTION_CONFIG.publications;
     const metrics = data.research_metrics;
     
-    renderSpecialSection(
-      config, 
-      { pubData: data.publications, metrics }, 
-      (d) => createPublicationsContainer(d.pubData, d.metrics), 
+    renderPublications(
+      config,
+      data.publications,
+      metrics,
       SECTION_CONFIG.awards.sectionSelector
     );
   } catch (error) {

@@ -11,6 +11,7 @@ import {
 import { getCardClasses } from '../utils/css-classes.js';
 import { createMeasurementContainer, measureCardHeight } from '../utils/measurement.js';
 import { createCard } from '../cards/factory.js';
+import { createPublicationCard, createPublicationsHeader, createPublicationsSummaryCards, calculatePublicationCounts } from '../cards/publications.js';
 import {
   finalizePage,
   calculateAvailableHeightInPage,
@@ -214,5 +215,132 @@ export function renderSpecialSection(config, data, createCardFn, previousSection
   }
 
   currentContainer.appendChild(createCardFn(data));
+}
+
+/**
+ * Renders publications section with page break handling
+ */
+export function renderPublications(config, pubData, metrics, previousSectionSelector) {
+  const pagesContainer = document.querySelector(SELECTORS.pagesContainer);
+  const templatePage = document.querySelector(SELECTORS.pageTemplate);
+
+  if (!pagesContainer || !templatePage) {
+    console.error('Missing pagesContainer or templatePage');
+    return;
+  }
+
+  const allPages = document.querySelectorAll('.pdf-page');
+  const lastPage = allPages[allPages.length - 1];
+  const availableHeight = calculateAvailableHeightInPage(lastPage, previousSectionSelector);
+  
+  // Create header and summary cards
+  const headerContainer = document.createElement('div');
+  headerContainer.className = 'flex flex-col gap-4 w-full';
+  headerContainer.appendChild(createPublicationsHeader(pubData, metrics));
+  
+  const counts = calculatePublicationCounts(pubData.papers);
+  headerContainer.appendChild(createPublicationsSummaryCards(counts));
+  
+  // Measure header height and first paper card height
+  const measureContainer = createMeasurementContainer(null);
+  const headerHeight = measureCardHeight(headerContainer, measureContainer);
+  
+  // Measure first paper card height
+  const firstPaperCard = createPublicationCard(pubData.papers[0], {
+    isFirstInPage: true,
+    isFirstInSection: true,
+    isLast: false
+  });
+  const firstCardHeight = measureCardHeight(firstPaperCard, measureContainer);
+  measureContainer.remove();
+  
+  const requiredHeight = SECTION_HEADER_HEIGHT_PX + headerHeight + firstCardHeight;
+  
+  let currentPage = lastPage;
+  let currentContainer;
+  let currentPageNumber = allPages.length;
+  let currentPageMaxHeight;
+  
+  // Determine if we can fit header + first card in current page or need new page
+  if (availableHeight >= requiredHeight) {
+    // Fits on same page - use margin-top, not new page padding
+    const section = currentPage.querySelector('section');
+    if (section) {
+      section.insertAdjacentHTML('beforeend', createSectionHTML(config, true, true, false));
+    }
+    currentContainer = currentPage.querySelector(config.containerSelector);
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+    
+    // Add header to container
+    currentContainer.appendChild(headerContainer);
+    currentPageMaxHeight = availableHeight - headerHeight;
+  } else {
+    // Need new page
+    currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config, true);
+    currentContainer = currentPage.querySelector(config.containerSelector);
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+    
+    // Add header to new page
+    currentContainer.appendChild(headerContainer);
+    currentPageNumber = allPages.length + 1;
+    currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX - headerHeight;
+  }
+  
+  // Now render papers with page breaks
+  const finalMeasureContainer = createMeasurementContainer(currentContainer);
+  let currentPageHeight = 0;
+  let isFirstInPage = true;
+  
+  try {
+    pubData.papers.forEach((paper, index) => {
+      const isFirstInSection = index === 0;
+      const isLast = index === pubData.papers.length - 1;
+      
+      const card = createPublicationCard(paper, {
+        isFirstInPage,
+        isFirstInSection,
+        isLast
+      });
+      const cardHeight = measureCardHeight(card, finalMeasureContainer);
+      
+      const willCreateNewPage = currentPageHeight > 0 && 
+                                currentPageHeight + cardHeight > currentPageMaxHeight;
+      
+      if (willCreateNewPage) {
+        finalizePage(currentContainer, false);
+        currentPageNumber += 1;
+        const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
+        currentPage = nextPage;
+        const nextContainer = nextPage.querySelector(config.containerSelector);
+        if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
+        currentContainer = nextContainer;
+        currentPageHeight = 0;
+        currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX;
+        isFirstInPage = true;
+        
+        // Update card classes for new page
+        card.className = getCardClasses({ isFirstInPage, isFirstInSection, isCurrent: false });
+        if (isLast) {
+          card.classList.add('rounded-b-md');
+        }
+      }
+      
+      currentContainer.appendChild(card);
+      currentPageHeight += cardHeight;
+      isFirstInPage = false;
+    });
+    
+    if (currentContainer?.children.length > 0) {
+      finalizePage(currentContainer, true);
+    }
+  } finally {
+    finalMeasureContainer.remove();
+  }
 }
 

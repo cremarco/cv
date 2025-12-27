@@ -7,7 +7,7 @@ import { getCardClasses } from '../utils/css-classes.js';
 /**
  * Creates the publications header with links and metrics
  */
-function createPublicationsHeader(data, metrics) {
+export function createPublicationsHeader(data, metrics) {
   const header = document.createElement('div');
   header.className = 'flex flex-col gap-4 w-full';
   
@@ -91,29 +91,64 @@ function createPublicationsHeader(data, metrics) {
 }
 
 /**
+ * Calculates publication counts dynamically from papers array
+ */
+export function calculatePublicationCounts(papers) {
+  const counts = {
+    journal_papers: 0,
+    conference_papers: 0,
+    workshop_papers: 0,
+    challenge_papers: 0,
+    book_chapters: 0,
+  };
+  
+  papers.forEach(paper => {
+    switch (paper.type) {
+      case 'journal':
+        counts.journal_papers++;
+        break;
+      case 'conference':
+        counts.conference_papers++;
+        break;
+      case 'workshop':
+        counts.workshop_papers++;
+        break;
+      case 'challenge':
+        counts.challenge_papers++;
+        break;
+      case 'book_chapter':
+        counts.book_chapters++;
+        break;
+    }
+  });
+  
+  return counts;
+}
+
+/**
  * Creates the publications summary cards (counts)
  */
-function createPublicationsSummaryCards(summary) {
+export function createPublicationsSummaryCards(counts) {
   const wrapper = document.createElement('div');
   wrapper.className = 'flex gap-1 items-start w-full';
   
   const items = [
-    { count: summary.journal_papers, label: 'Journal Papers' },
-    { count: summary.conference_papers, label: 'Conference Papers' },
-    { count: summary.workshop_papers, label: 'Workshop Papers' },
-    { count: summary.challenge_papers, label: 'Challenge Papers' },
-    { count: summary.book_chapters, label: 'Book Chapter' },
+    { count: counts.journal_papers, label: 'Journal Papers' },
+    { count: counts.conference_papers, label: 'Conference Papers' },
+    { count: counts.workshop_papers, label: 'Workshop Papers' },
+    { count: counts.challenge_papers, label: 'Challenge Papers' },
+    { count: counts.book_chapters, label: 'Book Chapter' },
   ];
   
   items.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'flex-1 bg-white px-3 py-2 rounded-md flex flex-col gap-1 items-start';
+    card.className = 'flex-1 bg-white border border-gray-200 rounded-md shadow px-4 py-3 flex flex-col gap-1 items-start';
     card.innerHTML = `
       <div class="flex h-[15px] items-center justify-center w-full">
-        <span class="text-ink text-[20px] font-dm-sans leading-[10px] text-right w-full">${item.count}</span>
+        <span class="text-ink text-[20px] font-dm-sans leading-[10px] text-center w-full">${item.count}</span>
       </div>
       <div class="flex flex-col items-center justify-center w-full">
-        <span class="text-muted text-[7px] font-dm-sans text-center tracking-[0.07px] leading-[9px]">${item.label}</span>
+        <span class="text-muted text-xs-7 font-dm-sans text-center">${item.label}</span>
       </div>
     `;
     wrapper.appendChild(card);
@@ -156,29 +191,28 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   // Best paper badge
   if (paper.best_paper) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center px-0.5 rounded-sm">
+      <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
         <i class='bx bxs-star text-[8px]' style="color: rgba(219, 182, 0, 1);"></i>
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">Best paper</span>
-      </div>
+        <span>Best paper</span>
+      </span>
     `;
   }
   
   // Speaker badge
   if (paper.speaker) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center px-0.5 rounded-sm">
-        <i class='bx bx-microphone text-[8px] text-ink'></i>
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">Speaker</span>
-      </div>
+      <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
+        <i class='bx bx-microphone text-[8px]'></i>
+        <span>Speaker</span>
+      </span>
     `;
   }
   
   // ICORE badge
   if (paper.icore) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">
-        <span class="font-bold">ICORE:</span>
-        <span>${paper.icore}</span>
+      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
       </div>
     `;
   }
@@ -187,9 +221,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.quartiles?.length > 0) {
     const quartilesText = paper.quartiles.map(q => `<span class="font-bold">${q.rank}</span> ${q.field}`).join(', ');
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">
-        <span class="font-bold">QUARTILES:</span>
-        <span>${quartilesText}</span>
+      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
       </div>
     `;
   }
@@ -197,9 +230,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   // DOI badge
   if (paper.doi) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">
-        <span class="font-bold">DOI:</span>
-        <a href="https://doi.org/${paper.doi}" class="underline">${paper.doi}</a>
+      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" class="underline">${paper.doi}</a></span>
       </div>
     `;
   }
@@ -207,9 +239,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   // CEUR badge
   if (paper.ceur) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">
-        <span class="font-bold">CEUR:</span>
-        <span>${paper.ceur}</span>
+      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">CEUR:</span> ${paper.ceur}</span>
       </div>
     `;
   }
@@ -219,10 +250,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   contentDiv.className = 'flex-1';
   contentDiv.innerHTML = `
     <div class="flex flex-wrap gap-1.5 items-start mb-1">
-      <div class="bg-gray-lighter flex flex-col h-2.5 items-center justify-center px-0.5 rounded-sm w-[15px] shrink-0">
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">${paper.number}</span>
-      </div>
-      <div class="flex-1 flex flex-col font-dm-sans justify-center text-ink text-[7px] tracking-[0.07px] leading-[9px] min-w-0">
+      <span class="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-gray-100 text-gray-700 shrink-0">${paper.number + 1}</span>
+      <div class="flex-1 flex flex-col font-dm-sans justify-center text-ink text-xs-7 leading-normal min-w-0">
         <p class="mb-0">${paper.authors}</p>
         <p class="italic mb-0 font-dm-sans">${paper.title}</p>
         <p class="mb-0">${paper.venue}</p>
@@ -231,9 +260,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
         <span class="text-accent text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">${typeLabels[paper.type] || paper.type}</span>
       </div>
     </div>
-    <div class="pl-1.5 flex gap-[2px] items-center justify-end">
-      ${attrsHTML}
-    </div>
+    ${attrsHTML ? `<div class="pl-1.5 flex gap-[2px] items-center justify-end mt-0.5">${attrsHTML}</div>` : ''}
   `;
   card.appendChild(contentDiv);
   
@@ -247,18 +274,21 @@ export function createPublicationsContainer(pubData, metrics) {
   const wrapper = document.createElement('div');
   wrapper.className = 'flex flex-col gap-4 items-start w-full';
   
+  // Calculate counts dynamically from papers
+  const counts = calculatePublicationCounts(pubData.papers);
+  
   // Header with links
   const headerContainer = document.createElement('div');
   headerContainer.className = 'flex flex-col gap-4 w-full';
   headerContainer.appendChild(createPublicationsHeader(pubData, metrics));
   
-  // Summary cards
-  headerContainer.appendChild(createPublicationsSummaryCards(pubData.summary));
+  // Summary cards with dynamically calculated counts
+  headerContainer.appendChild(createPublicationsSummaryCards(counts));
   wrapper.appendChild(headerContainer);
   
-  // Papers list - no gap between cards (they connect like other sections)
+  // Papers list - same gap as other sections
   const papersContainer = document.createElement('div');
-  papersContainer.className = 'flex flex-col gap-0 items-start w-full';
+  papersContainer.className = 'flex flex-col gap-1 items-start w-full';
   
   pubData.papers.forEach((paper, index) => {
     const isFirstInSection = index === 0;
