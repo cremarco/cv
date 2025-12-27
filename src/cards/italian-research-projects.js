@@ -128,23 +128,31 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
 
 /**
  * Creates the Italian research projects section container
+ * @param {Array} projects - Array of projects (or single item array for page break rendering)
+ * @param {Object} options - Optional parameters for page break rendering
+ * @param {boolean} options.isFirstInSection - Whether this is the first card in the section (for single item)
+ * @param {boolean} options.isLast - Whether this is the last card in the section (for single item)
  */
-export function createItalianResearchProjectsCard(projects) {
+export function createItalianResearchProjectsCard(projects, options = {}) {
   const wrapper = document.createElement('div');
   wrapper.className = `flex flex-col ${CARD_INTERNAL_GAP} items-start justify-center relative shrink-0 w-full`;
   
   if (!projects?.length) return wrapper;
   
-  // If single item array (for page break rendering), treat it as first and last
+  // If single item array (for page break rendering), use provided options or default to true
   const isSingleItem = projects.length === 1;
   
   projects.forEach((project, index) => {
-    const isFirstInSection = index === 0;
-    const isLast = index === projects.length - 1;
+    const isFirstInSection = isSingleItem && options.isFirstInSection !== undefined 
+      ? options.isFirstInSection 
+      : index === 0;
+    const isLast = isSingleItem && options.isLast !== undefined 
+      ? options.isLast 
+      : index === projects.length - 1;
     const card = createItalianResearchProjectCard(project, {
       isFirstInPage: isFirstInSection,
       isFirstInSection,
-      isLast: isSingleItem ? true : isLast
+      isLast
     });
     wrapper.appendChild(card);
   });

@@ -8,7 +8,8 @@ import { CARD_BASE_CLASSES } from '../config.js';
  * Determines card CSS classes based on position in section/page
  */
 export function getCardClasses({ isFirstInPage, isFirstInSection, isCurrent }) {
-  const hasTopRounded = isFirstInSection && isFirstInPage;
+  // Apply rounded-t-md to first card of section, regardless of page
+  const hasTopRounded = isFirstInSection;
   
   if (isFirstInPage && isCurrent) {
     const baseClasses = `${CARD_BASE_CLASSES} bg-accent-lightest border border-accent-soft border-b-0`;

@@ -11,11 +11,11 @@ import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.j
  */
 function createInternationalResearchProjectCard(project, { isFirstInPage, isFirstInSection, isLast }) {
   // Override background color for first card
-  const bgClass = project.isFirst ? 'bg-accent-lightest' : 'bg-white';
-  const borderClass = project.isFirst 
-    ? 'border border-accent-soft border-b-0' 
-    : 'border border-gray-200 border-t-0';
-  const roundedClass = project.isFirst ? 'rounded-t-md' : 'rounded-b-md';
+  const bgClass = isFirstInSection ? 'bg-accent-lightest' : 'bg-white';
+  const borderClass = isLast
+    ? (isFirstInSection ? 'border border-accent-soft' : 'border border-gray-200')
+    : (isFirstInSection ? 'border border-accent-soft border-b-0' : 'border border-gray-200 border-t-0');
+  const roundedClass = isFirstInSection ? 'rounded-t-md' : (isLast ? 'rounded-b-md' : '');
   
   const card = document.createElement('div');
   card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
@@ -70,7 +70,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   // Period badge
   if (project.period) {
     const periodBadge = document.createElement('div');
-    if (project.isFirst) {
+    if (isFirstInSection) {
       periodBadge.className = 'bg-accent-soft flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0';
       const periodP = document.createElement('p');
       periodP.className = 'font-dm-sans font-normal leading-[8px] relative shrink-0 text-accent text-xs-6 whitespace-nowrap text-right';
@@ -145,23 +145,31 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
 
 /**
  * Creates the international research projects section container
+ * @param {Array} projects - Array of projects (or single item array for page break rendering)
+ * @param {Object} options - Optional parameters for page break rendering
+ * @param {boolean} options.isFirstInSection - Whether this is the first card in the section (for single item)
+ * @param {boolean} options.isLast - Whether this is the last card in the section (for single item)
  */
-export function createInternationalResearchProjectsCard(projects) {
+export function createInternationalResearchProjectsCard(projects, options = {}) {
   const wrapper = document.createElement('div');
   wrapper.className = `flex flex-col ${CARD_INTERNAL_GAP} items-start justify-center relative shrink-0 w-full`;
   
   if (!projects?.length) return wrapper;
   
-  // If single item array (for page break rendering), treat it as first and last
+  // If single item array (for page break rendering), use provided options or default to true
   const isSingleItem = projects.length === 1;
   
   projects.forEach((project, index) => {
-    const isFirstInSection = index === 0;
-    const isLast = index === projects.length - 1;
+    const isFirstInSection = isSingleItem && options.isFirstInSection !== undefined 
+      ? options.isFirstInSection 
+      : index === 0;
+    const isLast = isSingleItem && options.isLast !== undefined 
+      ? options.isLast 
+      : index === projects.length - 1;
     const card = createInternationalResearchProjectCard(project, {
       isFirstInPage: isFirstInSection,
       isFirstInSection,
-      isLast: isSingleItem ? true : isLast
+      isLast
     });
     wrapper.appendChild(card);
   });

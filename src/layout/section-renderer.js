@@ -59,6 +59,7 @@ export function renderSection(items, config, previousSectionSelector = null) {
       items.forEach((item, index) => {
         const isCurrent = item.current === true;
         const isFirstInSection = index === 0;
+        const isLast = index === items.length - 1;
         const card = createCard(config.cardType, item, { isCurrent });
         const cardHeight = measureCardHeight(card, measureContainer);
 
@@ -87,6 +88,13 @@ export function renderSection(items, config, previousSectionSelector = null) {
         }
 
         card.className = getCardClasses({ isFirstInPage, isFirstInSection, isCurrent });
+        
+        // Mark last card in section and add rounded-b-md
+        if (isLast) {
+          card.setAttribute('data-is-last-in-section', 'true');
+          card.classList.add('rounded-b-md');
+        }
+        
         currentContainer.appendChild(card);
         currentPageHeight += gapHeight + cardHeight;
         isFirstInPage = false;
@@ -152,6 +160,7 @@ export function renderSection(items, config, previousSectionSelector = null) {
     items.forEach((item, index) => {
       const isCurrent = item.current === true;
       const isFirstInSection = index === 0;
+      const isLast = index === items.length - 1;
       const card = createCard(config.cardType, item, { isCurrent });
       const cardHeight = measureCardHeight(card, finalMeasureContainer);
 
@@ -180,6 +189,13 @@ export function renderSection(items, config, previousSectionSelector = null) {
       }
 
       card.className = getCardClasses({ isFirstInPage, isFirstInSection, isCurrent });
+      
+      // Mark last card in section and add rounded-b-md
+      if (isLast) {
+        card.setAttribute('data-is-last-in-section', 'true');
+        card.classList.add('rounded-b-md');
+      }
+      
       currentContainer.appendChild(card);
       currentPageHeight += gapHeight + cardHeight;
       isFirstInPage = false;
@@ -315,7 +331,8 @@ export function renderSpecialSectionWithPageBreaks(config, items, createCardFn, 
       const isLast = index === items.length - 1;
       
       // Create card wrapper for this item (createProjectsCard returns a wrapper with the card)
-      const cardWrapper = createCardFn([item]);
+      // Pass isFirstInSection and isLast for proper rounded corners
+      const cardWrapper = createCardFn([item], { isFirstInSection, isLast });
       const cardHeight = measureCardHeight(cardWrapper, finalMeasureContainer);
       
       // Calculate total height needed (card + gap if not first in page)
@@ -344,6 +361,17 @@ export function renderSpecialSectionWithPageBreaks(config, items, createCardFn, 
         currentPageHeight = 0;
         currentPageMaxHeight = newPageAvailableHeight;
         isFirstInPage = true;
+      }
+      
+      // Mark last card in section and ensure rounded-b-md is applied
+      if (isLast) {
+        // Find the actual card element inside the wrapper (projects cards are wrapped)
+        // The card is the first direct child of the wrapper
+        const actualCard = cardWrapper.firstElementChild;
+        if (actualCard) {
+          actualCard.setAttribute('data-is-last-in-section', 'true');
+          actualCard.classList.add('rounded-b-md');
+        }
       }
       
       currentContainer.appendChild(cardWrapper);
@@ -496,6 +524,13 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
         // Update card classes for new page
         card.className = getCardClasses({ isFirstInPage, isFirstInSection, isCurrent: false });
         if (isLast) {
+          card.setAttribute('data-is-last-in-section', 'true');
+          card.classList.add('rounded-b-md');
+        }
+      } else {
+        // Mark last card in section and ensure rounded-b-md is applied
+        if (isLast) {
+          card.setAttribute('data-is-last-in-section', 'true');
           card.classList.add('rounded-b-md');
         }
       }

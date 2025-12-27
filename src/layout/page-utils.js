@@ -18,14 +18,21 @@ import {
 export function finalizePage(container, isLastPageOfSection = false) {
   if (!container?.children.length) return;
   
-  // Remove any existing bottom rounded corners
+  // Remove bottom rounded corners from cards that are NOT the last in section
   Array.from(container.children).forEach(card => {
-    card.classList.remove('rounded-b-md');
+    const isLastInSection = card.hasAttribute('data-is-last-in-section');
+    if (!isLastInSection) {
+      card.classList.remove('rounded-b-md');
+    }
   });
   
-  // Add bottom corners only to the last card of the last page
+  // Add bottom corners to the last card of the last page if it's the last in section
   if (isLastPageOfSection) {
-    container.lastElementChild.classList.add('rounded-b-md');
+    const lastCard = container.lastElementChild;
+    const isLastInSection = lastCard.hasAttribute('data-is-last-in-section');
+    if (isLastInSection) {
+      lastCard.classList.add('rounded-b-md');
+    }
   }
 }
 
