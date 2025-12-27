@@ -34,11 +34,15 @@ export function createDeclarationCard() {
   container.innerHTML = `
     <div class="text-xs-8 font-dm-sans font-medium text-ink leading-normal mb-0">
       <p class="mb-0">
-        <span>Io sottoscritto </span>
-        <span class="font-bold">Marco Cremaschi</span>
-        <span>, nato a Chiari (BS) il 04/10/1983, residente a Sesto San Giovanni (Mi) in Viale Gramsci, 730, CF: CRMMRC83R04C618I, </span>
+        Io sottoscritto <span class="font-bold">Marco Cremaschi</span>, nato a
+        <span class="font-bold">Chiari (BS) il 04/10/1983</span>, residente a
+        <span class="font-bold">Sesto San Giovanni (Mi) in Viale Gramsci, 730</span>, CF:
+        <span class="font-bold">CRMMRC83R04C618I</span>,
       </p>
-      <p class="mb-0">tel: 3664168368, email: cremarco@gmail.com, consapevole delle sanzioni penali, nel caso di dichiarazioni non veritiere e falsità negli atti, richiamate dagli artt. 46 e 47 del DPR 445 del 28/12/2000,</p>
+      <p class="mb-0">
+        tel: <span class="font-bold">3664168368</span>, email:
+        <span class="font-bold">cremarco@gmail.com</span>, consapevole delle sanzioni penali, nel caso di dichiarazioni non veritiere e falsità negli atti, richiamate dagli artt. 46 e 47 del DPR 445 del 28/12/2000,
+      </p>
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0 font-bold">DICHIARA</p>
       <p class="mb-0">&nbsp;</p>
@@ -46,14 +50,18 @@ export function createDeclarationCard() {
         che le informazioni sopra riportate sono veritiere.
         <br aria-hidden="true" />
         <br aria-hidden="true" />
-        "Autorizzo il trattamento dei miei dati personali ai sensi del GDPR UE 2016/679 "Regolamento Generale sulla Protezione dei Dati""
+        Autorizzo il trattamento dei dati personali contenuti nel presente curriculum ai sensi dell'art. 13 del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018.
       </p>
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0">${currentDate}</p>
+      <div class="flex justify-end mt-4">
+        <div class="flex h-16 w-56 items-center justify-center border border-ink">
+          <span class="text-sm text-ink opacity-30">Marco Cremaschi</span>
+        </div>
+      </div>
     </div>
   `;
   
   return container;
 }
-
