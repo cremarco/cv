@@ -869,6 +869,10 @@ body.pdf-mode [data-section] {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -1501,6 +1505,10 @@ body.pdf-mode [data-section] {
 
 .text-justify {
   text-align: justify;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-dm-sans {
