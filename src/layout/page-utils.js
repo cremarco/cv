@@ -95,7 +95,7 @@ export function createSectionHTML(config, addMarginTop = false, showTitle = true
     : '';
   
   const subtitleHTML = (config.subtitle && showTitle) 
-    ? `<div class="text-xs-8 font-dm-sans text-ink -mt-1 mb-2">${config.subtitle}</div>` 
+    ? `<div class="text-xs-8 font-dm-sans text-ink -mt-3 mb-2">${config.subtitle}</div>` 
     : '';
   
   const circleHTML = showTitle 

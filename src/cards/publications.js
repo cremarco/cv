@@ -17,7 +17,7 @@ export function createPublicationsHeader(data, metrics) {
   const titleDiv = document.createElement('div');
   titleDiv.className = 'flex flex-col items-start leading-none';
   titleDiv.innerHTML = `
-    <div class="text-xs-8 font-dm-sans text-ink -mt-1 mb-2">Update date: ${data.update_date}</div>
+    <div class="text-xs-8 font-dm-sans text-ink -mt-3 mb-2">Update date: ${data.update_date}</div>
   `;
   header.appendChild(titleDiv);
   
