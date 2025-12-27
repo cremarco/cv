@@ -527,7 +527,7 @@
     "papers": [
       {
         "number": 0,
-        "authors": "Blerina Spahiu, <b>Marco Cremaschi</b>, Andrea Maurino, G Vizzari",
+        "authors": "Blerina Spahiu, <b>Marco Cremaschi</b>, Andrea Maurino, Giuseppe Vizzari",
         "title": "Harnessing Large Language Models for Efficient Crowd Management in Large-Scale Events",
         "venue": "ECAI, 2025",
         "type": "conference",
@@ -555,7 +555,7 @@
       },
       {
         "number": 3,
-        "authors": "Giulia Rosemary Avis, S Nocco, An Qi Zhao, <b>Marco Cremaschi</b>",
+        "authors": "Giulia Rosemary Avis, Sara Nocco, An Qi Zhao, <b>Marco Cremaschi</b>",
         "title": "Guiding AI Assisted persona generation with Hofstede's cultural dimensions: a mixed-methods evaluation",
         "venue": "Behaviour & Information Technology, 1-29, 2025",
         "type": "journal",
@@ -651,7 +651,7 @@
       },
       {
         "number": 14,
-        "authors": "Elia Guarinieri, <b>Marco Cremaschi</b>",
+        "authors": "Elia Guarnieri, <b>Marco Cremaschi</b>",
         "title": "The digitalisation of reinforcement learning and token economy in e-health",
         "venue": "In Proceedings of the 5th International Conference on Higher Education Learning Methodologies and Technologies Online (HELMETO), Communications in Computer and Information Science, Volume 2076, Springer, 2023",
         "type": "conference",
@@ -672,7 +672,7 @@
         "number": 16,
         "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, David Chieregato",
         "title": "s-elBat: a semantic interpretation approach for messy taBle-s",
-        "venue": "In Proceeding of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
         "type": "challenge",
         "speaker": true,
         "ceur": "Vol-3320"
@@ -681,7 +681,7 @@
         "number": 17,
         "authors": "Jessica Amianto Barbato, <b>Marco Cremaschi</b>",
         "title": "Bridging the gap between human-gaze data and table summarisation",
-        "venue": "In Proceeding of the 1st Workshop on Artificial Intelligence for Human-Machine Interaction (AI*HMI@AI*IA), Volume 3368, CEUR Workshop Proceedings, 2022",
+        "venue": "In Proceedings of the 1st Workshop on Artificial Intelligence for Human-Machine Interaction (AI*HMI@AI*IA), Volume 3368, CEUR Workshop Proceedings, 2022",
         "type": "workshop",
         "ceur": "Vol-3368"
       },
@@ -697,7 +697,7 @@
       {
         "number": 19,
         "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Fabio D'Adda, Flavio De Paoli, Matteo Palmonari",
-        "title": "LamAPI: a comprehensive tool for string-based Entity retrieval with type-base filters",
+        "title": "LamAPI: a comprehensive tool for string-based ntity retrieval with type-base filters",
         "venue": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 3324, CEUR Workshop Proceedings, 2022",
         "type": "workshop",
         "speaker": true,
@@ -725,7 +725,7 @@
         "number": 22,
         "authors": "<b>Marco Cremaschi</b>, Simone Saleri, Andrea Maurino",
         "title": "A geometrical deep learning model for the lexicalisation of \"unseen\" RDF triples",
-        "venue": "In Proceeding of the IEEE 23rd Int Conf on High Performance Computing & Communications; 7th Int Conf on Data Science & Systems; 19th Int Conf on Smart City; 7th Int Conf on Dependability in Sensor, Cloud & Big Data Systems & Application, IEEE, 2021",
+        "venue": "In Proceedings of the IEEE 23rd Int Conf on High Performance Computing & Communications; 7th Int Conf on Data Science & Systems; 19th Int Conf on Smart City; 7th Int Conf on Dependability in Sensor, Cloud & Big Data Systems & Application, IEEE, 2021",
         "type": "conference",
         "speaker": true,
         "doi": "10.1109/HPCC-DSS-SmartCity-DependSys53884.2021.00334"
@@ -742,7 +742,7 @@
         "number": 24,
         "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Ernesto Jiménez-Ruiz, Anisa Rula",
         "title": "A framework for quality assessment of semantic annotations of tabular data",
-        "venue": "In Proceeding of the 20th International Semantic Web Conference (ISWC), Lecture Notes in Computer Science, Volume 12922, Springer, 2021",
+        "venue": "In Proceedings of the 20th International Semantic Web Conference (ISWC), Lecture Notes in Computer Science, Volume 12922, Springer, 2021",
         "type": "conference",
         "icore": "A",
         "speaker": true,
@@ -750,7 +750,7 @@
       },
       {
         "number": 25,
-        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, Andrea Barazzetti, David Chieregato, E Jiménez-Ruiz",
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, Andrea Barazzetti, David Chieregato, Ernesto Jiménez-Ruiz",
         "title": "MantisTable SE: an efficient approach for the Semantic Table Interpretation",
         "venue": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2775, CEUR Workshop Proceedings, 2020",
         "type": "challenge",
@@ -770,7 +770,7 @@
         "number": 27,
         "authors": "<b>Marco Cremaschi</b>, Alessandra Siano, Roberto Avogadro, Ernesto Jimenez-Ruiz, Andrea Maurino",
         "title": "STILTool: A Semantic Table Interpretation evaLuation Tool",
-        "venue": "In Proceeding of 17th International Extended Semantic Web Conference, Volume 12124, Springer, 2020",
+        "venue": "In Proceedings of 17th International Extended Semantic Web Conference, Volume 12124, Springer, 2020",
         "type": "conference",
         "icore": "B",
         "speaker": true,
