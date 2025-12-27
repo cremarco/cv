@@ -22,6 +22,8 @@ export const SECTION_PADDING_BOTTOM_PX = SECTION_PADDING_BOTTOM_MM * MM_TO_PX;
 export const MAX_EXPERIENCE_SECTION_HEIGHT_PX = MAX_EXPERIENCE_SECTION_HEIGHT_MM * MM_TO_PX;
 export const PAGE_HEIGHT_PX = PAGE_HEIGHT_MM * MM_TO_PX;
 export const FALLBACK_CARD_HEIGHT_PX = 150;
+// Safety margin to prevent cards from overlapping with page numbers
+export const PAGE_BREAK_SAFETY_MARGIN_PX = 10;
 
 // Section header height for layout calculations (pt-12 + title)
 export const SECTION_HEADER_HEIGHT_PX = 70;
@@ -120,6 +122,44 @@ export const SECTION_CONFIG = {
     timelineId: 'community-service',
     cardType: 'community-service',
     previousSectionId: 'publications',
+  },
+  community_service_editorial: {
+    title: 'Community service',
+    subtitle: 'Direction or participation in editorial boards of journals, publishing series, encyclopedias, and treatises of recognised prestige',
+    sectionId: 'community-service-editorial',
+    timelineId: 'community-service-editorial',
+    cardType: 'community-service-editorial',
+    previousSectionId: 'community-service',
+  },
+  international_research_projects: {
+    title: 'International research projects/groups',
+    subtitle: 'Active participation and collaboration in international research groups, with a temporal continuity of at least four years',
+    sectionId: 'international-research-projects',
+    timelineId: 'international-research-projects',
+    cardType: 'international-research-projects',
+    previousSectionId: 'community-service-editorial',
+  },
+  italian_research_projects: {
+    title: 'Italian research projects/groups',
+    subtitle: 'Active participation and collaboration in italian research groups',
+    sectionId: 'italian-research-projects',
+    timelineId: 'italian-research-projects',
+    cardType: 'italian-research-projects',
+    previousSectionId: 'international-research-projects',
+  },
+  projects: {
+    title: 'Projects',
+    sectionId: 'projects',
+    timelineId: 'projects',
+    cardType: 'projects',
+    previousSectionId: 'italian-research-projects',
+  },
+  tender_commissions: {
+    title: 'Tender commissions',
+    sectionId: 'tender-commissions',
+    timelineId: 'tender-commissions',
+    cardType: 'tender-commissions',
+    previousSectionId: 'projects',
   },
 };
 

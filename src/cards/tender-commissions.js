@@ -1,0 +1,126 @@
+// =============================================================================
+// CARD CREATION - TENDER COMMISSIONS CARD
+// =============================================================================
+
+/**
+ * Creates a link badge with text "Link" (as per Figma design)
+ */
+function createLinkTextBadge(url) {
+  if (!url) return '';
+  
+  const badge = document.createElement('div');
+  badge.className = 'bg-gray-lighter flex h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0';
+  
+  const link = document.createElement('a');
+  link.href = url;
+  link.className = 'text-underline-position-from-font block cursor-pointer decoration-solid font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-darkest text-xs-6 text-center whitespace-nowrap underline';
+  link.textContent = 'Link';
+  
+  badge.appendChild(link);
+  return badge;
+}
+
+/**
+ * Creates a single tender commission item card
+ */
+function createTenderCommissionItemCard(item) {
+  const card = document.createElement('div');
+  card.className = 'flex items-start relative rounded-tl-[4px] rounded-tr-[4px] shrink-0 w-full';
+  
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'basis-0 flex flex-col grow items-start min-h-px min-w-px relative shrink-0';
+  
+  const innerDiv = document.createElement('div');
+  innerDiv.className = 'flex items-start justify-between relative shrink-0 w-full';
+  
+  // Build title
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 min-w-0 flex-1';
+  
+  const titleP = document.createElement('p');
+  titleP.className = 'font-dm-sans font-normal leading-[10px] mb-0';
+  
+  if (item.note) {
+    // Split title and note
+    const titleText = document.createTextNode(`${item.title} - `);
+    const noteSpan = document.createElement('span');
+    noteSpan.className = 'font-dm-sans font-bold';
+    noteSpan.textContent = item.note;
+    
+    titleP.appendChild(titleText);
+    titleP.appendChild(noteSpan);
+  } else {
+    titleP.textContent = item.title;
+  }
+  
+  titleDiv.appendChild(titleP);
+  innerDiv.appendChild(titleDiv);
+  
+  // Build badges (link and year)
+  if (item.link || item.year) {
+    const badgesDiv = document.createElement('div');
+    badgesDiv.className = 'flex gap-[8px] items-start relative shrink-0';
+    
+    if (item.link) {
+      badgesDiv.appendChild(createLinkTextBadge(item.link));
+    }
+    
+    if (item.year) {
+      const yearBadge = document.createElement('div');
+      yearBadge.className = 'flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0 w-5';
+      const yearP = document.createElement('p');
+      yearP.className = 'font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap';
+      yearP.textContent = item.year;
+      yearBadge.appendChild(yearP);
+      badgesDiv.appendChild(yearBadge);
+    }
+    
+    innerDiv.appendChild(badgesDiv);
+  }
+  
+  contentDiv.appendChild(innerDiv);
+  card.appendChild(contentDiv);
+  return card;
+}
+
+/**
+ * Creates the tender commissions section container
+ */
+export function createTenderCommissionsCard(data) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'bg-white flex flex-col items-start justify-center p-2 relative rounded-md shrink-0 w-full';
+  
+  const innerWrapper = document.createElement('div');
+  innerWrapper.className = 'flex items-start relative shrink-0 w-full';
+  
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'basis-0 flex flex-col gap-1 grow items-start min-h-px min-w-px relative shrink-0';
+  
+  // Add organization label
+  if (data.organization) {
+    const orgLabel = document.createElement('div');
+    orgLabel.className = 'flex items-start relative shrink-0 w-full';
+    const text = document.createElement('div');
+    text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-muted text-xs-7';
+    const p = document.createElement('p');
+    p.className = 'leading-normal mb-0';
+    p.textContent = data.organization;
+    text.appendChild(p);
+    orgLabel.appendChild(text);
+    contentDiv.appendChild(orgLabel);
+  }
+  
+  // Add items
+  if (data.items && data.items.length > 0) {
+    data.items.forEach((item) => {
+      const card = createTenderCommissionItemCard(item);
+      contentDiv.appendChild(card);
+    });
+  }
+  
+  innerWrapper.appendChild(contentDiv);
+  wrapper.appendChild(innerWrapper);
+  
+  return wrapper;
+}
+

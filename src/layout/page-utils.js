@@ -9,6 +9,7 @@ import {
   PAGE_NUMBER_RESERVED_HEIGHT_PX,
   SECTION_PADDING_BOTTOM_PX,
   MAX_EXPERIENCE_SECTION_HEIGHT_PX,
+  PAGE_BREAK_SAFETY_MARGIN_PX,
 } from '../config.js';
 
 /**
@@ -30,26 +31,37 @@ export function finalizePage(container, isLastPageOfSection = false) {
 
 /**
  * Calculates available height in a page after previous sections
+ * This is used to determine if a new section can fit on the same page
+ * The safety margin is NOT included here - it's applied when checking if cards fit
  */
 export function calculateAvailableHeightInPage(page, previousSectionSelector) {
+  // Base available height: full page minus reserved space for page numbers and padding
+  // Note: We don't subtract PAGE_BREAK_SAFETY_MARGIN_PX here because that's only for card-level checks
+  const baseAvailableHeight = PAGE_HEIGHT_PX - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
+  
   if (!previousSectionSelector) {
-    return PAGE_HEIGHT_PX - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
+    return Math.max(baseAvailableHeight, 0);
   }
   
   const previousSection = page.querySelector(previousSectionSelector);
   if (!previousSection) {
-    return PAGE_HEIGHT_PX - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
+    return Math.max(baseAvailableHeight, 0);
   }
   
   const pageRect = page.getBoundingClientRect();
   const sectionRect = previousSection.getBoundingClientRect();
   const lastBottom = sectionRect.bottom - pageRect.top;
   
-  return Math.max(PAGE_HEIGHT_PX - lastBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX, 0);
+  // Calculate available height ensuring we always reserve space for page numbers
+  // The safety margin will be applied when checking individual cards
+  const availableHeight = PAGE_HEIGHT_PX - lastBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
+  return Math.max(availableHeight, 0);
 }
 
 /**
  * Calculates available height in the first page for the first section
+ * This is used to determine how many cards can fit in the first section
+ * The safety margin is applied when checking individual cards, not here
  */
 export function calculateFirstPageAvailableHeight(page, section) {
   const sectionRect = section.getBoundingClientRect();
@@ -59,6 +71,8 @@ export function calculateFirstPageAvailableHeight(page, section) {
   const sectionStyle = window.getComputedStyle(section);
   const paddingBottom = parseFloat(sectionStyle.paddingBottom) || SECTION_PADDING_BOTTOM_PX;
   
+  // Calculate available height ensuring we always reserve space for page numbers
+  // The safety margin will be applied when checking individual cards
   const availableHeight = PAGE_HEIGHT_PX - sectionTop - paddingBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX;
   return Math.max(availableHeight * 0.95, MAX_EXPERIENCE_SECTION_HEIGHT_PX * 0.6);
 }

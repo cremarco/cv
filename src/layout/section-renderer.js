@@ -7,6 +7,7 @@ import {
   SECTION_HEADER_HEIGHT_PX,
   MAX_EXPERIENCE_SECTION_HEIGHT_PX,
   FALLBACK_CARD_HEIGHT_PX,
+  PAGE_BREAK_SAFETY_MARGIN_PX,
 } from '../config.js';
 import { getCardClasses } from '../utils/css-classes.js';
 import { createMeasurementContainer, measureCardHeight } from '../utils/measurement.js';
@@ -44,7 +45,11 @@ export function renderSection(items, config, previousSectionSelector = null) {
     const measureContainer = createMeasurementContainer(firstContainer);
     const firstPageAvailableHeight = calculateFirstPageAvailableHeight(templatePage, firstSection);
     
+    // Gap between cards (gap-1 = 4px in Tailwind)
+    const CARD_GAP_PX = 4;
+    
     let currentContainer = firstContainer;
+    let currentPage = templatePage;
     let currentPageHeight = 0;
     let currentPageNumber = 1;
     let isFirstInPage = true;
@@ -57,8 +62,12 @@ export function renderSection(items, config, previousSectionSelector = null) {
         const card = createCard(config.cardType, item, { isCurrent });
         const cardHeight = measureCardHeight(card, measureContainer);
 
-        const willCreateNewPage = currentPageHeight > 0 && 
-                                  currentPageHeight + cardHeight > currentPageMaxHeight;
+        // Calculate total height needed (card + gap if not first in page)
+        const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
+        const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
+        
+        // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
+        const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
 
         if (willCreateNewPage) {
           finalizePage(currentContainer, false);
@@ -66,15 +75,20 @@ export function renderSection(items, config, previousSectionSelector = null) {
           const newPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
           const newContainer = newPage.querySelector(config.containerSelector);
           if (!newContainer) throw new Error(`Missing ${config.title} container in new page`);
+          
+          // Recalculate available height for the new page
+          const newPageAvailableHeight = calculateAvailableHeightInPage(newPage, null);
+          
+          currentPage = newPage;
           currentContainer = newContainer;
           currentPageHeight = 0;
-          currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX;
+          currentPageMaxHeight = newPageAvailableHeight;
           isFirstInPage = true;
         }
 
         card.className = getCardClasses({ isFirstInPage, isFirstInSection, isCurrent });
         currentContainer.appendChild(card);
-        currentPageHeight += cardHeight;
+        currentPageHeight += gapHeight + cardHeight;
         isFirstInPage = false;
       });
 
@@ -120,7 +134,8 @@ export function renderSection(items, config, previousSectionSelector = null) {
     currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config, true);
     currentContainer = currentPage.querySelector(config.containerSelector);
     currentPageNumber = allPages.length + 1;
-    currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX;
+    // Recalculate available height for the new page
+    currentPageMaxHeight = calculateAvailableHeightInPage(currentPage, null);
   }
   
   if (!currentContainer) {
@@ -129,6 +144,8 @@ export function renderSection(items, config, previousSectionSelector = null) {
   }
 
   const finalMeasureContainer = createMeasurementContainer(currentContainer);
+  // Gap between cards (gap-1 = 4px in Tailwind)
+  const CARD_GAP_PX = 4;
   let currentPageHeight = 0;
   
   try {
@@ -138,8 +155,12 @@ export function renderSection(items, config, previousSectionSelector = null) {
       const card = createCard(config.cardType, item, { isCurrent });
       const cardHeight = measureCardHeight(card, finalMeasureContainer);
 
-      const willCreateNewPage = currentPageHeight > 0 && 
-                                currentPageHeight + cardHeight > currentPageMaxHeight;
+      // Calculate total height needed (card + gap if not first in page)
+      const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
+      const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
+      
+      // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
+      const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
 
       if (willCreateNewPage) {
         finalizePage(currentContainer, false);
@@ -148,15 +169,19 @@ export function renderSection(items, config, previousSectionSelector = null) {
         currentPage = nextPage;
         const nextContainer = nextPage.querySelector(config.containerSelector);
         if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
+        
+        // Recalculate available height for the new page
+        const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
+        
         currentContainer = nextContainer;
         currentPageHeight = 0;
-        currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX;
+        currentPageMaxHeight = newPageAvailableHeight;
         isFirstInPage = true;
       }
 
       card.className = getCardClasses({ isFirstInPage, isFirstInSection, isCurrent });
       currentContainer.appendChild(card);
-      currentPageHeight += cardHeight;
+      currentPageHeight += gapHeight + cardHeight;
       isFirstInPage = false;
     });
 
@@ -170,6 +195,7 @@ export function renderSection(items, config, previousSectionSelector = null) {
 
 /**
  * Renders a special section (thesis supervisor or awards)
+ * For sections with arrays of items (like projects), use renderSpecialSectionWithPageBreaks
  */
 export function renderSpecialSection(config, data, createCardFn, previousSectionSelector) {
   const pagesContainer = document.querySelector(SELECTORS.pagesContainer);
@@ -215,6 +241,122 @@ export function renderSpecialSection(config, data, createCardFn, previousSection
   }
 
   currentContainer.appendChild(createCardFn(data));
+}
+
+/**
+ * Renders a special section with array of items and handles page breaks
+ * Used for sections like projects that have multiple cards
+ */
+export function renderSpecialSectionWithPageBreaks(config, items, createCardFn, previousSectionSelector) {
+  const pagesContainer = document.querySelector(SELECTORS.pagesContainer);
+  const templatePage = document.querySelector(SELECTORS.pageTemplate);
+
+  if (!pagesContainer || !templatePage) {
+    console.error('Missing pagesContainer or templatePage');
+    return;
+  }
+
+  if (!items || items.length === 0) return;
+
+  const allPages = document.querySelectorAll('.pdf-page');
+  const lastPage = allPages[allPages.length - 1];
+  const availableHeight = calculateAvailableHeightInPage(lastPage, previousSectionSelector);
+  
+  // Measure first card height (only the first item, not all items)
+  const measureContainer = createMeasurementContainer(null);
+  const firstCard = createCardFn([items[0]]); // Pass only first item, not all items
+  const firstCardHeight = measureCardHeight(firstCard, measureContainer);
+  measureContainer.remove();
+  
+  const headerHeight = config.subtitle ? 100 : SECTION_HEADER_HEIGHT_PX;
+  const requiredHeight = headerHeight + firstCardHeight;
+  
+  let currentPage = lastPage;
+  let currentContainer;
+  let currentPageNumber = allPages.length;
+  let currentPageMaxHeight;
+  
+  // Determine if we can fit header + first card in current page or need new page
+  if (availableHeight >= requiredHeight) {
+    // Fits on same page - use margin-top, not new page padding
+    const section = currentPage.querySelector('section');
+    if (section) {
+      section.insertAdjacentHTML('beforeend', createSectionHTML(config, true, true, false));
+    }
+    currentContainer = currentPage.querySelector(config.containerSelector);
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+    currentPageMaxHeight = availableHeight;
+  } else {
+    // Need new page
+    currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config, true);
+    currentContainer = currentPage.querySelector(config.containerSelector);
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+    currentPageNumber = allPages.length + 1;
+    const newPageAvailableHeight = calculateAvailableHeightInPage(currentPage, null);
+    currentPageMaxHeight = newPageAvailableHeight;
+  }
+  
+  // Now render items with page breaks
+  const CARD_GAP_PX = 2; // gap-1 = 4px, but we use gap-0.5 = 2px for projects
+  
+  const finalMeasureContainer = createMeasurementContainer(currentContainer);
+  let currentPageHeight = 0;
+  let isFirstInPage = true;
+  
+  try {
+    items.forEach((item, index) => {
+      const isFirstInSection = index === 0;
+      const isLast = index === items.length - 1;
+      
+      // Create card wrapper for this item (createProjectsCard returns a wrapper with the card)
+      const cardWrapper = createCardFn([item]);
+      const cardHeight = measureCardHeight(cardWrapper, finalMeasureContainer);
+      
+      // Calculate total height needed (card + gap if not first in page)
+      const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
+      const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
+      
+      // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
+      const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
+      
+      if (willCreateNewPage) {
+        finalizePage(currentContainer, false);
+        currentPageNumber += 1;
+        const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
+        currentPage = nextPage;
+        const nextContainer = nextPage.querySelector(config.containerSelector);
+        if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
+        
+        // Recalculate available height for the new page
+        const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
+        
+        // Update measurement container width for new page
+        const { width } = nextContainer.getBoundingClientRect();
+        if (width) finalMeasureContainer.style.width = `${width}px`;
+        
+        currentContainer = nextContainer;
+        currentPageHeight = 0;
+        currentPageMaxHeight = newPageAvailableHeight;
+        isFirstInPage = true;
+      }
+      
+      currentContainer.appendChild(cardWrapper);
+      currentPageHeight += gapHeight + cardHeight;
+      isFirstInPage = false;
+    });
+    
+    if (currentContainer?.children.length > 0) {
+      finalizePage(currentContainer, true);
+    }
+  } finally {
+    finalMeasureContainer.remove();
+  }
 }
 
 /**
@@ -328,9 +470,8 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
       const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
       const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
       
-      // Check if we need a new page
-      // Also check if card doesn't fit even when page is empty (shouldn't happen, but safety check)
-      const willCreateNewPage = totalHeightNeeded > currentPageMaxHeight;
+      // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
+      const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
       
       if (willCreateNewPage) {
         finalizePage(currentContainer, false);
@@ -341,9 +482,11 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
         if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
         
         // Recalculate available height for the new page
-        const newMeasureContainer = createMeasurementContainer(nextContainer);
         const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
-        newMeasureContainer.remove();
+        
+        // Update measurement container width for new page
+        const { width } = nextContainer.getBoundingClientRect();
+        if (width) finalMeasureContainer.style.width = `${width}px`;
         
         currentContainer = nextContainer;
         currentPageHeight = 0;

@@ -11,6 +11,11 @@ import {
   loadAwards,
   loadPublications,
   loadCommunityService,
+  loadEditorialCommunityService,
+  loadInternationalResearchProjects,
+  loadItalianResearchProjects,
+  loadProjects,
+  loadTenderCommissions,
   updatePageNumbers,
 } from './data/loader.js';
 
@@ -40,6 +45,11 @@ async function init() {
   await loadAwards();
   await loadPublications();
   await loadCommunityService();
+  await loadEditorialCommunityService();
+  await loadInternationalResearchProjects();
+  await loadItalianResearchProjects();
+  await loadProjects();
+  await loadTenderCommissions();
   
   updatePageNumbers();
   

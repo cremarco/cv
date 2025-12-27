@@ -897,5 +897,312 @@
         "link": "https://unimib-datai.github.io/sti-website/tutorial/"
       }
     ]
-  }
+  },
+  "community_service_editorial": {
+    "associate_editor": [
+      {
+        "title": "Journal of Intelligent & Fuzzy Systems",
+        "year": "2024"
+      }
+    ],
+    "member_of_committee": [
+      {
+        "items": [
+          {
+            "name": "SemTab 2019",
+            "link": "http://www.cs.ox.ac.uk/isg/challenges/sem-tab/2019/index.html"
+          },
+          {
+            "name": "EAIoT 2021",
+            "link": "https://eaiot2021.connect.rs/"
+          },
+          {
+            "name": "DIKWN 2021",
+            "link": "https://conferences.computer.org/services/2021/workshops/dikwn_workshop.html"
+          },
+          {
+            "name": "ICRAIC 2021",
+            "link": "https://www.icraic.org/committee/"
+          },
+          {
+            "name": "ESWC 2022",
+            "link": "https://2022.eswc-conferences.org/"
+          },
+          {
+            "name": "ESWC 2023",
+            "link": "https://2023.eswc-conferences.org/"
+          },
+          {
+            "name": "ProLingKNOWER 2023",
+            "link": "https://prolingknower.disco.unimib.it/home#h.340i0c3cr1n3"
+          }
+        ],
+        "more": true
+      }
+    ],
+    "reviewer": [
+      {
+        "title": "SoftwareX, AIMS Bioengineering, Digital Health, TIST, Soft Computing, ..."
+      }
+    ]
+  },
+  "international_research_projects": [
+    {
+      "name": "Goblin",
+      "title": "CA23147 - Global Network on Large-Scale, Cross-domain and Multilingual Open KG",
+      "period": "2024 - 2028",
+      "link": "https://www.cost.eu/actions/CA23147/",
+      "description": "This COST Action project aims to provide a large-scale, high quality, cross-domain and multilingual knowledge graph technology that is free to use, reuse, and redistribute.",
+      "role": "Science Communication Coordinator.\nTask Leader 2.4.\nMember of WG 1, WG 2, WG 3, WG 4.",
+      "isFirst": true
+    },
+    {
+      "name": "NexusLinguarum",
+      "title": "CA18209 - European network for Web-centred linguistic data science",
+      "period": "2019 - 2024",
+      "link": "https://www.cost.eu/actions/ca18209/",
+      "description": "This COST Action project aims to promote synergies across Europe between linguists, computer scientists, terminologists, and other stakeholders in industry and society, in order to investigate and extend the area of linguistic data science.",
+      "role": "Member of WG 2, WG 3.",
+      "isFirst": false
+    }
+  ],
+  "italian_research_projects": [
+    {
+      "institution": "Univeristy of Milan-Bicocca, INTERDEPARTMENTAL CENTER",
+      "name": "Best4Food",
+      "period": "2024 - 2025",
+      "link": "https://bestforfood.unimib.it/",
+      "description": "Best4food is a multidisciplinary centre dedicated to food research and innovation actions. It aims to identify the most suitable strategy to develop sustainable food systems able to support our future and the one of the next generations.",
+      "role": "Member.",
+      "logo": "best4food.png",
+      "isFirst": true
+    },
+    {
+      "institution": "Univeristy of Milan-Bicocca, INTERDEPARTMENTAL CENTER",
+      "name": "BReCHS - Bicocca Research Centre in Health Services",
+      "period": "2024 - 2025",
+      "logo": "brechs.png",
+      "role": "Member.",
+      "isFirst": false
+    }
+  ],
+  "tender_commissions": {
+    "organization": "University of Milan-Bicocca",
+    "items": [
+      {
+        "title": "Research grants announcement - Code 24A224",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a224",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24A221",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a221",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24A060",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a060",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24A059",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a059",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24B122",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24b122",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24B137",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24b137",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24B064",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24b064",
+        "year": "2024",
+        "note": "Scientific Project Head: Cremaschi Marco"
+      },
+      {
+        "title": "Call for collaboration - Code 24CE249",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24ce249",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 22B194",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-22b194",
+        "year": "2022"
+      },
+      {
+        "title": "Research grants announcement - Code 22B178",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-22b178",
+        "year": "2022"
+      },
+      {
+        "title": "Research grants announcement - Code 22B176",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-22b176",
+        "year": "2022"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "MS4A",
+      "title": "Mobile Services for Agrofood",
+      "period": "Dec 2010 - Jun 2012",
+      "funding_agency": "Lombardia Region",
+      "description": "The research project, sponsored by Lombardy region, aimed at the development of high value mobile services to deliver information about food via smart labels.",
+      "activities": "As part of this project, I analysed service value and I cooperated to the identification and definition of requirements and functionality to be implemented in the associated application. I also performed a usability study, proposing a possible interface and defining interaction modalities.",
+      "logo": "ms4a.png"
+    },
+    {
+      "name": "SMART",
+      "title": "Services & Meta-services for smART eGovernment",
+      "period": "Feb 2011 - Feb 2014",
+      "funding_agency": "MIUR - Ministry of Education, University and Research",
+      "description": "The project aimed at developing methodologies and tools for the design and implementation of value-added services.",
+      "activities": "I was involved in the definition of a series of steps for the SMART methodology, aimed at planning, designing and producing services which were consistent with the value for the user. Moreover, during a second phase, I implemented some information tools to help Italian citizens (through user profiling) to identify useful services based upon their needs.",
+      "logo": "smart.png"
+    },
+    {
+      "name": "Comsode",
+      "title": "Components Supporting The Open Data Exploitation Project",
+      "period": "Oct 2013 - Sept 2015",
+      "funding_agency": "EU",
+      "description": "The purpose of the project was to progress the capabilities in the Open Data reuse field, by fostering better integration and quality improvement.",
+      "activities": "I managed the development of components to extract, transform and load Open Data for the Open Data Node platform.",
+      "logo": "comsode.png"
+    },
+    {
+      "name": "SPAC3",
+      "title": "Servizi smart della nuova Pubblica amministrazione per la Citizen-Centricity in cloud",
+      "period": "Apr 2014 - May 2015",
+      "funding_agency": "Lombardia Region",
+      "description": "The purpose of the project was to streamline service processes in the Public Administration.",
+      "activities": "I managed the definition of scenarios to be implemented in the platform, which provides SPAC3 services.",
+      "logo": "spac.png"
+    },
+    {
+      "name": "Foodnet",
+      "title": "Food Social Sensor Network",
+      "period": "Jan 2017 - Mar 2021",
+      "funding_agency": "Lombardia Region",
+      "description": "Food NET is a Smart Cities and Communities project aimed at identifying and addressing the nutritional needs of specific consumer groups, fostering innovation in the agri-food industry through advanced infrastructures for functional foods.",
+      "activities": "Project management.",
+      "logo": "foodnet.png"
+    },
+    {
+      "name": "ew-shopp",
+      "title": "Supporting Event and Weather-based Data Analytics and Marketing along the Shopper Journey",
+      "period": "Jan 2017 - Dec 2019",
+      "funding_agency": "EU",
+      "description": "The aim of the project is to build a platform with innovative services based on advanced data analysis techniques capable to leverage the large variety and volume of data from multiple sources.",
+      "activities": "Within the project I participated in the definition of algorithms for the semantic annotation of tabular data.",
+      "logo": "eww.png"
+    },
+    {
+      "name": "ARCA",
+      "period": "Oct 2017 - Nov 2021",
+      "funding_agency": "Lazio Region",
+      "description": "ARCA is a software system that enables semantic search and exploration over a book catalog.",
+      "activities": "I contributed to this project by developing algorithms for data extraction and semantic combination, leveraging AI-based matchmaking techniques.",
+      "logo": "arca.png"
+    },
+    {
+      "name": "GoForIt",
+      "period": "2018 - 2020",
+      "funding_agency": "MIUR - Ministry of Education, University and Research",
+      "description": "The project consists of R&D activities aimed at identifying the special needs expressed by people with various types of disabilities, the elderly, etc., based on the ICF (International Classification of Functioning, Disability & Health) framework.",
+      "activities": "In this project I contributed to the realisation of an accessible hotel booking platform and a prototype of a homeassistant interface for hospitality.",
+      "logo": "goforit.png"
+    },
+    {
+      "name": "Melinda",
+      "title": "Mobility Ecosystem for Low-carbon and INnovative moDal shifts in the Alps",
+      "period": "Apr 2018 - Aug 2021",
+      "funding_agency": "EU",
+      "description": "The MELINDA project promoted multimodality and modal shift in mobility behaviours for more sustainable mobility in the Alps. By providing an integrated set of mobility and behaviour data, it supports policy making and service planning.",
+      "activities": "I provided support for the development of a web questionnaire for collecting information from users.",
+      "logo": "melinda.png"
+    },
+    {
+      "name": "MAPS-EH",
+      "title": "Monitoraggio e Attuazione Policy di Sicurezza nell'E-Health",
+      "period": "Sept 2021 - July 2023",
+      "link": "https://maps-eh.atoninformatica.it/",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "MAPS-EH provides comprehensive support for the automated compliance verification between recorded access events on IT resources and the security policies established by an organization, enabling the automatic detection of potential anomalies.",
+      "activities": "In this project I provided support in the analysis of solutions in the SOTA and the definition of the compliance verification algorithm.",
+      "logo": "maps-eh.png"
+    },
+    {
+      "name": "Ampel",
+      "title": "Artificial Intelligence facing Multidimensional Poverty in Elderly",
+      "period": "Nov 2021 - Oct 2023",
+      "link": "https://ampel.unimib.it/",
+      "funding_agency": "Fondazione Cariplo",
+      "funding_type": "Funder",
+      "description": "The project Artificial intelligence facing Multidimensional Poverty in Elderly (AMPEL) focuses on the use of cutting edge technologies in Artificial Intelligence (AI), Machine Learning (ML), data analysis and data visualisation to identify the risk of poverty in elderly people, relying on multidimensional indicators, learned from heterogeneous sources of information.",
+      "activities": "I provided support in defining the concept of multidimensional poverty and in defining the ML algorithms.",
+      "logo": "ampel.png"
+    },
+    {
+      "name": "Bintrawine",
+      "title": "Blockchain, Tracking and Tracing solutions for Wine",
+      "period": "Mar 2022 - Sept 2023",
+      "link": "https://bintrawine.atoninformatica.it/",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "BinTraWine, based on Blockchain technology, aims to ensure transparency, traceability, verifiability, and data certification for all producers, winemakers, distributors, consumers, and certification bodies involved in the process.",
+      "activities": "In the project I was responsible for defining the architecture for managing smart contracts.",
+      "logo": "bintrawine.png"
+    },
+    {
+      "name": "enRichMyData",
+      "title": "Enabling Data Enrichment Pipelines for AI-driven Business Products and Services",
+      "period": "Oct 2022 - Sept 2023",
+      "link": "https://enrichmydata.eu/",
+      "funding_agency": "EU",
+      "description": "The project aims to provide a novel paradigm for building rich, high-quality, and valuable datasets to feed Big Data Analytics and AI applications.",
+      "activities": "Within the project I participated in the definition of algorithms for the semantic annotation of tabular data.",
+      "logo": "enrich.png"
+    },
+    {
+      "name": "DIPPS",
+      "title": "Digital Intervention in Psychiatric and Psychologist Services",
+      "period": "Mar 2023 - Dec 2026",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "The project aims to enhance mental health care through innovative digital solutions, improving accessibility, efficiency, and patient outcomes.",
+      "activities": "Project management.",
+      "logo": "dipps.png"
+    },
+    {
+      "name": "Biomatrix",
+      "title": "Biodiverse Information Organization, Management, Analysis, Transformation and Reporting with Innovative eXperience",
+      "period": "Sept 2024 - Nov 2025",
+      "funding_agency": "MUR - Ministry of University and Research",
+      "description": "BIOMATRIX focuses on data acquisition, transformation, and the implementation of a dashboard for data delivery through the creation of a pipeline consisting of three main phases: acquisition, processing, and analysis.",
+      "activities": "As part of this project I contributed to the analysis of the available datasets and to the data integration and visualisation dashboard which was realised.",
+      "logo": "biomatrix.png"
+    },
+    {
+      "name": "CrowdIT",
+      "title": "Crowd Response Optimisation With Digital-twin InTervention",
+      "period": "Dec 2024 - Dec 2025",
+      "funding_agency": "MUR - Ministry of University and Research",
+      "description": "CrowdIT is a Digital Twin system for the management of urban crowds, with special emphasis on anomaly detection and early warning generation.",
+      "activities": "In this project I contributed to the algorithms for the route optimisation in crowd management.",
+      "logo": "crowdit.png"
+    },
+    {
+      "name": "AMP",
+      "title": "Automotive Predictive Maintenance",
+      "period": "Jun 2025 - Jun 2028",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "The APM project aims to develop an innovative AI and Machine Learning-based platform for predictive maintenance of corporate fleets and public transportation. The goal is to reduce costs, improve efficiency, and enhance vehicle safety by anticipating failures and optimizing maintenance operations.",
+      "activities": "As part of this project I will contribute to the corporate fleet predictive maintenance algorithms.",
+      "logo": "apm.png"
+    }
+  ]
 }
