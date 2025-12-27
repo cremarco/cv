@@ -56,19 +56,6 @@ export function createPublicationsHeader(data, metrics) {
     linksGroup.appendChild(scopusBadge);
   }
   
-  // Orcid badge - same style as time badge
-  if (metrics?.orcid) {
-    const orcidUrl = metrics.orcid.url || '#';
-    const orcidBadge = document.createElement('span');
-    orcidBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
-    orcidBadge.innerHTML = `
-      <i class='bx bxl-orcid text-[12px] text-orcid'></i>
-      <a href="${orcidUrl}" target="_blank" class="underline">Orcid</a>
-      <span>${formatMetricValue(metrics.orcid.id)}</span>
-    `;
-    linksGroup.appendChild(orcidBadge);
-  }
-  
   linksRow.appendChild(linksGroup);
   
   // Legend - same style as Link badge
@@ -76,15 +63,15 @@ export function createPublicationsHeader(data, metrics) {
   legendGroup.className = 'flex gap-1 items-center';
   legendGroup.innerHTML = `
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bx-microphone text-[8px]'></i>
+      <i class='bx bx-microphone text-[8px] text-award-gold'></i>
       <span>Speaker</span>
     </span>
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bxs-star text-[8px] text-award-gold'></i>
+      <i class='bx bx-star text-[8px] text-award-gold'></i>
       <span>Best paper</span>
     </span>
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bxs-trophy text-[8px] text-award-gold'></i>
+      <i class='bx bx-trophy text-[8px] text-award-gold'></i>
       <span>Winner</span>
     </span>
   `;
@@ -197,7 +184,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.best_paper) {
     attrsHTML += `
       <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-        <i class='bx bxs-star text-[8px] text-award-gold'></i>
+        <i class='bx bx-star text-[8px] text-award-gold'></i>
         <span>Best paper</span>
       </span>
     `;
@@ -207,7 +194,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.speaker) {
     attrsHTML += `
       <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-        <i class='bx bx-microphone text-[8px]'></i>
+        <i class='bx bx-microphone text-[8px] text-award-gold'></i>
         <span>Speaker</span>
       </span>
     `;

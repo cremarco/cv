@@ -1339,6 +1339,10 @@ body.pdf-mode [data-section] {
   background-color: var(--color-gray-lightest);
 }
 
+.bg-orcid {
+  background-color: var(--color-orcid);
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }

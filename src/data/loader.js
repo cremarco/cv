@@ -341,6 +341,19 @@ export async function loadResearchMetrics() {
     })) {
       console.error('Scopus metrics container not found in DOM');
     }
+
+    // Update ORCID in sidebar
+    const orcidSidebar = document.getElementById('orcid-sidebar');
+    const orcidLink = document.getElementById('orcid-link');
+    if (metrics.orcid && orcidLink) {
+      const orcidUrl = metrics.orcid.url || '#';
+      const orcidId = metrics.orcid.id || '-';
+      orcidLink.href = orcidUrl;
+      orcidLink.textContent = orcidId;
+    } else if (orcidSidebar) {
+      // Hide ORCID section if not available
+      orcidSidebar.style.display = 'none';
+    }
   } catch (error) {
     console.error('Error loading research metrics:', error);
   }
