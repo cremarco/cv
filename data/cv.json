@@ -3,7 +3,7 @@
     {
       "current": true,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1DGNlKqHZpI-ng4UJY1wt8IESgqY2uqYt/view?usp=sharing",
+      "link": "files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant",
@@ -15,7 +15,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1cJRHK9w0Oqc45Xd8Z7uh7AiyFetzUR9K/view?usp=sharing",
+      "link": "files/contratti-precedenti/07-rtda-10-01-2022-09-01-2025.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Assistant Professor (RTD/A)",
@@ -27,7 +27,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1PBw2p5WyjVyqQ4Gi4OhN5_ZkRyH_ANqA/view?usp=sharing",
+      "link": "files/contratti-precedenti/06-assegno-01-02-2021-31-01-2022.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant",
@@ -39,7 +39,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/13qIkC1_a5zSGn5Q-O4T9mzoCtStLTkzZ/view?usp=sharing",
+      "link": "files/contratti-precedenti/05-assegno-01-02-2020-31-01-2021.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant",
@@ -51,7 +51,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1GmgEBWVp9xuuxplpP_sLmW__93C1A-Qv/view?usp=sharing",
+      "link": "files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant",
@@ -63,7 +63,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1UhYDI21z-RG1_exk-23Tm4_NHL0E8mTF/view?usp=sharing",
+      "link": "files/contratti-precedenti/03-assegno-01-09-2014-31-08-2015.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant",
@@ -75,7 +75,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1d_HX-kI4c8404zpAuHZDp4yvV3Wtmrv4/view?usp=sharing",
+      "link": "files/contratti-precedenti/02-assegno-01-09-2013-31-08-2014.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant",
@@ -87,7 +87,7 @@
     {
       "current": false,
       "department": "Department of Informatics, Systems and Communication",
-      "link": "https://drive.google.com/file/d/1WaFTG4rQ44slXfMWjkp7kQ49CcpwqwCU/view?usp=sharing",
+      "link": "files/contratti-precedenti/01-borsa-01-02-2011-31-01-2012.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research fellow",
@@ -100,7 +100,7 @@
   "foreign_research_contracts": [
     {
       "current": false,
-      "link": "https://drive.google.com/file/d/1nyLv-4-TaxBfusZd8uOcQf0n5Q53uFBy/view?usp=sharing",
+      "link": "files/contratti-precedenti/Estero/08-intertwino-20-04-2022-31-03-2024.pdf",
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
       "position": "Researcher",
@@ -110,7 +110,7 @@
     },
     {
       "current": false,
-      "link": "https://drive.google.com/file/d/1bzwiGd6uK4WRjRuw6ZOQ1jlpd1puxXtq/view?usp=sharing",
+      "link": "files/contratti-precedenti/Estero/07-intertwino-15-07-2021-31-03-2022.pdf",
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
       "position": "Researcher",
@@ -120,7 +120,6 @@
     },
     {
       "current": false,
-      "link": "https://drive.google.com/file/d/1bzwiGd6uK4WRjRuw6ZOQ1jlpd1puxXtq/view?usp=sharing",
       "logo": "bielefeld.png",
       "place": "Bielefeld, Germany",
       "position": "Researcher",
