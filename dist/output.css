@@ -997,6 +997,10 @@ body.pdf-mode [data-section] {
   width: 1px;
 }
 
+.w-\[180px\] {
+  width: 180px;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -1076,6 +1080,10 @@ body.pdf-mode [data-section] {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-end {

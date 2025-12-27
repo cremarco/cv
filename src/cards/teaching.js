@@ -10,8 +10,8 @@ import { createLogoImage } from './shared.js';
  */
 function renderCourseRow(course, isPhd = true) {
   const roleBadge = course.role ? `
-    <div class="inline-flex items-center justify-center px-0.5 py-0 h-2 bg-purple-100 text-purple-700 rounded text-[6px] font-dm-sans">
-      ${course.role}
+    <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+      <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight whitespace-nowrap">${course.role}</span>
     </div>
   ` : '';
   
@@ -33,7 +33,7 @@ function renderCourseRow(course, isPhd = true) {
         <div class="text-xs-8 text-ink font-dm-sans font-medium whitespace-nowrap">${course.course_name}</div>
         ${hoursMarkup}
       </div>
-      <div class="flex items-center justify-between w-[120px]">
+      <div class="flex items-center gap-2 justify-end w-[180px]">
         ${roleBadge}
         ${periodBadge}
       </div>
