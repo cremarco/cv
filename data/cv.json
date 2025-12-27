@@ -502,13 +502,119 @@
   ],
   "research_metrics": {
     "google_scholar": {
-      "citations": 475,
+      "citations": 473,
       "h_index": 13,
       "i10_index": 17,
-      "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ&hl=it&oi=ao"
+      "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ"
     },
     "scopus": {
-      "citations": 9
+      "h_index": 9,
+      "url": "https://www.scopus.com/authid/detail.uri?authorId=56167172000"
+    },
+    "orcid": {
+      "id": "0000-0001-7840-6228",
+      "url": "https://orcid.org/0000-0001-7840-6228"
     }
+  },
+  "publications": {
+    "update_date": "December 17, 2025",
+    "summary": {
+      "journal_papers": 11,
+      "conference_papers": 16,
+      "workshop_papers": 5,
+      "challenge_papers": 6,
+      "book_chapters": 1
+    },
+    "papers": [
+      {
+        "number": 0,
+        "authors": "Blerina Spahiu, <b>Marco Cremaschi</b>, Andrea Maurino, G Vizzari",
+        "title": "Harnessing Large Language Models for Efficient Crowd Management in Large-Scale Events",
+        "venue": "ECAI, 2025",
+        "type": "conference",
+        "icore": "A",
+        "doi": "10.3233/FAIA251463"
+      },
+      {
+        "number": 1,
+        "authors": "<b>Marco Cremaschi</b>, Fabio D'Adda, Sara Nocco",
+        "title": "MantisTable UI: A Web Interface for Comprehensive Semantic Table Interpretation Curation and Management",
+        "venue": "Journal of Open Research Software 13 (1), 2025",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Information Systems"}, {"rank": "Q1", "field": "Software"}],
+        "doi": "10.5334/jors.583"
+      },
+      {
+        "number": 2,
+        "authors": "<b>Marco Cremaschi</b>, Federico Belotti, Jennifer D'Souza, Matteo Palmonari",
+        "title": "MammoTab 25: A Large-Scale Dataset fo Semantic Table Interpretation - Training, Testing and Detecting Weaknesses",
+        "venue": "International Semantic Web Conference, 131-148, 2025",
+        "type": "conference",
+        "best_paper": true,
+        "icore": "A",
+        "doi": "10.1007/978-3-032-09530-5_8"
+      },
+      {
+        "number": 3,
+        "authors": "Giulia Rosemary Avis, S Nocco, An Qi Zhao, <b>Marco Cremaschi</b>",
+        "title": "Guiding AI Assisted persona generation with Hofstede's cultural dimensions: a mixed-methods evaluation",
+        "venue": "Behaviour & Information Technology, 1-29, 2025",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Human-Computer Interaction"}],
+        "doi": "10.1080/0144929X.2025.2581258"
+      },
+      {
+        "number": 4,
+        "authors": "<b>Marco Cremaschi</b>, Davide Ditolve, Cesare Curcio, Anna Panzeri, Andrea Spoto, Andrea Maurino",
+        "title": "Decoding the Mind: A RAG-LLM on ICD-11 for Decision Support in Psychology",
+        "venue": "Expert Systems With Applications, Elsevier Ltd, 2025 (accepted for publication)",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}]
+      },
+      {
+        "number": 5,
+        "authors": "<b>Marco Cremaschi</b>, Fabio D'Adda, and Andrea Maurino",
+        "title": "StEELlm: an LLM for generating semantic annotations of tabular data",
+        "venue": "ACM Transactions on Intelligent Systems and Technology, Association for Computing Machinery, 2025",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}, {"rank": "Q1", "field": "Theoretical Computer Science"}],
+        "doi": "10.1145/3719206"
+      },
+      {
+        "number": 6,
+        "authors": "<b>Marco Cremaschi</b>, Giulia Rosemary Avis, An Qi Zhao, Elia Guarnieri, Anna Panzeri, Andrea Spoto",
+        "title": "PENguIN: A mental health application employing gamification and token economy to boost therapeutic adherence in young users",
+        "venue": "Computers in Human Behavior Reports, Volume 17, Elsevier Ltd, 2025",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}, {"rank": "Q1", "field": "Computer Science Application"}, {"rank": "Q1", "field": "Human-Computer Interaction"}],
+        "doi": "10.1016/j.chbr.2025.100586"
+      },
+      {
+        "number": 7,
+        "authors": "Roberto Avogadro, Fabio D'Adda, <b>Marco Cremaschi</b>",
+        "title": "Feature/vector entity retrieval and disambiguation techniques to create a supervised and unsupervised semantic table interpretation approach",
+        "venue": "Knowledge-Based Systems, Volume 304, Elsevier B.V., 2024",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}, {"rank": "Q1", "field": "Software"}],
+        "doi": "10.1016/j.knosys.2024.112447"
+      },
+      {
+        "number": 8,
+        "authors": "Dagmar Gromann, Elena-Simona Apostol, Christian Chiarcos, <b>Marco Cremaschi</b>, Jorge Gracia, Katerina Gkirtzou, Chaya Liebeskind, Liudmila Mockiene, Michael Rosner, Ineke Schuurman, Gilles Sérasset, Purificação Silvano, Blerina Spahiu, Ciprian-Octavian Truică, Andrius Utka and Giedre Valunaite Oleskeviciene",
+        "title": "Multilinguality and LLOD: a survey across linguistic description levels",
+        "venue": "Semantic Web, Volume 15, IOS Press, 2024",
+        "type": "journal",
+        "quartiles": [{"rank": "Q2", "field": "Computer Networks and Communications"}, {"rank": "Q2", "field": "Computer Science Applications"}, {"rank": "Q2", "field": "Information Systems"}],
+        "doi": "10.3233/SW-243591"
+      },
+      {
+        "number": 9,
+        "authors": "Oktie Hassanzadeh, Nora Abdelmageed, <b>Marco Cremaschi</b>, Vincenzo Cutrona, Fabio D'Adda, Vasilis Efthymiou, Benno Kruit, Elita Lobo, Nandana Mihindukulasooriya, Nhan H. Pham",
+        "title": "Results of SemTab 2024",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3889, CEUR Workshop Proceedings, 2024",
+        "type": "challenge",
+        "ceur": "Vol-3889"
+      }
+    ]
   }
 }
