@@ -28,21 +28,24 @@ export function createEducationCard(edu) {
   
   // Build thesis markup
   const thesisMarkup = edu.thesis_title ? `
-    <div class="flex gap-2 items-start w-full">
-      <div class="flex-shrink-0 w-[60px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Thesis Title:</p>
+    <div class="flex gap-3 items-start w-full">
+      <div class="flex-shrink-0 w-[65px]">
+        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Thesis:</p>
       </div>
       <div class="flex-1 min-w-0">
-        <p class="text-xs-7 text-ink font-dm-sans leading-normal">${edu.thesis_title}</p>
+        <div class="flex gap-2 items-center">
+          <p class="text-xs-7 text-ink font-dm-sans leading-normal italic">${edu.thesis_title}</p>
+          ${createLinkBadge(edu.thesis_link)}
+        </div>
       </div>
     </div>
   ` : '';
   
   // Build international experience markup
   const internationalMarkup = edu.international_experience ? `
-    <div class="flex gap-2 items-start w-full">
-      <div class="flex-shrink-0 w-[60px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">International Experience:</p>
+    <div class="flex gap-3 items-start w-full">
+      <div class="flex-shrink-0 w-[65px]">
+        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Int Esp.:</p>
       </div>
       <div class="flex-1 min-w-0">
         <p class="text-xs-7 text-ink font-dm-sans leading-normal">${edu.international_experience}</p>
@@ -52,13 +55,13 @@ export function createEducationCard(edu) {
   
   // Build courses list
   const coursesMarkup = (edu.courses?.length > 0) ? `
-    <div class="flex gap-2 items-start w-full">
-      <div class="flex-shrink-0 w-[60px]">
+    <div class="flex gap-3 items-start w-full">
+      <div class="flex-shrink-0 w-[65px]">
         <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Courses:</p>
       </div>
       <div class="flex-1 min-w-0">
-        <ul class="list-disc">
-          ${edu.courses.map(c => `<li class="mb-0 ml-2.5"><span class="text-xs-7 text-ink font-dm-sans leading-normal">${c}</span></li>`).join('')}
+        <ul class="list-disc pl-5 space-y-0.5">
+          ${edu.courses.map(c => `<li class="text-xs-7 text-ink font-dm-sans leading-normal">${c}</li>`).join('')}
         </ul>
       </div>
     </div>
@@ -66,9 +69,9 @@ export function createEducationCard(edu) {
   
   // Build summer schools list
   const summerSchoolsMarkup = (edu.summer_schools?.length > 0) ? `
-    <div class="flex gap-2 items-start w-full">
-      <div class="flex-shrink-0 w-[60px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Summer Schools:</p>
+    <div class="flex gap-3 items-start w-full">
+      <div class="flex-shrink-0 w-[65px]">
+        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Sum. Sch.:</p>
       </div>
       <div class="flex-1 min-w-0">
         ${edu.summer_schools.map((s, i) => 
@@ -86,7 +89,6 @@ export function createEducationCard(edu) {
         </div>
         <div class="flex flex-col gap-0.5 items-end">
           <div class="flex gap-2">
-            ${createLinkBadge(edu.thesis_link)}
             <span class="${timeBadgeClasses}">${edu.time_period}</span>
           </div>
         </div>
