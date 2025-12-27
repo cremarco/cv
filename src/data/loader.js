@@ -7,6 +7,7 @@ import { setPdfState } from '../utils/pdf-state.js';
 import { renderSection, renderSpecialSection, renderPublications } from '../layout/section-renderer.js';
 import { createThesisSupervisorCard } from '../cards/thesis.js';
 import { createAwardsCard } from '../cards/awards.js';
+import { createCommunityServiceCard } from '../cards/community-service.js';
 
 /**
  * Loads CV data from JSON file
@@ -94,6 +95,27 @@ export async function loadPublications() {
   } catch (error) {
     console.error('Error loading Publications:', error);
     setPdfState({ error: 'Error loading Publications' });
+  }
+}
+
+/**
+ * Loads and renders community service section
+ */
+export async function loadCommunityService() {
+  try {
+    const data = await loadCVData();
+    if (!data.community_service) return;
+    
+    const config = SECTION_CONFIG.community_service;
+    renderSpecialSection(
+      config, 
+      data.community_service, 
+      createCommunityServiceCard, 
+      SECTION_CONFIG.publications.sectionSelector
+    );
+  } catch (error) {
+    console.error('Error loading Community service:', error);
+    setPdfState({ error: 'Error loading Community service' });
   }
 }
 

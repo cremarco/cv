@@ -2,6 +2,8 @@
 // CARD CREATION - AWARDS CARD
 // =============================================================================
 
+import { createLinkBadge } from './shared.js';
+
 /**
  * Creates a single award card
  */
@@ -31,14 +33,7 @@ function createAwardCard(award) {
   titleContainer.appendChild(title);
   
   if (award.link) {
-    const badge = document.createElement('div');
-    badge.className = 'bg-accent-soft flex h-[10px] items-center justify-center px-0.5 py-0 relative rounded-[2px] shrink-0';
-    const link = document.createElement('a');
-    link.href = award.link;
-    link.className = 'block cursor-pointer font-dm-sans font-normal leading-[8px] relative shrink-0 text-accent text-xs-6 text-center whitespace-nowrap underline';
-    link.textContent = 'Link';
-    badge.appendChild(link);
-    titleContainer.appendChild(badge);
+    titleContainer.insertAdjacentHTML('beforeend', createLinkBadge(award.link, true));
   }
   card.appendChild(titleContainer);
   

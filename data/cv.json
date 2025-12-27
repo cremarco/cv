@@ -869,5 +869,33 @@
         "doi": "10.24297/ijmit.v4i1.4635"
       }
     ]
+  },
+  "community_service": {
+    "chair": [
+      {
+        "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
+        "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
+        "year": "2024",
+        "link": "https://sem-tab-challenge.github.io/2024/"
+      },
+      {
+        "title": "Eighth Italian Conference on Computational Linguistics (CLIC-it 2021 - attended)",
+        "year": "2021",
+        "link": "https://clic2021.disco.unimib.it/organization/chairs/"
+      },
+      {
+        "title": "International Conference on Data, Information, Knowledge and Wisdom (DIKW 2021 - attended)",
+        "year": "2021",
+        "link": "https://www.ieee-cybermatics.org/2021/dikw/"
+      }
+    ],
+    "organizer": [
+      {
+        "title": "Tutorial on Semantic Table Interpretation",
+        "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
+        "year": "2024",
+        "link": "https://unimib-datai.github.io/sti-website/tutorial/"
+      }
+    ]
   }
 }

@@ -10,6 +10,7 @@ import {
   loadThesisSupervisor,
   loadAwards,
   loadPublications,
+  loadCommunityService,
   updatePageNumbers,
 } from './data/loader.js';
 
@@ -38,6 +39,7 @@ async function init() {
   await loadThesisSupervisor();
   await loadAwards();
   await loadPublications();
+  await loadCommunityService();
   
   updatePageNumbers();
   

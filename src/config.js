@@ -113,6 +113,14 @@ export const SECTION_CONFIG = {
     cardType: 'publications',
     previousSectionId: 'awards',
   },
+  community_service: {
+    title: 'Community service',
+    subtitle: 'Scientific responsibility in international conferences or workshops',
+    sectionId: 'community-service',
+    timelineId: 'community-service',
+    cardType: 'community-service',
+    previousSectionId: 'publications',
+  },
 };
 
 // Build derived selectors from config
