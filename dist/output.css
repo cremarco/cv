@@ -668,6 +668,16 @@ body.pdf-mode [data-pdf-hide] {
   display: none !important;
 }
 
+/* Elements visible only in PDF mode */
+
+[data-pdf-only] {
+  display: none !important;
+}
+
+body.pdf-mode [data-pdf-only] {
+  display: block !important;
+}
+
 body.pdf-mode [data-pdf-no-shadow] {
   box-shadow: none !important;
 }
@@ -925,6 +935,10 @@ body.pdf-mode [data-section] {
   min-height: 1px;
 }
 
+.min-h-full {
+  min-height: 100%;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -961,10 +975,6 @@ body.pdf-mode [data-section] {
   width: 100px;
 }
 
-.w-\[120px\] {
-  width: 120px;
-}
-
 .w-\[15px\] {
   width: 15px;
 }
@@ -975,6 +985,10 @@ body.pdf-mode [data-section] {
 
 .w-\[178px\] {
   width: 178px;
+}
+
+.w-\[180px\] {
+  width: 180px;
 }
 
 .w-\[220px\] {
@@ -995,10 +1009,6 @@ body.pdf-mode [data-section] {
 
 .w-px {
   width: 1px;
-}
-
-.w-\[180px\] {
-  width: 180px;
 }
 
 .min-w-0 {
@@ -1023,6 +1033,10 @@ body.pdf-mode [data-section] {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .flex-1 {
@@ -1080,10 +1094,6 @@ body.pdf-mode [data-section] {
 
 .items-center {
   align-items: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-end {
@@ -1513,6 +1523,10 @@ body.pdf-mode [data-section] {
 
 .italic {
   font-style: italic;
+}
+
+.leading-\[9px\] {
+  line-height: 9px;
 }
 
 .leading-none {

@@ -16,6 +16,7 @@ import {
   loadItalianResearchProjects,
   loadProjects,
   loadTenderCommissions,
+  loadDeclaration,
   updatePageNumbers,
 } from './data/loader.js';
 import { highlightActiveItems } from './utils/active-highlighter.js';
@@ -51,6 +52,7 @@ async function init() {
   await loadItalianResearchProjects();
   await loadProjects();
   await loadTenderCommissions();
+  await loadDeclaration();
   
   updatePageNumbers();
   

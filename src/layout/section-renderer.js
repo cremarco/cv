@@ -8,6 +8,9 @@ import {
   MAX_EXPERIENCE_SECTION_HEIGHT_PX,
   FALLBACK_CARD_HEIGHT_PX,
   PAGE_BREAK_SAFETY_MARGIN_PX,
+  PAGE_HEIGHT_PX,
+  PAGE_NUMBER_RESERVED_HEIGHT_PX,
+  SECTION_PADDING_BOTTOM_PX,
 } from '../config.js';
 import { getCardClasses } from '../utils/css-classes.js';
 import { createMeasurementContainer, measureCardHeight } from '../utils/measurement.js';
@@ -237,7 +240,8 @@ export function renderSpecialSection(config, data, createCardFn, previousSection
   const cardHeight = measureCardHeight(card, measureContainer);
   measureContainer.remove();
   
-  const headerHeight = config.subtitle ? 100 : SECTION_HEADER_HEIGHT_PX;
+  const hasTitle = config.title && config.title.trim() !== '';
+  const headerHeight = config.subtitle ? 100 : (hasTitle ? SECTION_HEADER_HEIGHT_PX : 0);
   const requiredHeight = headerHeight + cardHeight;
   
   let currentPage = lastPage;
@@ -247,7 +251,7 @@ export function renderSpecialSection(config, data, createCardFn, previousSection
     // Fits on same page - use margin-top, not new page padding
     const section = currentPage.querySelector('section');
     if (section) {
-      section.insertAdjacentHTML('beforeend', createSectionHTML(config, true, true, false));
+      section.insertAdjacentHTML('beforeend', createSectionHTML(config, true, hasTitle, false));
     }
     currentContainer = currentPage.querySelector(config.containerSelector);
   } else {
@@ -259,6 +263,21 @@ export function renderSpecialSection(config, data, createCardFn, previousSection
   if (!currentContainer) {
     console.error(`Missing ${config.title} container`);
     return;
+  }
+
+  // For declaration section (no title), center vertically in available space
+  if (!hasTitle && config.sectionId === 'declaration') {
+    const sectionElement = currentPage.querySelector(`[data-section="${config.sectionId}"]`);
+    if (sectionElement) {
+      // Calculate remaining height after previous sections
+      const sectionTop = sectionElement.getBoundingClientRect().top - currentPage.getBoundingClientRect().top;
+      const remainingHeight = PAGE_HEIGHT_PX - sectionTop - PAGE_NUMBER_RESERVED_HEIGHT_PX - SECTION_PADDING_BOTTOM_PX;
+      // Set min-height to fill remaining space and center content vertically
+      const contentDiv = sectionElement.querySelector('.flex-1');
+      if (contentDiv) {
+        contentDiv.style.minHeight = `${remainingHeight}px`;
+      }
+    }
   }
 
   currentContainer.appendChild(createCardFn(data));

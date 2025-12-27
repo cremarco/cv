@@ -14,6 +14,7 @@ import { createInternationalResearchProjectsCard } from '../cards/international-
 import { createItalianResearchProjectsCard } from '../cards/italian-research-projects.js';
 import { createProjectsCard } from '../cards/projects.js';
 import { createTenderCommissionsCard } from '../cards/tender-commissions.js';
+import { createDeclarationCard } from '../cards/declaration.js';
 
 let cvDataPromise = null;
 let cachedResearchMetrics = null;
@@ -304,6 +305,24 @@ export async function loadTenderCommissions() {
   } catch (error) {
     console.error('Error loading Tender commissions:', error);
     setPdfState({ error: 'Error loading Tender commissions' });
+  }
+}
+
+/**
+ * Loads and renders declaration section (PDF only)
+ */
+export async function loadDeclaration() {
+  try {
+    const config = SECTION_CONFIG.declaration;
+    renderSpecialSection(
+      config, 
+      {}, // No data needed for declaration
+      createDeclarationCard, 
+      SECTION_CONFIG.tender_commissions.sectionSelector
+    );
+  } catch (error) {
+    console.error('Error loading Declaration:', error);
+    setPdfState({ error: 'Error loading Declaration' });
   }
 }
 

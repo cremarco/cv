@@ -59,6 +59,15 @@
     display: none !important;
   }
 
+  /* Elements visible only in PDF mode */
+  [data-pdf-only] {
+    display: none !important;
+  }
+
+  body.pdf-mode [data-pdf-only] {
+    display: block !important;
+  }
+
   body.pdf-mode [data-pdf-no-shadow] {
     box-shadow: none !important;
   }

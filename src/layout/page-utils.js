@@ -111,6 +111,21 @@ export function createSectionHTML(config, addMarginTop = false, showTitle = true
        </div>` 
     : '';
   
+  // For sections without title (like declaration), center the content vertically
+  // Maintain same width as other cards (gap-4 + pl-2 pr-6) but without timeline
+  if (!showTitle) {
+    return `
+      <div class="flex gap-4 pl-2 pr-6 pt-0 pb-0 ${topSpacingClass}" data-section="${config.sectionId}" style="padding-bottom: ${SECTION_PADDING_BOTTOM_PX}px;">
+        <div class="w-4 shrink-0"></div>
+        <div class="flex-1 flex flex-col justify-center ${gapClass}">
+          ${titleHTML}
+          ${subtitleHTML}
+          <div id="${config.sectionId}" class="flex flex-col gap-1 w-full"></div>
+        </div>
+      </div>
+    `;
+  }
+  
   return `
     <div class="flex gap-4 pl-2 pr-6 pt-0 pb-0 ${topSpacingClass}" data-section="${config.sectionId}" style="padding-bottom: ${SECTION_PADDING_BOTTOM_PX}px;">
       <div class="flex flex-col items-center w-4 shrink-0 ml-4 relative z-10" data-timeline="${config.timelineId}">

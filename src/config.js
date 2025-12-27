@@ -171,6 +171,13 @@ export const SECTION_CONFIG = {
     cardType: 'tender-commissions',
     previousSectionId: 'projects',
   },
+  declaration: {
+    title: '',
+    sectionId: 'declaration',
+    timelineId: 'declaration',
+    cardType: 'declaration',
+    previousSectionId: 'tender-commissions',
+  },
 };
 
 // Build derived selectors from config
