@@ -18,6 +18,7 @@ import {
   loadTenderCommissions,
   updatePageNumbers,
 } from './data/loader.js';
+import { highlightActiveItems } from './utils/active-highlighter.js';
 
 async function init() {
   initPdfMode();
@@ -52,6 +53,15 @@ async function init() {
   await loadTenderCommissions();
   
   updatePageNumbers();
+  
+  // Highlight active items based on date analysis
+  // Use a small delay to ensure DOM is fully rendered
+  setTimeout(() => {
+    highlightActiveItems({
+      highlightBackground: true,
+      highlightDates: true
+    });
+  }, 200);
   
   setPdfState({
     pageCount: document.querySelectorAll('.pdf-page').length,

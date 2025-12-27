@@ -1,7 +1,6 @@
 {
   "academic_experiences": [
     {
-      "current": true,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
       "logo": "unimib.png",
@@ -13,7 +12,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/07-rtda-10-01-2022-09-01-2025.pdf",
       "logo": "unimib.png",
@@ -25,7 +23,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/06-assegno-01-02-2021-31-01-2022.pdf",
       "logo": "unimib.png",
@@ -37,7 +34,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/05-assegno-01-02-2020-31-01-2021.pdf",
       "logo": "unimib.png",
@@ -49,7 +45,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
       "logo": "unimib.png",
@@ -61,7 +56,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/03-assegno-01-09-2014-31-08-2015.pdf",
       "logo": "unimib.png",
@@ -73,7 +67,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/02-assegno-01-09-2013-31-08-2014.pdf",
       "logo": "unimib.png",
@@ -85,7 +78,6 @@
       "university": "University of Milan-Bicocca"
     },
     {
-      "current": false,
       "department": "Department of Informatics, Systems and Communication",
       "link": "files/contratti-precedenti/01-borsa-01-02-2011-31-01-2012.pdf",
       "logo": "unimib.png",
@@ -99,7 +91,6 @@
   ],
   "foreign_research_contracts": [
     {
-      "current": false,
       "link": "files/contratti-precedenti/Estero/08-intertwino-20-04-2022-31-03-2024.pdf",
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
@@ -109,7 +100,6 @@
       "university": "Sofia University \"St. Kliment Ohridski\""
     },
     {
-      "current": false,
       "link": "files/contratti-precedenti/Estero/07-intertwino-15-07-2021-31-03-2022.pdf",
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
@@ -119,7 +109,6 @@
       "university": "Sofia University \"St. Kliment Ohridski\""
     },
     {
-      "current": false,
       "logo": "bielefeld.png",
       "place": "Bielefeld, Germany",
       "position": "Researcher",
@@ -130,7 +119,6 @@
   ],
   "research_and_technology_transfer": [
     {
-      "current": true,
       "company": "WhattaData srl",
       "logo": "whattadata.png",
       "place": "Milan, Italy",
@@ -139,7 +127,6 @@
       "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
     },
     {
-      "current": false,
       "company": "Aton Informatica s.r.l.",
       "logo": "aton.png",
       "place": "Rome, Italy",
@@ -148,7 +135,6 @@
       "topic": "I provided hands-on R&D and technical consultancy, spanning software development, data/AI analytics and advanced digital solutions, across multiple publicly funded innovation projects."
     },
     {
-      "current": false,
       "company": "Nana Bianca/Instal srl",
       "logo": "nanabianca.png",
       "place": "Milan, Italy",
@@ -157,7 +143,6 @@
       "topic": "Definition of a software architecture based on LSTM algorithms for the lexicalization of RDF data."
     },
     {
-      "current": false,
       "company": "Umbria Digitale S.c. a r.l.",
       "logo": "umbria.png",
       "place": "Perugia, Italy",
@@ -168,7 +153,6 @@
   ],
   "entrepreneurial_initiatives": [
     {
-      "current": false,
       "company": "Whattaspot srl",
       "logo": "whattaspot.png",
       "place": "Bergamo, Italy",
@@ -177,7 +161,6 @@
       "topic": "Innovative start-up specialising in the development of cutting-edge applications for the sports industry."
     },
     {
-      "current": false,
       "company": "NPCrew srl",
       "logo": "npcrew.png",
       "place": "Bergamo, Italy",
@@ -188,7 +171,6 @@
   ],
   "company_experiences": [
     {
-      "current": true,
       "company": "Aton Informatica srl",
       "logo": "aton.png",
       "place": "Rome, Italy",
@@ -197,7 +179,6 @@
       "topic": "Providing consultancy in R&D project management, grant writing, and strategic planning, supporting organisations in securing funding, coordinating research initiatives, and fostering partnerships with academic and industrial stakeholders."
     },
     {
-      "current": false,
       "company": "Instal srl",
       "logo": "instal.png",
       "place": "Florence, Italy",
@@ -206,7 +187,6 @@
       "topic": "Advised on mobile advertising solutions by optimising ad delivery software, enhancing performance tracking, and implementing innovative monetisation strategies."
     },
     {
-      "current": false,
       "company": "Mobile Avenue Solutions LLC",
       "logo": "mobile-avenue.png",
       "place": "New York, USA",
@@ -215,7 +195,6 @@
       "topic": "Advised on mobile advertising solutions by optimising ad delivery software, enhancing performance tracking, and implementing innovative monetisation strategies."
     },
     {
-      "current": false,
       "company": "Future Space spa",
       "logo": "futurespace.png",
       "place": "Rome, Italy",
@@ -540,7 +519,16 @@
         "title": "MantisTable UI: A Web Interface for Comprehensive Semantic Table Interpretation Curation and Management",
         "venue": "Journal of Open Research Software 13 (1), 2025",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Information Systems"}, {"rank": "Q1", "field": "Software"}],
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Information Systems"
+          },
+          {
+            "rank": "Q1",
+            "field": "Software"
+          }
+        ],
         "doi": "10.5334/jors.583"
       },
       {
@@ -559,7 +547,12 @@
         "title": "Guiding AI Assisted persona generation with Hofstede's cultural dimensions: a mixed-methods evaluation",
         "venue": "Behaviour & Information Technology, 1-29, 2025",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Human-Computer Interaction"}],
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Human-Computer Interaction"
+          }
+        ],
         "doi": "10.1080/0144929X.2025.2581258"
       },
       {
@@ -568,8 +561,13 @@
         "title": "Decoding the Mind: A RAG-LLM on ICD-11 for Decision Support in Psychology",
         "venue": "Expert Systems With Applications, Elsevier Ltd, 2025 (accepted for publication)",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}],
-        "doi":"10.1016/j.eswa.2025.127191"
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          }
+        ],
+        "doi": "10.1016/j.eswa.2025.127191"
       },
       {
         "number": 5,
@@ -577,7 +575,16 @@
         "title": "StEELlm: an LLM for generating semantic annotations of tabular data",
         "venue": "ACM Transactions on Intelligent Systems and Technology, Association for Computing Machinery, 2025",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}, {"rank": "Q1", "field": "Theoretical Computer Science"}],
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Theoretical Computer Science"
+          }
+        ],
         "doi": "10.1145/3719206"
       },
       {
@@ -586,7 +593,20 @@
         "title": "PENguIN: A mental health application employing gamification and token economy to boost therapeutic adherence in young users",
         "venue": "Computers in Human Behavior Reports, Volume 17, Elsevier Ltd, 2025",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}, {"rank": "Q1", "field": "Computer Science Application"}, {"rank": "Q1", "field": "Human-Computer Interaction"}],
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Computer Science Application"
+          },
+          {
+            "rank": "Q1",
+            "field": "Human-Computer Interaction"
+          }
+        ],
         "doi": "10.1016/j.chbr.2025.100586"
       },
       {
@@ -595,7 +615,16 @@
         "title": "Feature/vector entity retrieval and disambiguation techniques to create a supervised and unsupervised semantic table interpretation approach",
         "venue": "Knowledge-Based Systems, Volume 304, Elsevier B.V., 2024",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Artificial Intelligence"}, {"rank": "Q1", "field": "Software"}],
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Software"
+          }
+        ],
         "doi": "10.1016/j.knosys.2024.112447"
       },
       {
@@ -604,7 +633,20 @@
         "title": "Multilinguality and LLOD: a survey across linguistic description levels",
         "venue": "Semantic Web, Volume 15, IOS Press, 2024",
         "type": "journal",
-        "quartiles": [{"rank": "Q2", "field": "Computer Networks and Communications"}, {"rank": "Q2", "field": "Computer Science Applications"}, {"rank": "Q2", "field": "Information Systems"}],
+        "quartiles": [
+          {
+            "rank": "Q2",
+            "field": "Computer Networks and Communications"
+          },
+          {
+            "rank": "Q2",
+            "field": "Computer Science Applications"
+          },
+          {
+            "rank": "Q2",
+            "field": "Information Systems"
+          }
+        ],
         "doi": "10.3233/SW-243591"
       },
       {
@@ -621,7 +663,12 @@
         "title": "Facing multidimensional poverty in older adults: an artificial intelligence approach that reveals the variable relevance",
         "venue": "Intelligenza Artificiale, Volume 18, IOS Press, 2024",
         "type": "journal",
-        "quartiles": [{"rank": "Q2", "field": "Artificial Intelligence"}],
+        "quartiles": [
+          {
+            "rank": "Q2",
+            "field": "Artificial Intelligence"
+          }
+        ],
         "doi": "10.3233/IA-240027"
       },
       {
@@ -764,7 +811,20 @@
         "title": "A fully automated approach to a complete Semantic Table Interpretation",
         "venue": "Future Generation Computer Systems, Volume 112, Elsevier B.V., 2020",
         "type": "journal",
-        "quartiles": [{"rank": "Q1", "field": "Computer Networks and Communications"}, {"rank": "Q1", "field": "Hardware and Architecture"}, {"rank": "Q1", "field": "Software"}],
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Computer Networks and Communications"
+          },
+          {
+            "rank": "Q1",
+            "field": "Hardware and Architecture"
+          },
+          {
+            "rank": "Q1",
+            "field": "Software"
+          }
+        ],
         "doi": "10.1016/j.future.2020.05.019"
       },
       {

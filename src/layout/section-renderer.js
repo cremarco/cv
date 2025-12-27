@@ -57,7 +57,9 @@ export function renderSection(items, config, previousSectionSelector = null) {
     
     try {
       items.forEach((item, index) => {
-        const isCurrent = item.current === true;
+        // isCurrent is now determined automatically by the active-highlighter script
+        // We pass false here as the script will handle highlighting
+        const isCurrent = false;
         const isFirstInSection = index === 0;
         const isLast = index === items.length - 1;
         const card = createCard(config.cardType, item, { isCurrent });
@@ -122,7 +124,8 @@ export function renderSection(items, config, previousSectionSelector = null) {
   const measureContainer = createMeasurementContainer(null);
   let firstCardHeight = FALLBACK_CARD_HEIGHT_PX;
   if (items.length > 0) {
-    const firstCard = createCard(config.cardType, items[0], { isCurrent: items[0].current === true });
+    // isCurrent is now determined automatically by the active-highlighter script
+    const firstCard = createCard(config.cardType, items[0], { isCurrent: false });
     firstCardHeight = measureCardHeight(firstCard, measureContainer);
   }
   measureContainer.remove();
@@ -158,7 +161,9 @@ export function renderSection(items, config, previousSectionSelector = null) {
   
   try {
     items.forEach((item, index) => {
-      const isCurrent = item.current === true;
+      // isCurrent is now determined automatically by the active-highlighter script
+      // We pass false here as the script will handle highlighting
+      const isCurrent = false;
       const isFirstInSection = index === 0;
       const isLast = index === items.length - 1;
       const card = createCard(config.cardType, item, { isCurrent });
