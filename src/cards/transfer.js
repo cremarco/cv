@@ -24,13 +24,13 @@ export function createTransferCard(exp, { isCurrent }) {
   contentDiv.className = 'flex-1';
   contentDiv.innerHTML = `
     <div class="flex flex-col ${CARD_INTERNAL_GAP}">
-      <div class="flex justify-between items-start">
+      <div class="flex justify-between items-center">
         <div class="${titleWidth}">
           <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.company}</div>
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${exp.position}</div>
         </div>
         <div class="flex flex-col gap-0.5 items-end">
-          <div class="flex gap-2">
+          <div class="flex gap-2 items-center">
             ${createLinkBadge(exp.link)}
             <span class="${getTimeBadgeClasses(isCurrent)}">${exp.time_period}</span>
           </div>

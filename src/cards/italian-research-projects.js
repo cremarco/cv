@@ -30,7 +30,7 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
   
   // Header row with institution, name, link and period
   const headerRow = document.createElement('div');
-  headerRow.className = 'flex items-start justify-between relative shrink-0 w-full';
+  headerRow.className = 'flex items-center justify-between relative shrink-0 w-full';
   
   // Left side: institution and name
   const leftDiv = document.createElement('div');
@@ -61,7 +61,7 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
   rightDiv.className = 'flex flex-col gap-0.5 items-end min-w-[186px] pl-10 pr-0 py-0 relative shrink-0';
   
   const badgesRow = document.createElement('div');
-  badgesRow.className = 'flex gap-2 items-start justify-end relative shrink-0';
+  badgesRow.className = 'flex gap-2 items-center justify-end relative shrink-0';
   
   // Link badge
   if (project.link) {

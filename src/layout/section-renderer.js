@@ -424,7 +424,8 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
   const firstPaperCard = createPublicationCard(pubData.papers[0], {
     isFirstInPage: true,
     isFirstInSection: true,
-    isLast: false
+    isLast: false,
+    index: 0
   });
   const firstCardHeight = measureCardHeight(firstPaperCard, measureContainer);
   measureContainer.remove();
@@ -495,7 +496,8 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
       const card = createPublicationCard(paper, {
         isFirstInPage,
         isFirstInSection,
-        isLast
+        isLast,
+        index
       });
       const cardHeight = measureCardHeight(card, finalMeasureContainer);
       

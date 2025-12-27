@@ -28,7 +28,7 @@ export function createEducationCard(edu) {
   
   // Build thesis markup
   const thesisMarkup = edu.thesis_title ? `
-    <div class="flex gap-3 items-start w-full">
+    <div class="flex gap-3 items-center w-full">
       <div class="flex-shrink-0 w-[65px]">
         <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Thesis:</p>
       </div>
@@ -43,7 +43,7 @@ export function createEducationCard(edu) {
   
   // Build international experience markup
   const internationalMarkup = edu.international_experience ? `
-    <div class="flex gap-3 items-start w-full">
+    <div class="flex gap-3 items-center w-full">
       <div class="flex-shrink-0 w-[65px]">
         <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Int Esp.:</p>
       </div>
@@ -83,12 +83,12 @@ export function createEducationCard(edu) {
 
   contentDiv.innerHTML = `
     <div class="flex flex-col ${CARD_INTERNAL_GAP}">
-      <div class="flex justify-between items-start">
+      <div class="flex justify-between items-center">
         <div class="w-[178px]">
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${degreeText}</div>
         </div>
         <div class="flex flex-col gap-0.5 items-end">
-          <div class="flex gap-2">
+          <div class="flex gap-2 items-center">
             <span class="${timeBadgeClasses}">${edu.time_period}</span>
           </div>
         </div>

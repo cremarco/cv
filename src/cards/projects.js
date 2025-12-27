@@ -29,7 +29,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   
   // Header row with name, funding agency, link and period
   const headerRow = document.createElement('div');
-  headerRow.className = 'flex items-start justify-between relative shrink-0 w-full';
+  headerRow.className = 'flex items-center justify-between relative shrink-0 w-full';
   
   // Left side: project name
   const leftDiv = document.createElement('div');
@@ -50,7 +50,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   rightDiv.className = 'flex flex-col gap-0.5 items-end relative shrink-0';
   
   const badgesRow = document.createElement('div');
-  badgesRow.className = 'flex gap-2 items-start relative shrink-0';
+  badgesRow.className = 'flex gap-2 items-center relative shrink-0';
   
   // Funding agency badge
   if (project.funding_agency) {
@@ -124,7 +124,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
     const activitiesDiv = document.createElement('div');
     activitiesDiv.className = `flex flex-col ${CARD_TEXT_GAP} items-start relative shrink-0 w-full`;
     const activitiesRow = document.createElement('div');
-    activitiesRow.className = 'flex font-dm-sans font-medium items-start relative shrink-0 text-ink w-full';
+    activitiesRow.className = 'flex font-dm-sans font-medium items-center relative shrink-0 text-ink w-full';
     
     const activitiesLabel = document.createElement('div');
     activitiesLabel.className = 'flex flex-col justify-center relative shrink-0 text-xs-7 w-[60px]';

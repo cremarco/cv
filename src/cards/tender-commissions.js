@@ -16,7 +16,7 @@ function createTenderCommissionItemCard(item) {
   contentDiv.className = 'basis-0 flex flex-col grow items-start min-h-px min-w-px relative shrink-0';
   
   const innerDiv = document.createElement('div');
-  innerDiv.className = 'flex items-start justify-between relative shrink-0 w-full';
+  innerDiv.className = 'flex items-center justify-between relative shrink-0 w-full';
   
   // Build title
   const titleDiv = document.createElement('div');
@@ -44,7 +44,7 @@ function createTenderCommissionItemCard(item) {
   // Build badges (link and year)
   if (item.link || item.year) {
     const badgesDiv = document.createElement('div');
-    badgesDiv.className = 'flex gap-2 items-start relative shrink-0';
+    badgesDiv.className = 'flex gap-2 items-center relative shrink-0';
     
     if (item.link) {
       const linkBadgeDiv = document.createElement('div');

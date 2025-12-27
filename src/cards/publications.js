@@ -153,7 +153,7 @@ export function createPublicationsSummaryCards(counts) {
 /**
  * Creates a single publication card following the same style as other cards
  */
-export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, isLast }) {
+export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, isLast, index }) {
   // Use getCardClasses for consistent styling (isCurrent is false for publications)
   const cardClasses = getCardClasses({ 
     isFirstInPage, 
@@ -244,8 +244,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   const contentDiv = document.createElement('div');
   contentDiv.className = 'flex-1';
   contentDiv.innerHTML = `
-    <div class="flex flex-wrap gap-1.5 items-start mb-1">
-      <span class="inline-flex items-center px-1.5 py-0.5 text-[8px] font-medium rounded-md bg-gray-100 text-gray-700 shrink-0">${paper.number + 1}</span>
+    <div class="flex flex-wrap gap-1.5 items-center mb-1">
+      <span class="inline-flex items-center px-1.5 py-0.5 text-[8px] font-medium rounded-md bg-gray-100 text-gray-700 shrink-0">${index + 1}</span>
       <div class="flex-1 flex flex-col font-dm-sans justify-center text-ink text-xs-6 leading-normal min-w-0">
         <p class="mb-0">${paper.authors}</p>
         <p class="italic mb-0 font-dm-sans">${paper.title}</p>
@@ -295,7 +295,8 @@ export function createPublicationsContainer(pubData, metrics) {
     papersContainer.appendChild(createPublicationCard(paper, { 
       isFirstInPage, 
       isFirstInSection, 
-      isLast 
+      isLast,
+      index
     }));
   });
   

@@ -25,7 +25,7 @@ export function createWebinarCard(item) {
   
   contentDiv.innerHTML = `
     <div class="flex flex-col ${CARD_INTERNAL_GAP}">
-      <div class="flex justify-between items-start">
+      <div class="flex justify-between items-center">
         <div class="flex-1">
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${item.title || ''}</div>
         </div>

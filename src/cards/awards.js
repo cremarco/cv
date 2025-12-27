@@ -23,7 +23,7 @@ function createAwardCard(award) {
   
   // Title and link badge
   const titleContainer = document.createElement('div');
-  titleContainer.className = 'flex gap-1 items-start relative shrink-0 w-full';
+  titleContainer.className = 'flex gap-1 items-center relative shrink-0 w-full';
   
   const title = document.createElement('p');
   title.className = 'font-dm-sans font-medium leading-tight relative shrink-0 text-gray-dark text-[7px] whitespace-nowrap';

@@ -15,7 +15,7 @@ function createEditorialCommunityServiceItemCard(item) {
   contentDiv.className = 'basis-0 flex flex-col grow items-start min-h-px min-w-px relative shrink-0';
   
   const innerDiv = document.createElement('div');
-  innerDiv.className = 'flex items-start justify-between relative shrink-0 w-full';
+  innerDiv.className = 'flex items-center justify-between relative shrink-0 w-full';
   
   // Build title
   const titleDiv = document.createElement('div');
@@ -55,7 +55,7 @@ function createEditorialCommunityServiceItemCard(item) {
   // Build badges (year if present)
   if (item.year) {
     const badgesDiv = document.createElement('div');
-    badgesDiv.className = 'flex gap-2 items-start relative shrink-0';
+    badgesDiv.className = 'flex gap-2 items-center relative shrink-0';
     
     const yearBadge = document.createElement('span');
     yearBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
@@ -66,7 +66,7 @@ function createEditorialCommunityServiceItemCard(item) {
   } else {
     // Empty space for alignment when no year
     const badgesDiv = document.createElement('div');
-    badgesDiv.className = 'flex gap-2 items-start relative shrink-0';
+    badgesDiv.className = 'flex gap-2 items-center relative shrink-0';
     const spacer = document.createElement('div');
     spacer.className = 'h-2.5 shrink-0 w-[15px]';
     badgesDiv.appendChild(spacer);
