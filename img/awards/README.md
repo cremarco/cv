@@ -29,3 +29,4 @@ Le seguenti immagini devono essere scaricate manualmente da Figma:
    - `mobidatalab-codagon-2023.png`
    - `iswc-best-resource-2025.png`
 
+

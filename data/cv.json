@@ -519,11 +519,11 @@
   "publications": {
     "update_date": "December 17, 2025",
     "summary": {
-      "journal_papers": 11,
-      "conference_papers": 16,
-      "workshop_papers": 5,
-      "challenge_papers": 6,
-      "book_chapters": 1
+      "journal_papers": 15,
+      "conference_papers": 30,
+      "workshop_papers": 10,
+      "challenge_papers": 10,
+      "book_chapters": 2
     },
     "papers": [
       {
@@ -614,6 +614,266 @@
         "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3889, CEUR Workshop Proceedings, 2024",
         "type": "challenge",
         "ceur": "Vol-3889"
+      },
+      {
+        "number": 10,
+        "authors": "Lorenzo Olearo, Fabio D'Adda, Enza Messina, <b>Marco Cremaschi</b>, Stefania Bandini, Francesca Gasparini",
+        "title": "Facing multidimensional poverty in older adults: an artificial intelligence approach that reveals the variable relevance",
+        "venue": "Intelligenza Artificiale, Volume 18, IOS Press, 2024",
+        "type": "journal",
+        "quartiles": [{"rank": "Q2", "field": "Artificial Intelligence"}],
+        "doi": "10.3233/IA-240027"
+      },
+      {
+        "number": 11,
+        "authors": "Giulia Rosemary Avis, Fabio D'Adda, David Chieregato, Elia Guarnieri, Maria Meliante, Andrea Primo Pierotti, <b>Marco Cremaschi</b>",
+        "title": "A neural network for automatic handwriting extraction and recognition in psychodiagnostic questionnaires",
+        "venue": "In Proceedings of the 10th International Conference on Information and Communication Technologies for Ageing Well and e-Health (ICT4AWE), Volume 1, SciTePress, 2024",
+        "type": "conference",
+        "icore": "C",
+        "speaker": true,
+        "doi": "10.5220/0012587600003699"
+      },
+      {
+        "number": 12,
+        "authors": "Jessica Amianto Barbato, <b>Marco Cremaschi</b>, Anisa Rula, Andrea Maurino",
+        "title": "Toward a Human-in-the-Loop Approach to Create Training Datasets for RDF Lexicalisation",
+        "venue": "In Proceedings of the 9th Intelligent Systems Conference (IntelliSys), Lecture Notes in Networks and Systems, Volume 822, Springer, 2024",
+        "type": "conference",
+        "doi": "10.1007/978-3-031-47721-8_6"
+      },
+      {
+        "number": 13,
+        "authors": "Lorenzo Olearo, Fabio D'Adda, Vincenzina Messina, <b>Marco Cremaschi</b>, Stefania Bandini, Francesca Gasparini",
+        "title": "An Artificial Intelligence approach to predict multidimensional poverty of older people from unlabelled data",
+        "venue": "In Proceedings of the 12th Italian Workshop on Artificial Intelligence for an Ageing Society (AI*AS@AI*IA), CEUR Workshop Proceedings, 2023",
+        "type": "workshop",
+        "ceur": "Vol-3623"
+      },
+      {
+        "number": 14,
+        "authors": "Elia Guarinieri, <b>Marco Cremaschi</b>",
+        "title": "The digitalisation of reinforcement learning and token economy in e-health",
+        "venue": "In Proceedings of the 5th International Conference on Higher Education Learning Methodologies and Technologies Online (HELMETO), Communications in Computer and Information Science, Volume 2076, Springer, 2023",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1007/978-3-031-67351-1_29"
+      },
+      {
+        "number": 15,
+        "authors": "<b>Marco Cremaschi</b>, Jessica Amianto Barbato, Anisa Rula, Matteo Palmonari, Rossana Actis-Grosso",
+        "title": "What Really Matters in a Table? Insights from a User Study",
+        "venue": "In Proceedings of the 21st IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT), IEEE, 2022",
+        "type": "conference",
+        "icore": "B",
+        "speaker": true,
+        "doi": "10.1109/WI-IAT55865.2022.00045"
+      },
+      {
+        "number": 16,
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, David Chieregato",
+        "title": "s-elBat: a semantic interpretation approach for messy taBle-s",
+        "venue": "In Proceeding of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-3320"
+      },
+      {
+        "number": 17,
+        "authors": "Jessica Amianto Barbato, <b>Marco Cremaschi</b>",
+        "title": "Bridging the gap between human-gaze data and table summarisation",
+        "venue": "In Proceeding of the 1st Workshop on Artificial Intelligence for Human-Machine Interaction (AI*HMI@AI*IA), Volume 3368, CEUR Workshop Proceedings, 2022",
+        "type": "workshop",
+        "ceur": "Vol-3368"
+      },
+      {
+        "number": 18,
+        "authors": "Stefania Bandini, Valeria Marina Borodi, David Chieregato, <b>Marco Cremaschi</b>, Federica D'Antico, Vincenzina Messina, Marco Terraneo, Laura Terzera, Francesca Gasparini",
+        "title": "Artificial Intelligence facing multidimensional poverty in elderly",
+        "venue": "In Proceedings of the 11th Italian Workshop on Artificial Intelligence for an Ageing Society (AI*AS@AI*IA), Volume 3367, CEUR Workshop Proceedings, 2022",
+        "type": "workshop",
+        "speaker": true,
+        "ceur": "Vol-3367"
+      },
+      {
+        "number": 19,
+        "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Fabio D'Adda, Flavio De Paoli, Matteo Palmonari",
+        "title": "LamAPI: a comprehensive tool for string-based Entity retrieval with type-base filters",
+        "venue": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 3324, CEUR Workshop Proceedings, 2022",
+        "type": "workshop",
+        "speaker": true,
+        "ceur": "Vol-3324"
+      },
+      {
+        "number": 20,
+        "authors": "Mattia Marzocchi, <b>Marco Cremaschi</b>, Riccardo Pozzi, Roberto Avogadro, Matteo Palmonari",
+        "title": "MammoTab: a giant and comprehensive dataset for Semantic Table Interpretation",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-3320"
+      },
+      {
+        "number": 21,
+        "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>",
+        "title": "MantisTable V: a novel and efficient approach to Semantic Table Interpretation",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3130, CEUR Workshop Proceedings, 2021",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-3103"
+      },
+      {
+        "number": 22,
+        "authors": "<b>Marco Cremaschi</b>, Simone Saleri, Andrea Maurino",
+        "title": "A geometrical deep learning model for the lexicalisation of \"unseen\" RDF triples",
+        "venue": "In Proceeding of the IEEE 23rd Int Conf on High Performance Computing & Communications; 7th Int Conf on Data Science & Systems; 19th Int Conf on Smart City; 7th Int Conf on Dependability in Sensor, Cloud & Big Data Systems & Application, IEEE, 2021",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1109/HPCC-DSS-SmartCity-DependSys53884.2021.00334"
+      },
+      {
+        "number": 23,
+        "authors": "Rachele De Giuseppe, Matteo Colleoni, <b>Marco Cremaschi</b>, Luca Daconto, Ilaria Di Napoli, Alberto Gallace, Lorenzo Guzzetti, Massimo Labra, Andrea Maurino, Chiara Tomasinelli, Alessandra Vincenti, Sara Zizzari, Hellas Cena",
+        "title": "How to preserve healthy aging through nutritional strategies: the new approach of the Food Social Network (Food NET) project",
+        "venue": "Mediterranean Journal of Nutrition and Metabolism, Volume 15, SAGE Publications, 2021",
+        "type": "journal",
+        "doi": "10.3233/MNM-211500"
+      },
+      {
+        "number": 24,
+        "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Ernesto Jiménez-Ruiz, Anisa Rula",
+        "title": "A framework for quality assessment of semantic annotations of tabular data",
+        "venue": "In Proceeding of the 20th International Semantic Web Conference (ISWC), Lecture Notes in Computer Science, Volume 12922, Springer, 2021",
+        "type": "conference",
+        "icore": "A",
+        "speaker": true,
+        "doi": "10.1007/978-3-030-88361-4_31"
+      },
+      {
+        "number": 25,
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, Andrea Barazzetti, David Chieregato, E Jiménez-Ruiz",
+        "title": "MantisTable SE: an efficient approach for the Semantic Table Interpretation",
+        "venue": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2775, CEUR Workshop Proceedings, 2020",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-2775"
+      },
+      {
+        "number": 26,
+        "authors": "<b>Marco Cremaschi</b>, Flavio De Paoli, Anisa Rula, Blerina Spahiu",
+        "title": "A fully automated approach to a complete Semantic Table Interpretation",
+        "venue": "Future Generation Computer Systems, Volume 112, Elsevier B.V., 2020",
+        "type": "journal",
+        "quartiles": [{"rank": "Q1", "field": "Computer Networks and Communications"}, {"rank": "Q1", "field": "Hardware and Architecture"}, {"rank": "Q1", "field": "Software"}],
+        "doi": "10.1016/j.future.2020.05.019"
+      },
+      {
+        "number": 27,
+        "authors": "<b>Marco Cremaschi</b>, Alessandra Siano, Roberto Avogadro, Ernesto Jimenez-Ruiz, Andrea Maurino",
+        "title": "STILTool: A Semantic Table Interpretation evaLuation Tool",
+        "venue": "In Proceeding of 17th International Extended Semantic Web Conference, Volume 12124, Springer, 2020",
+        "type": "conference",
+        "icore": "B",
+        "speaker": true,
+        "doi": "10.1007/978-3-030-62327-2_11"
+      },
+      {
+        "number": 28,
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, David Chieregato",
+        "title": "MantisTable: an automatic approach for the Semantic Table Interpretation",
+        "venue": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2553, CEUR Workshop Proceedings, 2019",
+        "type": "challenge",
+        "winner": true,
+        "ceur": "Vol-2553"
+      },
+      {
+        "number": 29,
+        "authors": "<b>Marco Cremaschi</b>, Anisa Rula, Alessandra Siano, Flavio De Paoli",
+        "title": "MantisTable: a tool for creating semantic annotations on tabular data",
+        "venue": "In Proceedings of the 16th Extended Semantic Web Conference (ESWC), Lecture Notes in Computer Science, Volume 11762, Springer, 2019",
+        "type": "conference",
+        "icore": "B",
+        "best_paper": true,
+        "doi": "10.1007/978-3-030-32327-1_4"
+      },
+      {
+        "number": 30,
+        "authors": "<b>Marco Cremaschi</b>, Federico Bianchi, Andrea Maurino, Andrea Primo Pierotti",
+        "title": "Supporting journalism by combining neural language generation and Knowledge Graphs",
+        "venue": "In Proceedings of the Sesta Conferenza Italiana di Linguistica Computazionale (Clic-it), Volume 2481, CEUR Workshop Proceedings, 2019",
+        "type": "conference",
+        "speaker": true,
+        "ceur": "Vol-2481"
+      },
+      {
+        "number": 31,
+        "authors": "<b>Marco Cremaschi</b>, Anisa Rula, Alessandra Siano, Flavio De Paoli",
+        "title": "Semantic Table Interpretation using MantisTable",
+        "venue": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 2536, CEUR Workshop Proceedings, 2019",
+        "type": "workshop",
+        "speaker": true,
+        "ceur": "Vol-2536"
+      },
+      {
+        "number": 32,
+        "authors": "<b>Marco Cremaschi</b>, Flavio De Paoli",
+        "title": "A practical approach to services composition through light semantic descriptions",
+        "venue": "In Proceedings of the 7th European Conference on Service-Oriented and Cloud Computing (ESOCC), Lecture Notes in Computer Science, Volume 11116, Springer, 2018",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1007/978-3-319-99819-0_10"
+      },
+      {
+        "number": 33,
+        "authors": "Federico Bianchi, Matteo Palmonari, <b>Marco Cremaschi</b>, Elisabetta Fersini",
+        "title": "Actively learning to rank semantic associations for personalized contextual exploration of knowledge graphs",
+        "venue": "In Proceedings of the 14th Extended Semantic Web Conference (ESWC), Lecture Notes in Computer Science, Volume 10249, Springer, 2017",
+        "type": "conference",
+        "icore": "B",
+        "doi": "10.1007/978-3-319-58068-5_8"
+      },
+      {
+        "number": 34,
+        "authors": "Meherun Nesa Lucky, <b>Marco Cremaschi</b>, Barbara Lodigiani, Antonio Menolascina, Flavio De Paoli",
+        "title": "Enriching API descriptions by adding API profiles through semantic annotation",
+        "venue": "In Proceedings of the 14th International Conference Service-Oriented Computing (ICSOC), Lecture Notes in Computer Science, Volume 9936, Springer, 2016",
+        "type": "conference",
+        "icore": "A",
+        "doi": "10.1007/978-3-319-46295-0_55"
+      },
+      {
+        "number": 35,
+        "authors": "Matteo Palmonari, Giorgio Uboldi, <b>Marco Cremaschi</b>, Daniele Ciminieri, Federico Bianchi",
+        "title": "DaCENA: serendipitous news reading with data contexts",
+        "venue": "In Proceedings of the 12th Extended Semantic Web Conference (ESWC), Lecture Notes in Computer Science, Volume 9341, Springer, 2015",
+        "type": "conference",
+        "icore": "B",
+        "doi": "10.1007/978-3-319-25639-9_26"
+      },
+      {
+        "number": 36,
+        "authors": "Gianluigi Viscusi, <b>Marco Cremaschi</b>, Carlo Batini",
+        "title": "Service Science and scholarship: experiences from a pragmatist perspective",
+        "venue": "In Software Engineering Education for a Global E-Service Economy, Springer, 2014",
+        "type": "book_chapter",
+        "doi": "10.1007/978-3-319-04217-6_19"
+      },
+      {
+        "number": 37,
+        "authors": "Claudio Baldassarre, <b>Marco Cremaschi</b>, Matteo Palmonari",
+        "title": "Bridging the gap between citizens and local administrations with knowledge-based service bundle recommendations",
+        "venue": "In Proceedings of the 24th International Conference on Database and Expert Systems Applications (DEXA), IEEE, 2013",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1109/DEXA.2013.25"
+      },
+      {
+        "number": 38,
+        "authors": "Marco Comerio, Marco Castelli, <b>Marco Cremaschi</b>",
+        "title": "Towards the Definition of Value-added Services for Citizens: a New Model for the Description of Public Administration Services",
+        "venue": "International Journal of Management and Information Technology, Volume 4, Khalsa Publications, 2013",
+        "type": "journal",
+        "doi": "10.24297/ijmit.v4i1.4635"
       }
     ]
   }

@@ -188,3 +188,4 @@ export function createNewPage(pageNumber, templatePage, pagesContainer, sectionC
   return newPage;
 }
 
+

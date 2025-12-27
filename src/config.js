@@ -122,3 +122,4 @@ Object.values(SECTION_CONFIG).forEach(config => {
   config.timelineSelector = `[data-timeline="${config.timelineId}"]`;
 });
 
+

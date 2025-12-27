@@ -51,3 +51,4 @@ export function createWebinarCard(item) {
   return card;
 }
 
+
