@@ -20,7 +20,7 @@ export function createWebinarCard(item) {
   contentDiv.className = 'flex-1';
   
   const dateMarkup = item.date ? `
-    <div class="text-xs-6 text-gray-dark font-dm-sans text-right whitespace-nowrap">${item.date}</div>
+    <span class="inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700">${item.date}</span>
   ` : '';
   
   contentDiv.innerHTML = `
@@ -30,7 +30,7 @@ export function createWebinarCard(item) {
           <div class="text-xs-8 text-ink font-dm-sans font-medium">${item.title || ''}</div>
         </div>
         <div class="flex gap-2 items-center">
-          ${createLinkBadge(item.link, true)}
+          ${createLinkBadge(item.link)}
           ${dateMarkup}
         </div>
       </div>

@@ -74,7 +74,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   if (project.link) {
     const linkBadgeDiv = document.createElement('div');
     linkBadgeDiv.className = 'h-2.5 relative shrink-0 w-4';
-    linkBadgeDiv.insertAdjacentHTML('beforeend', createLinkBadge(project.link, true));
+    linkBadgeDiv.insertAdjacentHTML('beforeend', createLinkBadge(project.link));
     if (linkBadgeDiv.firstElementChild) {
       badgesRow.appendChild(linkBadgeDiv.firstElementChild);
     }
@@ -82,12 +82,9 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   
   // Period badge
   if (project.period) {
-    const periodBadge = document.createElement('div');
-    periodBadge.className = 'flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0';
-    const periodP = document.createElement('p');
-    periodP.className = 'font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap text-right';
-    periodP.textContent = project.period;
-    periodBadge.appendChild(periodP);
+    const periodBadge = document.createElement('span');
+    periodBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
+    periodBadge.textContent = project.period;
     badgesRow.appendChild(periodBadge);
   }
   

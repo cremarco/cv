@@ -28,7 +28,7 @@ export function getCardClasses({ isFirstInPage, isFirstInSection, isCurrent }) {
  * Returns time badge classes based on current status
  */
 export function getTimeBadgeClasses(isCurrent) {
-  const base = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md';
+  const base = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md';
   return isCurrent 
     ? `${base} bg-purple-100 text-purple-700`
     : `${base} bg-gray-100 text-gray-700`;

@@ -136,7 +136,7 @@ function highlightActiveTimeBadges() {
       const classes = span.className;
       return classes.includes('inline-flex') && 
              classes.includes('items-center') && 
-             (classes.includes('px-1.5') || classes.includes('px-1'));
+             (classes.includes('px-1.5') || classes.includes('px-1') || classes.includes('px-0.5'));
     });
     
     timeBadges.forEach(badge => {
@@ -150,8 +150,8 @@ function highlightActiveTimeBadges() {
     });
     
     // Also check for date elements in teaching cards and other cards
-    // Look for elements with text-xs-6 that might contain dates
-    const dateElements = Array.from(card.querySelectorAll('[class*="text-xs-6"]')).filter(el => {
+    // Look for elements with text-xs-6 or text-[7px] that might contain dates
+    const dateElements = Array.from(card.querySelectorAll('[class*="text-xs-6"], [class*="text-[7px]"]')).filter(el => {
       const text = el.textContent.trim();
       // Check if it looks like a date (contains month names or year patterns)
       return /(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|\d{4}|Present|Current)/i.test(text);
@@ -286,7 +286,7 @@ function highlightActiveCardBackgrounds() {
       const classes = span.className;
       return classes.includes('inline-flex') && 
              classes.includes('items-center') && 
-             (classes.includes('px-1.5') || classes.includes('px-1'));
+             (classes.includes('px-1.5') || classes.includes('px-1') || classes.includes('px-0.5'));
     });
     
     // Find all potential date elements

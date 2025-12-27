@@ -31,7 +31,7 @@ function createAwardCard(award) {
   titleContainer.appendChild(title);
   
   if (award.link) {
-    titleContainer.insertAdjacentHTML('beforeend', createLinkBadge(award.link, true));
+    titleContainer.insertAdjacentHTML('beforeend', createLinkBadge(award.link));
   }
   card.appendChild(titleContainer);
   

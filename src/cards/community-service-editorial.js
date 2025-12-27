@@ -57,12 +57,9 @@ function createEditorialCommunityServiceItemCard(item) {
     const badgesDiv = document.createElement('div');
     badgesDiv.className = 'flex gap-2 items-start relative shrink-0';
     
-    const yearBadge = document.createElement('div');
-    yearBadge.className = 'flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0 w-5';
-    const yearP = document.createElement('p');
-    yearP.className = 'font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap';
-    yearP.textContent = item.year;
-    yearBadge.appendChild(yearP);
+    const yearBadge = document.createElement('span');
+    yearBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
+    yearBadge.textContent = item.year;
     badgesDiv.appendChild(yearBadge);
     
     innerDiv.appendChild(badgesDiv);

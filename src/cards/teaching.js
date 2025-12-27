@@ -16,15 +16,16 @@ function renderCourseRow(course, isPhd = true) {
   ` : '';
   
   const hasPresent = course.time_period?.toLowerCase().includes('present');
-  const periodColor = (!isPhd && course.time_period?.includes('current'))
-    ? 'text-purple-600'
-    : hasPresent
-    ? 'text-purple-600'
-    : isPhd ? 'text-ink' : 'text-gray-dark';
+  const isActive = (!isPhd && course.time_period?.includes('current')) || hasPresent;
+  const periodBadgeClasses = isActive
+    ? 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-purple-100 text-purple-700'
+    : 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
   
   const hoursMarkup = course.hours ? `
     <div class="text-xs-6 text-muted font-dm-sans italic whitespace-nowrap">${course.hours}</div>
   ` : '';
+  
+  const periodBadge = course.time_period ? `<span class="${periodBadgeClasses}">${course.time_period}</span>` : '';
   
   return `
     <div class="flex items-center justify-between h-2.5 mb-0.5 last:mb-0">
@@ -34,7 +35,7 @@ function renderCourseRow(course, isPhd = true) {
       </div>
       <div class="flex items-center justify-between w-[120px]">
         ${roleBadge}
-        <div class="text-xs-6 ${periodColor} font-dm-sans text-right whitespace-nowrap">${course.time_period || ''}</div>
+        ${periodBadge}
       </div>
     </div>
   `;

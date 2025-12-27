@@ -49,19 +49,16 @@ function createTenderCommissionItemCard(item) {
     if (item.link) {
       const linkBadgeDiv = document.createElement('div');
       linkBadgeDiv.className = 'h-2.5 relative shrink-0 w-4';
-      linkBadgeDiv.insertAdjacentHTML('beforeend', createLinkBadge(item.link, true));
+      linkBadgeDiv.insertAdjacentHTML('beforeend', createLinkBadge(item.link));
       if (linkBadgeDiv.firstElementChild) {
         badgesDiv.appendChild(linkBadgeDiv.firstElementChild);
       }
     }
     
     if (item.year) {
-      const yearBadge = document.createElement('div');
-      yearBadge.className = 'flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0 w-5';
-      const yearP = document.createElement('p');
-      yearP.className = 'font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap';
-      yearP.textContent = item.year;
-      yearBadge.appendChild(yearP);
+      const yearBadge = document.createElement('span');
+      yearBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
+      yearBadge.textContent = item.year;
       badgesDiv.appendChild(yearBadge);
     }
     
