@@ -212,7 +212,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.icore) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
       </div>
     `;
   }
@@ -222,7 +222,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
     const quartilesText = paper.quartiles.map(q => `<span class="font-bold">${q.rank}</span> ${q.field}`).join(', ');
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
       </div>
     `;
   }
@@ -231,7 +231,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.doi) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" class="underline">${paper.doi}</a></span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" class="underline">${paper.doi}</a></span>
       </div>
     `;
   }
@@ -240,7 +240,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.ceur) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">CEUR:</span> ${paper.ceur}</span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">CEUR:</span> ${paper.ceur}</span>
       </div>
     `;
   }
@@ -250,14 +250,14 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   contentDiv.className = 'flex-1';
   contentDiv.innerHTML = `
     <div class="flex flex-wrap gap-1.5 items-start mb-1">
-      <span class="inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-gray-100 text-gray-700 shrink-0">${paper.number + 1}</span>
-      <div class="flex-1 flex flex-col font-dm-sans justify-center text-ink text-xs-7 leading-normal min-w-0">
+      <span class="inline-flex items-center px-1.5 py-0.5 text-[8px] font-medium rounded-md bg-gray-100 text-gray-700 shrink-0">${paper.number + 1}</span>
+      <div class="flex-1 flex flex-col font-dm-sans justify-center text-ink text-xs-6 leading-normal min-w-0">
         <p class="mb-0">${paper.authors}</p>
         <p class="italic mb-0 font-dm-sans">${paper.title}</p>
         <p class="mb-0">${paper.venue}</p>
       </div>
       <div class="bg-accent-soft flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
-        <span class="text-accent text-xs-6 font-dm-sans text-center tracking-[0.06px] leading-[8px]">${typeLabels[paper.type] || paper.type}</span>
+        <span class="text-accent text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]">${typeLabels[paper.type] || paper.type}</span>
       </div>
     </div>
     ${attrsHTML ? `<div class="pl-1.5 flex gap-[2px] items-center justify-end mt-0.5">${attrsHTML}</div>` : ''}
@@ -286,9 +286,9 @@ export function createPublicationsContainer(pubData, metrics) {
   headerContainer.appendChild(createPublicationsSummaryCards(counts));
   wrapper.appendChild(headerContainer);
   
-  // Papers list - same gap as other sections
+  // Papers list - reduced gap to optimize page space usage
   const papersContainer = document.createElement('div');
-  papersContainer.className = 'flex flex-col gap-1 items-start w-full';
+  papersContainer.className = 'flex flex-col gap-0.5 items-start w-full';
   
   pubData.papers.forEach((paper, index) => {
     const isFirstInSection = index === 0;

@@ -276,7 +276,12 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
     
     // Add header to container
     currentContainer.appendChild(headerContainer);
-    currentPageMaxHeight = availableHeight - headerHeight;
+    // Recalculate available height after adding header (use clone to avoid removing from DOM)
+    const measureAfterHeader = createMeasurementContainer(currentContainer);
+    const headerClone = headerContainer.cloneNode(true);
+    const actualHeaderHeight = measureCardHeight(headerClone, measureAfterHeader);
+    measureAfterHeader.remove();
+    currentPageMaxHeight = availableHeight - actualHeaderHeight;
   } else {
     // Need new page
     currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config, true);
@@ -289,10 +294,20 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
     // Add header to new page
     currentContainer.appendChild(headerContainer);
     currentPageNumber = allPages.length + 1;
-    currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX - headerHeight;
+    
+    // Recalculate available height in the new page after adding header (use clone to avoid removing from DOM)
+    const newPageAvailableHeight = calculateAvailableHeightInPage(currentPage, null);
+    const measureAfterHeader = createMeasurementContainer(currentContainer);
+    const headerClone = headerContainer.cloneNode(true);
+    const actualHeaderHeight = measureCardHeight(headerClone, measureAfterHeader);
+    measureAfterHeader.remove();
+    currentPageMaxHeight = newPageAvailableHeight - actualHeaderHeight;
   }
   
   // Now render papers with page breaks
+  // Gap between publication cards (gap-0.5 = 2px in Tailwind)
+  const CARD_GAP_PX = 2;
+  
   const finalMeasureContainer = createMeasurementContainer(currentContainer);
   let currentPageHeight = 0;
   let isFirstInPage = true;
@@ -309,8 +324,13 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
       });
       const cardHeight = measureCardHeight(card, finalMeasureContainer);
       
-      const willCreateNewPage = currentPageHeight > 0 && 
-                                currentPageHeight + cardHeight > currentPageMaxHeight;
+      // Calculate total height needed (card + gap if not first in page)
+      const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
+      const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
+      
+      // Check if we need a new page
+      // Also check if card doesn't fit even when page is empty (shouldn't happen, but safety check)
+      const willCreateNewPage = totalHeightNeeded > currentPageMaxHeight;
       
       if (willCreateNewPage) {
         finalizePage(currentContainer, false);
@@ -319,9 +339,15 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
         currentPage = nextPage;
         const nextContainer = nextPage.querySelector(config.containerSelector);
         if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
+        
+        // Recalculate available height for the new page
+        const newMeasureContainer = createMeasurementContainer(nextContainer);
+        const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
+        newMeasureContainer.remove();
+        
         currentContainer = nextContainer;
         currentPageHeight = 0;
-        currentPageMaxHeight = MAX_EXPERIENCE_SECTION_HEIGHT_PX;
+        currentPageMaxHeight = newPageAvailableHeight;
         isFirstInPage = true;
         
         // Update card classes for new page
@@ -332,7 +358,8 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
       }
       
       currentContainer.appendChild(card);
-      currentPageHeight += cardHeight;
+      // Add gap height to current page height (will be 0 for first card)
+      currentPageHeight += gapHeight + cardHeight;
       isFirstInPage = false;
     });
     
