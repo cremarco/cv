@@ -36,7 +36,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   leftDiv.className = 'flex flex-col gap-0.5 items-start relative shrink-0 w-[178px]';
   
   const nameDiv = document.createElement('div');
-  nameDiv.className = 'flex flex-col font-dm-sans font-medium justify-center leading-[0] relative shrink-0 text-ink text-xs-8 w-full';
+  nameDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 w-full';
   const nameP = document.createElement('p');
   nameP.className = 'leading-normal mb-0';
   nameP.textContent = project.name;
@@ -55,9 +55,9 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   // Funding agency badge
   if (project.funding_agency) {
     const fundingBadge = document.createElement('div');
-    fundingBadge.className = 'bg-gray-lighter flex font-dm-sans font-normal gap-0.5 h-2.5 items-center leading-[8px] px-0.5 py-0 relative rounded-sm shrink-0 text-gray-darkest text-xs-6 text-center whitespace-nowrap';
+    fundingBadge.className = 'bg-gray-lighter flex font-dm-sans font-normal gap-0.5 h-2.5 items-center px-0.5 py-0 relative rounded-sm shrink-0 text-gray-darkest text-xs-6 text-center whitespace-nowrap';
     const fundingP = document.createElement('p');
-    fundingP.className = 'leading-[8px] relative shrink-0';
+    fundingP.className = 'leading-tight relative shrink-0';
     const fundingLabel = document.createElement('span');
     fundingLabel.className = 'font-dm-sans font-bold';
     fundingLabel.textContent = project.funding_type || 'Funding Agency';
@@ -96,9 +96,9 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   // Title in italic
   if (project.title) {
     const titleDiv = document.createElement('div');
-    titleDiv.className = 'flex flex-col font-dm-sans font-normal italic h-2.5 justify-center leading-[0] relative shrink-0 text-ink text-xs-6 w-full';
+    titleDiv.className = 'flex flex-col font-dm-sans font-normal italic justify-center relative shrink-0 text-ink text-xs-6 w-full';
     const titleP = document.createElement('p');
-    titleP.className = 'leading-[8px] mb-0';
+    titleP.className = 'leading-tight mb-0';
     titleP.textContent = project.title;
     titleDiv.appendChild(titleP);
     contentDiv.appendChild(titleDiv);
@@ -111,7 +111,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   // Description
   if (project.description) {
     const descDiv = document.createElement('div');
-    descDiv.className = 'flex flex-col font-dm-sans font-normal justify-center leading-[0] relative shrink-0 text-xs-7 w-full';
+    descDiv.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-xs-7 w-full';
     const descP = document.createElement('p');
     descP.className = 'leading-normal mb-0';
     descP.textContent = project.description;
@@ -124,12 +124,12 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
     const activitiesDiv = document.createElement('div');
     activitiesDiv.className = `flex flex-col ${CARD_TEXT_GAP} items-start relative shrink-0 w-full`;
     const activitiesRow = document.createElement('div');
-    activitiesRow.className = 'flex font-dm-sans font-medium items-start leading-[0] relative shrink-0 text-ink w-full';
+    activitiesRow.className = 'flex font-dm-sans font-medium items-start relative shrink-0 text-ink w-full';
     
     const activitiesLabel = document.createElement('div');
     activitiesLabel.className = 'flex flex-col justify-center relative shrink-0 text-xs-7 w-[60px]';
     const labelP = document.createElement('p');
-    labelP.className = 'font-dm-sans font-bold leading-[9px] mb-0';
+    labelP.className = 'font-dm-sans font-bold leading-tight mb-0';
     labelP.textContent = 'Activities';
     activitiesLabel.appendChild(labelP);
     activitiesRow.appendChild(activitiesLabel);

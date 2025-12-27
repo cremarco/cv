@@ -38,7 +38,7 @@ export const CARD_CONTENT_PADDING = 'pl-1.5'; // Standard padding for card conte
 export const CARD_SECTION_PADDING = 'pl-2'; // Padding for structured sections within cards
 export const CARD_CONTAINER_GAP = 'gap-1'; // Gap between cards in containers
 export const CARD_INTERNAL_GAP = 'gap-1'; // Gap between major card blocks
-export const CARD_TEXT_GAP = 'gap-0.5'; // Gap for compact card text rows
+export const CARD_TEXT_GAP = 'gap-1'; // Gap for compact card text rows (increased from gap-0.5 to prevent overlapping)
 export const CARD_ELEMENT_GAP = 'gap-2'; // Gap between card elements (badges, etc.)
 
 // =============================================================================

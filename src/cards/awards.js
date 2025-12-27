@@ -26,7 +26,7 @@ function createAwardCard(award) {
   titleContainer.className = 'flex gap-1 items-start relative shrink-0 w-full';
   
   const title = document.createElement('p');
-  title.className = 'font-dm-sans font-medium leading-[9px] relative shrink-0 text-gray-dark text-[7px] whitespace-nowrap';
+  title.className = 'font-dm-sans font-medium leading-tight relative shrink-0 text-gray-dark text-[7px] whitespace-nowrap';
   title.textContent = award.title;
   titleContainer.appendChild(title);
   
@@ -37,7 +37,7 @@ function createAwardCard(award) {
   
   // Event and year
   const eventText = document.createElement('p');
-  eventText.className = 'font-dm-sans font-normal leading-[8px] min-w-full relative shrink-0 text-muted text-xs-6';
+  eventText.className = 'font-dm-sans font-normal leading-tight min-w-full relative shrink-0 text-muted text-xs-6';
   eventText.innerHTML = `${award.event} <span class="font-dm-sans font-bold">${award.year}</span>`;
   card.appendChild(eventText);
   

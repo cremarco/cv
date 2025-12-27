@@ -73,7 +73,7 @@ function createEditorialCommunityServiceItemCard(item) {
     const emptyBadge = document.createElement('div');
     emptyBadge.className = 'flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0 w-5';
     const emptyP = document.createElement('p');
-    emptyP.className = 'font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap';
+    emptyP.className = 'font-dm-sans font-normal leading-tight relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap';
     emptyP.innerHTML = '&nbsp;';
     emptyBadge.appendChild(emptyP);
     badgesDiv.appendChild(emptyBadge);

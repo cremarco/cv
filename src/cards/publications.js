@@ -138,7 +138,7 @@ export function createPublicationsSummaryCards(counts) {
     card.className = `flex-1 ${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} rounded-md flex flex-col ${CARD_INTERNAL_GAP} items-start`;
     card.innerHTML = `
       <div class="flex h-[15px] items-center justify-center w-full">
-        <span class="text-ink text-[20px] font-dm-sans leading-[10px] text-center w-full">${item.count}</span>
+        <span class="text-ink text-[20px] font-dm-sans leading-tight text-center w-full">${item.count}</span>
       </div>
       <div class="flex flex-col items-center justify-center w-full">
         <span class="text-muted text-xs-7 font-dm-sans text-center">${item.label}</span>
@@ -205,7 +205,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.icore) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
       </div>
     `;
   }
@@ -215,7 +215,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
     const quartilesText = paper.quartiles.map(q => `<span class="font-bold">${q.rank}</span> ${q.field}`).join(', ');
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
       </div>
     `;
   }
@@ -224,7 +224,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.doi) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" class="underline">${paper.doi}</a></span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" class="underline">${paper.doi}</a></span>
       </div>
     `;
   }
@@ -235,7 +235,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
     const ceurUrl = paper.ceur_url || `https://ceur-ws.org/${encodeURIComponent(ceurId)}/`;
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" class="underline">${ceurId}</a></span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" class="underline">${ceurId}</a></span>
       </div>
     `;
   }
@@ -252,7 +252,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
         <p class="mb-0">${paper.venue}</p>
       </div>
       <div class="bg-accent-soft flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
-        <span class="text-accent text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]">${typeLabels[paper.type] || paper.type}</span>
+        <span class="text-accent text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight">${typeLabels[paper.type] || paper.type}</span>
       </div>
     </div>
     ${attrsHTML ? `<div class="pl-1.5 flex gap-[2px] items-center justify-end mt-0.5">${attrsHTML}</div>` : ''}

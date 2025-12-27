@@ -32,12 +32,12 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   
   // Left side: name and title
   const leftDiv = document.createElement('div');
-  leftDiv.className = 'basis-0 flex flex-col gap-0.5 grow items-start leading-[0] min-h-px min-w-[100px] relative shrink-0';
+  leftDiv.className = 'basis-0 flex flex-col gap-0.5 grow items-start min-h-px min-w-[100px] relative shrink-0';
   
   const nameDiv = document.createElement('div');
   nameDiv.className = 'flex flex-col font-dm-sans font-normal justify-center min-w-full relative shrink-0 text-muted text-xs-7';
   const nameP = document.createElement('p');
-  nameP.className = 'leading-[9px] mb-0';
+  nameP.className = 'leading-tight mb-0';
   nameP.textContent = project.name;
   nameDiv.appendChild(nameP);
   leftDiv.appendChild(nameDiv);
@@ -86,7 +86,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   
   // Description and role text box
   const textBox = document.createElement('div');
-  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start leading-[0] pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
+  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
   
   // Description
   if (project.description) {

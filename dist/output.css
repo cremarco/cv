@@ -1410,10 +1410,6 @@ body.pdf-mode [data-section] {
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .text-justify {
   text-align: justify;
 }
@@ -1428,10 +1424,6 @@ body.pdf-mode [data-section] {
 
 .font-outfit {
   font-family: Outfit, sans-serif;
-}
-
-.text-\[10px\] {
-  font-size: 10px;
 }
 
 .text-\[12px\] {
@@ -1476,26 +1468,26 @@ body.pdf-mode [data-section] {
 }
 
 .text-xs-5 {
-  font-size: 7px;
-  line-height: normal;
+  font-size: 8px;
+  line-height: 11px;
   letter-spacing: 0.05px;
 }
 
 .text-xs-6 {
-  font-size: 8px;
-  line-height: 11px;
+  font-size: 9px;
+  line-height: 12px;
   letter-spacing: 0.06px;
 }
 
 .text-xs-7 {
-  font-size: 9px;
-  line-height: 12px;
+  font-size: 10px;
+  line-height: 13px;
   letter-spacing: 0.07px;
 }
 
 .text-xs-8 {
-  font-size: 10px;
-  line-height: 13px;
+  font-size: 11px;
+  line-height: 14px;
   letter-spacing: 0;
 }
 
@@ -1513,22 +1505,6 @@ body.pdf-mode [data-section] {
 
 .italic {
   font-style: italic;
-}
-
-.leading-\[0\] {
-  line-height: 0;
-}
-
-.leading-\[10px\] {
-  line-height: 10px;
-}
-
-.leading-\[8px\] {
-  line-height: 8px;
-}
-
-.leading-\[9px\] {
-  line-height: 9px;
 }
 
 .leading-none {
