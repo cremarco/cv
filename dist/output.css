@@ -883,6 +883,10 @@ body.pdf-mode [data-section] {
   height: 3rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-2 {
   height: 0.5rem;
 }
@@ -931,20 +935,12 @@ body.pdf-mode [data-section] {
   height: 1px;
 }
 
-.h-16 {
-  height: 4rem;
-}
-
 .max-h-full {
   max-height: 100%;
 }
 
 .min-h-px {
   min-height: 1px;
-}
-
-.min-h-full {
-  min-height: 100%;
 }
 
 .w-10 {
@@ -969,6 +965,10 @@ body.pdf-mode [data-section] {
 
 .w-5 {
   width: 1.25rem;
+}
+
+.w-56 {
+  width: 14rem;
 }
 
 .w-6 {
@@ -1019,14 +1019,6 @@ body.pdf-mode [data-section] {
   width: 1px;
 }
 
-.w-48 {
-  width: 12rem;
-}
-
-.w-56 {
-  width: 14rem;
-}
-
 .min-w-0 {
   min-width: 0px;
 }
@@ -1049,10 +1041,6 @@ body.pdf-mode [data-section] {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-2xl {
-  max-width: 42rem;
 }
 
 .flex-1 {
@@ -1247,13 +1235,13 @@ body.pdf-mode [data-section] {
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 
+.border-ink {
+  border-color: var(--color-ink);
+}
+
 .border-purple-200 {
   --tw-border-opacity: 1;
   border-color: rgb(233 213 255 / var(--tw-border-opacity, 1));
-}
-
-.border-ink {
-  border-color: var(--color-ink);
 }
 
 .bg-accent-lightest {
@@ -1488,6 +1476,11 @@ body.pdf-mode [data-section] {
   font-size: 9px;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -1529,11 +1522,6 @@ body.pdf-mode [data-section] {
   letter-spacing: 0;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1548,10 +1536,6 @@ body.pdf-mode [data-section] {
 
 .italic {
   font-style: italic;
-}
-
-.leading-\[9px\] {
-  line-height: 9px;
 }
 
 .leading-none {
@@ -1629,14 +1613,6 @@ body.pdf-mode [data-section] {
 
 .underline {
   text-decoration-line: underline;
-}
-
-.opacity-40 {
-  opacity: 0.4;
-}
-
-.opacity-60 {
-  opacity: 0.6;
 }
 
 .opacity-30 {

@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4173';
-const PRINT_PATH = '?pdf=1';
+const PDF_QUERY = process.env.PDF_QUERY || '';
 const NAVIGATION_TIMEOUT_MS = Number(process.env.PDF_NAV_TIMEOUT_MS || 30000);
 const PDF_TIMEOUT_MS = Number(process.env.PDF_TIMEOUT_MS || 30000);
 const PDF_DEVICE_SCALE_FACTOR = Number(process.env.PDF_DEVICE_SCALE_FACTOR || 2);
@@ -12,7 +12,18 @@ const A4_VIEWPORT = { width: 794, height: 1123 };
 let browserPromise;
 
 function buildTargetUrl() {
-  return new URL(PRINT_PATH, BASE_URL).toString();
+  const targetUrl = new URL(BASE_URL);
+
+  if (PDF_QUERY) {
+    const query = PDF_QUERY.startsWith('?') ? PDF_QUERY.slice(1) : PDF_QUERY;
+    const extraParams = new URLSearchParams(query);
+    extraParams.forEach((value, key) => {
+      targetUrl.searchParams.set(key, value);
+    });
+  }
+
+  targetUrl.searchParams.set('pdf', '1');
+  return targetUrl.toString();
 }
 
 async function getBrowser() {

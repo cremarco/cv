@@ -16,6 +16,16 @@ In modalita PDF:
 - animazioni/transitions sono disabilitate per stabilita layout
 - tutte le pagine (sezioni) sono visibili con dimensione A4
 
+Opzioni di rendering via query param (o hash, vedi esempi):
+
+- `no-personal-data`: nasconde email, website, phone e address dalla sidebar e la sezione dichiarazione/firma
+- `no-link`: nasconde i link che puntano a file interni al progetto (es. `files/...`)
+
+Esempi URL:
+
+- query: `http://localhost:4173/?no-personal-data&no-link`
+- hash (utile con preview che aggiunge token): `http://127.0.0.1:3000/#no-personal-data&no-link`
+
 I flag globali usati dal renderer:
 
 - `window.__PDF_READY__`: true quando la pagina ha finito di renderizzare
@@ -69,6 +79,12 @@ BASE_URL=http://localhost:4173 npm run pdf:generate
 
 Output di default: `dist/marco-cremaschi-cv.pdf`.
 
+Con opzioni:
+
+```bash
+PDF_QUERY="no-personal-data&no-link" npm run pdf:generate
+```
+
 ### Avviare un endpoint PDF
 
 ```bash
@@ -85,6 +101,7 @@ Endpoint: `http://localhost:8787/api/pdf`
 - `PDF_TIMEOUT_MS`: timeout generazione PDF (default 30000)
 - `PDF_DEVICE_SCALE_FACTOR`: scala device per migliorare resa di ombre/gradienti (default 2)
 - `PDF_PORT`: porta del server PDF (default 8787)
+- `PDF_QUERY`: query string aggiuntiva da appendere all'URL di stampa (es. `no-link&no-personal-data`)
 
 ## Note di manutenzione
 

@@ -3,7 +3,8 @@
 // =============================================================================
 
 import { DATA_URL, SECTION_CONFIG } from '../config.js';
-import { setPdfState } from '../utils/pdf-state.js';
+import { isPdfMode, setPdfState } from '../utils/pdf-state.js';
+import { getRenderOptions } from '../utils/render-options.js';
 import { compareDatesDesc } from '../utils/date.js';
 import { renderSection, renderSpecialSection, renderSpecialSectionWithPageBreaks, renderPublications } from '../layout/section-renderer.js';
 import { createThesisSupervisorCard } from '../cards/thesis.js';
@@ -26,8 +27,15 @@ export async function loadCVData() {
   if (!cvDataPromise) {
     cvDataPromise = (async () => {
       const response = await fetch(DATA_URL);
-      if (!response.ok) throw new Error(`Failed to load ${DATA_URL}`);
-      return response.json();
+      if (!response.ok) throw new Error(`Failed to load ${DATA_URL}: ${response.status} ${response.statusText}`);
+      const text = await response.text();
+      try {
+        return JSON.parse(text);
+      } catch (parseError) {
+        console.error('JSON parse error:', parseError);
+        console.error('Response text (first 500 chars):', text.substring(0, 500));
+        throw new Error(`Failed to parse JSON from ${DATA_URL}: ${parseError.message}`);
+      }
     })();
   }
 
@@ -35,6 +43,7 @@ export async function loadCVData() {
     return await cvDataPromise;
   } catch (error) {
     cvDataPromise = null;
+    console.error('Error loading CV data:', error);
     throw error;
   }
 }
@@ -313,6 +322,9 @@ export async function loadTenderCommissions() {
  */
 export async function loadDeclaration() {
   try {
+    if (!isPdfMode()) return;
+    const { noPersonalData } = getRenderOptions();
+    if (noPersonalData) return;
     const config = SECTION_CONFIG.declaration;
     renderSpecialSection(
       config, 

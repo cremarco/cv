@@ -4,6 +4,7 @@
 
 import { SECTION_CONFIG } from './config.js';
 import { initPdfMode, setPdfState } from './utils/pdf-state.js';
+import { applyRenderOptions } from './utils/render-options.js';
 import {
   loadResearchMetrics,
   loadSection,
@@ -64,6 +65,8 @@ async function init() {
   await loadTenderCommissions();
   await loadDeclaration();
   
+  applyRenderOptions();
+
   updatePageNumbers();
   
   // Highlight active items based on date analysis
@@ -82,4 +85,3 @@ async function init() {
 }
 
 init();
-

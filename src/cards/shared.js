@@ -2,6 +2,8 @@
 // CARD CREATION - SHARED HELPERS
 // =============================================================================
 
+import { isInternalFileLink, shouldHideInternalLinks } from '../utils/render-options.js';
+
 /**
  * Creates a logo image element with standard styling
  */
@@ -18,7 +20,8 @@ export function createLogoImage(logoPath, alt, sizeClass = 'w-5 h-5') {
  */
 export function createLinkBadge(url) {
   if (!url) return '';
-  
+  if (shouldHideInternalLinks() && isInternalFileLink(url)) return '';
+
   return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-1 py-0.5 text-[7px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[8px]'></i></a>`;
 }
 
@@ -34,4 +37,3 @@ export function createLocationMarkup(place) {
     </div>
   `;
 }
-
