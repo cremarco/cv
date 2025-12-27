@@ -57,7 +57,7 @@ export function createPublicationsHeader(data, metrics) {
     const orcidBadge = document.createElement('span');
     orcidBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     orcidBadge.innerHTML = `
-      <i class='bx bxl-orcid text-[12px]' style="color: #A6CE39;"></i>
+      <i class='bx bxl-orcid text-[12px] text-orcid'></i>
       <a href="${metrics.orcid.url}" class="underline">Orcid</a>
       <span>${metrics.orcid.id}</span>
     `;
@@ -75,11 +75,11 @@ export function createPublicationsHeader(data, metrics) {
       <span>Speaker</span>
     </span>
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bxs-star text-[8px]' style="color: rgba(219, 182, 0, 1);"></i>
+      <i class='bx bxs-star text-[8px] text-award-gold'></i>
       <span>Best paper</span>
     </span>
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bxs-trophy text-[8px]' style="color: rgba(219, 182, 0, 1);"></i>
+      <i class='bx bxs-trophy text-[8px] text-award-gold'></i>
       <span>Winner</span>
     </span>
   `;
@@ -192,7 +192,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.best_paper) {
     attrsHTML += `
       <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-        <i class='bx bxs-star text-[8px]' style="color: rgba(219, 182, 0, 1);"></i>
+        <i class='bx bxs-star text-[8px] text-award-gold'></i>
         <span>Best paper</span>
       </span>
     `;
@@ -286,7 +286,7 @@ export function createPublicationsContainer(pubData, metrics) {
   headerContainer.appendChild(createPublicationsSummaryCards(counts));
   wrapper.appendChild(headerContainer);
   
-  // Papers list - reduced gap to optimize page space usage
+  // Papers list - reduced gap to optimise page space usage
   const papersContainer = document.createElement('div');
   papersContainer.className = 'flex flex-col gap-0.5 items-start w-full';
   

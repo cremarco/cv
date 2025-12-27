@@ -33,7 +33,7 @@ export function createEducationCard(edu) {
         <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Thesis Title:</p>
       </div>
       <div class="flex-1 min-w-0">
-        <p class="text-xs-7 text-ink font-dm-sans leading-tight">${edu.thesis_title}</p>
+        <p class="text-xs-7 text-ink font-dm-sans leading-normal">${edu.thesis_title}</p>
       </div>
     </div>
   ` : '';
@@ -45,7 +45,7 @@ export function createEducationCard(edu) {
         <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">International Experience:</p>
       </div>
       <div class="flex-1 min-w-0">
-        <p class="text-xs-7 text-ink font-dm-sans leading-tight">${edu.international_experience}</p>
+        <p class="text-xs-7 text-ink font-dm-sans leading-normal">${edu.international_experience}</p>
       </div>
     </div>
   ` : '';
@@ -58,7 +58,7 @@ export function createEducationCard(edu) {
       </div>
       <div class="flex-1 min-w-0">
         <ul class="list-disc">
-          ${edu.courses.map(c => `<li class="mb-0 ml-2.5"><span class="text-xs-7 text-ink font-dm-sans leading-tight">${c}</span></li>`).join('')}
+          ${edu.courses.map(c => `<li class="mb-0 ml-2.5"><span class="text-xs-7 text-ink font-dm-sans leading-normal">${c}</span></li>`).join('')}
         </ul>
       </div>
     </div>
@@ -72,7 +72,7 @@ export function createEducationCard(edu) {
       </div>
       <div class="flex-1 min-w-0">
         ${edu.summer_schools.map((s, i) => 
-          `<p class="text-xs-7 text-ink font-dm-sans leading-tight ${i === edu.summer_schools.length - 1 ? '' : 'mb-0'}">${s}</p>`
+          `<p class="text-xs-7 text-ink font-dm-sans leading-normal ${i === edu.summer_schools.length - 1 ? '' : 'mb-0'}">${s}</p>`
         ).join('')}
       </div>
     </div>
@@ -91,7 +91,7 @@ export function createEducationCard(edu) {
           </div>
         </div>
       </div>
-      <div class="pl-2 flex flex-col gap-0.5 items-start">
+      <div class="pl-1.5 flex flex-col gap-0.5 items-start">
         ${thesisMarkup}
         ${internationalMarkup}
         ${coursesMarkup}

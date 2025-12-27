@@ -258,8 +258,12 @@ export async function loadResearchMetrics() {
     // Update Scopus metrics
     if (metrics.scopus) {
       const scopusContainer = document.getElementById('scopus-metrics');
-      const citationsEl = scopusContainer?.querySelector('[data-metric="citations"]');
-      if (citationsEl) citationsEl.textContent = metrics.scopus.citations || '-';
+      if (scopusContainer) {
+        const citationsEl = scopusContainer.querySelector('[data-metric="citations"]');
+        if (citationsEl) {
+          citationsEl.textContent = metrics.scopus.citations || '-';
+        }
+      }
     }
   } catch (error) {
     console.error('Error loading research metrics:', error);

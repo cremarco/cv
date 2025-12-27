@@ -34,13 +34,13 @@ export function createWebinarCard(item) {
           ${dateMarkup}
         </div>
       </div>
-      <div class="pl-2 flex flex-col gap-0.5">
+      <div class="pl-1.5 flex flex-col gap-0.5">
         <div class="flex gap-2 items-start w-full">
           <div class="flex-shrink-0 w-[60px]">
             <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Activities:</p>
           </div>
           <div class="flex-1 min-w-0">
-            <p class="text-xs-7 text-ink font-dm-sans leading-tight">${item.activities || ''}</p>
+            <p class="text-xs-7 text-ink font-dm-sans leading-normal">${item.activities || ''}</p>
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@
       "position": "Research Assistant",
       "ssd": "ING-INF/05",
       "time_period": "Nov 2015 - Oct 2016",
-      "topic": "Definition and implementation of the UniData center's data architecture",
+      "topic": "Definition and implementation of the UniData centre's data architecture",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -184,7 +184,7 @@
       "place": "Bergamo, Italy",
       "position": "CTO, Co-funder",
       "time_period": "2012 - 2014",
-      "topic": "Company specialising in web development, communication, and event organization."
+      "topic": "Company specialising in web development, communication, and event organisation."
     }
   ],
   "company_experiences": [
@@ -889,7 +889,7 @@
         "link": "https://www.ieee-cybermatics.org/2021/dikw/"
       }
     ],
-    "organizer": [
+    "organiser": [
       {
         "title": "Tutorial on Semantic Table Interpretation",
         "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
@@ -968,7 +968,7 @@
   ],
   "italian_research_projects": [
     {
-      "institution": "Univeristy of Milan-Bicocca, INTERDEPARTMENTAL CENTER",
+      "institution": "University of Milan-Bicocca, INTERDEPARTMENTAL CENTRE",
       "name": "Best4Food",
       "period": "2024 - 2025",
       "link": "https://bestforfood.unimib.it/",
@@ -978,7 +978,7 @@
       "isFirst": true
     },
     {
-      "institution": "Univeristy of Milan-Bicocca, INTERDEPARTMENTAL CENTER",
+      "institution": "University of Milan-Bicocca, INTERDEPARTMENTAL CENTRE",
       "name": "BReCHS - Bicocca Research Centre in Health Services",
       "period": "2024 - 2025",
       "logo": "brechs.png",

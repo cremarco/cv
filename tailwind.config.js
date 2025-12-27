@@ -29,6 +29,13 @@ module.exports = {
         'gray-lightest': '#f7f9fc',
         'linkedin': '#0077b5',
         'github': '#030943',
+        'gradient-start': '#a478e8',
+        'gradient-end': '#516cf7',
+        'orcid': '#A6CE39',
+        'award-gold': 'rgba(219, 182, 0, 1)',
+      },
+      backgroundImage: {
+        'gradient-accent': 'linear-gradient(to right, #a478e8, #516cf7)',
       },
       fontSize: {
         'xs-6': ['9px', { lineHeight: '12px', letterSpacing: '0.06px' }],

@@ -17,9 +17,7 @@ function createAwardCard(award) {
   const img = document.createElement('img');
   img.src = `img/awards/${award.image}`;
   img.alt = `${award.title} - ${award.event} ${award.year}`;
-  img.className = 'max-w-full max-h-full object-contain pointer-events-none';
-  img.style.width = '100%';
-  img.style.height = '100%';
+  img.className = 'max-w-full max-h-full object-contain pointer-events-none w-full h-full';
   imgContainer.appendChild(img);
   card.appendChild(imgContainer);
   

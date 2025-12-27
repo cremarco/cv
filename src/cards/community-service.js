@@ -113,11 +113,11 @@ export function createCommunityServiceCard(data) {
     });
   }
   
-  // Add Organizer section
-  if (data.organizer && data.organizer.length > 0) {
-    contentDiv.appendChild(createCategoryLabel('Organizer'));
+  // Add Organiser section
+  if (data.organiser && data.organiser.length > 0) {
+    contentDiv.appendChild(createCategoryLabel('Organiser'));
     
-    data.organizer.forEach((item) => {
+    data.organiser.forEach((item) => {
       const card = createCommunityServiceItemCard(item);
       contentDiv.appendChild(card);
     });

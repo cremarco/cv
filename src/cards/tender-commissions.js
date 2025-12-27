@@ -2,23 +2,7 @@
 // CARD CREATION - TENDER COMMISSIONS CARD
 // =============================================================================
 
-/**
- * Creates a link badge with text "Link" (as per Figma design)
- */
-function createLinkTextBadge(url) {
-  if (!url) return '';
-  
-  const badge = document.createElement('div');
-  badge.className = 'bg-gray-lighter flex h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0';
-  
-  const link = document.createElement('a');
-  link.href = url;
-  link.className = 'text-underline-position-from-font block cursor-pointer decoration-solid font-dm-sans font-normal leading-[8px] relative shrink-0 text-gray-darkest text-xs-6 text-center whitespace-nowrap underline';
-  link.textContent = 'Link';
-  
-  badge.appendChild(link);
-  return badge;
-}
+import { createLinkBadge } from './shared.js';
 
 /**
  * Creates a single tender commission item card
@@ -38,7 +22,7 @@ function createTenderCommissionItemCard(item) {
   titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 min-w-0 flex-1';
   
   const titleP = document.createElement('p');
-  titleP.className = 'font-dm-sans font-normal leading-[10px] mb-0';
+  titleP.className = 'font-dm-sans font-normal leading-normal mb-0';
   
   if (item.note) {
     // Split title and note
@@ -59,10 +43,15 @@ function createTenderCommissionItemCard(item) {
   // Build badges (link and year)
   if (item.link || item.year) {
     const badgesDiv = document.createElement('div');
-    badgesDiv.className = 'flex gap-[8px] items-start relative shrink-0';
+    badgesDiv.className = 'flex gap-2 items-start relative shrink-0';
     
     if (item.link) {
-      badgesDiv.appendChild(createLinkTextBadge(item.link));
+      const linkBadgeDiv = document.createElement('div');
+      linkBadgeDiv.className = 'h-2.5 relative shrink-0 w-4';
+      linkBadgeDiv.insertAdjacentHTML('beforeend', createLinkBadge(item.link, true));
+      if (linkBadgeDiv.firstElementChild) {
+        badgesDiv.appendChild(linkBadgeDiv.firstElementChild);
+      }
     }
     
     if (item.year) {

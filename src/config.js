@@ -31,6 +31,13 @@ export const SECTION_HEADER_HEIGHT_PX = 70;
 // Shared Tailwind class constants
 export const CARD_BASE_CLASSES = 'px-4 py-3 flex gap-3 shadow';
 
+// Card spacing constants
+export const CARD_CONTENT_PADDING = 'pl-1.5'; // Standard padding for card content text
+export const CARD_SECTION_PADDING = 'pl-2'; // Padding for structured sections within cards
+export const CARD_CONTAINER_GAP = 'gap-1'; // Gap between cards in containers
+export const CARD_INTERNAL_GAP = 'gap-0.5'; // Gap for internal card elements
+export const CARD_ELEMENT_GAP = 'gap-2'; // Gap between card elements (badges, etc.)
+
 // =============================================================================
 // SECTION CONFIGURATION
 // Maps section keys to their display properties and card creation functions
