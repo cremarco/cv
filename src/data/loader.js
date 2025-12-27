@@ -330,6 +330,7 @@ export async function loadResearchMetrics() {
       console.error('Scopus metrics are missing from CV data');
     } else if (!updateMetricValues(scopusContainer, {
       'citations': metrics.scopus.citations,
+      'h-index': metrics.scopus.h_index,
     })) {
       console.error('Scopus metrics container not found in DOM');
     }

@@ -37,7 +37,7 @@ export function createPublicationsHeader(data, metrics) {
     gsBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     gsBadge.innerHTML = `
       <img src="img/logo/google_scholar.png" alt="Google Scholar" class="w-3 h-3 object-contain rounded shadow-sm">
-      <a href="${googleScholarUrl}" class="underline">Google Scholar</a>
+      <a href="${googleScholarUrl}" target="_blank" class="underline">Google Scholar</a>
       <span>cit: ${formatMetricValue(gs.citations)}, h-index: ${formatMetricValue(gs.h_index)}, i10-index: ${formatMetricValue(gs.i10_index)}</span>
     `;
     linksGroup.appendChild(gsBadge);
@@ -50,7 +50,7 @@ export function createPublicationsHeader(data, metrics) {
     scopusBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     scopusBadge.innerHTML = `
       <img src="img/logo/scopus.png" alt="Scopus" class="w-3 h-3 object-contain">
-      <a href="${scopusUrl}" class="underline">Scopus</a>
+      <a href="${scopusUrl}" target="_blank" class="underline">Scopus</a>
       <span>cit: ${formatMetricValue(metrics.scopus.citations)}, h-index: ${formatMetricValue(metrics.scopus.h_index)}</span>
     `;
     linksGroup.appendChild(scopusBadge);
@@ -63,7 +63,7 @@ export function createPublicationsHeader(data, metrics) {
     orcidBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     orcidBadge.innerHTML = `
       <i class='bx bxl-orcid text-[12px] text-orcid'></i>
-      <a href="${orcidUrl}" class="underline">Orcid</a>
+      <a href="${orcidUrl}" target="_blank" class="underline">Orcid</a>
       <span>${formatMetricValue(metrics.orcid.id)}</span>
     `;
     linksGroup.appendChild(orcidBadge);
@@ -236,7 +236,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.doi) {
     attrsHTML += `
       <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" class="underline">${paper.doi}</a></span>
+        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-[8px]"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" class="underline">${paper.doi}</a></span>
       </div>
     `;
   }

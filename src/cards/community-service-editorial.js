@@ -32,6 +32,7 @@ function createEditorialCommunityServiceItemCard(item) {
       }
       const link = document.createElement('a');
       link.href = linkItem.link;
+      link.target = '_blank';
       link.className = 'underline cursor-pointer';
       link.textContent = linkItem.name;
       fragment.appendChild(link);

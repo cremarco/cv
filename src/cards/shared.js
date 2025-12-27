@@ -20,10 +20,10 @@ export function createLinkBadge(url, small = false) {
   if (!url) return '';
   
   if (small) {
-    return `<a href="${url}" class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[8px]'></i></a>`;
+    return `<a href="${url}" target="_blank" class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[8px]'></i></a>`;
   }
   
-  return `<a href="${url}" class="inline-flex items-center justify-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[10px]'></i></a>`;
+  return `<a href="${url}" target="_blank" class="inline-flex items-center justify-center px-1.5 py-0.5 text-[9px] font-medium bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" aria-label="Link"><i class='bx bx-link-external text-[10px]'></i></a>`;
 }
 
 /**
