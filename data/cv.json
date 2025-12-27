@@ -8,7 +8,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant",
       "ssd": "INF/01",
-      "time_period": "Feb 2025 - Gen 2026",
+      "time_period": "Feb 2025 - Jan 2026",
       "topic": "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field",
       "university": "University of Milan-Bicocca"
     },
@@ -20,7 +20,7 @@
       "place": "Milan, Italy",
       "position": "Assistant Professor (RTD/A)",
       "ssd": "INF/01",
-      "time_period": "Gen 2022 - Gen 2025",
+      "time_period": "Jan 2022 - Jan 2025",
       "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, funded by the Italian Ministero dell'Università e della Ricerca through the European project D.M. 1062/2021 – Piano Operativo Nazionale - PON \"Ricerca e Innovazione\" 2014- 2020 Asse IV, azioni IV.4 \"Dottorati e contratti di ricerca sulle tematiche dell'innovazione\"",
       "university": "University of Milan-Bicocca"
     },
@@ -32,7 +32,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant",
       "ssd": "ING-INF/05",
-      "time_period": "Feb 2021 - Gen 2022",
+      "time_period": "Feb 2021 - Jan 2022",
       "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
       "university": "University of Milan-Bicocca"
     },
@@ -44,7 +44,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant",
       "ssd": "ING-INF/05",
-      "time_period": "Feb 2020 - Gen 2021",
+      "time_period": "Feb 2020 - Jan 2021",
       "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
       "university": "University of Milan-Bicocca"
     },
@@ -68,7 +68,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant",
       "ssd": "ING-INF/05",
-      "time_period": "Sep 2014 - Ago 2015",
+      "time_period": "Sep 2014 - Aug 2015",
       "topic": "Definition of tools for the population of semantic services for public administration",
       "university": "University of Milan-Bicocca"
     },
@@ -80,7 +80,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant",
       "ssd": "ING-INF/05",
-      "time_period": "Sep 2013 - Ago 2014",
+      "time_period": "Sep 2013 - Aug 2014",
       "topic": "Development Methodologies for Value-Added Services in Agriculture",
       "university": "University of Milan-Bicocca"
     },
@@ -92,7 +92,7 @@
       "place": "Milan, Italy",
       "position": "Research fellow",
       "ssd": "ING-INF/09",
-      "time_period": "Feb 2011 - Gen 2012",
+      "time_period": "Feb 2011 - Jan 2012",
       "topic": "Development Methodologies for Value-Added Services in Agriculture",
       "university": "University of Milan-Bicocca"
     }
@@ -137,7 +137,7 @@
       "place": null,
       "position": "CTO, Co-funder",
       "time_period": "2025",
-      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on March 5, 2025."
+      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
     },
     {
       "current": false,
@@ -163,8 +163,8 @@
       "logo": "umbria.png",
       "place": "Perugia, Italy",
       "position": "Consultant",
-      "time_period": "2015-2016",
-      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on March 5, 2025."
+      "time_period": "2015 - 2016",
+      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
     }
   ],
   "entrepreneurial_initiatives": [
@@ -174,7 +174,7 @@
       "logo": "whattaspot.png",
       "place": "Bergamo, Italy",
       "position": "CEO, Co-funder",
-      "time_period": "Gen 2014 - Oct 2016",
+      "time_period": "Jan 2014 - Oct 2016",
       "topic": "Innovative start-up specialising in the development of cutting-edge applications for the sports industry."
     },
     {
@@ -194,7 +194,7 @@
       "logo": "aton.png",
       "place": "Rome, Italy",
       "position": "PM, Grant Writer",
-      "time_period": "Gen 2015 - Present",
+      "time_period": "Jan 2015 - Present",
       "topic": "Providing consultancy in R&D project management, grant writing, and strategic planning, supporting organisations in securing funding, coordinating research initiatives, and fostering partnerships with academic and industrial stakeholders."
     },
     {
@@ -241,8 +241,8 @@
         "Internet of Things: a service-oriented perspective"
       ],
       "summer_schools": [
-        "Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience - Como, Italy, Sep 18 - 22, 2017",
-        "2nd International Summer School on Deep Learning 2018 - Genova, Italy, July 23 - 27, 2018"
+        "Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience - Como, Italy, 18–22 Sep 2017",
+        "2nd International Summer School on Deep Learning 2018 - Genova, Italy, 23–27 Jul 2018"
       ]
     },
     {
@@ -282,7 +282,7 @@
               "course_name": "Digital Futures for Intangible Heritage",
               "hours": "8/4 hours",
               "role": "Professor",
-              "time_period": "2022 - current"
+              "time_period": "2022 - Present"
             }
           ]
         }
@@ -301,7 +301,7 @@
               "course_name": "Visual Communication and Interface Design",
               "hours": "40/21 hours",
               "role": "Professor",
-              "time_period": "2019 - current"
+              "time_period": "2019 - Present"
             },
             {
               "course_name": "Visual Communication Laboratory",
@@ -358,7 +358,7 @@
               "course_name": "Databases",
               "hours": "20 hours",
               "role": "Teaching Assistant",
-              "time_period": "2021 - current"
+              "time_period": "2021 - Present"
             },
             {
               "course_name": "Distributed Systems",
@@ -381,7 +381,7 @@
               "course_name": "Data Structures and Database Systems",
               "hours": "45 hours",
               "role": "Professor",
-              "time_period": "2023 - current"
+              "time_period": "2023 - Present"
             }
           ]
         },
@@ -392,7 +392,7 @@
               "course_name": "Information Management Online: Tools and Strategies",
               "hours": "30 hours",
               "role": "Professor",
-              "time_period": "2025 - current"
+              "time_period": "2025 - Present"
             }
           ]
         }
@@ -409,7 +409,7 @@
               "course_name": "Health Engineering for Health Promotion",
               "hours": "18 hours",
               "role": "Professor",
-              "time_period": "2024 - current"
+              "time_period": "2024 - Present"
             }
           ]
         }
@@ -508,6 +508,7 @@
       "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ"
     },
     "scopus": {
+      "citations": 206,
       "h_index": 9,
       "url": "https://www.scopus.com/authid/detail.uri?authorId=56167172000"
     },
@@ -517,7 +518,7 @@
     }
   },
   "publications": {
-    "update_date": "December 17, 2025",
+    "update_date": "17 Dec 2025",
     "papers": [
       {
         "number": 0,
@@ -540,7 +541,7 @@
       {
         "number": 2,
         "authors": "<b>Marco Cremaschi</b>, Federico Belotti, Jennifer D'Souza, Matteo Palmonari",
-        "title": "MammoTab 25: A Large-Scale Dataset fo Semantic Table Interpretation - Training, Testing and Detecting Weaknesses",
+        "title": "MammoTab 25: A Large-Scale Dataset for Semantic Table Interpretation - Training, Testing and Detecting Weaknesses",
         "venue": "International Semantic Web Conference, 131-148, 2025",
         "type": "conference",
         "best_paper": true,
@@ -1069,7 +1070,7 @@
     {
       "name": "Comsode",
       "title": "Components Supporting The Open Data Exploitation Project",
-      "period": "Oct 2013 - Sept 2015",
+      "period": "Oct 2013 - Sep 2015",
       "funding_agency": "EU",
       "description": "The purpose of the project was to progress the capabilities in the Open Data reuse field, by fostering better integration and quality improvement.",
       "activities": "I managed the development of components to extract, transform and load Open Data for the Open Data Node platform.",
@@ -1130,10 +1131,10 @@
     {
       "name": "MAPS-EH",
       "title": "Monitoraggio e Attuazione Policy di Sicurezza nell'E-Health",
-      "period": "Sept 2021 - July 2023",
+      "period": "Sep 2021 - Jul 2023",
       "link": "https://maps-eh.atoninformatica.it/",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
-      "description": "MAPS-EH provides comprehensive support for the automated compliance verification between recorded access events on IT resources and the security policies established by an organization, enabling the automatic detection of potential anomalies.",
+      "description": "MAPS-EH provides comprehensive support for the automated compliance verification between recorded access events on IT resources and the security policies established by an organisation, enabling the automatic detection of potential anomalies.",
       "activities": "In this project I provided support in the analysis of solutions in the SOTA and the definition of the compliance verification algorithm.",
       "logo": "maps-eh.png"
     },
@@ -1151,7 +1152,7 @@
     {
       "name": "Bintrawine",
       "title": "Blockchain, Tracking and Tracing solutions for Wine",
-      "period": "Mar 2022 - Sept 2023",
+      "period": "Mar 2022 - Sep 2023",
       "link": "https://bintrawine.atoninformatica.it/",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
       "description": "BinTraWine, based on Blockchain technology, aims to ensure transparency, traceability, verifiability, and data certification for all producers, winemakers, distributors, consumers, and certification bodies involved in the process.",
@@ -1161,7 +1162,7 @@
     {
       "name": "enRichMyData",
       "title": "Enabling Data Enrichment Pipelines for AI-driven Business Products and Services",
-      "period": "Oct 2022 - Sept 2023",
+      "period": "Oct 2022 - Sep 2023",
       "link": "https://enrichmydata.eu/",
       "funding_agency": "EU",
       "description": "The project aims to provide a novel paradigm for building rich, high-quality, and valuable datasets to feed Big Data Analytics and AI applications.",
@@ -1180,7 +1181,7 @@
     {
       "name": "Biomatrix",
       "title": "Biodiverse Information Organization, Management, Analysis, Transformation and Reporting with Innovative eXperience",
-      "period": "Sept 2024 - Nov 2025",
+      "period": "Sep 2024 - Nov 2025",
       "funding_agency": "MUR - Ministry of University and Research",
       "description": "BIOMATRIX focuses on data acquisition, transformation, and the implementation of a dashboard for data delivery through the creation of a pipeline consisting of three main phases: acquisition, processing, and analysis.",
       "activities": "As part of this project I contributed to the analysis of the available datasets and to the data integration and visualisation dashboard which was realised.",
@@ -1196,11 +1197,11 @@
       "logo": "crowdit.png"
     },
     {
-      "name": "AMP",
+      "name": "APM",
       "title": "Automotive Predictive Maintenance",
       "period": "Jun 2025 - Jun 2028",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
-      "description": "The APM project aims to develop an innovative AI and Machine Learning-based platform for predictive maintenance of corporate fleets and public transportation. The goal is to reduce costs, improve efficiency, and enhance vehicle safety by anticipating failures and optimizing maintenance operations.",
+      "description": "The APM project aims to develop an innovative AI and Machine Learning-based platform for predictive maintenance of corporate fleets and public transport. The goal is to reduce costs, improve efficiency, and enhance vehicle safety by anticipating failures and optimising maintenance operations.",
       "activities": "As part of this project I will contribute to the corporate fleet predictive maintenance algorithms.",
       "logo": "apm.png"
     }

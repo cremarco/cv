@@ -29,7 +29,7 @@ export const PAGE_BREAK_SAFETY_MARGIN_PX = 10;
 export const SECTION_HEADER_HEIGHT_PX = 70;
 
 // Shared Tailwind class constants
-export const CARD_BASE_CLASSES = 'px-4 py-3 flex gap-3 shadow';
+export const CARD_BASE_CLASSES = 'px-4 py-3 flex gap-3 shadow break-inside-avoid-page';
 
 // Card spacing constants
 export const CARD_CONTENT_PADDING = 'pl-1.5'; // Standard padding for card content text
@@ -176,5 +176,4 @@ Object.values(SECTION_CONFIG).forEach(config => {
   config.containerSelector = `#${config.sectionId}`;
   config.timelineSelector = `[data-timeline="${config.timelineId}"]`;
 });
-
 

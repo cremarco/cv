@@ -14,13 +14,84 @@ import { createItalianResearchProjectsCard } from '../cards/italian-research-pro
 import { createProjectsCard } from '../cards/projects.js';
 import { createTenderCommissionsCard } from '../cards/tender-commissions.js';
 
+let cvDataPromise = null;
+let cachedResearchMetrics = null;
+
 /**
- * Loads CV data from JSON file
+ * Loads CV data from JSON file with caching to ensure consistent values across sections
  */
 export async function loadCVData() {
-  const response = await fetch(DATA_URL);
-  if (!response.ok) throw new Error(`Failed to load ${DATA_URL}`);
-  return response.json();
+  if (!cvDataPromise) {
+    cvDataPromise = (async () => {
+      const response = await fetch(DATA_URL);
+      if (!response.ok) throw new Error(`Failed to load ${DATA_URL}`);
+      return response.json();
+    })();
+  }
+
+  try {
+    return await cvDataPromise;
+  } catch (error) {
+    cvDataPromise = null;
+    throw error;
+  }
+}
+
+/**
+ * Normalises research metrics and keeps a shared reference
+ */
+function buildResearchMetrics(rawMetrics) {
+  if (!rawMetrics) return null;
+
+  const safeMetric = (value) => value ?? null;
+
+  const metrics = {
+    google_scholar: rawMetrics.google_scholar
+      ? {
+          citations: safeMetric(rawMetrics.google_scholar.citations),
+          h_index: safeMetric(rawMetrics.google_scholar.h_index),
+          i10_index: safeMetric(rawMetrics.google_scholar.i10_index),
+          url: rawMetrics.google_scholar.url || null,
+        }
+      : null,
+    scopus: rawMetrics.scopus
+      ? {
+          citations: safeMetric(rawMetrics.scopus.citations),
+          h_index: safeMetric(rawMetrics.scopus.h_index),
+          url: rawMetrics.scopus.url || null,
+        }
+      : null,
+    orcid: rawMetrics.orcid
+      ? {
+          id: rawMetrics.orcid.id || null,
+          url: rawMetrics.orcid.url || null,
+        }
+      : null,
+  };
+
+  cachedResearchMetrics = metrics;
+  return metrics;
+}
+
+/**
+ * Shared getter used by other loaders to avoid diverging metrics objects
+ */
+function getResearchMetrics(rawMetrics) {
+  if (cachedResearchMetrics) return cachedResearchMetrics;
+  return buildResearchMetrics(rawMetrics);
+}
+
+function updateMetricValues(container, metricsMap) {
+  if (!container) return false;
+
+  Object.entries(metricsMap).forEach(([key, value]) => {
+    const el = container.querySelector(`[data-metric="${key}"]`);
+    if (el) {
+      el.textContent = value ?? '—';
+    }
+  });
+
+  return true;
 }
 
 /**
@@ -89,7 +160,7 @@ export async function loadPublications() {
     if (!data.publications) return;
     
     const config = SECTION_CONFIG.publications;
-    const metrics = data.research_metrics;
+    const metrics = getResearchMetrics(data.research_metrics);
     
     renderPublications(
       config,
@@ -235,35 +306,32 @@ export async function loadTenderCommissions() {
 export async function loadResearchMetrics() {
   try {
     const data = await loadCVData();
-    const metrics = data.research_metrics;
-    if (!metrics) return;
+    const metrics = getResearchMetrics(data.research_metrics);
+    if (!metrics) {
+      console.error('Missing research metrics in CV data');
+      return;
+    }
 
     // Update Google Scholar metrics
-    if (metrics.google_scholar) {
-      const gsContainer = document.getElementById('google-scholar-metrics');
-      if (gsContainer) {
-        const metricsMap = {
-          'citations': metrics.google_scholar.citations,
-          'h-index': metrics.google_scholar.h_index,
-          'i10-index': metrics.google_scholar.i10_index,
-        };
-        
-        Object.entries(metricsMap).forEach(([key, value]) => {
-          const el = gsContainer.querySelector(`[data-metric="${key}"]`);
-          if (el) el.textContent = value || '-';
-        });
-      }
+    const gsContainer = document.getElementById('google-scholar-metrics');
+    if (!metrics.google_scholar) {
+      console.error('Google Scholar metrics are missing from CV data');
+    } else if (!updateMetricValues(gsContainer, {
+      'citations': metrics.google_scholar.citations,
+      'h-index': metrics.google_scholar.h_index,
+      'i10-index': metrics.google_scholar.i10_index,
+    })) {
+      console.error('Google Scholar metrics container not found in DOM');
     }
 
     // Update Scopus metrics
-    if (metrics.scopus) {
-      const scopusContainer = document.getElementById('scopus-metrics');
-      if (scopusContainer) {
-        const citationsEl = scopusContainer.querySelector('[data-metric="citations"]');
-        if (citationsEl) {
-          citationsEl.textContent = metrics.scopus.citations || '-';
-        }
-      }
+    const scopusContainer = document.getElementById('scopus-metrics');
+    if (!metrics.scopus) {
+      console.error('Scopus metrics are missing from CV data');
+    } else if (!updateMetricValues(scopusContainer, {
+      'citations': metrics.scopus.citations,
+    })) {
+      console.error('Scopus metrics container not found in DOM');
     }
   } catch (error) {
     console.error('Error loading research metrics:', error);
@@ -288,4 +356,3 @@ export function updatePageNumbers() {
     pageNumberElement.textContent = `${index + 1} / ${totalPages}`;
   });
 }
-

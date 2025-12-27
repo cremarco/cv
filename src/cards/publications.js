@@ -4,6 +4,8 @@
 
 import { getCardClasses } from '../utils/css-classes.js';
 
+const formatMetricValue = (value) => (value ?? '—');
+
 /**
  * Creates the publications header with links and metrics
  */
@@ -30,36 +32,39 @@ export function createPublicationsHeader(data, metrics) {
   // Google Scholar badge - same style as time badge
   if (metrics?.google_scholar) {
     const gs = metrics.google_scholar;
+    const googleScholarUrl = gs.url || '#';
     const gsBadge = document.createElement('span');
     gsBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     gsBadge.innerHTML = `
       <img src="img/logo/google_scholar.png" alt="Google Scholar" class="w-3 h-3 object-contain rounded shadow-sm">
-      <a href="${gs.url}" class="underline">Google Scholar</a>
-      <span>cit: ${gs.citations}, h-index: ${gs.h_index}, i10-index: ${gs.i10_index}</span>
+      <a href="${googleScholarUrl}" class="underline">Google Scholar</a>
+      <span>cit: ${formatMetricValue(gs.citations)}, h-index: ${formatMetricValue(gs.h_index)}, i10-index: ${formatMetricValue(gs.i10_index)}</span>
     `;
     linksGroup.appendChild(gsBadge);
   }
   
   // Scopus badge - same style as time badge
   if (metrics?.scopus) {
+    const scopusUrl = metrics.scopus.url || '#';
     const scopusBadge = document.createElement('span');
     scopusBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     scopusBadge.innerHTML = `
       <img src="img/logo/scopus.png" alt="Scopus" class="w-3 h-3 object-contain">
-      <a href="${metrics.scopus.url}" class="underline">Scopus</a>
-      <span>h-index: ${metrics.scopus.h_index}</span>
+      <a href="${scopusUrl}" class="underline">Scopus</a>
+      <span>cit: ${formatMetricValue(metrics.scopus.citations)}, h-index: ${formatMetricValue(metrics.scopus.h_index)}</span>
     `;
     linksGroup.appendChild(scopusBadge);
   }
   
   // Orcid badge - same style as time badge
   if (metrics?.orcid) {
+    const orcidUrl = metrics.orcid.url || '#';
     const orcidBadge = document.createElement('span');
     orcidBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
     orcidBadge.innerHTML = `
       <i class='bx bxl-orcid text-[12px] text-orcid'></i>
-      <a href="${metrics.orcid.url}" class="underline">Orcid</a>
-      <span>${metrics.orcid.id}</span>
+      <a href="${orcidUrl}" class="underline">Orcid</a>
+      <span>${formatMetricValue(metrics.orcid.id)}</span>
     `;
     linksGroup.appendChild(orcidBadge);
   }
@@ -308,4 +313,3 @@ export function createPublicationsContainer(pubData, metrics) {
   
   return wrapper;
 }
-
