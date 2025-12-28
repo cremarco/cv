@@ -65,7 +65,7 @@ async function init() {
   await loadTenderCommissions();
   await loadDeclaration();
   
-  applyRenderOptions();
+  await applyRenderOptions();
 
   updatePageNumbers();
   

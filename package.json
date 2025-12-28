@@ -6,7 +6,8 @@
     "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "pdf:generate": "node scripts/pdf-generate.js",
-    "pdf:server": "node scripts/pdf-server.js"
+    "pdf:server": "node scripts/pdf-server.js",
+    "pdf:generate:compact": "PDF_PROFILE=compact PDF_MAX_KB=950 PDF_COMPRESS=1 PDF_COMPRESS_PROFILE=ebook node scripts/pdf-generate.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

@@ -37,10 +37,7 @@ export function createDeclarationCard() {
         Io sottoscritto <span class="font-bold">Marco Cremaschi</span>, nato a
         <span class="font-bold">Chiari (BS) il 04/10/1983</span>, residente a
         <span class="font-bold">Sesto San Giovanni (Mi) in Viale Gramsci, 730</span>, CF:
-        <span class="font-bold">CRMMRC83R04C618I</span>,
-      </p>
-      <p class="mb-0">
-        tel: <span class="font-bold">3664168368</span>, email:
+        <span class="font-bold">CRMMRC83R04C618I</span>, tel: <span class="font-bold">3664168368</span>, email:
         <span class="font-bold">cremarco@gmail.com</span>, consapevole delle sanzioni penali, nel caso di dichiarazioni non veritiere e falsità negli atti, richiamate dagli artt. 46 e 47 del DPR 445 del 28/12/2000,
       </p>
       <p class="mb-0">&nbsp;</p>
@@ -56,8 +53,11 @@ export function createDeclarationCard() {
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0">${currentDate}</p>
       <div class="flex justify-end mt-4">
-        <div class="flex h-16 w-56 items-center justify-center border border-slate-800">
-          <span class="text-sm text-slate-800 opacity-30">Marco Cremaschi</span>
+        <div class="relative inline-flex items-center justify-center border border-slate-500 px-1 py-2 mr-8">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-xs-6 font-dm-sans text-slate-500 opacity-60 text-center">Marco Cremaschi</div>
+          </div>
+          <img src="img/signature.png" alt="Firma" class="h-24 object-contain relative z-10">
         </div>
       </div>
     </div>

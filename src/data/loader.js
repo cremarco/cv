@@ -318,11 +318,10 @@ export async function loadTenderCommissions() {
 }
 
 /**
- * Loads and renders declaration section (PDF only)
+ * Loads and renders declaration section
  */
 export async function loadDeclaration() {
   try {
-    if (!isPdfMode()) return;
     const { noPersonalData } = getRenderOptions();
     if (noPersonalData) return;
     const config = SECTION_CONFIG.declaration;

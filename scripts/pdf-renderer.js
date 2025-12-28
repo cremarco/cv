@@ -4,8 +4,20 @@ const BASE_URL = process.env.BASE_URL || 'http://localhost:4173';
 const PDF_QUERY = process.env.PDF_QUERY || '';
 const NAVIGATION_TIMEOUT_MS = Number(process.env.PDF_NAV_TIMEOUT_MS || 30000);
 const PDF_TIMEOUT_MS = Number(process.env.PDF_TIMEOUT_MS || 30000);
-const PDF_DEVICE_SCALE_FACTOR = Number(process.env.PDF_DEVICE_SCALE_FACTOR || 2);
 const MAX_RETRIES = 1;
+
+function parseEnvFlag(value) {
+  if (value === undefined || value === null) return false;
+  const normalized = String(value).trim().toLowerCase();
+  if (normalized === '' || normalized === '1' || normalized === 'true') return true;
+  if (normalized === '0' || normalized === 'false') return false;
+  return true;
+}
+
+const PDF_PROFILE = String(process.env.PDF_PROFILE || '').trim().toLowerCase();
+const PDF_COMPACT = parseEnvFlag(process.env.PDF_COMPACT);
+const IS_COMPACT_PROFILE = PDF_PROFILE.startsWith('compact') || PDF_COMPACT;
+const PDF_DEVICE_SCALE_FACTOR = Number(process.env.PDF_DEVICE_SCALE_FACTOR || (IS_COMPACT_PROFILE ? 1 : 2));
 
 const A4_VIEWPORT = { width: 794, height: 1123 };
 
@@ -20,6 +32,10 @@ function buildTargetUrl() {
     extraParams.forEach((value, key) => {
       targetUrl.searchParams.set(key, value);
     });
+  }
+
+  if (IS_COMPACT_PROFILE) {
+    targetUrl.searchParams.set('pdf-compact', '1');
   }
 
   targetUrl.searchParams.set('pdf', '1');

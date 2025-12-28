@@ -51,7 +51,11 @@
     box-shadow: none !important;
   }
 
-  body.pdf-mode :is(.shadow, .shadow-sm, .shadow-lg).border {
+  body.pdf-compact [data-pdf-compact-hide] {
+    display: none !important;
+  }
+
+  body.pdf-mode :is(.shadow, .shadow-sm, .shadow-lg) {
     box-shadow: none !important;
   }
 
@@ -125,9 +129,9 @@
     }
 
     [data-pdf-no-shadow],
-    .border.shadow,
-    .border.shadow-sm,
-    .border.shadow-lg {
+    .shadow,
+    .shadow-sm,
+    .shadow-lg {
       box-shadow: none !important;
     }
   }
