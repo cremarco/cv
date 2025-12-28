@@ -31,7 +31,7 @@ export const SECTION_HEADER_HEIGHT_PX = 70;
 // Shared Tailwind class constants
 export const CARD_PADDING_CLASSES = 'px-4 py-3';
 export const CARD_BASE_CLASSES = `${CARD_PADDING_CLASSES} flex gap-3 shadow break-inside-avoid-page`;
-export const CARD_SURFACE_CLASSES = 'bg-white border border-gray-200 shadow';
+export const CARD_SURFACE_CLASSES = 'bg-white shadow';
 
 // Current/Active card color classes (configurable via Tailwind config)
 export const CURRENT_CARD_BG = 'bg-current-50';
