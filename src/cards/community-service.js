@@ -124,6 +124,16 @@ export function createCommunityServiceCard(data) {
     });
   }
   
+  // Add Project Evaluator section
+  if (data.project_evaluator && data.project_evaluator.length > 0) {
+    contentDiv.appendChild(createCategoryLabel('Project Evaluator'));
+    
+    data.project_evaluator.forEach((item) => {
+      const card = createCommunityServiceItemCard(item);
+      contentDiv.appendChild(card);
+    });
+  }
+  
   innerWrapper.appendChild(contentDiv);
   wrapper.appendChild(innerWrapper);
   

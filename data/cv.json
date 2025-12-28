@@ -258,7 +258,7 @@
           "courses": [
             {
               "course_name": "Digital Futures for Intangible Heritage",
-              "hours": "8/4/4",
+              "hours": "8/4/4 hours",
               "role": "Professor",
               "time_period": "2023 - 2025"
             }
@@ -975,6 +975,13 @@
         "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
         "year": "2024",
         "link": "https://unimib-datai.github.io/sti-website/tutorial/"
+      }
+    ],
+    "project_evaluator": [
+      {
+        "title": "ANR (Agence Nationale de la Recherche)",
+        "year": "2025",
+        "link": "files/valutatore-di-progetti/anr-certificate-of-mission-2025.pdf"
       }
     ]
   },
