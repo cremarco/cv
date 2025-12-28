@@ -10,8 +10,8 @@ import { createLogoImage } from './shared.js';
  */
 function renderCourseRow(course, isPhd = true) {
   const roleBadge = course.role ? `
-    <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-      <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight whitespace-nowrap">${course.role}</span>
+    <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+      <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight whitespace-nowrap">${course.role}</span>
     </div>
   ` : '';
   
@@ -22,7 +22,7 @@ function renderCourseRow(course, isPhd = true) {
     : 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
   
   const hoursMarkup = course.hours ? `
-    <div class="text-xs-6 text-muted font-dm-sans italic whitespace-nowrap">${course.hours}</div>
+    <div class="text-xs-6 text-slate-500 font-dm-sans italic whitespace-nowrap">${course.hours}</div>
   ` : '';
   
   const periodBadge = course.time_period ? `<span class="${periodBadgeClasses}" data-time-period="${course.time_period}" data-time-kind="badge">${course.time_period}</span>` : '';
@@ -30,7 +30,7 @@ function renderCourseRow(course, isPhd = true) {
   return `
     <div class="flex items-center justify-between h-2.5 mb-0.5 last:mb-0">
       <div class="flex gap-2 items-end pl-2">
-        <div class="text-xs-8 text-ink font-dm-sans font-medium whitespace-nowrap">${course.course_name}</div>
+        <div class="text-xs-8 text-slate-800 font-dm-sans font-medium whitespace-nowrap">${course.course_name}</div>
         ${hoursMarkup}
       </div>
       <div class="flex items-center gap-2 justify-end w-[180px]">
@@ -78,7 +78,7 @@ export function createTeachingCard(teaching, { isPhd = true }) {
   contentDiv.className = 'flex-1';
   
   const universityMarkup = teaching.university ? `
-    <div class="text-xs-7 text-muted font-dm-sans">${teaching.university}</div>
+    <div class="text-xs-7 text-slate-500 font-dm-sans">${teaching.university}</div>
   ` : '';
   
   const programsMarkup = (teaching.programs?.length > 0) 
@@ -88,7 +88,7 @@ export function createTeachingCard(teaching, { isPhd = true }) {
         
         return `
           <div class="flex flex-col ${CARD_TEXT_GAP}">
-            <div class="text-xs-7 text-ink font-dm-sans">
+            <div class="text-xs-7 text-slate-800 font-dm-sans leading-normal">
               <span class="font-bold">${type}</span> ${isPhd ? 'in ' : ''}${name}
             </div>
             <div class="flex flex-col ${CARD_TEXT_GAP}">${coursesHtml}</div>

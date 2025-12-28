@@ -38,7 +38,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   leftDiv.className = 'basis-0 flex flex-col gap-0.5 grow items-start min-h-px min-w-[100px] relative shrink-0';
   
   const nameDiv = document.createElement('div');
-  nameDiv.className = 'flex flex-col font-dm-sans font-normal justify-center min-w-full relative shrink-0 text-muted text-xs-7';
+  nameDiv.className = 'flex flex-col font-dm-sans font-normal justify-center min-w-full relative shrink-0 text-slate-500 text-xs-7';
   const nameP = document.createElement('p');
   nameP.className = 'leading-tight mb-0';
   nameP.textContent = project.name;
@@ -46,7 +46,7 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   leftDiv.appendChild(nameDiv);
   
   const titleDiv = document.createElement('div');
-  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8';
+  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-slate-800 text-xs-8';
   const titleP = document.createElement('p');
   titleP.className = 'leading-normal mb-0';
   titleP.textContent = project.title;
@@ -87,14 +87,14 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
   
   // Description and role text box
   const textBox = document.createElement('div');
-  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
+  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-slate-800 w-full`;
   
   // Description
   if (project.description) {
     const descDiv = document.createElement('div');
     descDiv.className = 'flex flex-col justify-center relative shrink-0 text-xs-7 w-full';
     const descP = document.createElement('p');
-    descP.className = 'leading-normal mb-0';
+    descP.className = 'leading-normal mb-0 text-slate-800';
     
     // Split description to handle bold "COST Action"
     const parts = project.description.split('COST Action');
@@ -118,13 +118,13 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
     const roleDiv = document.createElement('div');
     roleDiv.className = 'flex flex-col justify-center relative shrink-0 w-full';
     const roleP = document.createElement('p');
-    roleP.className = 'font-dm-sans font-bold leading-normal text-xs-7 mb-0';
+    roleP.className = 'font-dm-sans font-bold leading-normal text-xs-7 mb-0 text-slate-800';
     // Handle line breaks in role and add star icon for Science Communication Coordinator
     let roleHTML = project.role.replace(/\n/g, '<br>');
     // Add yellow star icon after "Science Communication Coordinator."
     roleHTML = roleHTML.replace(
       /Science Communication Coordinator\./g,
-      'Science Communication Coordinator. <i class=\'bx bx-star text-[8px] text-award-gold inline-block align-middle\'></i>'
+      'Science Communication Coordinator. <i class=\'bx bx-star text-[8px] text-amber-500 inline-block align-middle\'></i>'
     );
     roleP.innerHTML = roleHTML;
     roleDiv.appendChild(roleP);

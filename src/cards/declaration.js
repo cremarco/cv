@@ -32,7 +32,7 @@ export function createDeclarationCard() {
   
   // Using text-xs-8 (11px) for better readability
   container.innerHTML = `
-    <div class="text-xs-8 font-dm-sans font-medium text-ink leading-normal mb-0">
+    <div class="text-xs-8 font-dm-sans font-medium text-slate-800 leading-normal mb-0">
       <p class="mb-0">
         Io sottoscritto <span class="font-bold">Marco Cremaschi</span>, nato a
         <span class="font-bold">Chiari (BS) il 04/10/1983</span>, residente a
@@ -56,8 +56,8 @@ export function createDeclarationCard() {
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0">${currentDate}</p>
       <div class="flex justify-end mt-4">
-        <div class="flex h-16 w-56 items-center justify-center border border-ink">
-          <span class="text-sm text-ink opacity-30">Marco Cremaschi</span>
+        <div class="flex h-16 w-56 items-center justify-center border border-slate-800">
+          <span class="text-sm text-slate-800 opacity-30">Marco Cremaschi</span>
         </div>
       </div>
     </div>

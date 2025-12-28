@@ -18,13 +18,13 @@ export function createThesisSupervisorCard(data) {
     bachelorCard.className = `${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} rounded-md flex flex-col items-center justify-center`;
     bachelorCard.innerHTML = `
       <div class="flex flex-col items-center justify-center">
-        <p class="text-ink text-xs-16 font-dm-sans font-normal mb-0">${item.count}</p>
-        <div class="flex flex-col justify-center text-muted text-xs-6 text-center font-dm-sans font-normal">
+        <p class="text-slate-800 text-xs-16 font-dm-sans font-normal mb-0">${item.count}</p>
+        <div class="flex flex-col justify-center text-slate-500 text-xs-6 text-center font-dm-sans font-normal">
           <p class="mb-0">${item.program}</p>
           <p>@${item.university}</p>
         </div>
       </div>
-      <div class="flex flex-col justify-center text-muted text-xs-7 text-center font-dm-sans font-normal mt-1">
+      <div class="flex flex-col justify-center text-slate-500 text-xs-7 text-center font-dm-sans font-normal mt-1">
         <p>Bachelor's thesis</p>
       </div>
     `;
@@ -34,7 +34,7 @@ export function createThesisSupervisorCard(data) {
   // Master's thesis section
   if (data.master_thesis?.length > 0) {
     const masterCards = data.master_thesis.map((item, index) => {
-      const divider = index > 0 ? '<div class="border border-[rgba(0,0,0,0.05)] border-solid h-[25px] shrink-0 w-[0.5px]"></div>' : '';
+      const divider = index > 0 ? '<div class="border border-slate-200 border-solid h-[25px] shrink-0 w-[0.5px]"></div>' : '';
       const programParts = item.program.split(' ');
       const needsLineBreak = programParts.length > 2;
       
@@ -47,8 +47,8 @@ export function createThesisSupervisorCard(data) {
       return `
         ${divider}
         <div class="flex flex-col items-center justify-center">
-          <p class="text-ink text-xs-16 font-dm-sans font-normal mb-0">${item.count}</p>
-          <div class="flex flex-col justify-center text-muted text-xs-6 text-center font-dm-sans font-normal">
+          <p class="text-slate-800 text-xs-16 font-dm-sans font-normal mb-0">${item.count}</p>
+          <div class="flex flex-col justify-center text-slate-500 text-xs-6 text-center font-dm-sans font-normal">
             ${programHtml}
           </div>
         </div>
@@ -60,7 +60,7 @@ export function createThesisSupervisorCard(data) {
     masterCard.innerHTML = `
       <div class="flex flex-col gap-1 items-center justify-center">
         <div class="flex gap-4 items-center justify-center">${masterCards}</div>
-        <div class="flex flex-col justify-center text-muted text-xs-7 text-center font-dm-sans font-normal">
+        <div class="flex flex-col justify-center text-slate-500 text-xs-7 text-center font-dm-sans font-normal">
           <p>Master's thesis</p>
         </div>
       </div>

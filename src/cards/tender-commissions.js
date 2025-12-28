@@ -21,7 +21,7 @@ function createTenderCommissionItemCard(item) {
   
   // Build title
   const titleDiv = document.createElement('div');
-  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 min-w-0 flex-1';
+  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-slate-800 text-xs-8 min-w-0 flex-1';
   
   const titleP = document.createElement('p');
   titleP.className = 'font-dm-sans font-normal leading-normal mb-0';
@@ -91,7 +91,7 @@ export function createTenderCommissionsCard(data) {
     const orgLabel = document.createElement('div');
     orgLabel.className = 'flex items-start relative shrink-0 w-full';
     const text = document.createElement('div');
-    text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-muted text-xs-7';
+    text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-slate-500 text-xs-7';
     const p = document.createElement('p');
     p.className = 'leading-normal mb-0';
     p.textContent = data.organization;

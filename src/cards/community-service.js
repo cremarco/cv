@@ -21,7 +21,7 @@ function createCommunityServiceItemCard(item) {
   
   // Build title and description
   const titleDiv = document.createElement('div');
-  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 min-w-0 flex-1';
+  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-slate-800 text-xs-8 min-w-0 flex-1';
   
   if (item.description) {
     const titleP = document.createElement('p');
@@ -82,7 +82,7 @@ function createCategoryLabel(label) {
   const labelDiv = document.createElement('div');
   labelDiv.className = 'flex items-start relative shrink-0 w-full';
   const text = document.createElement('div');
-  text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-muted text-xs-7';
+  text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-slate-500 text-xs-7';
   const p = document.createElement('p');
   p.className = 'leading-normal mb-0';
   p.textContent = label;

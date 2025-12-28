@@ -11,7 +11,7 @@ import { CARD_BASE_CLASSES } from '../config.js';
  */
 export function getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent }) {
   // Background: accent for current, white for others
-  const bgClass = isCurrent ? 'bg-accent-lightest' : 'bg-white';
+  const bgClass = isCurrent ? 'bg-purple-50' : 'bg-white';
   
   // Uniform border style: always use border-gray-200, same for all cards
   // First card of page has border-b-0, others have border-t-0

@@ -41,7 +41,7 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
   
   if (project.institution) {
     const institutionDiv = document.createElement('div');
-    institutionDiv.className = 'flex flex-col font-dm-sans font-normal justify-center min-w-full relative shrink-0 text-muted text-xs-7';
+    institutionDiv.className = 'flex flex-col font-dm-sans font-normal justify-center min-w-full relative shrink-0 text-slate-500 text-xs-7';
     const institutionP = document.createElement('p');
     institutionP.className = 'leading-tight mb-0';
     institutionP.textContent = project.institution;
@@ -50,7 +50,7 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
   }
   
   const nameDiv = document.createElement('div');
-  nameDiv.className = 'flex flex-col font-dm-sans font-medium justify-center min-w-full relative shrink-0 text-ink text-xs-8';
+  nameDiv.className = 'flex flex-col font-dm-sans font-medium justify-center min-w-full relative shrink-0 text-slate-800 text-xs-8';
   const nameP = document.createElement('p');
   nameP.className = 'leading-normal mb-0';
   nameP.textContent = project.name;
@@ -98,14 +98,14 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
   
   // Description and role text box
   const textBox = document.createElement('div');
-  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
+  textBox.className = `flex flex-col font-dm-sans font-normal ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-slate-800 w-full`;
   
   // Description
   if (project.description) {
     const descDiv = document.createElement('div');
     descDiv.className = 'flex flex-col justify-center relative shrink-0 text-xs-7 w-full';
     const descP = document.createElement('p');
-    descP.className = 'leading-normal mb-0';
+    descP.className = 'leading-normal mb-0 text-slate-800';
     descP.textContent = project.description;
     descDiv.appendChild(descP);
     textBox.appendChild(descDiv);
@@ -116,7 +116,7 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
     const roleDiv = document.createElement('div');
     roleDiv.className = 'flex flex-col justify-center relative shrink-0 w-full';
     const roleP = document.createElement('p');
-    roleP.className = 'font-dm-sans font-bold leading-normal text-xs-7 mb-0';
+    roleP.className = 'font-dm-sans font-bold leading-normal text-xs-7 mb-0 text-slate-800';
     roleP.textContent = project.role;
     roleDiv.appendChild(roleP);
     textBox.appendChild(roleDiv);

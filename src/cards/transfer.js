@@ -27,8 +27,8 @@ export function createTransferCard(exp, { isCurrent }) {
     <div class="flex flex-col ${CARD_INTERNAL_GAP}">
       <div class="flex justify-between items-center">
         <div class="${titleWidth}">
-          <div class="text-xs-7 text-muted font-dm-sans mb-0.5 whitespace-nowrap">${exp.company}</div>
-          <div class="text-xs-8 text-ink font-dm-sans font-medium">${exp.position}</div>
+          <div class="text-xs-7 text-slate-500 font-dm-sans mb-0.5 whitespace-nowrap">${exp.company}</div>
+          <div class="text-xs-8 text-slate-800 font-dm-sans font-medium">${exp.position}</div>
         </div>
         <div class="flex flex-col gap-0.5 items-end">
           <div class="flex gap-2 items-center">
@@ -38,7 +38,7 @@ export function createTransferCard(exp, { isCurrent }) {
           ${createLocationMarkup(exp.place)}
         </div>
       </div>
-      <div class="pl-1.5 text-xs-7 text-ink font-dm-sans leading-normal flex flex-col ${CARD_TEXT_GAP}">
+      <div class="pl-1.5 text-xs-7 text-slate-800 font-dm-sans leading-normal flex flex-col ${CARD_TEXT_GAP}">
         ${topicText ? `<p class="mb-0">${topicText}</p>` : ''}
       </div>
     </div>

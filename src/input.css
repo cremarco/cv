@@ -4,27 +4,6 @@
 
 @layer base {
   :root {
-    --color-ink: #2e2e48;
-    --color-muted: #79819a;
-    --color-subtle: #9fa3b5;
-    --color-accent: #9251f7;
-    --color-accent-soft: #efe2f9;
-    --color-accent-lightest: #f8f2fc;
-    --color-accent-dark: #5531a7;
-    --color-line: #e2e6ee;
-    --color-sidebar-bg: #ffffff;
-    --color-gray-dark: #47516b;
-    --color-gray-darkest: #232339;
-    --color-gray-lighter: #d9dfe8;
-    --color-gray-lightest: #f7f9fc;
-    --color-linkedin: #0077b5;
-    --color-github: #030943;
-    --color-gradient-start: #a478e8;
-    --color-gradient-end: #516cf7;
-    --color-orcid: #a6ce39;
-    --color-award-gold: rgba(219, 182, 0, 1);
-    --color-page-bg: #ffffff;
-    --color-page-number: #64748b;
     --shadow-elevation: 0 12px 32px rgba(15, 23, 42, 0.12);
   }
 }
@@ -41,7 +20,7 @@
   body.pdf-mode {
     padding: 0;
     gap: 0;
-    background: var(--color-page-bg);
+    background: white;
     align-items: stretch;
     overflow: visible;
   }
@@ -97,7 +76,7 @@
     max-width: 210mm;
     max-height: 297mm;
     margin: 0 auto;
-    background: var(--color-page-bg);
+    background: white;
     box-shadow: var(--shadow-elevation);
     overflow: hidden;
     position: relative;
@@ -114,7 +93,7 @@
     text-align: center;
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
-    color: var(--color-page-number);
+    color: rgb(100 116 139); /* Tailwind slate-500 */
     font-weight: 400;
     z-index: 100;
   }

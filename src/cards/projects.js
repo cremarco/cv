@@ -40,7 +40,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   leftDiv.className = 'flex flex-col gap-0.5 items-start relative shrink-0 w-[178px]';
   
   const nameDiv = document.createElement('div');
-  nameDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 w-full';
+  nameDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-slate-800 text-xs-8 w-full';
   const nameP = document.createElement('p');
   nameP.className = 'leading-normal mb-0';
   nameP.textContent = project.name;
@@ -59,7 +59,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   // Funding agency badge
   if (project.funding_agency) {
     const fundingBadge = document.createElement('div');
-    fundingBadge.className = 'bg-gray-lighter flex font-dm-sans font-normal gap-0.5 h-2.5 items-center px-0.5 py-0 relative rounded-sm shrink-0 text-gray-darkest text-xs-6 text-center whitespace-nowrap';
+    fundingBadge.className = 'bg-slate-200 flex font-dm-sans font-normal gap-0.5 h-2.5 items-center px-0.5 py-0 relative rounded-sm shrink-0 text-slate-900 text-xs-6 text-center whitespace-nowrap';
     const fundingP = document.createElement('p');
     fundingP.className = 'leading-tight relative shrink-0';
     const fundingLabel = document.createElement('span');
@@ -102,7 +102,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   // Title in italic
   if (project.title) {
     const titleDiv = document.createElement('div');
-    titleDiv.className = 'flex flex-col font-dm-sans font-normal italic justify-center relative shrink-0 text-ink text-xs-6 w-full';
+    titleDiv.className = 'flex flex-col font-dm-sans font-normal italic justify-center relative shrink-0 text-slate-800 text-xs-6 w-full';
     const titleP = document.createElement('p');
     titleP.className = 'leading-tight mb-0';
     titleP.textContent = project.title;
@@ -112,14 +112,14 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
   
   // Description and activities text box
   const textBox = document.createElement('div');
-  textBox.className = `flex flex-col ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-ink w-full`;
+  textBox.className = `flex flex-col ${CARD_TEXT_GAP} items-start pl-1.5 pr-0 py-0 relative shrink-0 text-slate-800 w-full`;
   
   // Description
   if (project.description) {
     const descDiv = document.createElement('div');
     descDiv.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-xs-7 w-full';
     const descP = document.createElement('p');
-    descP.className = 'leading-normal mb-0';
+    descP.className = 'leading-normal mb-0 text-slate-800';
     descP.textContent = project.description;
     descDiv.appendChild(descP);
     textBox.appendChild(descDiv);
@@ -130,20 +130,20 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
     const activitiesDiv = document.createElement('div');
     activitiesDiv.className = `flex flex-col ${CARD_TEXT_GAP} items-start relative shrink-0 w-full`;
     const activitiesRow = document.createElement('div');
-    activitiesRow.className = 'flex font-dm-sans font-medium items-center relative shrink-0 text-ink w-full';
+    activitiesRow.className = 'flex font-dm-sans font-medium items-center relative shrink-0 text-slate-800 w-full';
     
     const activitiesLabel = document.createElement('div');
-    activitiesLabel.className = 'flex flex-col justify-center relative shrink-0 text-xs-7 w-[60px]';
+    activitiesLabel.className = 'flex flex-col justify-center relative shrink-0 text-xs-7 w-[60px] text-slate-800';
     const labelP = document.createElement('p');
-    labelP.className = 'font-dm-sans font-bold leading-tight mb-0';
+    labelP.className = 'font-dm-sans font-bold leading-tight mb-0 text-slate-800';
     labelP.textContent = 'Activities';
     activitiesLabel.appendChild(labelP);
     activitiesRow.appendChild(activitiesLabel);
     
     const activitiesContent = document.createElement('div');
-    activitiesContent.className = 'basis-0 flex flex-col grow justify-center min-h-px min-w-px relative shrink-0 text-xs-7';
+    activitiesContent.className = 'basis-0 flex flex-col grow justify-center min-h-px min-w-px relative shrink-0 text-xs-7 text-slate-800';
     const contentP = document.createElement('p');
-    contentP.className = 'leading-normal mb-0';
+    contentP.className = 'leading-normal mb-0 text-slate-800';
     contentP.textContent = project.activities;
     activitiesContent.appendChild(contentP);
     activitiesRow.appendChild(activitiesContent);

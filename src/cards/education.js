@@ -31,11 +31,11 @@ export function createEducationCard(edu) {
   const thesisMarkup = edu.thesis_title ? `
     <div class="flex gap-3 items-center w-full">
       <div class="flex-shrink-0 w-[65px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Thesis:</p>
+        <p class="text-xs-7 text-slate-800 font-dm-sans font-bold leading-tight">Thesis:</p>
       </div>
       <div class="flex-1 min-w-0">
         <div class="flex gap-2 items-center">
-          <p class="text-xs-7 text-ink font-dm-sans leading-normal italic">${edu.thesis_title}</p>
+          <p class="text-xs-7 text-slate-800 font-dm-sans leading-normal italic">${edu.thesis_title}</p>
           ${createLinkBadge(edu.thesis_link)}
         </div>
       </div>
@@ -46,10 +46,10 @@ export function createEducationCard(edu) {
   const internationalMarkup = edu.international_experience ? `
     <div class="flex gap-3 items-center w-full">
       <div class="flex-shrink-0 w-[65px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Int Esp.:</p>
+        <p class="text-xs-7 text-slate-800 font-dm-sans font-bold leading-tight">Int Esp.:</p>
       </div>
       <div class="flex-1 min-w-0">
-        <p class="text-xs-7 text-ink font-dm-sans leading-normal">${edu.international_experience}</p>
+        <p class="text-xs-7 text-slate-800 font-dm-sans leading-normal">${edu.international_experience}</p>
       </div>
     </div>
   ` : '';
@@ -58,11 +58,11 @@ export function createEducationCard(edu) {
   const coursesMarkup = (edu.courses?.length > 0) ? `
     <div class="flex gap-3 items-start w-full">
       <div class="flex-shrink-0 w-[65px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Courses:</p>
+        <p class="text-xs-7 text-slate-800 font-dm-sans font-bold leading-tight">Courses:</p>
       </div>
       <div class="flex-1 min-w-0">
         <ul class="list-disc pl-5 space-y-0.5">
-          ${edu.courses.map(c => `<li class="text-xs-7 text-ink font-dm-sans leading-normal">${c}</li>`).join('')}
+          ${edu.courses.map(c => `<li class="text-xs-7 text-slate-800 font-dm-sans leading-normal">${c}</li>`).join('')}
         </ul>
       </div>
     </div>
@@ -72,11 +72,11 @@ export function createEducationCard(edu) {
   const summerSchoolsMarkup = (edu.summer_schools?.length > 0) ? `
     <div class="flex gap-3 items-start w-full">
       <div class="flex-shrink-0 w-[65px]">
-        <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Sum. Sch.:</p>
+        <p class="text-xs-7 text-slate-800 font-dm-sans font-bold leading-tight">Sum. Sch.:</p>
       </div>
       <div class="flex-1 min-w-0">
         ${edu.summer_schools.map((s, i) => 
-          `<p class="text-xs-7 text-ink font-dm-sans leading-normal ${i === edu.summer_schools.length - 1 ? '' : 'mb-0'}">${s}</p>`
+          `<p class="text-xs-7 text-slate-800 font-dm-sans leading-normal ${i === edu.summer_schools.length - 1 ? '' : 'mb-0'}">${s}</p>`
         ).join('')}
       </div>
     </div>
@@ -86,7 +86,7 @@ export function createEducationCard(edu) {
     <div class="flex flex-col ${CARD_INTERNAL_GAP}">
       <div class="flex justify-between items-center">
         <div class="w-[178px]">
-          <div class="text-xs-8 text-ink font-dm-sans font-medium">${degreeText}</div>
+          <div class="text-xs-8 text-slate-800 font-dm-sans font-medium">${degreeText}</div>
         </div>
         <div class="flex flex-col gap-0.5 items-end">
           <div class="flex gap-2 items-center">

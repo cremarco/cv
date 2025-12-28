@@ -32,8 +32,8 @@ export function createLocationMarkup(place) {
   if (!place) return '';
   return `
     <div class="flex items-center gap-1">
-      <i class='bx bx-map text-[8px] text-muted'></i>
-      <div class="text-xs-5 text-muted font-dm-sans">${place}</div>
+      <i class='bx bx-map text-[8px] text-slate-500'></i>
+      <div class="text-xs-5 text-slate-500 font-dm-sans">${place}</div>
     </div>
   `;
 }

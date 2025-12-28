@@ -20,7 +20,7 @@ function createEditorialCommunityServiceItemCard(item) {
   
   // Build title
   const titleDiv = document.createElement('div');
-  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-ink text-xs-8 min-w-0 flex-1';
+  titleDiv.className = 'flex flex-col font-dm-sans font-medium justify-center relative shrink-0 text-slate-800 text-xs-8 min-w-0 flex-1';
   
   const titleP = document.createElement('p');
   titleP.className = 'font-dm-sans font-normal leading-normal mb-0';
@@ -77,7 +77,7 @@ function createEditorialCommunityServiceItemCard(item) {
     const emptyBadge = document.createElement('div');
     emptyBadge.className = 'flex flex-col h-2.5 items-center justify-center px-0.5 py-0 relative rounded-sm shrink-0 w-5';
     const emptyP = document.createElement('p');
-    emptyP.className = 'font-dm-sans font-normal leading-tight relative shrink-0 text-gray-dark text-xs-6 whitespace-nowrap';
+    emptyP.className = 'font-dm-sans font-normal leading-tight relative shrink-0 text-slate-600 text-xs-6 whitespace-nowrap';
     emptyP.innerHTML = '&nbsp;';
     emptyBadge.appendChild(emptyP);
     badgesDiv.appendChild(emptyBadge);
@@ -96,7 +96,7 @@ function createCategoryLabel(label) {
   const labelDiv = document.createElement('div');
   labelDiv.className = 'flex items-start relative shrink-0 w-full';
   const text = document.createElement('div');
-  text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-muted text-xs-7';
+  text.className = 'flex flex-col font-dm-sans font-normal justify-center relative shrink-0 text-slate-500 text-xs-7';
   const p = document.createElement('p');
   p.className = 'leading-normal mb-0';
   p.textContent = label;

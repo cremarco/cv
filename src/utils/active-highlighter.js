@@ -126,7 +126,7 @@ function applyActiveBadgeStyles(badge) {
 }
 
 function applyActiveTextStyles(element) {
-  element.classList.remove('text-gray-dark', 'text-ink');
+  element.classList.remove('text-slate-600', 'text-slate-800');
   if (!element.classList.contains('text-purple-600')) {
     element.classList.add('text-purple-600');
   }
@@ -183,9 +183,9 @@ function highlightActiveCardBackgrounds() {
         return;
       }
       
-      if (!card.classList.contains('bg-accent-lightest')) {
+      if (!card.classList.contains('bg-purple-50')) {
         card.classList.remove('bg-white');
-        card.classList.add('bg-accent-lightest');
+        card.classList.add('bg-purple-50');
       }
     });
   });

@@ -18,7 +18,7 @@ export function createPublicationsHeader(data, metrics) {
   const titleDiv = document.createElement('div');
   titleDiv.className = 'flex flex-col items-start leading-none';
   titleDiv.innerHTML = `
-    <div class="text-xs-8 font-dm-sans text-ink -mt-3 mb-2">Update date: ${data.update_date}</div>
+    <div class="text-xs-8 font-dm-sans text-slate-800 -mt-3 mb-2">Update date: ${data.update_date}</div>
   `;
   header.appendChild(titleDiv);
   
@@ -64,15 +64,15 @@ export function createPublicationsHeader(data, metrics) {
   legendGroup.className = 'flex gap-1 items-center';
   legendGroup.innerHTML = `
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bx-microphone text-[8px] text-award-gold'></i>
+      <i class='bx bx-microphone text-[8px] text-amber-500'></i>
       <span>Speaker</span>
     </span>
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bx-star text-[8px] text-award-gold'></i>
+      <i class='bx bx-star text-[8px] text-amber-500'></i>
       <span>Best paper</span>
     </span>
     <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-      <i class='bx bx-trophy text-[8px] text-award-gold'></i>
+      <i class='bx bx-trophy text-[8px] text-amber-500'></i>
       <span>Winner</span>
     </span>
   `;
@@ -142,10 +142,10 @@ export function createPublicationsSummaryCards(counts) {
     card.className = `flex-1 ${CARD_SURFACE_CLASSES} ${CARD_PADDING_CLASSES} rounded-md flex flex-col ${CARD_INTERNAL_GAP} items-start`;
     card.innerHTML = `
       <div class="flex h-[15px] items-center justify-center w-full">
-        <span class="text-ink text-[20px] font-dm-sans leading-tight text-center w-full">${item.count}</span>
+        <span class="text-slate-800 text-[20px] font-dm-sans leading-tight text-center w-full">${item.count}</span>
       </div>
       <div class="flex flex-col items-center justify-center w-full">
-        <span class="text-muted text-xs-7 font-dm-sans text-center">${item.label}</span>
+        <span class="text-slate-500 text-xs-7 font-dm-sans text-center">${item.label}</span>
       </div>
     `;
     wrapper.appendChild(card);
@@ -186,7 +186,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.best_paper) {
     attrsHTML += `
       <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-        <i class='bx bx-star text-[8px] text-award-gold'></i>
+        <i class='bx bx-star text-[8px] text-amber-500'></i>
         <span>Best paper</span>
       </span>
     `;
@@ -196,7 +196,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.speaker) {
     attrsHTML += `
       <span class="inline-flex items-center justify-center px-1 py-0.5 text-[6px] font-medium bg-gray-200 text-gray-800 rounded gap-0.5">
-        <i class='bx bx-microphone text-[8px] text-award-gold'></i>
+        <i class='bx bx-microphone text-[8px] text-amber-500'></i>
         <span>Speaker</span>
       </span>
     `;
@@ -205,8 +205,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   // ICORE badge
   if (paper.icore) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
+      <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">ICORE:</span> ${paper.icore}</span>
       </div>
     `;
   }
@@ -215,8 +215,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.quartiles?.length > 0) {
     const quartilesText = paper.quartiles.map(q => `<span class="font-bold">${q.rank}</span> ${q.field}`).join(', ');
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
+      <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
       </div>
     `;
   }
@@ -224,8 +224,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   // DOI badge
   if (paper.doi) {
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" rel="noopener noreferrer" class="underline">${paper.doi}</a></span>
+      <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">DOI:</span> <a href="https://doi.org/${paper.doi}" target="_blank" rel="noopener noreferrer" class="underline">${paper.doi}</a></span>
       </div>
     `;
   }
@@ -235,8 +235,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
     const ceurId = String(paper.ceur).trim();
     const ceurUrl = paper.ceur_url || `https://ceur-ws.org/${encodeURIComponent(ceurId)}/`;
     attrsHTML += `
-      <div class="bg-gray-lighter flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-ink text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" rel="noopener noreferrer" class="underline">${ceurId}</a></span>
+      <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
+        <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" rel="noopener noreferrer" class="underline">${ceurId}</a></span>
       </div>
     `;
   }
@@ -247,13 +247,13 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   contentDiv.innerHTML = `
     <div class="flex flex-wrap gap-1.5 items-center mb-1">
       <span class="inline-flex items-center px-1.5 py-0.5 text-[8px] font-medium rounded-md bg-gray-100 text-gray-700 shrink-0">${index + 1}</span>
-      <div class="flex-1 flex flex-col font-dm-sans justify-center text-ink text-xs-6 leading-normal min-w-0">
+      <div class="flex-1 flex flex-col font-dm-sans justify-center text-slate-800 text-xs-6 leading-normal min-w-0">
         <p class="mb-0">${paper.authors}</p>
         <p class="italic mb-0 font-dm-sans">${paper.title}</p>
         <p class="mb-0">${paper.venue}</p>
       </div>
-      <div class="bg-accent-soft flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
-        <span class="text-accent text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight">${typeLabels[paper.type] || paper.type}</span>
+      <div class="bg-purple-100 flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
+        <span class="text-purple-500 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight">${typeLabels[paper.type] || paper.type}</span>
       </div>
     </div>
     ${attrsHTML ? `<div class="pl-1.5 flex gap-[2px] items-center justify-end mt-0.5">${attrsHTML}</div>` : ''}

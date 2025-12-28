@@ -28,7 +28,7 @@ export function createWebinarCard(item) {
     <div class="flex flex-col ${CARD_INTERNAL_GAP}">
       <div class="flex justify-between items-center">
         <div class="flex-1">
-          <div class="text-xs-8 text-ink font-dm-sans font-medium">${item.title || ''}</div>
+          <div class="text-xs-8 text-slate-800 font-dm-sans font-medium">${item.title || ''}</div>
         </div>
         <div class="flex gap-2 items-center">
           ${createLinkBadge(item.link)}
@@ -38,10 +38,10 @@ export function createWebinarCard(item) {
       <div class="pl-1.5 flex flex-col ${CARD_TEXT_GAP}">
         <div class="flex gap-2 items-start w-full">
           <div class="flex-shrink-0 w-[60px]">
-            <p class="text-xs-7 text-ink font-dm-sans font-bold leading-tight">Activities:</p>
+            <p class="text-xs-7 text-slate-800 font-dm-sans font-bold leading-tight">Activities:</p>
           </div>
           <div class="flex-1 min-w-0">
-            <p class="text-xs-7 text-ink font-dm-sans leading-normal">${item.activities || ''}</p>
+            <p class="text-xs-7 text-slate-800 font-dm-sans leading-normal">${item.activities || ''}</p>
           </div>
         </div>
       </div>

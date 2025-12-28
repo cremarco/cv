@@ -98,16 +98,16 @@ export function createSectionHTML(config, addMarginTop = false, showTitle = true
   const gapClass = showTitle ? 'gap-4' : 'gap-0';
   
   const titleHTML = showTitle 
-    ? `<h2 class="text-xs-12 font-outfit font-medium text-ink ${config.subtitle ? 'mb-0' : 'mb-0.5'}">${config.title}</h2>` 
+    ? `<h2 class="text-xs-12 font-outfit font-medium text-slate-800 ${config.subtitle ? 'mb-0' : 'mb-0.5'}">${config.title}</h2>` 
     : '';
   
   const subtitleHTML = (config.subtitle && showTitle) 
-    ? `<div class="text-xs-8 font-dm-sans text-ink -mt-3 mb-2">${config.subtitle}</div>` 
+    ? `<div class="text-xs-8 font-dm-sans text-slate-800 -mt-3 mb-2">${config.subtitle}</div>` 
     : '';
   
   const circleHTML = showTitle 
     ? `<div class="w-4 h-4 rounded-full bg-white shadow-lg flex items-center justify-center relative" data-pdf-no-shadow>
-         <div class="w-2 h-2 rounded-full bg-gray-dark"></div>
+         <div class="w-2 h-2 rounded-full bg-slate-600"></div>
        </div>` 
     : '';
   
