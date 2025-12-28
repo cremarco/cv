@@ -30,3 +30,4 @@ Le seguenti immagini devono essere scaricate manualmente da Figma:
    - `iswc-best-resource-2025.png`
 
 
+

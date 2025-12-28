@@ -4,20 +4,23 @@
 
 import { createLogoImage } from './shared.js';
 import { createLinkBadge } from './shared.js';
-import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
+import { CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
+import { getCardClasses } from '../utils/css-classes.js';
 
 /**
  * Creates a single project card
  */
 function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast }) {
-  const bgClass = 'bg-white';
-  const borderClass = isLast
-    ? 'border border-gray-200'
-    : 'border border-gray-200 border-b-0';
-  const roundedClass = isFirstInSection ? 'rounded-t-md' : (isLast ? 'rounded-b-md' : '');
+  // Use getCardClasses for consistent styling (isCurrent is false for projects)
+  const cardClasses = getCardClasses({ 
+    isFirstInPage, 
+    isFirstInSection, 
+    isLast,
+    isCurrent: false 
+  });
   
   const card = document.createElement('div');
-  card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
+  card.className = `${cardClasses} w-full`;
   card.dataset.card = 'projects';
   
   // Add project icon
@@ -173,6 +176,9 @@ export function createProjectsCard(projects, options = {}) {
   const isSingleItem = projects.length === 1;
   
   projects.forEach((project, index) => {
+    const isFirstInPage = isSingleItem && options.isFirstInPage !== undefined 
+      ? options.isFirstInPage 
+      : index === 0;
     const isFirstInSection = isSingleItem && options.isFirstInSection !== undefined 
       ? options.isFirstInSection 
       : index === 0;
@@ -180,7 +186,7 @@ export function createProjectsCard(projects, options = {}) {
       ? options.isLast 
       : index === projects.length - 1;
     const card = createProjectCard(project, {
-      isFirstInPage: isFirstInSection,
+      isFirstInPage,
       isFirstInSection,
       isLast
     });

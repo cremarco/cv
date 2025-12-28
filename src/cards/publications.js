@@ -162,17 +162,13 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   const cardClasses = getCardClasses({ 
     isFirstInPage, 
     isFirstInSection, 
+    isLast,
     isCurrent: false 
   });
   
   const card = document.createElement('div');
   card.className = `${cardClasses} w-full`;
   card.dataset.card = 'publications';
-  
-  // Add rounded-b-md to last card
-  if (isLast) {
-    card.classList.add('rounded-b-md');
-  }
   
   // Paper type badge text
   const typeLabels = {

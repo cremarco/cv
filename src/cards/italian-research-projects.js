@@ -4,21 +4,23 @@
 
 import { createLogoImage } from './shared.js';
 import { createLinkBadge } from './shared.js';
-import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
+import { CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
+import { getCardClasses } from '../utils/css-classes.js';
 
 /**
  * Creates a single Italian research project card
  */
 function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSection, isLast }) {
-  // Override background color - all cards have accent-lightest background
-  const bgClass = 'bg-accent-lightest';
-  const borderClass = isLast
-    ? 'border border-accent-soft'
-    : 'border border-accent-soft border-b-0';
-  const roundedClass = isFirstInSection ? 'rounded-t-md' : (isLast ? 'rounded-b-md' : '');
+  // Use getCardClasses for consistent styling (isCurrent is false for italian research projects)
+  const cardClasses = getCardClasses({ 
+    isFirstInPage, 
+    isFirstInSection, 
+    isLast,
+    isCurrent: false 
+  });
   
   const card = document.createElement('div');
-  card.className = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass} w-full`;
+  card.className = `${cardClasses} w-full`;
   card.dataset.card = 'italian-research-projects';
   
   // Add project icon
@@ -79,10 +81,10 @@ function createItalianResearchProjectCard(project, { isFirstInPage, isFirstInSec
     badgesRow.appendChild(spacer);
   }
   
-  // Period badge (always with purple background for Italian projects)
+  // Period badge
   if (project.period) {
     const periodBadge = document.createElement('span');
-    periodBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-purple-100 text-purple-700';
+    periodBadge.className = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
     periodBadge.textContent = project.period;
     periodBadge.dataset.timePeriod = project.period;
     periodBadge.dataset.timeKind = 'badge';
@@ -143,6 +145,9 @@ export function createItalianResearchProjectsCard(projects, options = {}) {
   const isSingleItem = projects.length === 1;
   
   projects.forEach((project, index) => {
+    const isFirstInPage = isSingleItem && options.isFirstInPage !== undefined 
+      ? options.isFirstInPage 
+      : index === 0;
     const isFirstInSection = isSingleItem && options.isFirstInSection !== undefined 
       ? options.isFirstInSection 
       : index === 0;
@@ -150,7 +155,7 @@ export function createItalianResearchProjectsCard(projects, options = {}) {
       ? options.isLast 
       : index === projects.length - 1;
     const card = createItalianResearchProjectCard(project, {
-      isFirstInPage: isFirstInSection,
+      isFirstInPage,
       isFirstInSection,
       isLast
     });

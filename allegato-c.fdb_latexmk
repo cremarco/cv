@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1766861666.81649 "/Users/marco/Sites/cv/allegato-c.tex" "allegato-c.pdf" "allegato-c" 1766861667.47258 0
-  "/Users/marco/Sites/cv/allegato-c.tex" 1766861666.58174 11181 d9e729f2164d5b1828054fe995c0eb72 ""
+["pdflatex"] 1766864117.27898 "/Users/marco/Sites/cv/allegato-c.tex" "allegato-c.pdf" "allegato-c" 1766864117.91533 0
+  "/Users/marco/Sites/cv/allegato-c.tex" 1766864117.07299 13623 c4e53845176aee619d0c6c3b47b4a86d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -90,9 +90,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764886766 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1764886757 3345739 7c075fbd6fea3fc42e1208b19a54a8cc ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "allegato-c.aux" 1766861667.42091 302 8d9d989b0f1dc8f8d56a5585a11f5026 "pdflatex"
-  "allegato-c.out" 1766861667.1231 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "allegato-c.tex" 1766861666.58174 11181 d9e729f2164d5b1828054fe995c0eb72 ""
+  "allegato-c.aux" 1766864117.86477 302 b4f0eb2f416bd30753f0d6422fe0c265 "pdflatex"
+  "allegato-c.out" 1766864117.56157 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "allegato-c.tex" 1766864117.07299 13623 c4e53845176aee619d0c6c3b47b4a86d ""
   "files/documento/passaporto.pdf" 1766847743.21021 17982230 7cbe2d078ba6eb0fc3cb0b05188ba914 ""
   (generated)
   "allegato-c.aux"

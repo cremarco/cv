@@ -185,11 +185,7 @@ function highlightActiveCardBackgrounds() {
       
       if (!card.classList.contains('bg-accent-lightest')) {
         card.classList.remove('bg-white');
-        card.classList.add('bg-purple-50');
-        if (card.classList.contains('border-gray-200')) {
-          card.classList.remove('border-gray-200');
-          card.classList.add('border-purple-200');
-        }
+        card.classList.add('bg-accent-lightest');
       }
     });
   });

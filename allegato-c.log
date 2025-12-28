@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.4)  27 DEC 2025 19:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.4)  27 DEC 2025 20:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,44 +395,61 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 [2]
-Overfull \hbox (30.521pt too wide) in paragraph at lines 86--87
+Overfull \hbox (30.521pt too wide) in paragraph at lines 80--81
 \T1/cmr/m/it/12 (-20) Knowledge-Based Sy-stems, Vo-lu-me 304, El-se-vier B.V., 2024\T1/cmr/m/n/12 (-20) . DOI: [][]\T1/cmr/m/n/10.95 (-20) 10.1016/j.knosys.2024.112447[][]\T1/cmr/m/n/12 (-20) .
  []
 
 
 
 [3]
+Overfull \hbox (5.04385pt too wide) in paragraph at lines 109--110
+\T1/cmr/m/n/12 (-20) con-ser-va-to/rilasciato dal-l'Am-mi-ni-stra-zio-ne pub-bli-ca \T1/cmr/bx/n/12 (-20) Uni-ver-si-tà de-gli Stu-di di Milano-
+ []
+
+
+Overfull \hbox (0.90544pt too wide) in paragraph at lines 111--112
+[]\T1/cmr/m/n/12 (-20) la co-pia del se-guen-te at-to/documento: \T1/cmr/m/it/12 (-20) Con-trat-to di ri-cer-ca dal 20/04/2022 al 31/03/2024
+ []
+
+
+Overfull \hbox (1.80522pt too wide) in paragraph at lines 113--114
+[]\T1/cmr/m/n/12 (-20) la co-pia del se-guen-te at-to/documento: \T1/cmr/m/it/12 (-20) Con-trat-to di ri-cer-ca dal 15/07/2021 al 31/03/2022
+ []
+
+
 
 [4]
-<files/documento/passaporto.pdf, id=58, 597.50786pt x 845.04686pt>
+
+[5]
+<files/documento/passaporto.pdf, id=72, 597.50786pt x 845.04686pt>
 File: files/documento/passaporto.pdf Graphic file (type pdf)
 <use files/documento/passaporto.pdf>
-Package pdftex.def Info: files/documento/passaporto.pdf  used on input line 116.
+Package pdftex.def Info: files/documento/passaporto.pdf  used on input line 134.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
-<files/documento/passaporto.pdf, id=60, page=1, 597.50786pt x 845.04686pt>
+<files/documento/passaporto.pdf, id=74, page=1, 597.50786pt x 845.04686pt>
 File: files/documento/passaporto.pdf Graphic file (type pdf)
 <use files/documento/passaporto.pdf, page 1>
-Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 116.
+Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 134.
 (pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
 File: files/documento/passaporto.pdf Graphic file (type pdf)
 <use files/documento/passaporto.pdf, page 1>
-Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 116.
+Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 134.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: files/documento/passaporto.pdf Graphic file (type pdf)
 <use files/documento/passaporto.pdf, page 1>
-Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 116.
+Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 134.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 File: files/documento/passaporto.pdf Graphic file (type pdf)
 <use files/documento/passaporto.pdf, page 1>
-Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 116.
+Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 134.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
 
 
 File: files/documento/passaporto.pdf Graphic file (type pdf)
 <use files/documento/passaporto.pdf, page 1>
-Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 116.
+Package pdftex.def Info: files/documento/passaporto.pdf , page1 used on input line 134.
 (pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
-[5
+[6
 
  <./files/documento/passaporto.pdf>] (./allegato-c.aux)
  ***********
@@ -443,18 +460,18 @@ Package rerunfilecheck Info: File `allegato-c.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 13969 strings out of 473190
- 225274 string characters out of 5715800
+ 14006 strings out of 473190
+ 225614 string characters out of 5715800
  685997 words of memory out of 5000000
  36937 multiletter control sequences out of 15000+600000
- 569078 words of font info for 101 fonts, out of 8000000 for 9000
+ 570159 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,17n,79p,1029b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,17n,79p,1029b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on allegato-c.pdf (5 pages, 18124534 bytes).
+Output written on allegato-c.pdf (6 pages, 18127686 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 32 named destinations out of 1000 (max. 500000)
  16400 words of extra memory for PDF output out of 17280 (max. 10000000)
 

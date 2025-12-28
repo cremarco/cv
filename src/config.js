@@ -170,6 +170,7 @@ export const SECTION_CONFIG = {
   },
   tender_commissions: {
     title: 'Tender commissions',
+    subtitle: 'Member of evaluation commissions for research grants',
     sectionId: 'tender-commissions',
     timelineId: 'tender-commissions',
     cardType: 'tender-commissions',

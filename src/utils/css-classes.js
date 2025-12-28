@@ -6,22 +6,33 @@ import { CARD_BASE_CLASSES } from '../config.js';
 
 /**
  * Determines card CSS classes based on position in section/page
+ * All cards have uniform style: same borders, shadows, and styling
+ * First card of section gets rounded-t-md, last card gets rounded-b-md
  */
-export function getCardClasses({ isFirstInPage, isFirstInSection, isCurrent }) {
-  // Apply rounded-t-md to first card of section, regardless of page
-  const hasTopRounded = isFirstInSection;
+export function getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent }) {
+  // Background: accent for current, white for others
+  const bgClass = isCurrent ? 'bg-accent-lightest' : 'bg-white';
   
-  if (isFirstInPage && isCurrent) {
-    const baseClasses = `${CARD_BASE_CLASSES} bg-accent-lightest border border-accent-soft border-b-0`;
-    return hasTopRounded ? `${baseClasses} rounded-t-md` : baseClasses;
+  // Uniform border style: always use border-gray-200, same for all cards
+  // First card of page has border-b-0, others have border-t-0
+  const borderClass = isFirstInPage 
+    ? 'border border-gray-200 border-b-0' 
+    : 'border border-gray-200 border-t-0';
+  
+  // Rounded corners: first card of section gets rounded-t-md, last card gets rounded-b-md
+  const roundedClasses = [];
+  if (isFirstInSection) {
+    roundedClasses.push('rounded-t-md');
   }
-  
-  if (isFirstInPage) {
-    const baseClasses = `${CARD_BASE_CLASSES} bg-white border border-gray-200 border-b-0`;
-    return hasTopRounded ? `${baseClasses} rounded-t-md` : baseClasses;
+  if (isLast) {
+    roundedClasses.push('rounded-b-md');
   }
+  const roundedClass = roundedClasses.join(' ');
   
-  return `${CARD_BASE_CLASSES} bg-white border border-gray-200 border-t-0`;
+  // Combine all classes
+  const baseClasses = `${CARD_BASE_CLASSES} ${bgClass} ${borderClass} ${roundedClass}`.trim();
+  
+  return baseClasses;
 }
 
 /**
