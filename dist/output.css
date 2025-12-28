@@ -669,6 +669,36 @@ body.pdf-mode :is(.shadow, .shadow-sm, .shadow-lg) {
   box-shadow: none !important;
 }
 
+/* Card borders in PDF mode (left, right, bottom) - only for main cards with shadow class */
+
+/* Inner cards (like in community-service, tender-commissions) don't have shadow, so they're excluded */
+
+body.pdf-mode [data-card].shadow,
+  body.pdf-mode [data-card].shadow-sm,
+  body.pdf-mode [data-card].shadow-lg {
+  border-left: 1px solid rgb(226 232 240);
+  /* slate-200 */
+  border-right: 1px solid rgb(226 232 240);
+  /* slate-200 */
+  border-bottom: 1px solid rgb(226 232 240);
+  /* slate-200 */
+  border-top: none;
+}
+
+/* Wrapper cards using CARD_SURFACE_CLASSES (community-service, tender-commissions, etc.) */
+
+/* These have shadow class, so they get the border */
+
+body.pdf-mode .bg-white.shadow {
+  border-left: 1px solid rgb(226 232 240);
+  /* slate-200 */
+  border-right: 1px solid rgb(226 232 240);
+  /* slate-200 */
+  border-bottom: 1px solid rgb(226 232 240);
+  /* slate-200 */
+  border-top: none;
+}
+
 body.pdf-mode *,
   body.pdf-mode *::before,
   body.pdf-mode *::after {
@@ -752,6 +782,36 @@ body.pdf-mode [data-section] {
     .shadow-sm,
     .shadow-lg {
     box-shadow: none !important;
+  }
+
+  /* Card borders in print mode (left, right, bottom) - only for main cards with shadow class */
+
+  /* Inner cards (like in community-service, tender-commissions) don't have shadow, so they're excluded */
+
+  [data-card].shadow,
+    [data-card].shadow-sm,
+    [data-card].shadow-lg {
+    border-left: 1px solid rgb(226 232 240);
+    /* slate-200 */
+    border-right: 1px solid rgb(226 232 240);
+    /* slate-200 */
+    border-bottom: 1px solid rgb(226 232 240);
+    /* slate-200 */
+    border-top: none;
+  }
+
+  /* Wrapper cards using CARD_SURFACE_CLASSES (community-service, tender-commissions, etc.) */
+
+  /* These have shadow class, so they get the border */
+
+  .bg-white.shadow {
+    border-left: 1px solid rgb(226 232 240);
+    /* slate-200 */
+    border-right: 1px solid rgb(226 232 240);
+    /* slate-200 */
+    border-bottom: 1px solid rgb(226 232 240);
+    /* slate-200 */
+    border-top: none;
   }
 }
 
@@ -1148,12 +1208,6 @@ body.pdf-mode [data-section] {
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -1187,11 +1241,6 @@ body.pdf-mode [data-section] {
   border-bottom-left-radius: 0.375rem;
 }
 
-.rounded-t-md {
-  border-top-left-radius: 0.375rem;
-  border-top-right-radius: 0.375rem;
-}
-
 .rounded-l-md {
   border-top-left-radius: 0.375rem;
   border-bottom-left-radius: 0.375rem;
@@ -1200,6 +1249,11 @@ body.pdf-mode [data-section] {
 .rounded-r-md {
   border-top-right-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
+}
+
+.rounded-t-md {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
 }
 
 .rounded-tl-\[4px\] {
@@ -1214,21 +1268,12 @@ body.pdf-mode [data-section] {
   border-width: 1px;
 }
 
-.border-b-0 {
-  border-bottom-width: 0px;
-}
-
 .border-t-0 {
   border-top-width: 0px;
 }
 
 .border-solid {
   border-style: solid;
-}
-
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 
 .border-slate-200 {

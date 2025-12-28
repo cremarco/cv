@@ -16,6 +16,7 @@ export function createExperienceCard(exp, { isCurrent }) {
   card.dataset.card = 'experience';
 
   const topicText = formatSentence(buildTopicText(exp));
+  const topicItText = exp.topic_it ? formatSentence(exp.topic_it) : '';
   const departmentText = exp.department ? formatSentence(exp.department) : '';
   const logoAlt = exp.university ? `${exp.university} logo` : 'University logo';
   const nameField = exp.university || exp.company || '';
@@ -29,7 +30,7 @@ export function createExperienceCard(exp, { isCurrent }) {
     <div class="flex justify-between items-center">
       <div class="${titleWidth}">
         <div class="text-xs-7 text-slate-500 font-dm-sans mb-0.5 whitespace-nowrap">${nameField}</div>
-        <div class="text-xs-8 text-slate-800 font-dm-sans font-medium">${exp.position}</div>
+        <div class="text-xs-8 text-slate-800 font-dm-sans font-medium whitespace-nowrap">${exp.position}</div>
       </div>
       <div class="flex flex-col gap-0.5 items-end">
         <div class="flex gap-2 items-center">
@@ -41,6 +42,7 @@ export function createExperienceCard(exp, { isCurrent }) {
     </div>
     <div class="pl-1.5 text-xs-7 text-slate-800 font-dm-sans leading-normal flex flex-col ${CARD_TEXT_GAP}">
       ${topicText ? `<p class="mb-0">${topicText}</p>` : ''}
+      ${topicItText ? `<p class="mb-0">${topicItText}</p>` : ''}
       ${departmentText ? `<p class="text-xs-6 text-slate-500 italic">${departmentText}</p>` : ''}
     </div>
   `;

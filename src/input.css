@@ -59,6 +59,26 @@
     box-shadow: none !important;
   }
 
+  /* Card borders in PDF mode (left, right, bottom) - only for main cards with shadow class */
+  /* Inner cards (like in community-service, tender-commissions) don't have shadow, so they're excluded */
+  body.pdf-mode [data-card].shadow,
+  body.pdf-mode [data-card].shadow-sm,
+  body.pdf-mode [data-card].shadow-lg {
+    border-left: 1px solid rgb(226 232 240); /* slate-200 */
+    border-right: 1px solid rgb(226 232 240); /* slate-200 */
+    border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+    border-top: none;
+  }
+
+  /* Wrapper cards using CARD_SURFACE_CLASSES (community-service, tender-commissions, etc.) */
+  /* These have shadow class, so they get the border */
+  body.pdf-mode .bg-white.shadow {
+    border-left: 1px solid rgb(226 232 240); /* slate-200 */
+    border-right: 1px solid rgb(226 232 240); /* slate-200 */
+    border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+    border-top: none;
+  }
+
   body.pdf-mode *,
   body.pdf-mode *::before,
   body.pdf-mode *::after {
@@ -133,6 +153,26 @@
     .shadow-sm,
     .shadow-lg {
       box-shadow: none !important;
+    }
+
+    /* Card borders in print mode (left, right, bottom) - only for main cards with shadow class */
+    /* Inner cards (like in community-service, tender-commissions) don't have shadow, so they're excluded */
+    [data-card].shadow,
+    [data-card].shadow-sm,
+    [data-card].shadow-lg {
+      border-left: 1px solid rgb(226 232 240); /* slate-200 */
+      border-right: 1px solid rgb(226 232 240); /* slate-200 */
+      border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+      border-top: none;
+    }
+
+    /* Wrapper cards using CARD_SURFACE_CLASSES (community-service, tender-commissions, etc.) */
+    /* These have shadow class, so they get the border */
+    .bg-white.shadow {
+      border-left: 1px solid rgb(226 232 240); /* slate-200 */
+      border-right: 1px solid rgb(226 232 240); /* slate-200 */
+      border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+      border-top: none;
     }
   }
 }

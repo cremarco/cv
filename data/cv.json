@@ -5,10 +5,11 @@
       "link": "files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
-      "position": "Research Assistant",
+      "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "INF/01",
       "time_period": "Feb 2025 - Jan 2026",
       "topic": "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field",
+      "topic_it": "Progettazione e sviluppo di un modello di Intelligenza Artificiale/Machine Learning per la creazione di un sistema di supporto alle decisioni in campo psicologico/psichiatrico",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -20,6 +21,7 @@
       "ssd": "INF/01",
       "time_period": "Jan 2022 - Jan 2025",
       "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, funded by the Italian Ministero dell'Università e della Ricerca through the European project D.M. 1062/2021 – Piano Operativo Nazionale - PON \"Ricerca e Innovazione\" 2014- 2020 Asse IV, azioni IV.4 \"Dottorati e contratti di ricerca sulle tematiche dell'innovazione\"",
+      "topic_it": "Tecnologie semantiche e di AI per Intervento Digitale Precoce nei Servizi Psichiatrici",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -27,10 +29,11 @@
       "link": "files/contratti-precedenti/06-assegno-01-02-2021-31-01-2022.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
-      "position": "Research Assistant",
+      "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
       "time_period": "Feb 2021 - Jan 2022",
       "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "topic_it": "Analisi e annotazione semantica di dati relativi ai componenti nutrizionali dei cibi",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -38,10 +41,11 @@
       "link": "files/contratti-precedenti/05-assegno-01-02-2020-31-01-2021.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
-      "position": "Research Assistant",
+      "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
       "time_period": "Feb 2020 - Jan 2021",
       "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "topic_it": "Analisi e annotazione semantica di dati relativi ai componenti nutrizionali dei cibi",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -49,10 +53,11 @@
       "link": "files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
-      "position": "Research Assistant",
+      "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
       "time_period": "Nov 2015 - Oct 2016",
       "topic": "Definition and implementation of the UniData centre's data architecture",
+      "topic_it": "Definizione e implementazione dell'architettura dati del centro UniData",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -60,10 +65,11 @@
       "link": "files/contratti-precedenti/03-assegno-01-09-2014-31-08-2015.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
-      "position": "Research Assistant",
+      "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
       "time_period": "Sep 2014 - Aug 2015",
       "topic": "Definition of tools for the population of semantic services for public administration",
+      "topic_it": "Definizione di strumenti per il popolamento di servizi semantici per la pubblica amministrazione",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -71,10 +77,11 @@
       "link": "files/contratti-precedenti/02-assegno-01-09-2013-31-08-2014.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
-      "position": "Research Assistant",
+      "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
       "time_period": "Sep 2013 - Aug 2014",
-      "topic": "Development Methodologies for Value-Added Services in Agriculture",
+      "topic": "Development of software components for the efficient implementation of semantic technologies for extraction, processing, and fruition of information on the web. Access to web services via mobile channels",
+      "topic_it": "Sviluppo di componenti software per la implementazione efficiente di tecnologie semantiche di estrazione, elaborazione, fruizione della informazione nel web. Accesso a servizi web tramite canali mobili",
       "university": "University of Milan-Bicocca"
     },
     {
@@ -86,6 +93,7 @@
       "ssd": "ING-INF/09",
       "time_period": "Feb 2011 - Jan 2012",
       "topic": "Development Methodologies for Value-Added Services in Agriculture",
+      "topic_it": "Metodologie di sviluppo di servizi a valore aggiunto per l'agricoltura",
       "university": "University of Milan-Bicocca"
     }
   ],
