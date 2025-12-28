@@ -2,7 +2,7 @@
 // CSS CLASS UTILITIES
 // =============================================================================
 
-import { CARD_BASE_CLASSES } from '../config.js';
+import { CARD_BASE_CLASSES, CURRENT_CARD_BG, CURRENT_BADGE_BG, CURRENT_BADGE_TEXT } from '../config.js';
 
 /**
  * Determines card CSS classes based on position in section/page
@@ -11,7 +11,7 @@ import { CARD_BASE_CLASSES } from '../config.js';
  */
 export function getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent }) {
   // Background: accent for current, white for others
-  const bgClass = isCurrent ? 'bg-purple-50' : 'bg-white';
+  const bgClass = isCurrent ? CURRENT_CARD_BG : 'bg-white';
   
   // Uniform border style: always use border-gray-200, same for all cards
   // First card of page has border-b-0, others have border-t-0
@@ -41,7 +41,7 @@ export function getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurr
 export function getTimeBadgeClasses(isCurrent) {
   const base = 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md';
   return isCurrent 
-    ? `${base} bg-purple-100 text-purple-700`
+    ? `${base} ${CURRENT_BADGE_BG} ${CURRENT_BADGE_TEXT}`
     : `${base} bg-gray-100 text-gray-700`;
 }
 

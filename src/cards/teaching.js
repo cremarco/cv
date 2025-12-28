@@ -2,7 +2,7 @@
 // CARD CREATION - TEACHING CARDS (PhD & General)
 // =============================================================================
 
-import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
+import { CARD_BASE_CLASSES, CARD_INTERNAL_GAP, CARD_TEXT_GAP, CURRENT_BADGE_BG, CURRENT_BADGE_TEXT } from '../config.js';
 import { createLogoImage } from './shared.js';
 
 /**
@@ -18,7 +18,7 @@ function renderCourseRow(course, isPhd = true) {
   const hasPresent = course.time_period?.toLowerCase().includes('present');
   const isActive = (!isPhd && course.time_period?.includes('current')) || hasPresent;
   const periodBadgeClasses = isActive
-    ? 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-purple-100 text-purple-700'
+    ? `inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md ${CURRENT_BADGE_BG} ${CURRENT_BADGE_TEXT}`
     : 'inline-flex items-center px-1 py-0.5 text-[7px] font-medium rounded-md bg-gray-100 text-gray-700';
   
   const hoursMarkup = course.hours ? `

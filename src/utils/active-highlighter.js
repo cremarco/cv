@@ -4,7 +4,7 @@
 // based on date analysis
 // =============================================================================
 
-import { SECTION_CONFIG } from '../config.js';
+import { SECTION_CONFIG, CURRENT_CARD_BG, CURRENT_BADGE_BG, CURRENT_BADGE_TEXT, CURRENT_TEXT } from '../config.js';
 import { parseMonthYear } from './date.js';
 
 /**
@@ -122,13 +122,13 @@ function getTimePeriodFromElement(element) {
 
 function applyActiveBadgeStyles(badge) {
   badge.classList.remove('bg-gray-100', 'text-gray-700');
-  badge.classList.add('bg-purple-100', 'text-purple-700');
+  badge.classList.add(CURRENT_BADGE_BG, CURRENT_BADGE_TEXT);
 }
 
 function applyActiveTextStyles(element) {
   element.classList.remove('text-slate-600', 'text-slate-800');
-  if (!element.classList.contains('text-purple-600')) {
-    element.classList.add('text-purple-600');
+  if (!element.classList.contains(CURRENT_TEXT)) {
+    element.classList.add(CURRENT_TEXT);
   }
 }
 
@@ -183,9 +183,9 @@ function highlightActiveCardBackgrounds() {
         return;
       }
       
-      if (!card.classList.contains('bg-purple-50')) {
+      if (!card.classList.contains(CURRENT_CARD_BG)) {
         card.classList.remove('bg-white');
-        card.classList.add('bg-purple-50');
+        card.classList.add(CURRENT_CARD_BG);
       }
     });
   });

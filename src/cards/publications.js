@@ -3,7 +3,7 @@
 // =============================================================================
 
 import { getCardClasses } from '../utils/css-classes.js';
-import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES } from '../config.js';
+import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES, CURRENT_BADGE_BG, CURRENT_BADGE_TEXT, CURRENT_TEXT_LIGHT } from '../config.js';
 
 const formatMetricValue = (value) => (value ?? '—');
 
@@ -35,7 +35,7 @@ export function createPublicationsHeader(data, metrics) {
     const gs = metrics.google_scholar;
     const googleScholarUrl = gs.url || '#';
     const gsBadge = document.createElement('span');
-    gsBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
+    gsBadge.className = `inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md ${CURRENT_BADGE_BG} ${CURRENT_BADGE_TEXT} gap-1`;
     gsBadge.innerHTML = `
       <img src="img/logo/google_scholar.png" alt="Google Scholar" class="w-3 h-3 object-contain rounded shadow-sm">
       <a href="${googleScholarUrl}" target="_blank" rel="noopener noreferrer" class="underline">Google Scholar</a>
@@ -48,7 +48,7 @@ export function createPublicationsHeader(data, metrics) {
   if (metrics?.scopus) {
     const scopusUrl = metrics.scopus.url || '#';
     const scopusBadge = document.createElement('span');
-    scopusBadge.className = 'inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md bg-purple-100 text-purple-700 gap-1';
+    scopusBadge.className = `inline-flex items-center px-1.5 py-0.5 text-[9px] font-medium rounded-md ${CURRENT_BADGE_BG} ${CURRENT_BADGE_TEXT} gap-1`;
     scopusBadge.innerHTML = `
       <img src="img/logo/scopus.png" alt="Scopus" class="w-3 h-3 object-contain">
       <a href="${scopusUrl}" target="_blank" rel="noopener noreferrer" class="underline">Scopus</a>
@@ -252,8 +252,8 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
         <p class="italic mb-0 font-dm-sans">${paper.title}</p>
         <p class="mb-0">${paper.venue}</p>
       </div>
-      <div class="bg-purple-100 flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
-        <span class="text-purple-500 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight">${typeLabels[paper.type] || paper.type}</span>
+      <div class="${CURRENT_BADGE_BG} flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
+        <span class="${CURRENT_TEXT_LIGHT} text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight">${typeLabels[paper.type] || paper.type}</span>
       </div>
     </div>
     ${attrsHTML ? `<div class="pl-1.5 flex gap-[2px] items-center justify-end mt-0.5">${attrsHTML}</div>` : ''}

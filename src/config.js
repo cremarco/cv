@@ -33,6 +33,13 @@ export const CARD_PADDING_CLASSES = 'px-4 py-3';
 export const CARD_BASE_CLASSES = `${CARD_PADDING_CLASSES} flex gap-3 shadow break-inside-avoid-page`;
 export const CARD_SURFACE_CLASSES = 'bg-white border border-gray-200 shadow';
 
+// Current/Active card color classes (configurable via Tailwind config)
+export const CURRENT_CARD_BG = 'bg-current-50';
+export const CURRENT_BADGE_BG = 'bg-current-100';
+export const CURRENT_BADGE_TEXT = 'text-current-700';
+export const CURRENT_TEXT = 'text-current-600';
+export const CURRENT_TEXT_LIGHT = 'text-current-500';
+
 // Card spacing constants
 export const CARD_CONTENT_PADDING = 'pl-1.5'; // Standard padding for card content text
 export const CARD_SECTION_PADDING = 'pl-2'; // Padding for structured sections within cards
