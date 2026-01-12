@@ -1,0 +1,20 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "Academic CV - Marco Cremaschi",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "pdf:generate": "node scripts/pdf-generate.js",
+    "pdf:server": "node scripts/pdf-server.js",
+    "pdf:generate:compact": "PDF_PROFILE=compact PDF_MAX_KB=950 PDF_COMPRESS=1 PDF_COMPRESS_PROFILE=ebook node scripts/pdf-generate.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "playwright": "^1.57.0"
+  }
+}

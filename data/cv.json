@@ -1,0 +1,1944 @@
+{
+  "academic_experiences": [
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (Assegnista di Ricerca)",
+      "ssd": "INF/01",
+      "time_period": "Feb 2025 - Jan 2026",
+      "topic": "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field",
+      "topic_it": "Progettazione e sviluppo di un modello di Intelligenza Artificiale/Machine Learning per la creazione di un sistema di supporto alle decisioni in campo psicologico/psichiatrico",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/07-rtda-10-01-2022-09-01-2025.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Assistant Professor (RTD/A)",
+      "ssd": "INF/01",
+      "time_period": "Jan 2022 - Jan 2025",
+      "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, funded by the Italian Ministero dell'Università e della Ricerca through the European project D.M. 1062/2021 – Piano Operativo Nazionale - PON \"Ricerca e Innovazione\" 2014- 2020 Asse IV, azioni IV.4 \"Dottorati e contratti di ricerca sulle tematiche dell'innovazione\"",
+      "topic_it": "Tecnologie semantiche e di AI per Intervento Digitale Precoce nei Servizi Psichiatrici",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/06-assegno-01-02-2021-31-01-2022.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (Assegnista di Ricerca)",
+      "ssd": "ING-INF/05",
+      "time_period": "Feb 2021 - Jan 2022",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "topic_it": "Analisi e annotazione semantica di dati relativi ai componenti nutrizionali dei cibi",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/05-assegno-01-02-2020-31-01-2021.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (Assegnista di Ricerca)",
+      "ssd": "ING-INF/05",
+      "time_period": "Feb 2020 - Jan 2021",
+      "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
+      "topic_it": "Analisi e annotazione semantica di dati relativi ai componenti nutrizionali dei cibi",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (Assegnista di Ricerca)",
+      "ssd": "ING-INF/05",
+      "time_period": "Nov 2015 - Oct 2016",
+      "topic": "Definition and implementation of the UniData centre's data architecture",
+      "topic_it": "Definizione e implementazione dell'architettura dati del centro UniData",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/03-assegno-01-09-2014-31-08-2015.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (Assegnista di Ricerca)",
+      "ssd": "ING-INF/05",
+      "time_period": "Sep 2014 - Aug 2015",
+      "topic": "Definition of tools for the population of semantic services for public administration",
+      "topic_it": "Definizione di strumenti per il popolamento di servizi semantici per la pubblica amministrazione",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/02-assegno-01-09-2013-31-08-2014.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Assistant (Assegnista di Ricerca)",
+      "ssd": "ING-INF/05",
+      "time_period": "Sep 2013 - Aug 2014",
+      "topic": "Development of software components for the efficient implementation of semantic technologies for extraction, processing, and fruition of information on the web. Access to web services via mobile channels",
+      "topic_it": "Sviluppo di componenti software per la implementazione efficiente di tecnologie semantiche di estrazione, elaborazione, fruizione della informazione nel web. Accesso a servizi web tramite canali mobili",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
+      "link": "files/contratti-precedenti/01-borsa-01-02-2011-31-01-2012.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research fellow",
+      "ssd": "ING-INF/09",
+      "time_period": "Feb 2011 - Jan 2012",
+      "topic": "Development Methodologies for Value-Added Services in Agriculture",
+      "topic_it": "Metodologie di sviluppo di servizi a valore aggiunto per l'agricoltura",
+      "university": "University of Milan-Bicocca"
+    }
+  ],
+  "foreign_research_contracts": [
+    {
+      "link": "files/contratti-precedenti/Estero/08-intertwino-20-04-2022-31-03-2024.pdf",
+      "logo": "sofia.png",
+      "place": "Sofia, Bulgaria",
+      "position": "Researcher",
+      "time_period": "Apr 2022 - Mar 2024",
+      "topic": "Holder of a research contract on the topic \"Building competence in data enrichment for artificial intelligence,\" financed by the Bulgarian Ministry of Education and Science, as part of the implementation of the national program \"European Science Network.\" Big Data for Smart Society Institute.",
+      "university": "Sofia University \"St. Kliment Ohridski\""
+    },
+    {
+      "link": "files/contratti-precedenti/Estero/07-intertwino-15-07-2021-31-03-2022.pdf",
+      "logo": "sofia.png",
+      "place": "Sofia, Bulgaria",
+      "position": "Researcher",
+      "time_period": "Jul 2021 - Mar 2022",
+      "topic": "Holder of a research contract on the topic \"Building competence in data enrichment for artificial intelligence,\" financed by the Bulgarian Ministry of Education and Science, as part of the implementation of the national program \"European Science Network.\" Big Data for Smart Society Institute.",
+      "university": "Sofia University \"St. Kliment Ohridski\""
+    },
+    {
+      "logo": "bielefeld.png",
+      "place": "Bielefeld, Germany",
+      "position": "Researcher",
+      "time_period": "Nov 2018 - Apr 2019",
+      "topic": "Research internship abroad through the Erasmus+ Traineeship program. Semantic Computing Group.",
+      "university": "Bielefeld University"
+    }
+  ],
+  "research_and_technology_transfer": [
+    {
+      "company": "WhattaData srl",
+      "logo": "whattadata.png",
+      "place": "Milan, Italy",
+      "position": "CTO, Co-funder",
+      "time_period": "2025",
+      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
+    },
+    {
+      "company": "Aton Informatica s.r.l.",
+      "logo": "aton.png",
+      "place": "Rome, Italy",
+      "position": "Consultant",
+      "time_period": "2023",
+      "topic": "I provided hands-on R&D and technical consultancy, spanning software development, data/AI analytics and advanced digital solutions, across multiple publicly funded innovation projects."
+    },
+    {
+      "company": "Nana Bianca/Instal srl",
+      "logo": "nanabianca.png",
+      "place": "Milan, Italy",
+      "position": "Consultant",
+      "time_period": "Apr 2020 - May 2020",
+      "topic": "Definition of a software architecture based on LSTM algorithms for the lexicalization of RDF data."
+    },
+    {
+      "company": "Umbria Digitale S.c. a r.l.",
+      "logo": "umbria.png",
+      "place": "Perugia, Italy",
+      "position": "Consultant",
+      "time_period": "2015 - 2016",
+      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
+    }
+  ],
+  "entrepreneurial_initiatives": [
+    {
+      "company": "Whattaspot srl",
+      "logo": "whattaspot.png",
+      "place": "Bergamo, Italy",
+      "position": "CEO, Co-funder",
+      "time_period": "Jan 2014 - Oct 2016",
+      "topic": "Innovative start-up specialising in the development of cutting-edge applications for the sports industry."
+    },
+    {
+      "company": "NPCrew srl",
+      "logo": "npcrew.png",
+      "place": "Bergamo, Italy",
+      "position": "CTO, Co-funder",
+      "time_period": "2012 - 2014",
+      "topic": "Company specialising in web development, communication, and event organisation."
+    }
+  ],
+  "company_experiences": [
+    {
+      "company": "Aton Informatica srl",
+      "logo": "aton.png",
+      "place": "Rome, Italy",
+      "position": "PM, Grant Writer",
+      "time_period": "Jan 2015 - Present",
+      "topic": "Providing consultancy in R&D project management, grant writing, and strategic planning, supporting organisations in securing funding, coordinating research initiatives, and fostering partnerships with academic and industrial stakeholders."
+    },
+    {
+      "company": "Instal srl",
+      "logo": "instal.png",
+      "place": "Florence, Italy",
+      "position": "Consultant",
+      "time_period": "Sep 2017 - Mar 2018",
+      "topic": "Advised on mobile advertising solutions by optimising ad delivery software, enhancing performance tracking, and implementing innovative monetisation strategies."
+    },
+    {
+      "company": "Mobile Avenue Solutions LLC",
+      "logo": "mobile-avenue.png",
+      "place": "New York, USA",
+      "position": "Consultant",
+      "time_period": "Jan 2017 - Aug 2017",
+      "topic": "Advised on mobile advertising solutions by optimising ad delivery software, enhancing performance tracking, and implementing innovative monetisation strategies."
+    },
+    {
+      "company": "Future Space spa",
+      "logo": "futurespace.png",
+      "place": "Rome, Italy",
+      "position": "Developer",
+      "time_period": "Jul 2012 - Dec 2012",
+      "topic": "Designed, developed, and optimised backend systems, improving database efficiency and overall software performance."
+    }
+  ],
+  "education": [
+    {
+      "degree": "PhD in Computer Science",
+      "logo": "unimib.png",
+      "time_period": "Nov 2016 - Oct 2019",
+      "thesis_title": "Enabling tabular data understanding by human and machines through semantic interpretation",
+      "thesis_link": "https://hdl.handle.net/10281/263555",
+      "international_experience": "Bielefeld University, Germany",
+      "courses": [
+        "Writing of Scientific papers",
+        "Big Data Technologies",
+        "Privacy and processing of personal data. Technical and legal aspects",
+        "Knowledge Graphs and Semantic Data Management: Models, Techniques and Applications",
+        "Internet of Things: a service-oriented perspective"
+      ],
+      "summer_schools": [
+        "Advances in Collective Intelligence: Crowds, Big-Data and Community Resilience - Como, Italy, 18–22 Sep 2017",
+        "2nd International Summer School on Deep Learning 2018 - Genova, Italy, 23–27 Jul 2018"
+      ]
+    },
+    {
+      "degree": "M.Sc. in Computer Science",
+      "degree_honor": "magna cum laude",
+      "logo": "unimib.png",
+      "time_period": "Oct 2007 - Sep 2010",
+      "thesis_title": "Framework di supporto alla pianificazione di servizi basato su un approccio multi-paradigma"
+    },
+    {
+      "degree": "B.Sc. in Computer Science",
+      "logo": "unimib.png",
+      "time_period": "Oct 2002 - Oct 2007",
+      "thesis_title": "Progettazione e realizzazione di una applicazione web per la gestione di un indirizzario dipartimentale"
+    }
+  ],
+  "teaching_in_phd_courses": [
+    {
+      "university": "University of Milan-Bicocca",
+      "logo": "unimib.png",
+      "programs": [
+        {
+          "program_name": "PHD in Computer Science",
+          "courses": [
+            {
+              "course_name": "Introduction to Knowledge Graphs",
+              "hours": "20 hours",
+              "role": "Professor",
+              "time_period": "2025"
+            }
+          ]
+        },
+        {
+          "program_name": "PHD in Intangible Heritage in Socio-Cultural Innovation",
+          "courses": [
+            {
+              "course_name": "Digital Futures for Intangible Heritage",
+              "hours": "8/4/4 hours",
+              "role": "Professor",
+              "time_period": "2023 - 2025"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "teaching": [
+    {
+      "university": "University of Milan-Bicocca",
+      "logo": "unimib.png",
+      "programs": [
+        {
+          "program_name": "MD Communication Theory and Technology",
+          "courses": [
+            {
+              "course_name": "Visual Communication and Interface Design",
+              "hours": "40/21 hours",
+              "role": "Professor",
+              "time_period": "2019 - Present"
+            },
+            {
+              "course_name": "Visual Communication Laboratory",
+              "hours": "48 hours",
+              "role": "Professor",
+              "time_period": "2019 - 2020"
+            },
+            {
+              "course_name": "Technologies and Applications of Distributed Systems",
+              "hours": "24/36/18 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2019 - 2020"
+            },
+            {
+              "course_name": "Service Science",
+              "hours": "20 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2016 - 2018"
+            },
+            {
+              "course_name": "Information Systems",
+              "hours": "16 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2015 - 2016"
+            }
+          ]
+        },
+        {
+          "program_name": "MD Data Science",
+          "courses": [
+            {
+              "course_name": "Data Visualisation",
+              "hours": "20 hours",
+              "role": "Professor",
+              "time_period": "2023 - 2024"
+            }
+          ]
+        },
+        {
+          "program_name": "MD Computer Science",
+          "courses": [
+            {
+              "course_name": "Data Architecture",
+              "hours": "16 hours",
+              "role": "Professor",
+              "time_period": "2021 - 2023"
+            }
+          ]
+        },
+        {
+          "program_name": "BD Computer Science",
+          "courses": [
+            {
+              "course_name": "Databases",
+              "hours": "20 hours",
+              "role": "Teaching Assistant",
+              "time_period": "2021 - Present"
+            },
+            {
+              "course_name": "Distributed Systems",
+              "hours": null,
+              "role": "Teaching Assistant",
+              "time_period": "2012 - 2013"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "university": "Università Cattolica del Sacro Cuore",
+      "logo": "cattolica.png",
+      "programs": [
+        {
+          "program_name": "MD Linguistic Computing",
+          "courses": [
+            {
+              "course_name": "Data Structures and Database Systems",
+              "hours": "45 hours",
+              "role": "Professor",
+              "time_period": "2023 - Present"
+            }
+          ]
+        },
+        {
+          "program_name": "MD Letters and Philosophy",
+          "courses": [
+            {
+              "course_name": "Information Management Online: Tools and Strategies",
+              "hours": "30 hours",
+              "role": "Professor",
+              "time_period": "2025 - Present"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "university": "University of Bergamo",
+      "logo": "unibg.png",
+      "programs": [
+        {
+          "program_name": "Postgraduate School of Health Psychology",
+          "courses": [
+            {
+              "course_name": "Health Engineering for Health Promotion",
+              "hours": "18 hours",
+              "role": "Professor",
+              "time_period": "2024 - Present"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "teaching_webinar": [
+    {
+      "title": "AI2MED",
+      "logo": "ai2med.png",
+      "link": "https://www.ai2med.eu/587-2/",
+      "date": "Sep 2024",
+      "activities": "Webinar \"AI and Nutrition: Innovation for a Healthy and Sustainable Future\" (AI2MED European project, University of Pavia, 27/09/2024), focused on the role of artificial intelligence and Large Language Models in personalised nutrition and sustainable food systems."
+    },
+    {
+      "title": "NODES: Nord Ovest Digitale E Sostenibile",
+      "logo": "nodes.png",
+      "date": "Nov 2024",
+      "activities": "Intervention in the modular training course Artificial Intelligence in support of AgriFood designed within Spoke 7 Secondary Agroindustry of the Innovation Ecosystem NODES Nord Ovest Digitale e Sostenibile."
+    },
+    {
+      "title": "Edu on Air Higher Education EMEA",
+      "logo": "google.png",
+      "link": "https://educationonair.withgoogle.com/events/edu-on-air-emea-he",
+      "date": "Jun 2025",
+      "activities": "Edu on Air: Higher Education is an online Google for Education series (Feb–May 2025) offering monthly sessions on Gemini AI, NotebookLM and Google Workspace for Education to help universities and colleges across EMEA drive student success, foster academic innovation and build secure digital learning environments."
+    },
+    {
+      "title": "AICL Lectures 2025",
+      "logo": "aicl.png",
+      "link": "https://www.ai-lc.it/en/lectures-2/lectures-2025-ing/",
+      "date": "Jun 2025",
+      "activities": "\"Lectures on Computational Linguistics 2025\", a three-day training school (Milan, 18–20 June 2025) organised by the Italian Association for Computational Linguistics with Università Cattolica del Sacro Cuore and University of Milano-Bicocca, featuring tutorials, labs and student sessions on linguistic resources, Large Language Models and neuro-symbolic AI for PhD and Master's students."
+    }
+  ],
+  "thesis_supervisor": {
+    "bachelor_thesis": [
+      {
+        "count": 38,
+        "program": "Computer Science",
+        "university": "UNIMIB"
+      }
+    ],
+    "master_thesis": [
+      {
+        "count": 13,
+        "program": "Computer Science",
+        "university": "UNIMIB"
+      },
+      {
+        "count": 62,
+        "program": "Communication Theory and Technology",
+        "university": "UNIMIB"
+      },
+      {
+        "count": 4,
+        "program": "Data science",
+        "university": "UNIMIB"
+      },
+      {
+        "count": 2,
+        "program": "Linguistic Computing",
+        "university": "UNICATT"
+      }
+    ]
+  },
+  "awards": [
+    {
+      "title": "Best Demo Award",
+      "image": "9a4efce74599d8878ea6fd58d2d65c15a4e0e311.jpg",
+      "link": "img/awards/9a4efce74599d8878ea6fd58d2d65c15a4e0e311.jpg",
+      "event": "Extended Semantic Web Conference",
+      "year": "2019"
+    },
+    {
+      "title": "Outstanding Improvement",
+      "image": "37f087670a351b0a1ca59e2cd1f6171d42b0321d.jpg",
+      "link": "img/awards/37f087670a351b0a1ca59e2cd1f6171d42b0321d.jpg",
+      "event": "SemTab Challenge",
+      "year": "2019"
+    },
+    {
+      "title": "3rd Place",
+      "image": "d5949533966c15f50bc91bbab162798021365953.jpg",
+      "link": "img/awards/d5949533966c15f50bc91bbab162798021365953.jpg",
+      "event": "MobiDataLab Codagon",
+      "year": "2023"
+    },
+    {
+      "title": "Best Resource Award",
+      "image": "1eebdd8587bca4767b139082150440ef0d33c7b5.png",
+      "link": "img/awards/1eebdd8587bca4767b139082150440ef0d33c7b5.png",
+      "event": "International Semantic Web Conference",
+      "year": "2025"
+    }
+  ],
+  "research_metrics": {
+    "google_scholar": {
+      "citations": 481,
+      "h_index": 13,
+      "i10_index": 17,
+      "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ"
+    },
+    "scopus": {
+      "citations": 207,
+      "h_index": 9,
+      "url": "https://www.scopus.com/authid/detail.uri?authorId=56167172000"
+    },
+    "orcid": {
+      "id": "0000-0001-7840-6228",
+      "url": "https://orcid.org/0000-0001-7840-6228"
+    }
+  },
+  "publications": {
+    "update_date": "17 Dec 2025",
+    "papers": [
+      {
+        "authors": "Andrea Spoto, Anna Panzeri, <b>Marco Cremaschi</b>, Davide Di Tolve, Cesare Curcio, Andrea Maurino",
+        "title": "LLMind to Enhance Diagnostic Decision-Making in Mental Health: Synergy Between AI Language Models and Clinical Expertise",
+        "venue": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
+        "editor": "AIP Sperimentale",
+        "type": "conference",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "llmind-to-enhance-diagnostic-decision-making-in-mental-health-synergy-between-ai",
+          "fields": {
+            "title": "LLMind to Enhance Diagnostic Decision-Making in Mental Health: Synergy Between AI Language Models and Clinical Expertise",
+            "author": "Andrea Spoto and Anna Panzeri and Marco Cremaschi and Davide Di Tolve and Cesare Curcio and Andrea Maurino",
+            "year": "2025",
+            "booktitle": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
+            "publisher": "AIP Sperimentale"
+          }
+        }
+      },
+      {
+        "authors": "Blerina Spahiu, <b>Marco Cremaschi</b>, Andrea Maurino, Giuseppe Vizzari",
+        "title": "Harnessing Large Language Models for Efficient Crowd Management in Large-Scale Events",
+        "venue": "ECAI, 2025",
+        "editor": "IOS Press",
+        "type": "conference",
+        "icore": "A",
+        "doi": "10.3233/FAIA251463",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "10.3233/FAIA251463",
+          "fields": {
+            "title": "Harnessing Large Language Models for Efficient Crowd Management in Large-Scale Events",
+            "author": "Blerina Spahiu and Marco Cremaschi and Andrea Maurino and Giuseppe Vizzari",
+            "year": "2025",
+            "booktitle": "ECAI, 2025",
+            "publisher": "IOS Press",
+            "doi": "10.3233/FAIA251463"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, David Chieregato, Sara Nocco",
+        "title": "A Case Study for Video Game Usability Research with Fortnite Creative",
+        "venue": "In Proceedings of Higher Education Learning Methodologies and Technologies Online, Springer Nature Switzerland, 2025",
+        "editor": "Springer Nature Switzerland",
+        "type": "conference",
+        "doi": "10.1007/978-3-031-94002-6_21",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-031-94002-6_21",
+          "fields": {
+            "author": "Cremaschi, Marco and Chieregato, David and Nocco, Sara",
+            "editor": "Ardimento, Pasquale and Di Fuccio, Raffaele and Fulantelli, Giovanni and Limone, Pierpaolo and Pecori, Riccardo and Raviolo, Paolo and Rondonotti, Marco and Schicchi, Daniele and Taibi, Davide and Zaza, Gianluca",
+            "title": "A Case Study for Video Game Usability Research with Fortnite Creative",
+            "booktitle": "Higher Education Learning Methodologies and Technologies Online",
+            "year": "2025",
+            "publisher": "Springer Nature Switzerland",
+            "address": "Cham",
+            "pages": "288--300",
+            "abstract": "This study explores the educational potential of video game prototyping tools, specifically Fortnite Creative, for interface design within academic settings. As video games gain recognition as sophisticated digital media, interest in game interface design has surged among students and faculty. Traditional prototyping tools, such as Figma, are effective for web and app interfaces, but lack the immersive, interactive capabilities required for gaming environments. Fortnite Creative, with its integration of Unreal Engine assets, offers an accessible platform for designing and evaluating video game interfaces, supporting rapid prototyping and usability testing. This research presents a case study from a university project where Fortnite Creative was used to develop a Heads-Up Display (HUD), and wearable biometric sensor devices were employed to measure user engagement as a response to the proposed HUD. Findings demonstrate the educational value of Fortnite Creative, showcasing its potential for hands-on learning in interface design. These insights have informed updates to the Visual Communication and Interface Design curriculum at the University of Milan-Bicocca, where students now gain practical experience in game interface prototyping and user-centred evaluation.",
+            "isbn": "978-3-031-94002-6"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Fabio D'Adda, Sara Nocco",
+        "title": "MantisTable UI: A Web Interface for Comprehensive Semantic Table Interpretation Curation and Management",
+        "venue": "Journal of Open Research Software 13 (1), 2025",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Information Systems"
+          },
+          {
+            "rank": "Q1",
+            "field": "Software"
+          }
+        ],
+        "doi": "10.5334/jors.583",
+        "editor": "Ubiquity Press",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "Cremaschi-2025",
+          "fields": {
+            "abstract": "Semantic Table Interpretation (STI) is essential for data analysis and knowledge graph construction. However, current solutions lack accessible interfaces for managing STI workflows. MantisTable UI has been developed as a modular, web-based platform designed to simplify STI processes through an intuitive interface and an extensible plugin system supporting data transformation and export. The tool enables annotation visualisation and integration of custom modules. Usability testing indicated high effectiveness and user satisfaction. Being open-source and publicly available, MantisTable UI offers a practical solution for enhancing semantic annotation and facilitating the semantic enrichment of tabular data.",
+            "author": "Cremaschi, Marco and D’Adda, Fabio and Nocco, Sara",
+            "doi": "10.5334/jors.583",
+            "journal": "Journal of Open Research Software",
+            "keyword": "en",
+            "month": "Dec",
+            "title": "MantisTable UI: A Web Interface for Comprehensive Semantic Table Interpretation Curation and Management",
+            "year": "2025",
+            "publisher": "Ubiquity Press"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Federico Belotti, Jennifer D'Souza, Matteo Palmonari",
+        "title": "MammoTab 25: A Large-Scale Dataset for Semantic Table Interpretation - Training, Testing and Detecting Weaknesses",
+        "venue": "International Semantic Web Conference, 131-148, 2025",
+        "type": "conference",
+        "best_paper": true,
+        "icore": "A",
+        "doi": "10.1007/978-3-032-09530-5_8",
+        "editor": "Springer",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-032-09530-5_8",
+          "fields": {
+            "author": "Cremaschi, Marco and Belotti, Federico and D'Souza, Jennifer and Palmonari, Matteo",
+            "editor": "Garijo, Daniel and Kirrane, Sabrina and Salatino, Angelo and Shimizu, Cogan and Acosta, Maribel and Nuzzolese, Andrea Giovanni and Ferrada, Sebasti{'a}n and Soulard, Thibaut and Kozaki, Kouji and Takeda, Hideaki and Gentile, Anna Lisa",
+            "title": "MammoTab 25: A Large-Scale Dataset for Semantic Table Interpretation - Training, Testing, and Detecting Weaknesses",
+            "booktitle": "The Semantic Web -- ISWC 2025",
+            "year": "2026",
+            "publisher": "Springer Nature Switzerland",
+            "address": "Cham",
+            "pages": "131--148",
+            "abstract": "The paper presents MammoTab 25, a new dataset comprising approximately 838930 Wikipedia tables extracted from over 63 million English Wikipedia pages and semantically annotated through Wikidata. Each table in MammoTab 25 is accompanied by fine-grained metadata, including column typing, NIL flags, and statistics, and by four prompt templates, making the resource simultaneously suitable for training, fine-tuning, and stress-testing Large Language Models (LLMs). MammoTab 25 covers, in a single benchmark, all key challenges for the semantic interpretation of tables, such as disambiguation issues, homonymy and acronym presence, NIL-mentions, and large web-table sizes; the tags attached to every table let researchers isolate and diagnose specific failure cases with precision. The corpus is delivered with an open-source pipeline that can be rerun on future Wikipedia dumps, ensuring long-term sustainability and up-to-date annotations. MammoTab 25 already supports, and will continue to support, a public leaderboard that evaluates the Semantic Table Interpretation (STI) capabilities of state-of-the-art and upcoming LLMs, providing the community with a live yardstick of progress.",
+            "isbn": "978-3-032-09530-5",
+            "doi": "10.1007/978-3-032-09530-5_8"
+          }
+        }
+      },
+      {
+        "authors": "Giulia Rosemary Avis, Sara Nocco, An Qi Zhao, <b>Marco Cremaschi</b>",
+        "title": "Guiding AI Assisted persona generation with Hofstede's cultural dimensions: a mixed-methods evaluation",
+        "venue": "Behaviour & Information Technology, 1-29, 2025",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Human-Computer Interaction"
+          }
+        ],
+        "doi": "10.1080/0144929X.2025.2581258",
+        "editor": "Taylor & Francis",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "Avis06112025",
+          "fields": {
+            "author": "Giulia Rosemary Avis and Sara Nocco and An Qi Zhao and Marco Cremaschi",
+            "title": "Guiding AI-Assisted persona generation with Hofstede's cultural dimensions: a mixed-methods evaluation",
+            "journal": "Behaviour \\& Information Technology",
+            "volume": "0",
+            "number": "0",
+            "pages": "1--29",
+            "year": "2025",
+            "publisher": "Taylor \\& Francis",
+            "doi": "10.1080/0144929X.2025.2581258",
+            "url": "https://doi.org/10.1080/0144929X.2025.2581258",
+            "eprint": "https://doi.org/10.1080/0144929X.2025.2581258"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Davide Ditolve, Cesare Curcio, Anna Panzeri, Andrea Spoto, Andrea Maurino",
+        "title": "Decoding the Mind: A RAG-LLM on ICD-11 for Decision Support in Psychology",
+        "venue": "Expert Systems With Applications, Elsevier Ltd, 2025",
+        "editor": "Elsevier B.V.",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          }
+        ],
+        "doi": "10.1016/j.eswa.2025.127191",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "CREMASCHI2025127191",
+          "fields": {
+            "title": "Decoding the mind: A RAG-LLM on ICD-11 for decision support in psychology",
+            "journal": "Expert Systems with Applications",
+            "volume": "279",
+            "pages": "127191",
+            "year": "2025",
+            "issn": "0957-4174",
+            "doi": "https://doi.org/10.1016/j.eswa.2025.127191",
+            "url": "https://www.sciencedirect.com/science/article/pii/S0957417425008139",
+            "author": "Marco Cremaschi and Davide Ditolve and Cesare Curcio and Anna Panzeri and Andrea Spoto and Andrea Maurino",
+            "keywords": "Large language models, Retrieval Augmented Generation, Prompt Engineering, Healthcare, Mental health, Psychology, Clinical decision support, Diagnostic reasoning, ICD-11, DSM5",
+            "abstract": "This paper explores the use of Large Language Models (LLMs) in mental health to assist psychologists and psychiatrists with diagnostic decision-making according to the ICD-11 classification system. ICD-11 is the 11th revision of the International Classification of Diseases, a globally used diagnostic tool for health conditions, including mental, behavioural, and neurodevelopmental disorders. In detail, we propose LLMind Chat, an AI-powered tool with a user-friendly interface designed to support mental health professionals in their diagnostic processes. LLMind Chat leverages a Retrieval Augmented Generation (RAG) model based on the Gemma 2 (27B parameters), specifically adapted to the context of the ICD-11. This RAG model combines the strengths of Gemma 2 with a comprehensive knowledge base derived from the ICD-11, allowing it to access and process relevant information from the classification manual in real-time. LLMind’s diagnostic accuracy was rigorously evaluated against the DSM-5-TR Clinical Cases manual, using automated metrics and mental health professionals’ expert validation. The result suggests that LLMind Chat can serve as a reliable decision-support tool, enhancing diagnostic reasoning and potentially reducing misclassifications.",
+            "publisher": "Elsevier B.V."
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Fabio D'Adda, and Andrea Maurino",
+        "title": "StEELlm: an LLM for generating semantic annotations of tabular data",
+        "venue": "ACM Transactions on Intelligent Systems and Technology, Association for Computing Machinery, 2025",
+        "editor": "ACM",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Theoretical Computer Science"
+          }
+        ],
+        "doi": "10.1145/3719206",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "10.1145/3719206",
+          "fields": {
+            "author": "Cremaschi, Marco and D'Adda, Fabio and Maurino, Andrea",
+            "title": "stEELlm: An LLM for Generating Semantic Annotations of Tabular Data",
+            "year": "2025",
+            "publisher": "Association for Computing Machinery",
+            "address": "New York, NY, USA",
+            "issn": "2157-6904",
+            "url": "https://doi.org/10.1145/3719206",
+            "doi": "10.1145/3719206",
+            "abstract": "The capabilities of LLMs represent a pivotal step in transforming how we manage and interact with information and data. We witness an increasingly pervasive use of such models in various computational tasks. In some preliminary works, attempts to integrate Knowledge Graphs and Large Language Models (LLMs) can be identified, in particular, to perform the classic tasks related to the construction of Knowledge Graphs through semantic annotation of texts. Nowadays, tables are widely used and play a crucial role in creating, organising, and sharing information that could be used to produce factual knowledge to be integrated into a Knowledge Graph. However, table-to-KG techniques through LLM have not been extensively investigated. This paper presents stEELlm, an innovative Semantic Table Interpretation approach obtained by fine-tuning the Mixtral 8x7B model. Conducted experiments demonstrate the capabilities of our model to successfully create semantic annotations of heterogeneous datasets, a scenario where classic approaches based on heuristics tend to fail.",
+            "note": "Just Accepted",
+            "journal": "ACM Trans. Intell. Syst. Technol.",
+            "month": "feb",
+            "keywords": "Large Language Models, Knowledge Graphs, Pre-training, Fine-tuning, Prompt Engineering, Semantic Table Interpretation"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Giulia Rosemary Avis, An Qi Zhao, Elia Guarnieri, Anna Panzeri, Andrea Spoto",
+        "title": "PENguIN: A mental health application employing gamification and token economy to boost therapeutic adherence in young users",
+        "venue": "Computers in Human Behavior Reports, Volume 17, Elsevier Ltd, 2025",
+        "editor": "Elsevier B.V.",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Computer Science Application"
+          },
+          {
+            "rank": "Q1",
+            "field": "Human-Computer Interaction"
+          }
+        ],
+        "doi": "10.1016/j.chbr.2025.100586",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "CREMASCHI2025100586",
+          "fields": {
+            "title": "PENguIN: A mental health application employing gamification and token economy to boost therapeutic adherence in young users",
+            "journal": "Computers in Human Behavior Reports",
+            "volume": "17",
+            "pages": "100586",
+            "year": "2025",
+            "issn": "2451-9588",
+            "doi": "https://doi.org/10.1016/j.chbr.2025.100586",
+            "url": "https://www.sciencedirect.com/science/article/pii/S2451958825000016",
+            "author": "Marco Cremaschi and Giulia Rosemary Avis and An Qi Zhao and Elia Guarnieri and Anna Panzeri and Andrea Spoto",
+            "keywords": "Cognitive behavioral therapy, Digital interventions, Gamification, mHealth, Mental health, Token economy, Treatment adherence, Usability",
+            "abstract": "This paper explores the digitalisation of token economy principles within the context of mental health care, focusing on the PEnguIN application. As part of the Digital Intervention in Psychiatric and Psychological Services (DIPPS) project, the app aims to enhance therapeutic adherence among young patients experiencing Ultra-High Risk and First Episode Psychosis. It employs gamification elements, avatars, and a token economy system to foster engagement and self-expression. The study presents preliminary usability testing, employing a mixed-methods approach to assess the app’s acceptability and identify potential issues. The findings provide valuable insights for future developments in the digitisation of psychodiagnostic and psychiatric tools, contributing to innovative mental health therapy approaches through technology.",
+            "publisher": "Elsevier B.V."
+          }
+        }
+      },
+      {
+        "authors": "Roberto Avogadro, Fabio D'Adda, <b>Marco Cremaschi</b>",
+        "title": "Feature/vector entity retrieval and disambiguation techniques to create a supervised and unsupervised semantic table interpretation approach",
+        "venue": "Knowledge-Based Systems, Volume 304, Elsevier B.V., 2024",
+        "editor": "Elsevier B.V.",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Software"
+          }
+        ],
+        "doi": "10.1016/j.knosys.2024.112447",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "AVOGADRO2024112447",
+          "fields": {
+            "title": "Feature/vector entity retrieval and disambiguation techniques to create a supervised and unsupervised semantic table interpretation approach",
+            "journal": "Knowledge-Based Systems",
+            "volume": "304",
+            "pages": "112447",
+            "year": "2024",
+            "issn": "0950-7051",
+            "doi": "https://doi.org/10.1016/j.knosys.2024.112447",
+            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124010815",
+            "author": "Roberto Avogadro and Fabio D’Adda and Marco Cremaschi",
+            "keywords": "Semantic web, Knowledge base, Knowledge base construction, Knowledge base extension, Knowledge graph, Semantic table interpretation, Table annotation, Data enrichment, Tabular data",
+            "abstract": "Recently, there has been an increasing interest in extracting and annotating tables on the Web. This activity allows the transformation of textual data into machine-readable formats to enable the execution of various artificial intelligence tasks, e.g., semantic search and dataset extension. Semantic Table Interpretation (STI) is the process of annotating elements in a table. The paper explores Semantic Table Interpretation, addressing the challenges of Entity Retrieval and Entity Disambiguation in the context of Knowledge Graphs (KGs). It introduces LamAPI, an Information Retrieval system with string/type-based filtering and s-elBat, an Entity Disambiguation technique that combines heuristic and ML-based approaches. By applying the acquired know-how in the field and extracting algorithms, techniques and components from our previous STI approaches and the state of the art, we have created a new platform capable of annotating any tabular data, ensuring a high level of quality.",
+            "publisher": "Elsevier B.V."
+          }
+        }
+      },
+      {
+        "authors": "Dagmar Gromann, Elena-Simona Apostol, Christian Chiarcos, <b>Marco Cremaschi</b>, Jorge Gracia, Katerina Gkirtzou, Chaya Liebeskind, Liudmila Mockiene, Michael Rosner, Ineke Schuurman, Gilles Sérasset, Purificação Silvano, Blerina Spahiu, Ciprian-Octavian Truică, Andrius Utka and Giedre Valunaite Oleskeviciene",
+        "title": "Multilinguality and LLOD: a survey across linguistic description levels",
+        "venue": "Semantic Web, Volume 15, IOS Press, 2024",
+        "editor": "SAGE",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q2",
+            "field": "Computer Networks and Communications"
+          },
+          {
+            "rank": "Q2",
+            "field": "Computer Science Applications"
+          },
+          {
+            "rank": "Q2",
+            "field": "Information Systems"
+          }
+        ],
+        "doi": "10.3233/SW-243591",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "doi:10.3233/SW-243591",
+          "fields": {
+            "author": "Dagmar Gromann and Elena-Simona Apostol and Christian Chiarcos and Marco Cremaschi and Jorge Gracia and Katerina Gkirtzou and Chaya Liebeskind and Liudmila Mockiene and Michael Rosner and Ineke Schuurman and Gilles Sérasset and Purificação Silvano and Blerina Spahiu and Ciprian-Octavian Truică and Andrius Utka and Giedre Valunaite Oleskeviciene",
+            "title": "Multilinguality and LLOD: A survey across linguistic description levels",
+            "journal": "Semantic Web",
+            "volume": "15",
+            "number": "5",
+            "pages": "1915-1958",
+            "year": "2024",
+            "doi": "10.3233/SW-243591",
+            "url": "https://journals.sagepub.com/doi/abs/10.3233/SW-243591",
+            "eprint": "https://journals.sagepub.com/doi/pdf/10.3233/SW-243591",
+            "abstract": "Limited accessibility to language resources and technologies represents a challenge for the analysis, preservation, and documentation of natural languages other than English. Linguistic Linked (Open) Data (LLOD) holds the promise to ease the creation, linking, and reuse of multilingual linguistic data across distributed and heterogeneous resources. However, individual language resources and technologies accommodate or target different linguistic description levels, e.g., morphology, syntax, phonology, and pragmatics. In this comprehensive survey, the state-of-the-art of multilinguality and LLOD is being represented with a particular focus on linguistic description levels, identifying open challenges and gaps as well as proposing an ideal ecosystem for multilingual LLOD across description levels. This survey seeks to contribute an introductory text for newcomers to the field of multilingual LLOD, uncover gaps and challenges to be tackled by the LLOD community in reference to linguistic description levels, and present a solid basis for a future best practice of multilingual LLOD across description levels.",
+            "publisher": "SAGE"
+          }
+        }
+      },
+      {
+        "authors": "Oktie Hassanzadeh, Nora Abdelmageed, <b>Marco Cremaschi</b>, Vincenzo Cutrona, Fabio D'Adda, Vasilis Efthymiou, Benno Kruit, Elita Lobo, Nandana Mihindukulasooriya, Nhan H. Pham",
+        "title": "Results of SemTab 2024",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3889, CEUR Workshop Proceedings, 2024",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "ceur": "Vol-3889",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "results-of-semtab-2024",
+          "fields": {
+            "title": "Results of SemTab 2024",
+            "author": "Oktie Hassanzadeh and Nora Abdelmageed and Marco Cremaschi and Vincenzo Cutrona and Fabio D'Adda and Vasilis Efthymiou and Benno Kruit and Elita Lobo and Nandana Mihindukulasooriya and Nhan H. Pham",
+            "year": "2024",
+            "booktitle": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3889, CEUR Workshop Proceedings, 2024",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Lorenzo Olearo, Fabio D'Adda, Enza Messina, <b>Marco Cremaschi</b>, Stefania Bandini, Francesca Gasparini",
+        "title": "Facing multidimensional poverty in older adults: an artificial intelligence approach that reveals the variable relevance",
+        "venue": "Intelligenza Artificiale, Volume 18, IOS Press, 2024",
+        "editor": "SAGE",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q2",
+            "field": "Artificial Intelligence"
+          }
+        ],
+        "doi": "10.3233/IA-240027",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "doi:10.3233/IA-240027",
+          "fields": {
+            "author": "Lorenzo Olearo and Fabio D’Adda and Enza Messina and Marco Cremaschi and Stefania Bandini and Francesca Gasparini",
+            "title": "Facing multidimensional poverty in older adults: An artificial intelligence approach that reveals the variable relevance",
+            "journal": "Intelligenza Artificiale",
+            "volume": "18",
+            "number": "1",
+            "pages": "51-65",
+            "year": "2024",
+            "doi": "10.3233/IA-240027",
+            "url": "https://journals.sagepub.com/doi/abs/10.3233/IA-240027",
+            "eprint": "https://journals.sagepub.com/doi/pdf/10.3233/IA-240027",
+            "abstract": "Despite the rapid development in very recent years of Artificial Intelligence models to predict poverty risk, this problem still remains an unsolved open challenge, especially from a multidimensional perspective. One of the main challenges is related to the scarcity of labelled and high-quality data for training models coupled with the lack of a general reference model to build good predictors. This results in the proposal of a variety of approaches tailored to specific contexts. This paper presents our proposal to address multidimensional poverty prediction, starting from an unlabelled dataset. We focus on the case of a fragile population, the older adults; our approach is highly flexible and can be easily adapted to various scenarios. Firstly, starting from expert knowledge, we apply a stochastic method for estimating the probability of an individual being poor, and we use this probability to identify three levels of risk. Then, we train an XGBoost classification model and exploit its tree structure to define a ranking of feature relevance. This information is used to create a new set of aggregated features representative of different poverty dimensions. An explainable novel Naive Bayes model is then trained for predicting individuals’ deprivation level in our particular domain. The capacity to identify which variables are predominantly associated with poverty among older adults offers valuable insights for policymakers and decision-makers to address poverty effectively.",
+            "publisher": "SAGE"
+          }
+        }
+      },
+      {
+        "authors": "Giulia Rosemary Avis, Fabio D'Adda, David Chieregato, Elia Guarnieri, Maria Meliante, Andrea Primo Pierotti, <b>Marco Cremaschi</b>",
+        "title": "A neural network for automatic handwriting extraction and recognition in psychodiagnostic questionnaires",
+        "venue": "In Proceedings of the 10th International Conference on Information and Communication Technologies for Ageing Well and e-Health (ICT4AWE), Volume 1, SciTePress, 2024",
+        "editor": "SciTePress",
+        "type": "conference",
+        "icore": "C",
+        "speaker": true,
+        "doi": "10.5220/0012587600003699",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "10.5220/0012587600003699",
+          "fields": {
+            "title": "A neural network for automatic handwriting extraction and recognition in psychodiagnostic questionnaires",
+            "author": "Giulia Rosemary Avis and Fabio D'Adda and David Chieregato and Elia Guarnieri and Maria Meliante and Andrea Primo Pierotti and Marco Cremaschi",
+            "year": "2024",
+            "booktitle": "In Proceedings of the 10th International Conference on Information and Communication Technologies for Ageing Well and e-Health (ICT4AWE), Volume 1, SciTePress, 2024",
+            "publisher": "SciTePress",
+            "doi": "10.5220/0012587600003699"
+          }
+        }
+      },
+      {
+        "authors": "Jessica Amianto Barbato, <b>Marco Cremaschi</b>, Anisa Rula, Andrea Maurino",
+        "title": "Toward a Human-in-the-Loop Approach to Create Training Datasets for RDF Lexicalisation",
+        "venue": "In Proceedings of the 9th Intelligent Systems Conference (IntelliSys), Lecture Notes in Networks and Systems, Volume 822, Springer, 2024",
+        "editor": "Springer",
+        "type": "conference",
+        "doi": "10.1007/978-3-031-47721-8_6",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-031-47721-8_6",
+          "fields": {
+            "author": "Barbato, Jessica Amianto and Cremaschi, Marco and Rula, Anisa and Maurino, Andrea",
+            "editor": "Arai, Kohei",
+            "title": "Toward a Human-in-the-Loop Approach to Create Training Datasets for RDF Lexicalisation",
+            "booktitle": "Intelligent Systems and Applications",
+            "year": "2024",
+            "publisher": "Springer Nature Switzerland",
+            "address": "Cham",
+            "pages": "84--101",
+            "abstract": "Datasets that include alignments between natural language and Knowledge Graphs are fundamental to a wide variety of Natural Language Processing and Generation tasks. Current state-of-the-art aligned datasets, though, are significantly impacted by reduced size and scarcity of covered domains, and their quality is difficult to evaluate. To compensate for these issues, we introduce SEALIon, a tool for extracting RDF triples from natural language textual corpora based on a human-in-the-loop approach. We present our first results of SEALIon's approach, paving the way for further researches in the field of human-in-the-loop triple extraction.",
+            "isbn": "978-3-031-47721-8",
+            "doi": "10.1007/978-3-031-47721-8_6"
+          }
+        }
+      },
+      {
+        "authors": "Lorenzo Olearo, Fabio D'Adda, Vincenzina Messina, <b>Marco Cremaschi</b>, Stefania Bandini, Francesca Gasparini",
+        "title": "An Artificial Intelligence approach to predict multidimensional poverty of older people from unlabelled data",
+        "venue": "In Proceedings of the 12th Italian Workshop on Artificial Intelligence for an Ageing Society (AI*AS@AI*IA), CEUR Workshop Proceedings, 2023",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "workshop",
+        "ceur": "Vol-3623",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "an-artificial-intelligence-approach-to-predict-multidimensional-poverty-of-older",
+          "fields": {
+            "title": "An Artificial Intelligence approach to predict multidimensional poverty of older people from unlabelled data",
+            "author": "Lorenzo Olearo and Fabio D'Adda and Vincenzina Messina and Marco Cremaschi and Stefania Bandini and Francesca Gasparini",
+            "year": "2023",
+            "booktitle": "In Proceedings of the 12th Italian Workshop on Artificial Intelligence for an Ageing Society (AI*AS@AI*IA), CEUR Workshop Proceedings, 2023",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Elia Guarnieri, <b>Marco Cremaschi</b>",
+        "title": "The digitalisation of reinforcement learning and token economy in e-health",
+        "venue": "In Proceedings of the 5th International Conference on Higher Education Learning Methodologies and Technologies Online (HELMETO), Communications in Computer and Information Science, Volume 2076, Springer, 2023",
+        "editor": "Springer",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1007/978-3-031-67351-1_29",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-031-67351-1_29",
+          "fields": {
+            "author": "Guarnieri, Elia and Cremaschi, Marco",
+            "editor": "Casalino, Gabriella and Di Fuccio, Raffaele and Fulantelli, Giovanni and Raviolo, Paolo and Rivoltella, Pier Cesare and Taibi, Davide and Toto, Giusi Antonia",
+            "title": "The Digitalisation of Reinforcement Learning and Token Economy in e-Health",
+            "booktitle": "Higher Education Learning Methodologies and Technologies Online",
+            "year": "2024",
+            "publisher": "Springer Nature Switzerland",
+            "address": "Cham",
+            "pages": "423--439",
+            "abstract": "This document addresses the problem of psychosis, a mental health condition that affects one's perception of reality. It delves into the symptoms, causes, and consequences of psychosis, which can lead to chronic conditions like schizophrenia. We specifically focus on its early stages, particularly on Ultra High Risk and First Episode of Psychosis patients. We propose a digital platform that integrates psycho-education, Cognitive Behavioral Therapy, and a Token Economy system to improve the treatment of psychosis. The platform comprises a web-based patient management platform, a predictive model and decision support system, and a smartphone application for patients. We explore how e-health and the Token Economy can enhance psychiatric care by providing access, effectiveness, motivation, and engagement while using evidence-based tasks, gamification, feedback, and rewards to help patients achieve their therapeutic goals.",
+            "isbn": "978-3-031-67351-1",
+            "doi": "10.1007/978-3-031-67351-1_29"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Jessica Amianto Barbato, Anisa Rula, Matteo Palmonari, Rossana Actis-Grosso",
+        "title": "What Really Matters in a Table? Insights from a User Study",
+        "venue": "In Proceedings of the 21st IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT), IEEE, 2022",
+        "editor": "IEEE",
+        "type": "conference",
+        "icore": "B",
+        "speaker": true,
+        "doi": "10.1109/WI-IAT55865.2022.00045",
+        "bibtex": {
+          "entry_type": "INPROCEEDINGS",
+          "citation_key": "10101983",
+          "fields": {
+            "author": "Cremaschi, Marco and Barbato, Jessica Amianto and Rula, Anisa and Palmonari, Matteo and Actis-Grosso, Rossana",
+            "booktitle": "2022 IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT)",
+            "title": "What Really Matters in a Table? Insights from a User Study",
+            "year": "2022",
+            "volume": "",
+            "number": "",
+            "pages": "263-269",
+            "keywords": "Visualization;Focusing;Gaze tracking;Resource description framework;User experience;Intelligent agents;Task analysis;Data Summarisation;Lexicalisation;Semantic Table Interpretation;Human Interpretation",
+            "doi": "10.1109/WI-IAT55865.2022.00045",
+            "publisher": "IEEE"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, David Chieregato",
+        "title": "s-elBat: a semantic interpretation approach for messy taBle-s",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-3320",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "s-elbat-a-semantic-interpretation-approach-for-messy-table-s",
+          "fields": {
+            "title": "s-elBat: a semantic interpretation approach for messy taBle-s",
+            "author": "Marco Cremaschi and Roberto Avogadro and David Chieregato",
+            "year": "2022",
+            "booktitle": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Jessica Amianto Barbato, <b>Marco Cremaschi</b>",
+        "title": "Bridging the gap between human-gaze data and table summarisation",
+        "venue": "In Proceedings of the 1st Workshop on Artificial Intelligence for Human-Machine Interaction (AI*HMI@AI*IA), Volume 3368, CEUR Workshop Proceedings, 2022",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "workshop",
+        "ceur": "Vol-3368",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "bridging-the-gap-between-human-gaze-data-and-table-summarisation",
+          "fields": {
+            "title": "Bridging the gap between human-gaze data and table summarisation",
+            "author": "Jessica Amianto Barbato and Marco Cremaschi",
+            "year": "2022",
+            "booktitle": "In Proceedings of the 1st Workshop on Artificial Intelligence for Human-Machine Interaction (AI*HMI@AI*IA), Volume 3368, CEUR Workshop Proceedings, 2022",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Stefania Bandini, Valeria Marina Borodi, David Chieregato, <b>Marco Cremaschi</b>, Federica D'Antico, Vincenzina Messina, Marco Terraneo, Laura Terzera, Francesca Gasparini",
+        "title": "Artificial Intelligence facing multidimensional poverty in elderly",
+        "venue": "In Proceedings of the 11th Italian Workshop on Artificial Intelligence for an Ageing Society (AI*AS@AI*IA), Volume 3367, CEUR Workshop Proceedings, 2022",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "workshop",
+        "speaker": true,
+        "ceur": "Vol-3367",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "artificial-intelligence-facing-multidimensional-poverty-in-elderly",
+          "fields": {
+            "title": "Artificial Intelligence facing multidimensional poverty in elderly",
+            "author": "Stefania Bandini and Valeria Marina Borodi and David Chieregato and Marco Cremaschi and Federica D'Antico and Vincenzina Messina and Marco Terraneo and Laura Terzera and Francesca Gasparini",
+            "year": "2022",
+            "booktitle": "In Proceedings of the 11th Italian Workshop on Artificial Intelligence for an Ageing Society (AI*AS@AI*IA), Volume 3367, CEUR Workshop Proceedings, 2022",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Fabio D'Adda, Flavio De Paoli, Matteo Palmonari",
+        "title": "LamAPI: a comprehensive tool for string-based entity retrieval with type-base filters",
+        "venue": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 3324, CEUR Workshop Proceedings, 2022",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "workshop",
+        "speaker": true,
+        "ceur": "Vol-3324",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "lamapi-a-comprehensive-tool-for-string-based-entity-retrieval-with-type-base-fil",
+          "fields": {
+            "title": "LamAPI: a comprehensive tool for string-based entity retrieval with type-base filters",
+            "author": "Roberto Avogadro and Marco Cremaschi and Fabio D'Adda and Flavio De Paoli and Matteo Palmonari",
+            "year": "2022",
+            "booktitle": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 3324, CEUR Workshop Proceedings, 2022",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Mattia Marzocchi, <b>Marco Cremaschi</b>, Riccardo Pozzi, Roberto Avogadro, Matteo Palmonari",
+        "title": "MammoTab: a giant and comprehensive dataset for Semantic Table Interpretation",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-3320",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "mammotab-a-giant-and-comprehensive-dataset-for-semantic-table-interpretation",
+          "fields": {
+            "title": "MammoTab: a giant and comprehensive dataset for Semantic Table Interpretation",
+            "author": "Mattia Marzocchi and Marco Cremaschi and Riccardo Pozzi and Roberto Avogadro and Matteo Palmonari",
+            "year": "2022",
+            "booktitle": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3320, CEUR Workshop Proceedings, 2022",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>",
+        "title": "MantisTable V: a novel and efficient approach to Semantic Table Interpretation",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3130, CEUR Workshop Proceedings, 2021",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-3103",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "mantistable-v-a-novel-and-efficient-approach-to-semantic-table-interpretation",
+          "fields": {
+            "title": "MantisTable V: a novel and efficient approach to Semantic Table Interpretation",
+            "author": "Roberto Avogadro and Marco Cremaschi",
+            "year": "2021",
+            "booktitle": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 3130, CEUR Workshop Proceedings, 2021",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Simone Saleri, Andrea Maurino",
+        "title": "A geometrical deep learning model for the lexicalisation of \"unseen\" RDF triples",
+        "venue": "In Proceedings of the IEEE 23rd Int Conf on High Performance Computing & Communications; 7th Int Conf on Data Science & Systems; 19th Int Conf on Smart City; 7th Int Conf on Dependability in Sensor, Cloud & Big Data Systems & Application, IEEE, 2021",
+        "editor": "IEEE",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1109/HPCC-DSS-SmartCity-DependSys53884.2021.00334",
+        "bibtex": {
+          "entry_type": "INPROCEEDINGS",
+          "citation_key": "9781156",
+          "fields": {
+            "author": "Cremaschi, Marco and Saleri, Simone and Maurino, Andrea",
+            "booktitle": "2021 IEEE 23rd Int Conf on High Performance Computing & Communications; 7th Int Conf on Data Science & Systems; 19th Int Conf on Smart City; 7th Int Conf on Dependability in Sensor, Cloud & Big Data Systems & Application (HPCC/DSS/SmartCity/DependSys)",
+            "title": "A geometrical deep learning model for the lexicalisation of “unseen” RDF triples",
+            "year": "2021",
+            "volume": "",
+            "number": "",
+            "pages": "2233-2240",
+            "keywords": "Virtual assistants;Pipelines;Neural networks;Reinforcement learning;Syntactics;Generative adversarial networks;Resource description framework;Natural Language Generation;RDF triples;Lexicalisation",
+            "doi": "10.1109/HPCC-DSS-SmartCity-DependSys53884.2021.00334",
+            "publisher": "IEEE"
+          }
+        }
+      },
+      {
+        "authors": "Rachele De Giuseppe, Matteo Colleoni, <b>Marco Cremaschi</b>, Luca Daconto, Ilaria Di Napoli, Alberto Gallace, Lorenzo Guzzetti, Massimo Labra, Andrea Maurino, Chiara Tomasinelli, Alessandra Vincenti, Sara Zizzari, Hellas Cena",
+        "title": "How to preserve healthy aging through nutritional strategies: the new approach of the Food Social Network (Food NET) project",
+        "venue": "Mediterranean Journal of Nutrition and Metabolism, Volume 15, SAGE Publications, 2021",
+        "editor": "SAGE",
+        "type": "journal",
+        "doi": "10.3233/MNM-211500",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "doi:10.3233/MNM-211500",
+          "fields": {
+            "author": "Rachele De Giuseppe and Matteo Colleoni and Marco Cremaschi and Luca Daconto and Ilaria Di Napoli and Alberto Gallace and Lorenzo Guzzetti and Massimo Labra and Andrea Maurino and Chiara Elena Tomasinelli and Alessandra Vincenti and Sara Zizzari and Hellas Cena",
+            "title": "How to preserve healthy aging through nutritional strategies: The new approach of the Food Social Network (Food NET) project",
+            "journal": "Mediterranean Journal of Nutrition and Metabolism",
+            "volume": "15",
+            "number": "1",
+            "pages": "91-101",
+            "year": "2022",
+            "doi": "10.3233/MNM-211500",
+            "url": "https://journals.sagepub.com/doi/abs/10.3233/MNM-211500",
+            "eprint": "https://journals.sagepub.com/doi/pdf/10.3233/MNM-211500",
+            "abstract": "BACKGROUND: Aging is a process that does not refer only to the accumulation of damage in a human being over time but rather to individual changes determined by genetic, lifestyle, social and environmental factors. Aging is one of the greatest known risk factors for most human diseases. An older person in good health has a good level of independence, weighs less on the national health system and plays a productive and active role in his/her community; thus, the concept of “healthy aging”, reflecting older adult-environment fit should be promoted. The interactions between lifestyle, including nutrition, and health play a fundamental role in the aging process; eating habits and eating behaviours are recognized as important modifiable factors potentially leading to a healthy “phenotype”.OBJECTIVE AND METHODS: A multidisciplinary consortium with three Italian universities (the University of Milano-Bicocca, University of Pavia and University of Calabria) and Italian Small-Medium Enterprises proposed the Food Social Network (Food NET) project. Food NET overall outcome is to achieve target-specific guidelines and exact technologies for accessible functional foods, aimed at improving the quality of life and nutritional status of citizens (aged>65) of the Metropolitan City of Milan (Italy).CONCLUSIONS: This project is part of the “Smart Living” and food-related strategies aimed at responding to the needs of this target population, developing new food products, appropriate to meet the specific requirements and ensuring and promoting sustainable diets for healthy aging by effective food policy approaches.",
+            "publisher": "SAGE"
+          }
+        }
+      },
+      {
+        "authors": "Roberto Avogadro, <b>Marco Cremaschi</b>, Ernesto Jiménez-Ruiz, Anisa Rula",
+        "title": "A framework for quality assessment of semantic annotations of tabular data",
+        "venue": "In Proceedings of the 20th International Semantic Web Conference (ISWC), Lecture Notes in Computer Science, Volume 12922, Springer, 2021",
+        "editor": "Springer",
+        "type": "conference",
+        "icore": "A",
+        "speaker": true,
+        "doi": "10.1007/978-3-030-88361-4_31",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-030-88361-4_31",
+          "fields": {
+            "author": "Avogadro, Roberto and Cremaschi, Marco and Jim{'e}nez-Ruiz, Ernesto and Rula, Anisa",
+            "editor": "Hotho, Andreas and Blomqvist, Eva and Dietze, Stefan and Fokoue, Achille and Ding, Ying and Barnaghi, Payam and Haller, Armin and Dragoni, Mauro and Alani, Harith",
+            "title": "A Framework for Quality Assessment of Semantic Annotations of Tabular Data",
+            "booktitle": "The Semantic Web -- ISWC 2021",
+            "year": "2021",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "528--545",
+            "abstract": "Much information is conveyed within tables, which can be semantically annotated by humans or (semi)automatic approaches. Nevertheless, many applications cannot take full advantage of semantic annotations because of the low quality. A few methodologies exist for the quality assessment of semantic annotation of tabular data, but they do not automatically assess the quality as a multidimensional concept through different quality dimensions. The quality dimensions are implemented in STILTool 2, a web application to automate the quality assessment of the annotations. The evaluation is carried out by comparing the quality of semantic annotations with gold standards. The work presented here has been applied to at least three use cases. The results show that our approach can give us hints about the quality issues and how to address them.",
+            "isbn": "978-3-030-88361-4",
+            "doi": "10.1007/978-3-030-88361-4_31"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, Andrea Barazzetti, David Chieregato",
+        "title": "MantisTable SE: an efficient approach for the Semantic Table Interpretation",
+        "venue": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2775, CEUR Workshop Proceedings, 2020",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "speaker": true,
+        "ceur": "Vol-2775",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "mantistable-se-an-efficient-approach-for-the-semantic-table-interpretation",
+          "fields": {
+            "title": "MantisTable SE: an efficient approach for the Semantic Table Interpretation",
+            "author": "Marco Cremaschi and Roberto Avogadro and Andrea Barazzetti and David Chieregato",
+            "year": "2020",
+            "booktitle": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2775, CEUR Workshop Proceedings, 2020",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Flavio De Paoli, Anisa Rula, Blerina Spahiu",
+        "title": "A fully automated approach to a complete Semantic Table Interpretation",
+        "venue": "Future Generation Computer Systems, Volume 112, Elsevier B.V., 2020",
+        "editor": "Elsevier B.V.",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Computer Networks and Communications"
+          },
+          {
+            "rank": "Q1",
+            "field": "Hardware and Architecture"
+          },
+          {
+            "rank": "Q1",
+            "field": "Software"
+          }
+        ],
+        "doi": "10.1016/j.future.2020.05.019",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "CREMASCHI2020478",
+          "fields": {
+            "title": "A fully automated approach to a complete Semantic Table Interpretation",
+            "journal": "Future Generation Computer Systems",
+            "volume": "112",
+            "pages": "478-500",
+            "year": "2020",
+            "issn": "0167-739X",
+            "doi": "https://doi.org/10.1016/j.future.2020.05.019",
+            "url": "https://www.sciencedirect.com/science/article/pii/S0167739X19302663",
+            "author": "Marco Cremaschi and Flavio {De Paoli} and Anisa Rula and Blerina Spahiu",
+            "keywords": "Semantic Web, Ontology, Linked Data, Knowledge Graph, Semantic Table Interpretation",
+            "abstract": "In recent years, there has been an increasing interest in extracting and annotating tables on the Web. This activity allows the transformation of text data into machine-readable formats to enable the execution of various artificial intelligence tasks, e.g. semantic search and dataset extension. Semantic Table Interpretation is the process of annotating elements in a table. Current approaches are mainly based on lexical matching algorithms that rely on metadata associated with tables or custom Knowledge Graphs. Their main limitations are due to the lack of metadata, the little use of contextual semantics, and the incompleteness of the proposed methods that do not include all the necessary steps. In this paper, we propose a comprehensive approach and a tool that provides an unsupervised method to annotate independent tables, possibly without header row or other external information. The approach is based on the definition of a context created from the elements within the table in order to discriminate among matching entities found in shared Knowledge Graphs and create high-quality annotations. The approach has achieved excellent results in an international challenge, thus proving its effectiveness.",
+            "publisher": "Elsevier B.V."
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Alessandra Siano, Roberto Avogadro, Ernesto Jimenez-Ruiz, Andrea Maurino",
+        "title": "STILTool: A Semantic Table Interpretation evaLuation Tool",
+        "venue": "In Proceedings of 17th International Extended Semantic Web Conference, Volume 12124, Springer, 2020",
+        "editor": "Springer",
+        "type": "conference",
+        "icore": "B",
+        "speaker": true,
+        "doi": "10.1007/978-3-030-62327-2_11",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-030-62327-2_11",
+          "fields": {
+            "author": "Cremaschi, Marco and Siano, Alessandra and Avogadro, Roberto and Jimenez-Ruiz, Ernesto and Maurino, Andrea",
+            "editor": "Harth, Andreas and Presutti, Valentina and Troncy, Rapha{\"e}l and Acosta, Maribel and Polleres, Axel and Fern{'a}ndez, Javier D. and Xavier Parreira, Josiane and Hartig, Olaf and Hose, Katja and Cochez, Michael",
+            "title": "STILTool: A Semantic Table Interpretation evaLuation Tool",
+            "booktitle": "The Semantic Web: ESWC 2020 Satellite Events",
+            "year": "2020",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "61--66",
+            "abstract": "This paper describes STILTool, an open-source tool for the automatic evaluation of the quality of semantic annotations computed by semantic table interpretation approaches. STILTool provides a graphical interface allowing users to analyse the correctness of the annotations of tabular data. The tool also provides a set of statistics in order to identify the most common error patterns.",
+            "isbn": "978-3-030-62327-2",
+            "doi": "10.1007/978-3-030-62327-2_11"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Roberto Avogadro, David Chieregato",
+        "title": "MantisTable: an automatic approach for the Semantic Table Interpretation",
+        "venue": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2553, CEUR Workshop Proceedings, 2019",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "winner": true,
+        "ceur": "Vol-2553",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "mantistable-an-automatic-approach-for-the-semantic-table-interpretation",
+          "fields": {
+            "title": "MantisTable: an automatic approach for the Semantic Table Interpretation",
+            "author": "Marco Cremaschi and Roberto Avogadro and David Chieregato",
+            "year": "2019",
+            "booktitle": "In Proceedings of SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 2553, CEUR Workshop Proceedings, 2019",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Anisa Rula, Alessandra Siano, Flavio De Paoli",
+        "title": "MantisTable: a tool for creating semantic annotations on tabular data",
+        "venue": "In Proceedings of the 16th Extended Semantic Web Conference (ESWC), Lecture Notes in Computer Science, Volume 11762, Springer, 2019",
+        "editor": "Springer",
+        "type": "conference",
+        "icore": "B",
+        "best_paper": true,
+        "doi": "10.1007/978-3-030-32327-1_4",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-030-32327-1_4",
+          "fields": {
+            "author": "Cremaschi, Marco and Rula, Anisa and Siano, Alessandra and De Paoli, Flavio",
+            "editor": "Hitzler, Pascal and Kirrane, Sabrina and Hartig, Olaf and de Boer, Victor and Vidal, Maria-Esther and Maleshkova, Maria and Schlobach, Stefan and Hammar, Karl and Lasierra, Nelia and Stadtm{\"u}ller, Steffen and Hose, Katja and Verborgh, Ruben",
+            "title": "MantisTable: A Tool for Creating Semantic Annotations on Tabular Data",
+            "booktitle": "The Semantic Web: ESWC 2019 Satellite Events",
+            "year": "2019",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "18--23",
+            "abstract": "This paper describes MantisTable, an open source Semantic Table Interpretation tool, which automatically annotates tables using a Knowledge Graph. MantisTable provides a graphical interface allowing users to analyse the results of the semantic table interpretation process and validate the final annotations. The tool also provides a guided mode for viewing and editing annotations by users. Thanks to MantisTable features, it is possible to create semantic annotations and favour the publication and exchange of tabular data.",
+            "isbn": "978-3-030-32327-1",
+            "doi": "10.1007/978-3-030-32327-1_4"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Federico Bianchi, Andrea Maurino, Andrea Primo Pierotti",
+        "title": "Supporting journalism by combining neural language generation and Knowledge Graphs",
+        "venue": "In Proceedings of the Sesta Conferenza Italiana di Linguistica Computazionale (Clic-it), Volume 2481, CEUR Workshop Proceedings, 2019",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "conference",
+        "speaker": true,
+        "ceur": "Vol-2481",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "supporting-journalism-by-combining-neural-language-generation-and-knowledge-grap",
+          "fields": {
+            "title": "Supporting journalism by combining neural language generation and Knowledge Graphs",
+            "author": "Marco Cremaschi and Federico Bianchi and Andrea Maurino and Andrea Primo Pierotti",
+            "year": "2019",
+            "booktitle": "In Proceedings of the Sesta Conferenza Italiana di Linguistica Computazionale (Clic-it), Volume 2481, CEUR Workshop Proceedings, 2019",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Anisa Rula, Alessandra Siano, Flavio De Paoli",
+        "title": "Semantic Table Interpretation using MantisTable",
+        "venue": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 2536, CEUR Workshop Proceedings, 2019",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "workshop",
+        "speaker": true,
+        "ceur": "Vol-2536",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "semantic-table-interpretation-using-mantistable",
+          "fields": {
+            "title": "Semantic Table Interpretation using MantisTable",
+            "author": "Marco Cremaschi and Anisa Rula and Alessandra Siano and Flavio De Paoli",
+            "year": "2019",
+            "booktitle": "In Proceedings of the 17th International Workshop on Ontology Matching (OM@ISWC), Volume 2536, CEUR Workshop Proceedings, 2019",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Flavio De Paoli",
+        "title": "A practical approach to services composition through light semantic descriptions",
+        "venue": "In Proceedings of the 7th European Conference on Service-Oriented and Cloud Computing (ESOCC), Lecture Notes in Computer Science, Volume 11116, Springer, 2018",
+        "editor": "Springer",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1007/978-3-319-99819-0_10",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-319-99819-0_10",
+          "fields": {
+            "author": "Cremaschi, Marco and De Paoli, Flavio",
+            "editor": "Kritikos, Kyriakos and Plebani, Pierluigi and de Paoli, Flavio",
+            "title": "A Practical Approach to Services Composition Through Light Semantic Descriptions",
+            "booktitle": "Service-Oriented and Cloud Computing",
+            "year": "2018",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "130--145",
+            "abstract": "Services composition has been much investigated over the last decade without reaching shared and consolidated results mainly for the lack of interoperable descriptions of services and the consequent need of extensive user intervention. In this paper, we propose a light and practical approach to create machine-readable descriptions of output data that can be merged or used (as-is or adapted) as input data to other services. The solution relies on the popular and standard OpenAPI descriptions augmented with annotations based on JSON-LD format. Services descriptions are created by table annotations techniques applied on sets of given or retrieved output values. The approach has been implemented in a tool and validated with a set of real services.",
+            "isbn": "978-3-319-99819-0",
+            "doi": "10.1007/978-3-319-99819-0_10"
+          }
+        }
+      },
+      {
+        "authors": "Federico Bianchi, Matteo Palmonari, <b>Marco Cremaschi</b>, Elisabetta Fersini",
+        "title": "Actively learning to rank semantic associations for personalized contextual exploration of knowledge graphs",
+        "venue": "In Proceedings of the 14th Extended Semantic Web Conference (ESWC), Lecture Notes in Computer Science, Volume 10249, Springer, 2017",
+        "editor": "Springer",
+        "type": "conference",
+        "icore": "B",
+        "doi": "10.1007/978-3-319-58068-5_8",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-319-58068-5_8",
+          "fields": {
+            "author": "Bianchi, Federico and Palmonari, Matteo and Cremaschi, Marco and Fersini, Elisabetta",
+            "editor": "Blomqvist, Eva and Maynard, Diana and Gangemi, Aldo and Hoekstra, Rinke and Hitzler, Pascal and Hartig, Olaf",
+            "title": "Actively Learning to Rank Semantic Associations for Personalized Contextual Exploration of Knowledge Graphs",
+            "booktitle": "The Semantic Web",
+            "year": "2017",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "120--135",
+            "abstract": "Knowledge Graphs (KG) represent a large amount of Semantic Associations (SAs), i.e., chains of relations that may reveal interesting and unknown connections between different types of entities. Applications for the contextual exploration of KGs help users explore information extracted from a KG, including SAs, while they are reading an input text. Because of the large number of SAs that can be extracted from a text, a first challenge in these applications is to effectively determine which SAs are most interesting to the users, defining a suitable ranking function over SAs. However, since different users may have different interests, an additional challenge is to personalize this ranking function to match individual users' preferences. In this paper we introduce a novel active learning to rank model to let a user rate small samples of SAs, which are used to iteratively learn a personalized ranking function. Experiments conducted with two data sets show that the approach is able to improve the quality of the ranking function with a limited number of user interactions.",
+            "isbn": "978-3-319-58068-5",
+            "doi": "10.1007/978-3-319-58068-5_8"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Flavio De Paoli",
+        "title": "Toward Automatic Semantic API Descriptions to Support Services Composition",
+        "venue": "In Proceedings of Service-Oriented and Cloud Computing, Springer International Publishing, 2017",
+        "editor": "Springer International Publishing",
+        "type": "conference",
+        "doi": "10.1007/978-3-319-67262-5_12",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-319-67262-5_12",
+          "fields": {
+            "author": "Cremaschi, Marco and De Paoli, Flavio",
+            "editor": "De Paoli, Flavio and Schulte, Stefan and Broch Johnsen, Einar",
+            "title": "Toward Automatic Semantic API Descriptions to Support Services Composition",
+            "booktitle": "Service-Oriented and Cloud Computing",
+            "year": "2017",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "159--167",
+            "abstract": "The ability to provide appropriate and complete API descriptions to let users discover services that satisfy a set of requirements and compose them to fulfil more complex users' needs is critical for the success of any modern ICT solution. Composition suffers from the lack of semantic matching between properties included in published API descriptions. The work presented in this paper addresses this issue by discussing the current formats and tools to build API descriptions, and presenting a method for extracting and associating semantic to properties. Such method relies on a revised version of Table Interpretation techniques to support semantic annotations of API properties. The objectives are to enrich the popular OpenAPI Specification format with semantic annotations, and add the functionality of semantic annotation and composition to the associated editor.",
+            "isbn": "978-3-319-67262-5"
+          }
+        }
+      },
+      {
+        "authors": "Meherun Nesa Lucky, <b>Marco Cremaschi</b>, Barbara Lodigiani, Antonio Menolascina, Flavio De Paoli",
+        "title": "Enriching API descriptions by adding API profiles through semantic annotation",
+        "venue": "In Proceedings of the 14th International Conference Service-Oriented Computing (ICSOC), Lecture Notes in Computer Science, Volume 9936, Springer, 2016",
+        "editor": "Springer",
+        "type": "conference",
+        "icore": "A",
+        "doi": "10.1007/978-3-319-46295-0_55",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-319-46295-0_55",
+          "fields": {
+            "author": "Lucky, Meherun Nesa and Cremaschi, Marco and Lodigiani, Barbara and Menolascina, Antonio and De Paoli, Flavio",
+            "editor": "Sheng, Quan Z. and Stroulia, Eleni and Tata, Samir and Bhiri, Sami",
+            "title": "Enriching API Descriptions by Adding API Profiles Through Semantic Annotation",
+            "booktitle": "Service-Oriented Computing",
+            "year": "2016",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "780--794",
+            "abstract": "In recent years several description tools and formats have been introduced for describing REST Web APIs both in human and machine readable formats. Although these descriptions provide functional information about the APIs (e.g. HTTP methods, URIs, model schema, etc.), the information that qualifies the properties of APIs (e.g. classification of input arguments and response data) is missing. We envisage that providing a complete set of information to the users will facilitate the composition of APIs to fulfil users' specific needs.",
+            "isbn": "978-3-319-46295-0",
+            "doi": "10.1007/978-3-319-46295-0_55"
+          }
+        }
+      },
+      {
+        "authors": "Matteo Palmonari, Giorgio Uboldi, <b>Marco Cremaschi</b>, Daniele Ciminieri, Federico Bianchi",
+        "title": "DaCENA: serendipitous news reading with data contexts",
+        "venue": "In Proceedings of the 12th Extended Semantic Web Conference (ESWC), Lecture Notes in Computer Science, Volume 9341, Springer, 2015",
+        "editor": "Springer",
+        "type": "conference",
+        "icore": "B",
+        "doi": "10.1007/978-3-319-25639-9_26",
+        "bibtex": {
+          "entry_type": "InProceedings",
+          "citation_key": "10.1007/978-3-319-25639-9_26",
+          "fields": {
+            "author": "Palmonari, Matteo and Uboldi, Giorgio and Cremaschi, Marco and Ciminieri, Daniele and Bianchi, Federico",
+            "editor": "Gandon, Fabien and Gu{'e}ret, Christophe and Villata, Serena and Breslin, John and Faron-Zucker, Catherine and Zimmermann, Antoine",
+            "title": "DaCENA: Serendipitous News Reading with Data Contexts",
+            "booktitle": "The Semantic Web: ESWC 2015 Satellite Events",
+            "year": "2015",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "133--137",
+            "abstract": "DaCENA (Data Context for News Articles) is a web application that showcases a new approach to reading online news articles with the support of a data context built from interlinked facts available on the Web of Data. Given a source article, a set of facts that are estimated to be more interesting for the readers are extracted from the Web and presented using tailored information visualization methods and an interactive user interface. By looking at this background factual knowledge, the reader is supported in the interpretation of the news content and is suggested connections to related topics that he/she can further explore.",
+            "isbn": "978-3-319-25639-9",
+            "doi": "10.1007/978-3-319-25639-9_26"
+          }
+        }
+      },
+      {
+        "authors": "Gianluigi Viscusi, <b>Marco Cremaschi</b>, Carlo Batini",
+        "title": "Service Science and scholarship: experiences from a pragmatist perspective",
+        "venue": "In Software Engineering Education for a Global E-Service Economy, Springer, 2014",
+        "editor": "Springer",
+        "type": "book_chapter",
+        "doi": "10.1007/978-3-319-04217-6_19",
+        "bibtex": {
+          "entry_type": "Inbook",
+          "citation_key": "Viscusi2014",
+          "fields": {
+            "author": "Viscusi, Gianluigi and Cremaschi, Marco and Batini, Carlo",
+            "editor": "Motta, Gianmario and Wu, Bing",
+            "title": "Service Science and Scholarship: Experiences from a Pragmatist Perspective",
+            "booktitle": "Software Engineering Education for a Global E-Service Economy: State of the Art, Trends and Developments",
+            "year": "2014",
+            "publisher": "Springer International Publishing",
+            "address": "Cham",
+            "pages": "153--162",
+            "abstract": "This chapter discusses the case of ongoing experiences in the field of Service Science. The experiences refer to the Italian SMART project producing a homonymous methodology, briefly described together with a discussion of its application as an instrument for developing and structuring initiatives in Service Science education and in the design of services in funded industrial research projects. The discussion follows a pragmatist perspective, focusing on the enactment of a ``funded experience'' by scholars, practitioners, and Service Science students.",
+            "isbn": "978-3-319-04217-6",
+            "doi": "10.1007/978-3-319-04217-6_19",
+            "url": "https://doi.org/10.1007/978-3-319-04217-6_19"
+          }
+        }
+      },
+      {
+        "authors": "Claudio Baldassarre, <b>Marco Cremaschi</b>, Matteo Palmonari",
+        "title": "Bridging the gap between citizens and local administrations with knowledge-based service bundle recommendations",
+        "venue": "In Proceedings of the 24th International Conference on Database and Expert Systems Applications (DEXA), IEEE, 2013",
+        "editor": "IEEE",
+        "type": "conference",
+        "speaker": true,
+        "doi": "10.1109/DEXA.2013.25",
+        "bibtex": {
+          "entry_type": "INPROCEEDINGS",
+          "citation_key": "6621364",
+          "fields": {
+            "author": "Baldassarre, Claudio and Cremaschi, Marco and Palmonari, Matteo",
+            "booktitle": "2013 24th International Workshop on Database and Expert Systems Applications",
+            "title": "Bridging the Gap between Citizens and Local Administrations with Knowledge-Based Service Bundle Recommendations",
+            "year": "2013",
+            "volume": "",
+            "number": "",
+            "pages": "157-161",
+            "keywords": "Legislation;Abstracts;Knowledge based systems;Local government;Concrete;Contracts;Reccommender System;Italian Government;Value Added Services;Public Administration;Service Catalog",
+            "doi": "10.1109/DEXA.2013.25",
+            "publisher": "IEEE"
+          }
+        }
+      },
+      {
+        "authors": "Marco Comerio, Marco Castelli, <b>Marco Cremaschi</b>",
+        "title": "Towards the Definition of Value-added Services for Citizens: a New Model for the Description of Public Administration Services",
+        "venue": "International Journal of Management and Information Technology, Volume 4, Khalsa Publications, 2013",
+        "editor": "CIRWORLD",
+        "type": "journal",
+        "doi": "10.24297/ijmit.v4i1.4635",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "10.24297/ijmit.v4i1.4635",
+          "fields": {
+            "title": "Towards the Definition of Value-added Services for Citizens: a New Model for the Description of Public Administration Services",
+            "author": "Marco Comerio and Marco Castelli and Marco Cremaschi",
+            "year": "2013",
+            "journal": "International Journal of Management and Information Technology, Volume 4, Khalsa Publications, 2013",
+            "publisher": "CIRWORLD",
+            "doi": "10.24297/ijmit.v4i1.4635"
+          }
+        }
+      }
+    ]
+  },
+  "community_service": {
+    "chair": [
+      {
+        "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
+        "description": "SemTab@International Semantic Web Conference 2025 - ICORE rank: A - attended",
+        "year": "2025",
+        "link": "https://sem-tab-challenge.github.io/2025/"
+      },
+      {
+        "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
+        "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
+        "year": "2024",
+        "link": "https://sem-tab-challenge.github.io/2024/"
+      },
+      {
+        "title": "Eighth Italian Conference on Computational Linguistics (CLIC-it 2021 - attended)",
+        "year": "2021",
+        "link": "https://clic2021.disco.unimib.it/organization/chairs/"
+      },
+      {
+        "title": "International Conference on Data, Information, Knowledge and Wisdom (DIKW 2021 - attended)",
+        "year": "2021",
+        "link": "https://www.ieee-cybermatics.org/2021/dikw/"
+      }
+    ],
+    "organiser": [
+      {
+        "title": "Tutorial on Semantic Table Interpretation",
+        "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
+        "year": "2024",
+        "link": "https://unimib-datai.github.io/sti-website/tutorial/"
+      }
+    ],
+    "project_evaluator": [
+      {
+        "title": "ANR (Agence Nationale de la Recherche)",
+        "year": "2025",
+        "link": "files/valutatore-di-progetti/anr-certificate-of-mission-2025.pdf"
+      }
+    ]
+  },
+  "community_service_editorial": {
+    "associate_editor": [
+      {
+        "title": "Journal of Intelligent & Fuzzy Systems",
+        "year": "2024"
+      }
+    ],
+    "member_of_committee": [
+      {
+        "items": [
+          {
+            "name": "SemTab 2019",
+            "link": "http://www.cs.ox.ac.uk/isg/challenges/sem-tab/2019/index.html"
+          },
+          {
+            "name": "EAIoT 2021",
+            "link": "https://eaiot2021.connect.rs/"
+          },
+          {
+            "name": "DIKWN 2021",
+            "link": "https://conferences.computer.org/services/2021/workshops/dikwn_workshop.html"
+          },
+          {
+            "name": "ICRAIC 2021",
+            "link": "https://www.icraic.org/committee/"
+          },
+          {
+            "name": "ESWC 2022",
+            "link": "https://2022.eswc-conferences.org/"
+          },
+          {
+            "name": "ESWC 2023",
+            "link": "https://2023.eswc-conferences.org/"
+          },
+          {
+            "name": "ProLingKNOWER 2023",
+            "link": "https://prolingknower.disco.unimib.it/home#h.340i0c3cr1n3"
+          }
+        ],
+        "more": true
+      }
+    ],
+    "reviewer": [
+      {
+        "title": "SoftwareX, AIMS Bioengineering, Digital Health, TIST, Soft Computing, ..."
+      }
+    ]
+  },
+  "international_research_projects": [
+    {
+      "name": "Goblin",
+      "title": "CA23147 - Global Network on Large-Scale, Cross-domain and Multilingual Open KG",
+      "period": "2024 - 2028",
+      "link": "https://www.cost.eu/actions/CA23147/",
+      "description": "This COST Action project aims to provide a large-scale, high quality, cross-domain and multilingual knowledge graph technology that is free to use, reuse, and redistribute.",
+      "role": "Science Communication Coordinator.\nTask Leader 2.4.\nMember of WG 1, WG 2, WG 3, WG 4.",
+      "isFirst": true
+    },
+    {
+      "name": "NexusLinguarum",
+      "title": "CA18209 - European network for Web-centred linguistic data science",
+      "period": "2019 - 2024",
+      "link": "https://www.cost.eu/actions/ca18209/",
+      "description": "This COST Action project aims to promote synergies across Europe between linguists, computer scientists, terminologists, and other stakeholders in industry and society, in order to investigate and extend the area of linguistic data science.",
+      "role": "Member of WG 2, WG 3.",
+      "isFirst": false
+    }
+  ],
+  "italian_research_projects": [
+    {
+      "institution": "University of Milan-Bicocca, INTERDEPARTMENTAL CENTRE",
+      "name": "Best4Food",
+      "period": "2024 - 2025",
+      "link": "https://bestforfood.unimib.it/",
+      "description": "Best4food is a multidisciplinary centre dedicated to food research and innovation actions. It aims to identify the most suitable strategy to develop sustainable food systems able to support our future and the one of the next generations.",
+      "role": "Member.",
+      "logo": "best4food.png",
+      "isFirst": true
+    },
+    {
+      "institution": "University of Milan-Bicocca, INTERDEPARTMENTAL CENTRE",
+      "name": "BReCHS - Bicocca Research Centre in Health Services",
+      "period": "2024 - 2025",
+      "link": "https://brechs.unimib.it/",
+      "logo": "brechs.png",
+      "role": "Member.",
+      "isFirst": false
+    }
+  ],
+  "tender_commissions": {
+    "organization": "University of Milan-Bicocca",
+    "items": [
+      {
+        "title": "Research grants announcement - Code 24A224",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a224",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24A221",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a221",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24A060",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a060",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24A059",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24a059",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24B122",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24b122",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24B137",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24b137",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 24B064",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24b064",
+        "year": "2024",
+        "note": "Scientific Project Head: Cremaschi Marco"
+      },
+      {
+        "title": "Call for collaboration - Code 24CE249",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-24ce249",
+        "year": "2024"
+      },
+      {
+        "title": "Research grants announcement - Code 22B194",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-22b194",
+        "year": "2022"
+      },
+      {
+        "title": "Research grants announcement - Code 22B178",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-22b178",
+        "year": "2022"
+      },
+      {
+        "title": "Research grants announcement - Code 22B176",
+        "link": "https://www.unimib.it/ateneo/gare-e-concorsi/cod-22b176",
+        "year": "2022"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "MS4A",
+      "title": "Mobile Services for Agrofood",
+      "period": "Dec 2010 - Jun 2012",
+      "funding_agency": "Lombardia Region",
+      "description": "The research project, sponsored by Lombardy region, aimed at the development of high value mobile services to deliver information about food via smart labels.",
+      "activities": "As part of this project, I analysed service value and I cooperated to the identification and definition of requirements and functionality to be implemented in the associated application. I also performed a usability study, proposing a possible interface and defining interaction modalities.",
+      "logo": "ms4a.png"
+    },
+    {
+      "name": "SMART",
+      "title": "Services & Meta-services for smART eGovernment",
+      "period": "Feb 2011 - Feb 2014",
+      "funding_agency": "MIUR - Ministry of Education, University and Research",
+      "description": "The project aimed at developing methodologies and tools for the design and implementation of value-added services.",
+      "activities": "I was involved in the definition of a series of steps for the SMART methodology, aimed at planning, designing and producing services which were consistent with the value for the user. Moreover, during a second phase, I implemented some information tools to help Italian citizens (through user profiling) to identify useful services based upon their needs.",
+      "logo": "smart.png"
+    },
+    {
+      "name": "Comsode",
+      "title": "Components Supporting The Open Data Exploitation Project",
+      "period": "Oct 2013 - Sep 2015",
+      "funding_agency": "EU",
+      "description": "The purpose of the project was to progress the capabilities in the Open Data reuse field, by fostering better integration and quality improvement.",
+      "activities": "I managed the development of components to extract, transform and load Open Data for the Open Data Node platform.",
+      "logo": "comsode.png"
+    },
+    {
+      "name": "SPAC3",
+      "title": "Servizi smart della nuova Pubblica amministrazione per la Citizen-Centricity in cloud",
+      "period": "Apr 2014 - May 2015",
+      "funding_agency": "Lombardia Region",
+      "description": "The purpose of the project was to streamline service processes in the Public Administration.",
+      "activities": "I managed the definition of scenarios to be implemented in the platform, which provides SPAC3 services.",
+      "logo": "spac.png"
+    },
+    {
+      "name": "Foodnet",
+      "title": "Food Social Sensor Network",
+      "period": "Jan 2017 - Mar 2021",
+      "funding_agency": "Lombardia Region",
+      "description": "Food NET is a Smart Cities and Communities project aimed at identifying and addressing the nutritional needs of specific consumer groups, fostering innovation in the agri-food industry through advanced infrastructures for functional foods.",
+      "activities": "Project management.",
+      "logo": "foodnet.png"
+    },
+    {
+      "name": "ew-shopp",
+      "title": "Supporting Event and Weather-based Data Analytics and Marketing along the Shopper Journey",
+      "period": "Jan 2017 - Dec 2019",
+      "funding_agency": "EU",
+      "description": "The aim of the project is to build a platform with innovative services based on advanced data analysis techniques capable to leverage the large variety and volume of data from multiple sources.",
+      "activities": "Within the project I participated in the definition of algorithms for the semantic annotation of tabular data.",
+      "logo": "eww.png"
+    },
+    {
+      "name": "ARCA",
+      "period": "Oct 2017 - Nov 2021",
+      "funding_agency": "Lazio Region",
+      "description": "ARCA is a software system that enables semantic search and exploration over a book catalog.",
+      "activities": "I contributed to this project by developing algorithms for data extraction and semantic combination, leveraging AI-based matchmaking techniques.",
+      "logo": "arca.png"
+    },
+    {
+      "name": "GoForIt",
+      "period": "2018 - 2020",
+      "funding_agency": "MIUR - Ministry of Education, University and Research",
+      "description": "The project consists of R&D activities aimed at identifying the special needs expressed by people with various types of disabilities, the elderly, etc., based on the ICF (International Classification of Functioning, Disability & Health) framework.",
+      "activities": "In this project I contributed to the realisation of an accessible hotel booking platform and a prototype of a homeassistant interface for hospitality.",
+      "logo": "goforit.png"
+    },
+    {
+      "name": "Melinda",
+      "title": "Mobility Ecosystem for Low-carbon and INnovative moDal shifts in the Alps",
+      "period": "Apr 2018 - Aug 2021",
+      "funding_agency": "EU",
+      "description": "The MELINDA project promoted multimodality and modal shift in mobility behaviours for more sustainable mobility in the Alps. By providing an integrated set of mobility and behaviour data, it supports policy making and service planning.",
+      "activities": "I provided support for the development of a web questionnaire for collecting information from users.",
+      "logo": "melinda.png"
+    },
+    {
+      "name": "MAPS-EH",
+      "title": "Monitoraggio e Attuazione Policy di Sicurezza nell'E-Health",
+      "period": "Sep 2021 - Jul 2023",
+      "link": "https://maps-eh.atoninformatica.it/",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "MAPS-EH provides comprehensive support for the automated compliance verification between recorded access events on IT resources and the security policies established by an organisation, enabling the automatic detection of potential anomalies.",
+      "activities": "In this project I provided support in the analysis of solutions in the SOTA and the definition of the compliance verification algorithm.",
+      "logo": "maps-eh.png"
+    },
+    {
+      "name": "Ampel",
+      "title": "Artificial Intelligence facing Multidimensional Poverty in Elderly",
+      "period": "Nov 2021 - Oct 2023",
+      "link": "https://ampel.unimib.it/",
+      "funding_agency": "Fondazione Cariplo",
+      "funding_type": "Funder",
+      "description": "The project Artificial intelligence facing Multidimensional Poverty in Elderly (AMPEL) focuses on the use of cutting edge technologies in Artificial Intelligence (AI), Machine Learning (ML), data analysis and data visualisation to identify the risk of poverty in elderly people, relying on multidimensional indicators, learned from heterogeneous sources of information.",
+      "activities": "I provided support in defining the concept of multidimensional poverty and in defining the ML algorithms.",
+      "logo": "ampel.png"
+    },
+    {
+      "name": "Bintrawine",
+      "title": "Blockchain, Tracking and Tracing solutions for Wine",
+      "period": "Mar 2022 - Sep 2023",
+      "link": "https://bintrawine.atoninformatica.it/",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "BinTraWine, based on Blockchain technology, aims to ensure transparency, traceability, verifiability, and data certification for all producers, winemakers, distributors, consumers, and certification bodies involved in the process.",
+      "activities": "In the project I was responsible for defining the architecture for managing smart contracts.",
+      "logo": "bintrawine.png"
+    },
+    {
+      "name": "enRichMyData",
+      "title": "Enabling Data Enrichment Pipelines for AI-driven Business Products and Services",
+      "period": "Oct 2022 - Sep 2023",
+      "link": "https://enrichmydata.eu/",
+      "funding_agency": "EU",
+      "description": "The project aims to provide a novel paradigm for building rich, high-quality, and valuable datasets to feed Big Data Analytics and AI applications.",
+      "activities": "Within the project I participated in the definition of algorithms for the semantic annotation of tabular data.",
+      "logo": "enrich.png"
+    },
+    {
+      "name": "DIPPS",
+      "title": "Digital Intervention in Psychiatric and Psychologist Services",
+      "period": "Mar 2023 - Dec 2026",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "The project aims to enhance mental health care through innovative digital solutions, improving accessibility, efficiency, and patient outcomes.",
+      "activities": "Project management.",
+      "logo": "dipps.png"
+    },
+    {
+      "name": "Biomatrix",
+      "title": "Biodiverse Information Organization, Management, Analysis, Transformation and Reporting with Innovative eXperience",
+      "period": "Sep 2024 - Nov 2025",
+      "funding_agency": "MUR - Ministry of University and Research",
+      "description": "BIOMATRIX focuses on data acquisition, transformation, and the implementation of a dashboard for data delivery through the creation of a pipeline consisting of three main phases: acquisition, processing, and analysis.",
+      "activities": "As part of this project I contributed to the analysis of the available datasets and to the data integration and visualisation dashboard which was realised.",
+      "logo": "biomatrix.png"
+    },
+    {
+      "name": "CrowdIT",
+      "title": "Crowd Response Optimisation With Digital-twin InTervention",
+      "period": "Dec 2024 - Dec 2025",
+      "funding_agency": "MUR - Ministry of University and Research",
+      "description": "CrowdIT is a Digital Twin system for the management of urban crowds, with special emphasis on anomaly detection and early warning generation.",
+      "activities": "In this project I contributed to the algorithms for the route optimisation in crowd management.",
+      "logo": "crowdit.png"
+    },
+    {
+      "name": "APM",
+      "title": "Automotive Predictive Maintenance",
+      "period": "Jun 2025 - Jun 2028",
+      "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
+      "description": "The APM project aims to develop an innovative AI and Machine Learning-based platform for predictive maintenance of corporate fleets and public transport. The goal is to reduce costs, improve efficiency, and enhance vehicle safety by anticipating failures and optimising maintenance operations.",
+      "activities": "As part of this project I will contribute to the corporate fleet predictive maintenance algorithms.",
+      "logo": "apm.png"
+    }
+  ]
+}

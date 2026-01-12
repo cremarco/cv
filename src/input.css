@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shadow-elevation: 0 12px 32px rgba(15, 23, 42, 0.12);
+  }
+}
+
+@layer components {
+  /* Base body styles */
+  body {
+    min-height: 100vh;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  /* PDF mode overrides */
+  body.pdf-mode {
+    padding: 0;
+    gap: 0;
+    background: white;
+    align-items: stretch;
+    overflow: visible;
+  }
+
+  body.pdf-mode #pages-container {
+    gap: 0;
+  }
+
+  body.pdf-mode .a4-page {
+    margin: 0;
+    box-shadow: none;
+  }
+
+  body.pdf-mode [data-pdf-hide] {
+    display: none !important;
+  }
+
+  /* Elements visible only in PDF mode */
+  [data-pdf-only] {
+    display: none !important;
+  }
+
+  body.pdf-mode [data-pdf-only] {
+    display: block !important;
+  }
+
+  body.pdf-mode [data-pdf-no-shadow] {
+    box-shadow: none !important;
+  }
+
+  body.pdf-compact [data-pdf-compact-hide] {
+    display: none !important;
+  }
+
+  body.pdf-mode :is(.shadow, .shadow-sm, .shadow-lg) {
+    box-shadow: none !important;
+  }
+
+  /* Card borders in PDF mode (left, right, bottom) - only for main cards with shadow class */
+  /* Inner cards (like in community-service, tender-commissions) don't have shadow, so they're excluded */
+  body.pdf-mode [data-card].shadow,
+  body.pdf-mode [data-card].shadow-sm,
+  body.pdf-mode [data-card].shadow-lg {
+    border-left: 1px solid rgb(226 232 240); /* slate-200 */
+    border-right: 1px solid rgb(226 232 240); /* slate-200 */
+    border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+    border-top: none;
+  }
+
+  /* Wrapper cards using CARD_SURFACE_CLASSES (community-service, tender-commissions, etc.) */
+  /* These have shadow class, so they get the border */
+  body.pdf-mode .bg-white.shadow {
+    border-left: 1px solid rgb(226 232 240); /* slate-200 */
+    border-right: 1px solid rgb(226 232 240); /* slate-200 */
+    border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+    border-top: none;
+  }
+
+  body.pdf-mode *,
+  body.pdf-mode *::before,
+  body.pdf-mode *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Section padding for page number clearance (4mm in px) */
+  body.pdf-mode [data-section] {
+    padding-bottom: 15.12px !important;
+  }
+
+  /* A4 page dimensions and styling */
+  .a4-page {
+    width: 210mm;
+    height: 297mm;
+    min-width: 210mm;
+    min-height: 297mm;
+    max-width: 210mm;
+    max-height: 297mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: var(--shadow-elevation);
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  /* Page number styling */
+  .page-number {
+    display: block;
+    position: absolute;
+    bottom: 8mm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: rgb(100 116 139); /* Tailwind slate-500 */
+    font-weight: 400;
+    z-index: 100;
+  }
+
+  /* Page break handling */
+  .page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  /* Print media styles */
+  @media print {
+    .a4-page {
+      margin: 0;
+      box-shadow: none;
+      width: 210mm;
+      height: 297mm;
+    min-width: 210mm;
+    min-height: 297mm;
+    max-width: 210mm;
+    max-height: 297mm;
+    page-break-after: always;
+      break-after: page;
+    }
+    
+    .a4-page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+
+    [data-pdf-no-shadow],
+    .shadow,
+    .shadow-sm,
+    .shadow-lg {
+      box-shadow: none !important;
+    }
+
+    /* Card borders in print mode (left, right, bottom) - only for main cards with shadow class */
+    /* Inner cards (like in community-service, tender-commissions) don't have shadow, so they're excluded */
+    [data-card].shadow,
+    [data-card].shadow-sm,
+    [data-card].shadow-lg {
+      border-left: 1px solid rgb(226 232 240); /* slate-200 */
+      border-right: 1px solid rgb(226 232 240); /* slate-200 */
+      border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+      border-top: none;
+    }
+
+    /* Wrapper cards using CARD_SURFACE_CLASSES (community-service, tender-commissions, etc.) */
+    /* These have shadow class, so they get the border */
+    .bg-white.shadow {
+      border-left: 1px solid rgb(226 232 240); /* slate-200 */
+      border-right: 1px solid rgb(226 232 240); /* slate-200 */
+      border-bottom: 1px solid rgb(226 232 240); /* slate-200 */
+      border-top: none;
+    }
+  }
+}
