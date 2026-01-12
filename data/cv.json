@@ -446,7 +446,7 @@
         "university": "UNIMIB"
       },
       {
-        "count": 59,
+        "count": 62,
         "program": "Communication Theory and Technology",
         "university": "UNIMIB"
       },
@@ -456,7 +456,7 @@
         "university": "UNIMIB"
       },
       {
-        "count": 1,
+        "count": 2,
         "program": "Linguistic Computing",
         "university": "UNICATT"
       }
@@ -494,13 +494,13 @@
   ],
   "research_metrics": {
     "google_scholar": {
-      "citations": 473,
+      "citations": 481,
       "h_index": 13,
       "i10_index": 17,
       "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ"
     },
     "scopus": {
-      "citations": 206,
+      "citations": 207,
       "h_index": 9,
       "url": "https://www.scopus.com/authid/detail.uri?authorId=56167172000"
     },
