@@ -1595,6 +1595,10 @@
   "community_service": {
     "chair": [
       {
+        "title": "ACM International Conference on AI in Finance (ICAIF 2026)",
+        "year": "2026"
+      },
+      {
         "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
         "description": "SemTab@International Semantic Web Conference 2025 - ICORE rank: A - attended",
         "year": "2025",
