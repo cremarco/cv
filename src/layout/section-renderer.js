@@ -5,7 +5,6 @@
 import {
   SELECTORS,
   SECTION_HEADER_HEIGHT_PX,
-  MAX_EXPERIENCE_SECTION_HEIGHT_PX,
   FALLBACK_CARD_HEIGHT_PX,
   PAGE_BREAK_SAFETY_MARGIN_PX,
   PAGE_HEIGHT_PX,
@@ -32,6 +31,100 @@ function getMeasurementReference(templatePage, currentPage, config) {
     || currentPage?.querySelector('section')
     || templatePage.querySelector('section')
     || null;
+}
+
+/**
+ * Shared card loop used by all paginated sections.
+ * It keeps measurement and page-break logic centralized to avoid drift.
+ */
+function renderCardsWithPageBreaks({
+  items,
+  createCardForItem,
+  measureContainer,
+  pagesContainer,
+  templatePage,
+  config,
+  initialState,
+  gapPx,
+  decorateCard,
+  markLastCard,
+  recreateCardOnPageBreak = false,
+  finalizeLastPage = true,
+}) {
+  let currentContainer = initialState.currentContainer;
+  let currentPageNumber = initialState.currentPageNumber;
+  let currentPageMaxHeight = initialState.currentPageMaxHeight;
+  let currentPageHeight = initialState.currentPageHeight ?? 0;
+  let isFirstInPage = initialState.isFirstInPage ?? true;
+
+  items.forEach((item, index) => {
+    const isFirstInSection = index === 0;
+    const isLast = index === items.length - 1;
+    const context = {
+      item,
+      index,
+      isFirstInPage,
+      isFirstInSection,
+      isLast,
+    };
+
+    let card = createCardForItem(context);
+    const cardHeight = measureCardHeight(card, measureContainer);
+    const previousPageGap = isFirstInPage ? 0 : gapPx;
+    const totalHeightNeeded = currentPageHeight + previousPageGap + cardHeight;
+    const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
+
+    let gapHeight = previousPageGap;
+    if (willCreateNewPage) {
+      finalizePage(currentContainer, false);
+
+      currentPageNumber += 1;
+      const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
+      const nextContainer = nextPage.querySelector(config.containerSelector);
+      if (!nextContainer) {
+        throw new Error(`Missing ${config.title} container in new page`);
+      }
+
+      const { width } = nextContainer.getBoundingClientRect();
+      if (width) {
+        measureContainer.style.width = `${width}px`;
+      }
+
+      currentContainer = nextContainer;
+      currentPageHeight = 0;
+      currentPageMaxHeight = calculateAvailableHeightInPage(nextPage, null);
+      isFirstInPage = true;
+      gapHeight = 0;
+
+      if (recreateCardOnPageBreak) {
+        card = createCardForItem({
+          ...context,
+          isFirstInPage: true,
+        });
+      }
+    }
+
+    const finalContext = {
+      ...context,
+      isFirstInPage,
+    };
+
+    if (decorateCard) {
+      decorateCard(card, finalContext);
+    }
+
+    if (finalContext.isLast && markLastCard) {
+      markLastCard(card, finalContext);
+    }
+
+    currentContainer.appendChild(card);
+    currentPageHeight += gapHeight + cardHeight;
+    isFirstInPage = false;
+  });
+
+  if (finalizeLastPage && currentContainer?.children.length > 0) {
+    finalizePage(currentContainer, true);
+  }
 }
 
 /**
@@ -69,52 +162,34 @@ export function renderSection(items, config, previousSectionSelector = null) {
     let currentPageMaxHeight = firstPageAvailableHeight;
     
     try {
-      items.forEach((item, index) => {
-        // isCurrent is now determined automatically by the active-highlighter script
-        // We pass false here as the script will handle highlighting
-        const isCurrent = false;
-        const isFirstInSection = index === 0;
-        const isLast = index === items.length - 1;
-        const card = createCard(config.cardType, item, { isCurrent });
-        const cardHeight = measureCardHeight(card, measureContainer);
-
-        // Calculate total height needed (card + gap if not first in page)
-        const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
-        const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
-        
-        // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
-        const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
-
-        if (willCreateNewPage) {
-          finalizePage(currentContainer, false);
-          currentPageNumber += 1;
-          const newPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
-          const newContainer = newPage.querySelector(config.containerSelector);
-          if (!newContainer) throw new Error(`Missing ${config.title} container in new page`);
-          
-          // Recalculate available height for the new page
-          const newPageAvailableHeight = calculateAvailableHeightInPage(newPage, null);
-          
-          currentPage = newPage;
-          currentContainer = newContainer;
-          currentPageHeight = 0;
-          currentPageMaxHeight = newPageAvailableHeight;
-          isFirstInPage = true;
-        }
-
-        card.className = getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent });
-        
-        // Mark last card in section
-        if (isLast) {
+      renderCardsWithPageBreaks({
+        items,
+        pagesContainer,
+        templatePage,
+        config,
+        measureContainer,
+        gapPx: CARD_GAP_PX,
+        initialState: {
+          currentPage,
+          currentContainer,
+          currentPageNumber,
+          currentPageMaxHeight,
+          currentPageHeight,
+          isFirstInPage,
+        },
+        createCardForItem: ({ item }) => createCard(config.cardType, item, { isCurrent: false }),
+        decorateCard: (card, { isFirstInPage: finalFirstInPage, isFirstInSection, isLast }) => {
+          card.className = getCardClasses({
+            isFirstInPage: finalFirstInPage,
+            isFirstInSection,
+            isLast,
+            isCurrent: false,
+          });
+        },
+        markLastCard: (card) => {
           card.setAttribute('data-is-last-in-section', 'true');
-        }
-        
-        currentContainer.appendChild(card);
-        currentPageHeight += gapHeight + cardHeight;
-        isFirstInPage = false;
+        },
       });
-
-      finalizePage(currentContainer, true);
     } finally {
       measureContainer.remove();
     }
@@ -172,54 +247,34 @@ export function renderSection(items, config, previousSectionSelector = null) {
   let currentPageHeight = 0;
   
   try {
-    items.forEach((item, index) => {
-      // isCurrent is now determined automatically by the active-highlighter script
-      // We pass false here as the script will handle highlighting
-      const isCurrent = false;
-      const isFirstInSection = index === 0;
-      const isLast = index === items.length - 1;
-      const card = createCard(config.cardType, item, { isCurrent });
-      const cardHeight = measureCardHeight(card, finalMeasureContainer);
-
-      // Calculate total height needed (card + gap if not first in page)
-      const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
-      const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
-      
-      // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
-      const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
-
-      if (willCreateNewPage) {
-        finalizePage(currentContainer, false);
-        currentPageNumber += 1;
-        const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
-        currentPage = nextPage;
-        const nextContainer = nextPage.querySelector(config.containerSelector);
-        if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
-        
-        // Recalculate available height for the new page
-        const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
-        
-        currentContainer = nextContainer;
-        currentPageHeight = 0;
-        currentPageMaxHeight = newPageAvailableHeight;
-        isFirstInPage = true;
-      }
-
-      card.className = getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent });
-      
-      // Mark last card in section
-      if (isLast) {
+    renderCardsWithPageBreaks({
+      items,
+      pagesContainer,
+      templatePage,
+      config,
+      measureContainer: finalMeasureContainer,
+      gapPx: CARD_GAP_PX,
+      initialState: {
+        currentPage,
+        currentContainer,
+        currentPageNumber,
+        currentPageMaxHeight,
+        currentPageHeight,
+        isFirstInPage,
+      },
+      createCardForItem: ({ item }) => createCard(config.cardType, item, { isCurrent: false }),
+      decorateCard: (card, { isFirstInPage: finalFirstInPage, isFirstInSection, isLast }) => {
+        card.className = getCardClasses({
+          isFirstInPage: finalFirstInPage,
+          isFirstInSection,
+          isLast,
+          isCurrent: false,
+        });
+      },
+      markLastCard: (card) => {
         card.setAttribute('data-is-last-in-section', 'true');
-      }
-      
-      currentContainer.appendChild(card);
-      currentPageHeight += gapHeight + cardHeight;
-      isFirstInPage = false;
+      },
     });
-
-    if (currentContainer?.children.length > 0) {
-      finalizePage(currentContainer, true);
-    }
   } finally {
     finalMeasureContainer.remove();
   }
@@ -358,61 +413,31 @@ export function renderSpecialSectionWithPageBreaks(config, items, createCardFn, 
   let isFirstInPage = true;
   
   try {
-    items.forEach((item, index) => {
-      const isFirstInSection = index === 0;
-      const isLast = index === items.length - 1;
-      
-      // Create card wrapper for this item (createProjectsCard returns a wrapper with the card)
-      // Pass isFirstInPage, isFirstInSection and isLast for proper styling
-      const cardWrapper = createCardFn([item], { isFirstInPage, isFirstInSection, isLast });
-      const cardHeight = measureCardHeight(cardWrapper, finalMeasureContainer);
-      
-      // Calculate total height needed (card + gap if not first in page)
-      const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
-      const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
-      
-      // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
-      const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
-      
-      if (willCreateNewPage) {
-        finalizePage(currentContainer, false);
-        currentPageNumber += 1;
-        const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
-        currentPage = nextPage;
-        const nextContainer = nextPage.querySelector(config.containerSelector);
-        if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
-        
-        // Recalculate available height for the new page
-        const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
-        
-        // Update measurement container width for new page
-        const { width } = nextContainer.getBoundingClientRect();
-        if (width) finalMeasureContainer.style.width = `${width}px`;
-        
-        currentContainer = nextContainer;
-        currentPageHeight = 0;
-        currentPageMaxHeight = newPageAvailableHeight;
-        isFirstInPage = true;
-      }
-      
-      // Mark last card in section (rounded-b-md is handled by getCardClasses in card functions)
-      if (isLast) {
-        // Find the actual card element inside the wrapper (projects cards are wrapped)
-        // The card is the first direct child of the wrapper
+    renderCardsWithPageBreaks({
+      items,
+      pagesContainer,
+      templatePage,
+      config,
+      measureContainer: finalMeasureContainer,
+      gapPx: CARD_GAP_PX,
+      recreateCardOnPageBreak: true,
+      initialState: {
+        currentPage,
+        currentContainer,
+        currentPageNumber,
+        currentPageMaxHeight,
+        currentPageHeight,
+        isFirstInPage,
+      },
+      createCardForItem: ({ item: currentItem, isFirstInPage: firstInPage, isFirstInSection, isLast }) =>
+        createCardFn([currentItem], { isFirstInPage: firstInPage, isFirstInSection, isLast }),
+      markLastCard: (cardWrapper) => {
         const actualCard = cardWrapper.firstElementChild;
         if (actualCard) {
           actualCard.setAttribute('data-is-last-in-section', 'true');
         }
-      }
-      
-      currentContainer.appendChild(cardWrapper);
-      currentPageHeight += gapHeight + cardHeight;
-      isFirstInPage = false;
+      },
     });
-    
-    if (currentContainer?.children.length > 0) {
-      finalizePage(currentContainer, true);
-    }
   } finally {
     finalMeasureContainer.remove();
   }
@@ -516,66 +541,33 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
   let isFirstInPage = true;
   
   try {
-    pubData.papers.forEach((paper, index) => {
-      const isFirstInSection = index === 0;
-      const isLast = index === pubData.papers.length - 1;
-      
-      const card = createPublicationCard(paper, {
+    renderCardsWithPageBreaks({
+      items: pubData.papers,
+      pagesContainer,
+      templatePage,
+      config,
+      measureContainer: finalMeasureContainer,
+      gapPx: CARD_GAP_PX,
+      recreateCardOnPageBreak: true,
+      initialState: {
+        currentPage,
+        currentContainer,
+        currentPageNumber,
+        currentPageMaxHeight,
+        currentPageHeight,
         isFirstInPage,
-        isFirstInSection,
-        isLast,
-        index
-      });
-      const cardHeight = measureCardHeight(card, finalMeasureContainer);
-      
-      // Calculate total height needed (card + gap if not first in page)
-      const gapHeight = isFirstInPage ? 0 : CARD_GAP_PX;
-      const totalHeightNeeded = currentPageHeight + gapHeight + cardHeight;
-      
-      // Apply safety margin when checking if card fits (to prevent overlap with page numbers)
-      const willCreateNewPage = totalHeightNeeded + PAGE_BREAK_SAFETY_MARGIN_PX > currentPageMaxHeight;
-      
-      if (willCreateNewPage) {
-        finalizePage(currentContainer, false);
-        currentPageNumber += 1;
-        const nextPage = createNewPage(currentPageNumber, templatePage, pagesContainer, config, false);
-        currentPage = nextPage;
-        const nextContainer = nextPage.querySelector(config.containerSelector);
-        if (!nextContainer) throw new Error(`Missing ${config.title} container in new page`);
-        
-        // Recalculate available height for the new page
-        const newPageAvailableHeight = calculateAvailableHeightInPage(nextPage, null);
-        
-        // Update measurement container width for new page
-        const { width } = nextContainer.getBoundingClientRect();
-        if (width) finalMeasureContainer.style.width = `${width}px`;
-        
-        currentContainer = nextContainer;
-        currentPageHeight = 0;
-        currentPageMaxHeight = newPageAvailableHeight;
-        isFirstInPage = true;
-        
-        // Update card classes for new page
-        card.className = getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent: false });
-        if (isLast) {
-          card.setAttribute('data-is-last-in-section', 'true');
-        }
-      } else {
-        // Mark last card in section
-        if (isLast) {
-          card.setAttribute('data-is-last-in-section', 'true');
-        }
-      }
-      
-      currentContainer.appendChild(card);
-      // Add gap height to current page height (will be 0 for first card)
-      currentPageHeight += gapHeight + cardHeight;
-      isFirstInPage = false;
+      },
+      createCardForItem: ({ item: paper, index, isFirstInPage: firstInPage, isFirstInSection, isLast }) =>
+        createPublicationCard(paper, {
+          isFirstInPage: firstInPage,
+          isFirstInSection,
+          isLast,
+          index,
+        }),
+      markLastCard: (card) => {
+        card.setAttribute('data-is-last-in-section', 'true');
+      },
     });
-    
-    if (currentContainer?.children.length > 0) {
-      finalizePage(currentContainer, true);
-    }
   } finally {
     finalMeasureContainer.remove();
   }

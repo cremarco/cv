@@ -1,63 +1,42 @@
-# CV PDF Generation (Print-Grade)
+# CV Web + PDF (Print-grade)
 
-Questo progetto genera un PDF multipagina A4 “print‑grade” partendo da una singola pagina SPA che contiene tutte le sezioni.
-La generazione avviene server‑side via Playwright (Chromium headless), con testo selezionabile e layout fedele.
+Questo progetto genera e pubblica un CV accademico in formato web e PDF multipagina A4.
+Il rendering PDF avviene server-side con Playwright (Chromium headless), mantenendo testo selezionabile e impaginazione coerente.
 
-## Modalita PDF/Print
+## Stack e struttura
 
-La SPA espone una modalita PDF tramite query param o route:
+- Frontend: HTML + JavaScript modulare (`src/`)
+- Stili: Tailwind CSS (`src/input.css` -> `dist/output.css`)
+- Dati: `data/cv.json`
+- Generazione PDF: `scripts/pdf-renderer.js`, `scripts/pdf-generate.js`, `scripts/pdf-server.js`
 
-- `/?pdf=1` (o `?pdf=true`)
+## Modalità PDF/Print
+
+La SPA espone la modalità PDF tramite:
+
+- `/?pdf=1` oppure `?pdf=true`
 - `/print`
 
-In modalita PDF:
+In modalità PDF:
 
-- elementi marcati con `data-pdf-hide` vengono nascosti
-- animazioni/transitions sono disabilitate per stabilita layout
-- tutte le pagine (sezioni) sono visibili con dimensione A4
+- elementi con `data-pdf-hide` vengono nascosti
+- animazioni/transizioni vengono disabilitate
+- le pagine `.pdf-page` sono renderizzate in formato A4
 
-Opzioni di rendering via query param (o hash, vedi esempi):
+### Opzioni rendering
 
-- `no-personal-data`: nasconde email, website, phone e address dalla sidebar e la sezione dichiarazione/firma
-- `no-link`: nasconde i link che puntano a file interni al progetto (es. `files/...`)
-- `pdf-compact`: riduce il peso del PDF comprimendo le immagini locali (utile per invii via email)
+Flag supportati via query string o hash:
 
-Esempi URL:
+- `no-personal-data`: nasconde dati personali e dichiarazione/firma
+- `no-link`: rimuove link a file interni (es. `files/...`)
+- `pdf-compact` (o `compact`): riduce il peso del PDF comprimendo immagini locali
 
-- query: `http://localhost:4173/?no-personal-data&no-link`
-- hash (utile con preview che aggiunge token): `http://127.0.0.1:3000/#no-personal-data&no-link`
-- compatto: `http://localhost:4173/?pdf=1&pdf-compact=1`
+Esempi:
 
-I flag globali usati dal renderer:
+- `http://localhost:4173/?pdf=1&no-personal-data&no-link`
+- `http://localhost:4173/#pdf-compact=1`
 
-- `window.__PDF_READY__`: true quando la pagina ha finito di renderizzare
-- `window.__PDF_PAGE_COUNT__`: numero di pagine `.pdf-page`
-- `window.__PDF_ERROR__`: eventuale errore di render
-
-## Rendering server-side con Playwright
-
-Lo script Playwright stampa solo un URL interno noto (no SSRF):
-
-- `BASE_URL + "?pdf=1"`
-
-Il renderer:
-
-- `waitUntil: "networkidle"`
-- attende `.pdf-page`
-- attende `__PDF_READY__` e il count delle pagine
-- attende il caricamento dei font
-- fa uno scroll per triggerare lazy-load
-- genera PDF con `preferCSSPageSize: true`
-
-### Dipendenze
-
-Assicurati di avere Chromium installato per Playwright:
-
-```bash
-npx playwright install chromium
-```
-
-## Comandi
+## Comandi principali
 
 ### Build CSS
 
@@ -65,27 +44,23 @@ npx playwright install chromium
 npm run build
 ```
 
-### Generare un PDF (CLI)
-
-1) avvia un server statico del sito:
+### Watch CSS
 
 ```bash
-python3 -m http.server 4173
+npm run watch
 ```
 
-2) genera il PDF:
+### Generazione PDF da CLI
 
 ```bash
-BASE_URL=http://localhost:4173 npm run pdf:generate
+npm run pdf:generate
 ```
 
-Output di default: `dist/marco-cremaschi-cv.pdf`.
+`pdf:generate` avvia automaticamente un server statico locale interno (non serve avviare `python -m http.server`).
 
-Con opzioni:
+Output di default:
 
-```bash
-PDF_QUERY="no-personal-data&no-link" npm run pdf:generate
-```
+- `dist/marco-cremaschi-cv.pdf`
 
 PDF compatto:
 
@@ -93,36 +68,93 @@ PDF compatto:
 npm run pdf:generate:compact
 ```
 
-Richiede Ghostscript per la compressione finale (`gs`).
-
-### Avviare un endpoint PDF
+### Server HTTP per PDF on-demand
 
 ```bash
-BASE_URL=http://localhost:4173 npm run pdf:server
+npm run pdf:server
 ```
 
-Endpoint: `http://localhost:8787/api/pdf`
+Endpoint:
 
-## Variabili ambiente
+- `http://localhost:8787/api/pdf`
 
-- `BASE_URL`: base URL del sito (default `http://localhost:4173`)
-- `OUTPUT_PDF`: path di output del PDF (default `dist/marco-cremaschi-cv.pdf`)
-- `PDF_NAV_TIMEOUT_MS`: timeout navigazione (default 30000)
-- `PDF_TIMEOUT_MS`: timeout generazione PDF (default 30000)
-- `PDF_DEVICE_SCALE_FACTOR`: scala device per migliorare resa di ombre/gradienti (default 2)
-- `PDF_PORT`: porta del server PDF (default 8787)
-- `PDF_QUERY`: query string aggiuntiva da appendere all'URL di stampa (es. `no-link&no-personal-data`)
-- `PDF_PROFILE`: profilo di rendering (`compact` abilita `pdf-compact` e scala device piu bassa)
+Differenza operativa:
+
+- `pdf:generate`: produce un file PDF locale e termina
+- `pdf:server`: espone un endpoint API che genera PDF per ogni richiesta
+
+## Quality gates
+
+```bash
+npm run lint
+npm run validate:data
+npm run test
+npm run verify:external
+npm run smoke:pdf
+npm run check
+```
+
+`npm run check` esegue la pipeline completa di qualità/manutenibilità.
+
+## Verifica correttezza informazioni
+
+### Validazione locale dataset
+
+```bash
+npm run validate:data
+```
+
+Controlla:
+
+- validità JSON/schema (`schemas/cv.schema.json`)
+- esistenza file locali referenziati (`files/...`, `img/...`)
+- coerenza formati data usati dal renderer
+- sezioni dati non renderizzate (warning)
+- duplicati testuali sospetti (warning)
+
+Report:
+
+- `dist/verification/data-validation-report.json`
+
+### Verifica fonti esterne
+
+```bash
+npm run verify:external
+```
+
+Controlla:
+
+- Google Scholar (Playwright) e confronto metriche
+- ORCID via API pubblica
+- DOI via Crossref API
+- link esterni con classificazione: `ok`, `blocked/bot-protected`, `broken`, `dns-error`, `tls-error`, `timeout`, `network-error`
+
+Report:
+
+- `dist/verification/external-sources-report.json`
+
+Nota: alcuni provider (es. Scopus, LinkedIn o siti protetti da Cloudflare) possono risultare `blocked/bot-protected` anche se il link è corretto in navigazione manuale.
+
+## Variabili ambiente (PDF)
+
+- `BASE_URL`: URL base sito (default `http://localhost:4173`)
+- `OUTPUT_PDF`: path output PDF (default `dist/marco-cremaschi-cv.pdf`)
+- `PDF_SERVER_PORT`: porta server statico interno usata da `pdf:generate` (default `4173`)
+- `PDF_NAV_TIMEOUT_MS`: timeout navigazione Playwright (default `30000`)
+- `PDF_TIMEOUT_MS`: timeout chiamata `page.pdf()` (default `30000`)
+- `PDF_DEVICE_SCALE_FACTOR`: scala dispositivo (default `2`, oppure `1` in profilo compact)
+- `PDF_PORT`: porta API per `pdf:server` (default `8787`)
+- `PDF_QUERY`: query addizionale per la stampa (es. `no-link&no-personal-data`)
+- `PDF_PROFILE`: profilo rendering (`compact` abilita anche `pdf-compact`)
 - `PDF_COMPACT`: flag booleano alternativo a `PDF_PROFILE=compact`
-- `PDF_COMPRESS`: attiva la compressione finale con Ghostscript
-- `PDF_MAX_KB`: target massimo in KB (usa Ghostscript con profili `ebook`/`screen`)
+- `PDF_COMPRESS`: abilita compressione finale via Ghostscript
+- `PDF_MAX_KB`: target massimo KB per compressione
 - `PDF_COMPRESS_PROFILE`: profilo Ghostscript (`screen`, `ebook`, `printer`, `prepress`, `default`)
-- `GHOSTSCRIPT_BIN`: path al binario Ghostscript (default `gs`)
+- `GHOSTSCRIPT_BIN`: percorso binario Ghostscript (default `gs`)
 
-## Note di manutenzione
+## CI/CD
 
-- Le pagine A4 sono identificabili tramite `.pdf-page`.
-- Le regole CSS per la modalita PDF sono in `src/input.css`.
-- La logica client (PDF mode + impaginazione) e in `src/app.js`.
-- I dati del CV sono in `data/cv.json`.
-- Il renderer Playwright e in `scripts/pdf-renderer.js`.
+- CI (`.github/workflows/ci.yml`): esegue `npm run check`
+- Deploy (`.github/workflows/deploy.yml`): pubblica solo artefatti runtime da cartella `site/`:
+  - `index.html`, `src`, `data`, `img`, `dist`, `files`, `robots.txt`
+

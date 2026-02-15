@@ -156,7 +156,7 @@
       "place": "Perugia, Italy",
       "position": "Consultant",
       "time_period": "2015 - 2016",
-      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
+      "topic": "Consultancy on semantic technologies for public administration services, with focus on service interoperability, data integration and digital process support."
     }
   ],
   "entrepreneurial_initiatives": [
@@ -494,9 +494,9 @@
   ],
   "research_metrics": {
     "google_scholar": {
-      "citations": 481,
+      "citations": 480,
       "h_index": 13,
-      "i10_index": 17,
+      "i10_index": 18,
       "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ"
     },
     "scopus": {
@@ -971,7 +971,7 @@
       {
         "authors": "Elia Guarnieri, <b>Marco Cremaschi</b>",
         "title": "The digitalisation of reinforcement learning and token economy in e-health",
-        "venue": "In Proceedings of the 5th International Conference on Higher Education Learning Methodologies and Technologies Online (HELMETO), Communications in Computer and Information Science, Volume 2076, Springer, 2023",
+        "venue": "In Proceedings of the 5th International Conference on Higher Education Learning Methodologies and Technologies Online (HELMETO), Communications in Computer and Information Science, Volume 2076, Springer, 2024",
         "editor": "Springer",
         "type": "conference",
         "speaker": true,
@@ -1167,7 +1167,7 @@
       {
         "authors": "Rachele De Giuseppe, Matteo Colleoni, <b>Marco Cremaschi</b>, Luca Daconto, Ilaria Di Napoli, Alberto Gallace, Lorenzo Guzzetti, Massimo Labra, Andrea Maurino, Chiara Tomasinelli, Alessandra Vincenti, Sara Zizzari, Hellas Cena",
         "title": "How to preserve healthy aging through nutritional strategies: the new approach of the Food Social Network (Food NET) project",
-        "venue": "Mediterranean Journal of Nutrition and Metabolism, Volume 15, SAGE Publications, 2021",
+        "venue": "Mediterranean Journal of Nutrition and Metabolism, Volume 15, SAGE Publications, 2022",
         "editor": "SAGE",
         "type": "journal",
         "doi": "10.3233/MNM-211500",

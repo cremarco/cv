@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/cv.schema.json",
+  "title": "Academic CV Dataset",
+  "type": "object",
+  "required": [
+    "academic_experiences",
+    "foreign_research_contracts",
+    "research_and_technology_transfer",
+    "entrepreneurial_initiatives",
+    "company_experiences",
+    "education",
+    "teaching_in_phd_courses",
+    "teaching",
+    "teaching_webinar",
+    "thesis_supervisor",
+    "awards",
+    "research_metrics",
+    "publications",
+    "community_service",
+    "community_service_editorial",
+    "international_research_projects",
+    "italian_research_projects",
+    "tender_commissions",
+    "projects"
+  ],
+  "properties": {
+    "academic_experiences": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/timelineItem" }
+    },
+    "foreign_research_contracts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/timelineItem" }
+    },
+    "research_and_technology_transfer": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/timelineItem" }
+    },
+    "entrepreneurial_initiatives": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/timelineItem" }
+    },
+    "company_experiences": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/timelineItem" }
+    },
+    "education": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/educationItem" }
+    },
+    "teaching_in_phd_courses": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/teachingItem" }
+    },
+    "teaching": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/teachingItem" }
+    },
+    "teaching_webinar": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/webinarItem" }
+    },
+    "thesis_supervisor": {
+      "type": "object",
+      "properties": {
+        "bachelor_thesis": { "type": "array" },
+        "master_thesis": { "type": "array" }
+      },
+      "additionalProperties": true
+    },
+    "awards": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/awardItem" }
+    },
+    "research_metrics": { "$ref": "#/$defs/researchMetrics" },
+    "publications": { "$ref": "#/$defs/publications" },
+    "community_service": {
+      "type": "object",
+      "properties": {
+        "chair": { "type": "array" },
+        "organiser": { "type": "array" },
+        "project_evaluator": { "type": "array" }
+      },
+      "additionalProperties": true
+    },
+    "community_service_editorial": {
+      "type": "object",
+      "properties": {
+        "associate_editor": { "type": "array" },
+        "member_of_committee": { "type": "array" },
+        "reviewer": { "type": "array" }
+      },
+      "additionalProperties": true
+    },
+    "international_research_projects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/projectItem" }
+    },
+    "italian_research_projects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/projectItem" }
+    },
+    "tender_commissions": {
+      "type": "object",
+      "properties": {
+        "organization": { "type": "string" },
+        "items": { "type": "array" }
+      },
+      "additionalProperties": true
+    },
+    "projects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/projectItem" }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "timelineItem": {
+      "type": "object",
+      "required": ["time_period"],
+      "properties": {
+        "time_period": { "type": "string", "minLength": 1 },
+        "logo": { "type": "string" },
+        "link": { "type": "string" },
+        "topic": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "educationItem": {
+      "type": "object",
+      "required": ["degree", "time_period"],
+      "properties": {
+        "degree": { "type": "string", "minLength": 1 },
+        "time_period": { "type": "string", "minLength": 1 },
+        "logo": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "teachingItem": {
+      "type": "object",
+      "required": ["programs"],
+      "properties": {
+        "logo": { "type": "string" },
+        "programs": { "type": "array", "minItems": 1 }
+      },
+      "additionalProperties": true
+    },
+    "webinarItem": {
+      "type": "object",
+      "required": ["title", "date"],
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "logo": { "type": "string" },
+        "link": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "awardItem": {
+      "type": "object",
+      "required": ["title", "event", "year", "image"],
+      "properties": {
+        "title": { "type": "string" },
+        "event": { "type": "string" },
+        "year": { "type": ["string", "number"] },
+        "image": { "type": "string" },
+        "link": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "researchMetrics": {
+      "type": "object",
+      "required": ["google_scholar", "scopus", "orcid"],
+      "properties": {
+        "google_scholar": {
+          "type": "object",
+          "required": ["citations", "h_index", "i10_index", "url"],
+          "properties": {
+            "citations": { "type": "number" },
+            "h_index": { "type": "number" },
+            "i10_index": { "type": "number" },
+            "url": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": true
+        },
+        "scopus": {
+          "type": "object",
+          "required": ["citations", "h_index", "url"],
+          "properties": {
+            "citations": { "type": "number" },
+            "h_index": { "type": "number" },
+            "url": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": true
+        },
+        "orcid": {
+          "type": "object",
+          "required": ["id", "url"],
+          "properties": {
+            "id": { "type": "string" },
+            "url": { "type": "string", "format": "uri" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "publications": {
+      "type": "object",
+      "required": ["update_date", "papers"],
+      "properties": {
+        "update_date": { "type": "string", "minLength": 1 },
+        "papers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/publicationItem" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "publicationItem": {
+      "type": "object",
+      "required": ["authors", "title", "venue", "type"],
+      "properties": {
+        "authors": { "type": "string" },
+        "title": { "type": "string" },
+        "venue": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": ["journal", "conference", "workshop", "challenge", "book_chapter"]
+        },
+        "doi": { "type": "string" },
+        "ceur": { "type": ["string", "number"] }
+      },
+      "additionalProperties": true
+    },
+    "projectItem": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "period": { "type": "string" },
+        "time_period": { "type": "string" },
+        "logo": { "type": "string" },
+        "link": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  }
+}

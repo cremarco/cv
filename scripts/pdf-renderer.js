@@ -163,19 +163,17 @@ async function renderPdfOnce() {
 }
 
 async function renderPdfWithRetry() {
-  let attempt = 0;
-
-  while (true) {
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt += 1) {
     try {
       return await renderPdfOnce();
     } catch (error) {
       if (attempt >= MAX_RETRIES || !isTransientError(error)) {
         throw error;
       }
-
-      attempt += 1;
     }
   }
+
+  throw new Error('PDF retry loop ended unexpectedly');
 }
 
 module.exports = {

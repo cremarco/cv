@@ -7,10 +7,19 @@
     "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "pdf:generate": "node scripts/pdf-generate.js",
     "pdf:server": "node scripts/pdf-server.js",
-    "pdf:generate:compact": "PDF_PROFILE=compact PDF_MAX_KB=950 PDF_COMPRESS=1 PDF_COMPRESS_PROFILE=ebook node scripts/pdf-generate.js"
+    "pdf:generate:compact": "PDF_PROFILE=compact PDF_MAX_KB=950 PDF_COMPRESS=1 PDF_COMPRESS_PROFILE=ebook node scripts/pdf-generate.js",
+    "lint": "eslint . --ext .js,.mjs,.cjs",
+    "validate:data": "node scripts/validate-cv-data.js",
+    "verify:external": "node scripts/verify-external-sources.js",
+    "test": "node --test tests/*.test.mjs",
+    "smoke:pdf": "node scripts/smoke-pdf.js",
+    "check": "npm run lint && npm run validate:data && npm run test && npm run verify:external && npm run smoke:pdf"
   },
   "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
     "autoprefixer": "^10.4.17",
+    "eslint": "^8.57.1",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"
   },

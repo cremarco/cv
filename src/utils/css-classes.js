@@ -9,7 +9,7 @@ import { CARD_BASE_CLASSES, CURRENT_CARD_BG, CURRENT_BADGE_BG, CURRENT_BADGE_TEX
  * All cards have uniform style: same shadows and styling
  * First card of section gets rounded-t-md, last card gets rounded-b-md
  */
-export function getCardClasses({ isFirstInPage, isFirstInSection, isLast, isCurrent }) {
+export function getCardClasses({ isFirstInPage: _isFirstInPage, isFirstInSection, isLast, isCurrent }) {
   // Background: accent for current, white for others
   const bgClass = isCurrent ? CURRENT_CARD_BG : 'bg-white';
   
@@ -41,5 +41,4 @@ export function getTimeBadgeClasses(isCurrent) {
     ? `${base} ${CURRENT_BADGE_BG} ${CURRENT_BADGE_TEXT}`
     : `${base} bg-gray-100 text-gray-700`;
 }
-
 

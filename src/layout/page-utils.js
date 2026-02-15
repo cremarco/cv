@@ -3,13 +3,11 @@
 // =============================================================================
 
 import {
-  SELECTORS,
   SECTION_CONFIG,
   PAGE_HEIGHT_PX,
   PAGE_NUMBER_RESERVED_HEIGHT_PX,
   SECTION_PADDING_BOTTOM_PX,
   MAX_EXPERIENCE_SECTION_HEIGHT_PX,
-  PAGE_BREAK_SAFETY_MARGIN_PX,
 } from '../config.js';
 
 /**
@@ -79,7 +77,9 @@ export function calculateFirstPageAvailableHeight(page, section) {
   const paddingBottom = parseFloat(sectionStyle.paddingBottom) || SECTION_PADDING_BOTTOM_PX;
 
   // Calculate available height ensuring we always reserve space for page numbers
-  // The safety margin will be applied when checking individual cards
+  // The safety margin is handled by card-level checks in section-renderer.
+  // The 0.95 factor intentionally keeps a small breathing room for browser layout jitter
+  // (fonts, fractional pixels) to prevent footer overlap in printed PDFs.
   const availableHeight = PAGE_HEIGHT_PX - sectionTop - paddingBottom - PAGE_NUMBER_RESERVED_HEIGHT_PX;
   return Math.max(availableHeight * 0.95, MAX_EXPERIENCE_SECTION_HEIGHT_PX * 0.6);
 }
@@ -223,5 +223,4 @@ export function createNewPage(pageNumber, templatePage, pagesContainer, sectionC
   pagesContainer.appendChild(newPage);
   return newPage;
 }
-
 

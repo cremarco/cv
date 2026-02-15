@@ -27,9 +27,16 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Prepare deploy artifact
+        run: |
+          rm -rf site
+          mkdir -p site
+          cp index.html robots.txt site/
+          cp -R src data img dist files site/
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          keep_files: true
+          publish_dir: ./site
+          keep_files: false
