@@ -216,7 +216,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
     const quartilesText = paper.quartiles.map(q => `<span class="font-bold">${q.rank}</span> ${q.field}`).join(', ');
     attrsHTML += `
       <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-        <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">QUARTILES:</span> ${quartilesText}</span>
+        <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">QUARTILES</span> <small>Scimago</small>: ${quartilesText}</span>
       </div>
     `;
   }

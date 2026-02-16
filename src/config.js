@@ -100,6 +100,7 @@ export const SECTION_CONFIG = {
   },
   teaching_in_phd_courses: {
     title: 'Teaching in PhD courses',
+    subtitle: 'Reported hours are actual delivered teaching hours.',
     sectionId: 'teaching-in-phd-courses',
     timelineId: 'teaching',
     cardType: 'teaching-phd',

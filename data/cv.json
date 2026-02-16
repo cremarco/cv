@@ -130,9 +130,9 @@
       "company": "WhattaData srl",
       "logo": "whattadata.png",
       "place": "Milan, Italy",
-      "position": "CTO, Co-funder",
+      "position": "CTO, Co-founder (60% equity stake)",
       "time_period": "2025",
-      "topic": "Proposal for the establishment and recognition of Whattadata S.r.l. as a \"Spin-off,\" approved by the Academic Senate on 5 March 2025."
+      "topic": "Approval as a university spin-off was deliberated by the Academic Senate of the University of Milan-Bicocca on 3 March 2025 and ratified by the Board of Directors of the University of Milan-Bicocca on 18 March 2025."
     },
     {
       "company": "Aton Informatica s.r.l.",
@@ -255,7 +255,7 @@
           "courses": [
             {
               "course_name": "Introduction to Knowledge Graphs",
-              "hours": "20 hours",
+              "hours": "10 hours",
               "role": "Professor",
               "time_period": "2025"
             }

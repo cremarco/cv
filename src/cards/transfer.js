@@ -28,7 +28,7 @@ export function createTransferCard(exp, { isCurrent }) {
       <div class="flex justify-between items-center">
         <div class="${titleWidth}">
           <div class="text-xs-7 text-slate-500 font-dm-sans mb-0.5 whitespace-nowrap">${exp.company}</div>
-          <div class="text-xs-8 text-slate-800 font-dm-sans font-medium">${exp.position}</div>
+          <div class="text-xs-8 text-slate-800 font-dm-sans font-medium whitespace-nowrap">${exp.position}</div>
         </div>
         <div class="flex flex-col gap-0.5 items-end">
           <div class="flex gap-2 items-center">

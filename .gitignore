@@ -5,9 +5,6 @@ node_modules/
 dist/*.pdf
 dist/verification/
 
-# Local uploaded/temporary documents
-files/file-caricati-asn/
-
 # OS junk
 .DS_Store
 
