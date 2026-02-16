@@ -2,8 +2,8 @@
 // DATA LOADING
 // =============================================================================
 
-import { DATA_URL, SECTION_CONFIG } from '../config.js';
-import { isPdfMode, setPdfState } from '../utils/pdf-state.js';
+import { DATA_URL, SECTION_CONFIG, SECTION_CONFIG_BY_ID } from '../config.js';
+import { setPdfState } from '../utils/pdf-state.js';
 import { getRenderOptions } from '../utils/render-options.js';
 import { compareDatesDesc } from '../utils/date.js';
 import { renderSection, renderSpecialSection, renderSpecialSectionWithPageBreaks, renderPublications } from '../layout/section-renderer.js';
@@ -105,236 +105,232 @@ function updateMetricValues(container, metricsMap) {
   return true;
 }
 
+function withSectionError(label, loaderFn) {
+  return loaderFn().catch((error) => {
+    console.error(`Error loading ${label}:`, error);
+    setPdfState({ error: `Error loading ${label}` });
+  });
+}
+
+function hasRenderableData(sectionData) {
+  if (Array.isArray(sectionData)) return sectionData.length > 0;
+  return Boolean(sectionData);
+}
+
+function sortSectionItems(sectionKey, items) {
+  if (sectionKey === 'teaching_webinar') {
+    return [...items].sort((a, b) => compareDatesDesc(a.date, b.date));
+  }
+  return items;
+}
+
+function resolvePreviousSectionSelector(config, explicitPreviousSectionSelector = null) {
+  if (explicitPreviousSectionSelector) return explicitPreviousSectionSelector;
+  if (!config?.previousSectionId) return null;
+  return SECTION_CONFIG_BY_ID[config.previousSectionId]?.config?.sectionSelector || null;
+}
+
+function getConfigByKey(configKey) {
+  const config = SECTION_CONFIG[configKey];
+  if (!config) {
+    throw new Error(`Unknown SECTION_CONFIG key: ${configKey}`);
+  }
+  return config;
+}
+
+function loadSpecialSection({
+  data,
+  configKey,
+  dataKey,
+  createCardFn,
+  withPageBreaks = false,
+}) {
+  const sectionData = data[dataKey];
+  if (!hasRenderableData(sectionData)) return;
+
+  const config = getConfigByKey(configKey);
+  const previousSectionSelector = resolvePreviousSectionSelector(config);
+  const renderer = withPageBreaks ? renderSpecialSectionWithPageBreaks : renderSpecialSection;
+  renderer(config, sectionData, createCardFn, previousSectionSelector);
+}
+
 /**
  * Loads and renders a section from CV data
  */
 export async function loadSection(sectionKey, config, previousSectionSelector = null) {
-  try {
+  const label = config?.title || sectionKey;
+  return withSectionError(label, async () => {
     const data = await loadCVData();
-    let items = data[sectionKey];
+    const items = data[sectionKey];
     if (!Array.isArray(items) || items.length === 0) return;
-    
-    // Sort teaching_webinar items by date (most recent first)
-    if (sectionKey === 'teaching_webinar') {
-      items = [...items].sort((a, b) => compareDatesDesc(a.date, b.date));
-    }
-    
-    renderSection(items, config, previousSectionSelector);
-  } catch (error) {
-    console.error(`Error loading ${config.title}:`, error);
-    setPdfState({ error: `Error loading ${config.title}` });
-  }
+
+    const sortedItems = sortSectionItems(sectionKey, items);
+    const resolvedPreviousSelector = resolvePreviousSectionSelector(config, previousSectionSelector);
+    renderSection(sortedItems, config, resolvedPreviousSelector);
+  });
 }
 
 /**
  * Loads and renders thesis supervisor section
  */
 export async function loadThesisSupervisor() {
-  try {
+  return withSectionError('Thesis supervisor', async () => {
     const data = await loadCVData();
-    if (!data.thesis_supervisor) return;
-    
-    const config = SECTION_CONFIG.thesis_supervisor;
-    renderSpecialSection(
-      config, 
-      data.thesis_supervisor, 
-      createThesisSupervisorCard, 
-      SECTION_CONFIG.teaching_webinar.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Thesis supervisor:', error);
-    setPdfState({ error: 'Error loading Thesis supervisor' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'thesis_supervisor',
+      dataKey: 'thesis_supervisor',
+      createCardFn: createThesisSupervisorCard,
+    });
+  });
 }
 
 /**
  * Loads and renders awards section
  */
 export async function loadAwards() {
-  try {
+  return withSectionError('Awards', async () => {
     const data = await loadCVData();
-    if (!data.awards?.length) return;
-    
-    const config = SECTION_CONFIG.awards;
-    renderSpecialSection(
-      config, 
-      data.awards, 
-      createAwardsCard, 
-      SECTION_CONFIG.thesis_supervisor.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Awards:', error);
-    setPdfState({ error: 'Error loading Awards' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'awards',
+      dataKey: 'awards',
+      createCardFn: createAwardsCard,
+    });
+  });
 }
 
 /**
  * Loads and renders publications section
  */
 export async function loadPublications() {
-  try {
+  return withSectionError('Publications', async () => {
     const data = await loadCVData();
     if (!data.publications?.papers?.length) return;
-    
-    const config = SECTION_CONFIG.publications;
+
+    const config = getConfigByKey('publications');
     const metrics = getResearchMetrics(data.research_metrics);
-    
+    const previousSectionSelector = resolvePreviousSectionSelector(config);
+
     renderPublications(
       config,
       data.publications,
       metrics,
-      SECTION_CONFIG.awards.sectionSelector
+      previousSectionSelector
     );
-  } catch (error) {
-    console.error('Error loading Publications:', error);
-    setPdfState({ error: 'Error loading Publications' });
-  }
+  });
 }
 
 /**
  * Loads and renders community service section
  */
 export async function loadCommunityService() {
-  try {
+  return withSectionError('Community service', async () => {
     const data = await loadCVData();
-    if (!data.community_service) return;
-    
-    const config = SECTION_CONFIG.community_service;
-    renderSpecialSection(
-      config, 
-      data.community_service, 
-      createCommunityServiceCard, 
-      SECTION_CONFIG.publications.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Community service:', error);
-    setPdfState({ error: 'Error loading Community service' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'community_service',
+      dataKey: 'community_service',
+      createCardFn: createCommunityServiceCard,
+    });
+  });
 }
 
 /**
  * Loads and renders editorial community service section
  */
 export async function loadEditorialCommunityService() {
-  try {
+  return withSectionError('Editorial Community service', async () => {
     const data = await loadCVData();
-    if (!data.community_service_editorial) return;
-    
-    const config = SECTION_CONFIG.community_service_editorial;
-    renderSpecialSection(
-      config, 
-      data.community_service_editorial, 
-      createEditorialCommunityServiceCard, 
-      SECTION_CONFIG.community_service.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Editorial Community service:', error);
-    setPdfState({ error: 'Error loading Editorial Community service' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'community_service_editorial',
+      dataKey: 'community_service_editorial',
+      createCardFn: createEditorialCommunityServiceCard,
+    });
+  });
 }
 
 /**
  * Loads and renders international research projects section
  */
 export async function loadInternationalResearchProjects() {
-  try {
+  return withSectionError('International research projects', async () => {
     const data = await loadCVData();
-    if (!data.international_research_projects?.length) return;
-    
-    const config = SECTION_CONFIG.international_research_projects;
-    renderSpecialSectionWithPageBreaks(
-      config, 
-      data.international_research_projects, 
-      createInternationalResearchProjectsCard, 
-      SECTION_CONFIG.community_service_editorial.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading International research projects:', error);
-    setPdfState({ error: 'Error loading International research projects' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'international_research_projects',
+      dataKey: 'international_research_projects',
+      createCardFn: createInternationalResearchProjectsCard,
+      withPageBreaks: true,
+    });
+  });
 }
 
 /**
  * Loads and renders Italian research projects section
  */
 export async function loadItalianResearchProjects() {
-  try {
+  return withSectionError('Italian research projects', async () => {
     const data = await loadCVData();
-    if (!data.italian_research_projects?.length) return;
-    
-    const config = SECTION_CONFIG.italian_research_projects;
-    renderSpecialSectionWithPageBreaks(
-      config, 
-      data.italian_research_projects, 
-      createItalianResearchProjectsCard, 
-      SECTION_CONFIG.international_research_projects.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Italian research projects:', error);
-    setPdfState({ error: 'Error loading Italian research projects' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'italian_research_projects',
+      dataKey: 'italian_research_projects',
+      createCardFn: createItalianResearchProjectsCard,
+      withPageBreaks: true,
+    });
+  });
 }
 
 /**
  * Loads and renders projects section
  */
 export async function loadProjects() {
-  try {
+  return withSectionError('Projects', async () => {
     const data = await loadCVData();
-    if (!data.projects?.length) return;
-    
-    const config = SECTION_CONFIG.projects;
-    renderSpecialSectionWithPageBreaks(
-      config, 
-      data.projects, 
-      createProjectsCard, 
-      SECTION_CONFIG.italian_research_projects.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Projects:', error);
-    setPdfState({ error: 'Error loading Projects' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'projects',
+      dataKey: 'projects',
+      createCardFn: createProjectsCard,
+      withPageBreaks: true,
+    });
+  });
 }
 
 /**
  * Loads and renders tender commissions section
  */
 export async function loadTenderCommissions() {
-  try {
+  return withSectionError('Tender commissions', async () => {
     const data = await loadCVData();
-    if (!data.tender_commissions) return;
-    
-    const config = SECTION_CONFIG.tender_commissions;
-    renderSpecialSection(
-      config, 
-      data.tender_commissions, 
-      createTenderCommissionsCard, 
-      SECTION_CONFIG.projects.sectionSelector
-    );
-  } catch (error) {
-    console.error('Error loading Tender commissions:', error);
-    setPdfState({ error: 'Error loading Tender commissions' });
-  }
+    loadSpecialSection({
+      data,
+      configKey: 'tender_commissions',
+      dataKey: 'tender_commissions',
+      createCardFn: createTenderCommissionsCard,
+    });
+  });
 }
 
 /**
  * Loads and renders declaration section
  */
 export async function loadDeclaration() {
-  try {
+  return withSectionError('Declaration', async () => {
     const { noPersonalData } = getRenderOptions();
     if (noPersonalData) return;
-    const config = SECTION_CONFIG.declaration;
+    const config = getConfigByKey('declaration');
+    const previousSectionSelector = resolvePreviousSectionSelector(config);
+
     renderSpecialSection(
-      config, 
+      config,
       {}, // No data needed for declaration
-      createDeclarationCard, 
-      SECTION_CONFIG.tender_commissions.sectionSelector
+      createDeclarationCard,
+      previousSectionSelector
     );
-  } catch (error) {
-    console.error('Error loading Declaration:', error);
-    setPdfState({ error: 'Error loading Declaration' });
-  }
+  });
 }
 
 /**

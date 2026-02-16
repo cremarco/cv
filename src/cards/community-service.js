@@ -106,7 +106,7 @@ export function createCommunityServiceCard(data) {
   
   // Add Chair section
   if (data.chair && data.chair.length > 0) {
-    contentDiv.appendChild(createCategoryLabel('Chair'));
+    contentDiv.appendChild(createCategoryLabel('Chair or co-chair'));
     
     data.chair.forEach((item) => {
       const card = createCommunityServiceItemCard(item);

@@ -84,15 +84,23 @@ export const SECTION_CONFIG = {
     cardType: 'transfer',
     previousSectionId: 'research-and-technology-transfer',
   },
+  company_experiences: {
+    title: 'Company experiences',
+    sectionId: 'company-experiences',
+    timelineId: 'company-experiences',
+    cardType: 'transfer',
+    previousSectionId: 'entrepreneurial-initiatives',
+  },
   education: {
     title: 'Education',
     sectionId: 'education',
     timelineId: 'education',
     cardType: 'education',
-    previousSectionId: 'entrepreneurial-initiatives',
+    previousSectionId: 'company-experiences',
   },
   teaching_in_phd_courses: {
     title: 'Teaching in PhD courses',
+    subtitle: 'Reported hours are actual delivered teaching hours.',
     sectionId: 'teaching-in-phd-courses',
     timelineId: 'teaching',
     cardType: 'teaching-phd',
@@ -192,9 +200,36 @@ export const SECTION_CONFIG = {
   },
 };
 
+// Ordered rendering pipeline used by the app bootstrap and validation scripts.
+export const SECTION_RENDER_PIPELINE = [
+  { type: 'section', sectionKey: 'academic_experiences' },
+  { type: 'section', sectionKey: 'foreign_research_contracts' },
+  { type: 'section', sectionKey: 'research_and_technology_transfer' },
+  { type: 'section', sectionKey: 'entrepreneurial_initiatives' },
+  { type: 'section', sectionKey: 'company_experiences' },
+  { type: 'section', sectionKey: 'education' },
+  { type: 'section', sectionKey: 'teaching_in_phd_courses' },
+  { type: 'section', sectionKey: 'teaching' },
+  { type: 'section', sectionKey: 'teaching_webinar' },
+  { type: 'custom', loader: 'loadThesisSupervisor', dataKey: 'thesis_supervisor' },
+  { type: 'custom', loader: 'loadAwards', dataKey: 'awards' },
+  { type: 'custom', loader: 'loadPublications', dataKey: 'publications' },
+  { type: 'custom', loader: 'loadCommunityService', dataKey: 'community_service' },
+  { type: 'custom', loader: 'loadEditorialCommunityService', dataKey: 'community_service_editorial' },
+  { type: 'custom', loader: 'loadInternationalResearchProjects', dataKey: 'international_research_projects' },
+  { type: 'custom', loader: 'loadItalianResearchProjects', dataKey: 'italian_research_projects' },
+  { type: 'custom', loader: 'loadProjects', dataKey: 'projects' },
+  { type: 'custom', loader: 'loadTenderCommissions', dataKey: 'tender_commissions' },
+  { type: 'custom', loader: 'loadDeclaration' },
+];
+
 // Build derived selectors from config
 Object.values(SECTION_CONFIG).forEach(config => {
   config.sectionSelector = `[data-section="${config.sectionId}"]`;
   config.containerSelector = `#${config.sectionId}`;
   config.timelineSelector = `[data-timeline="${config.timelineId}"]`;
 });
+
+export const SECTION_CONFIG_BY_ID = Object.fromEntries(
+  Object.entries(SECTION_CONFIG).map(([key, config]) => [config.sectionId, { key, config }])
+);

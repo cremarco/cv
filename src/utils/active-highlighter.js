@@ -103,7 +103,6 @@ function isTimePeriodActive(timePeriod) {
   // A single date is considered active if it's the current month or a past month in current year
   const singleDate = parseMonthYear(period);
   if (singleDate) {
-    const currentDate = new Date(currentYear, currentMonth);
     // Consider active if it's in the current month or past months of current year
     return singleDate.getFullYear() === currentYear && 
            singleDate.getMonth() <= currentMonth;

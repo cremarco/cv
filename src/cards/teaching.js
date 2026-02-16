@@ -9,9 +9,13 @@ import { createLogoImage } from './shared.js';
  * Renders a single course row for teaching cards
  */
 function renderCourseRow(course, isPhd = true) {
+  const roleLabel = (!isPhd && course.role === 'Professor')
+    ? 'Professor/Main instructor'
+    : course.role;
+
   const roleBadge = course.role ? `
     <div class="bg-slate-200 flex gap-0.5 h-2.5 items-center justify-center px-0.5 rounded-sm">
-      <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight whitespace-nowrap">${course.role}</span>
+      <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight whitespace-nowrap">${roleLabel}</span>
     </div>
   ` : '';
   

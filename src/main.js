@@ -2,7 +2,7 @@
 // MAIN ENTRY POINT
 // =============================================================================
 
-import { SECTION_CONFIG } from './config.js';
+import { SECTION_CONFIG, SECTION_RENDER_PIPELINE } from './config.js';
 import { initPdfMode, setPdfState } from './utils/pdf-state.js';
 import { applyRenderOptions } from './utils/render-options.js';
 import {
@@ -22,6 +22,19 @@ import {
 } from './data/loader.js';
 import { highlightActiveItems } from './utils/active-highlighter.js';
 
+const CUSTOM_SECTION_LOADERS = {
+  loadThesisSupervisor,
+  loadAwards,
+  loadPublications,
+  loadCommunityService,
+  loadEditorialCommunityService,
+  loadInternationalResearchProjects,
+  loadItalianResearchProjects,
+  loadProjects,
+  loadTenderCommissions,
+  loadDeclaration,
+};
+
 async function waitForFonts(timeoutMs = 1500) {
   if (!document.fonts?.ready) return;
   await Promise.race([
@@ -30,40 +43,37 @@ async function waitForFonts(timeoutMs = 1500) {
   ]);
 }
 
+async function runSectionPipeline() {
+  for (const step of SECTION_RENDER_PIPELINE) {
+    if (step.type === 'section') {
+      const config = SECTION_CONFIG[step.sectionKey];
+      if (!config) {
+        console.error(`Unknown section config: ${step.sectionKey}`);
+        continue;
+      }
+
+      await loadSection(step.sectionKey, config);
+      continue;
+    }
+
+    const loader = CUSTOM_SECTION_LOADERS[step.loader];
+    if (!loader) {
+      console.error(`Unknown pipeline loader: ${step.loader}`);
+      continue;
+    }
+
+    await loader();
+  }
+}
+
 async function init() {
   initPdfMode();
   
   await waitForFonts();
   
   await loadResearchMetrics();
-  
-  // Load sections in order with their dependencies
-  await loadSection('academic_experiences', SECTION_CONFIG.academic_experiences);
-  await loadSection('foreign_research_contracts', SECTION_CONFIG.foreign_research_contracts, 
-    SECTION_CONFIG.academic_experiences.sectionSelector);
-  await loadSection('research_and_technology_transfer', SECTION_CONFIG.research_and_technology_transfer,
-    SECTION_CONFIG.foreign_research_contracts.sectionSelector);
-  await loadSection('entrepreneurial_initiatives', SECTION_CONFIG.entrepreneurial_initiatives,
-    SECTION_CONFIG.research_and_technology_transfer.sectionSelector);
-  await loadSection('education', SECTION_CONFIG.education,
-    SECTION_CONFIG.entrepreneurial_initiatives.sectionSelector);
-  await loadSection('teaching_in_phd_courses', SECTION_CONFIG.teaching_in_phd_courses,
-    SECTION_CONFIG.education.sectionSelector);
-  await loadSection('teaching', SECTION_CONFIG.teaching,
-    SECTION_CONFIG.teaching_in_phd_courses.sectionSelector);
-  await loadSection('teaching_webinar', SECTION_CONFIG.teaching_webinar,
-    SECTION_CONFIG.teaching.sectionSelector);
-  
-  await loadThesisSupervisor();
-  await loadAwards();
-  await loadPublications();
-  await loadCommunityService();
-  await loadEditorialCommunityService();
-  await loadInternationalResearchProjects();
-  await loadItalianResearchProjects();
-  await loadProjects();
-  await loadTenderCommissions();
-  await loadDeclaration();
+
+  await runSectionPipeline();
   
   await applyRenderOptions();
 
