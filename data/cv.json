@@ -2,7 +2,7 @@
   "academic_experiences": [
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
@@ -14,7 +14,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/07-rtda-10-01-2022-09-01-2025.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/07-rtda-10-01-2022-09-01-2025.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Assistant Professor (RTD/A)",
@@ -26,7 +26,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/06-assegno-01-02-2021-31-01-2022.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/06-assegno-01-02-2021-31-01-2022.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
@@ -38,7 +38,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/05-assegno-01-02-2020-31-01-2021.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/05-assegno-01-02-2020-31-01-2021.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
@@ -50,7 +50,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
@@ -62,7 +62,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/03-assegno-01-09-2014-31-08-2015.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/03-assegno-01-09-2014-31-08-2015.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
@@ -74,7 +74,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/02-assegno-01-09-2013-31-08-2014.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/02-assegno-01-09-2013-31-08-2014.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
@@ -86,7 +86,7 @@
     },
     {
       "department": "Department of Informatics, Systems and Communication",
-      "link": "files/contratti-precedenti/01-borsa-01-02-2011-31-01-2012.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/01-borsa-01-02-2011-31-01-2012.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research fellow",
@@ -99,7 +99,7 @@
   ],
   "foreign_research_contracts": [
     {
-      "link": "files/contratti-precedenti/Estero/08-intertwino-20-04-2022-31-03-2024.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/Estero/08-intertwino-20-04-2022-31-03-2024.pdf",
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
       "position": "Researcher",
@@ -108,7 +108,7 @@
       "university": "Sofia University \"St. Kliment Ohridski\""
     },
     {
-      "link": "files/contratti-precedenti/Estero/07-intertwino-15-07-2021-31-03-2022.pdf",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/Estero/07-intertwino-15-07-2021-31-03-2022.pdf",
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
       "position": "Researcher",
@@ -1633,7 +1633,7 @@
       {
         "title": "ANR (Agence Nationale de la Recherche)",
         "year": "2025",
-        "link": "files/valutatore-di-progetti/anr-certificate-of-mission-2025.pdf"
+        "link": "https://cremarco.github.io/cv/files/valutatore-di-progetti/anr-certificate-of-mission-2025.pdf"
       }
     ]
   },
