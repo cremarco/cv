@@ -1,74 +1,118 @@
 # CV Web + PDF (Print-grade)
 
-Questo progetto genera e pubblica un CV accademico in formato web e PDF multipagina A4.
-Il rendering PDF avviene server-side con Playwright (Chromium headless), mantenendo testo selezionabile e impaginazione coerente.
+Application to manage and publish an academic CV in dual format:
 
-## Stack e struttura
+- static web (`index.html` + `src/` modules)
+- multi-page A4 PDF generated with Playwright/Chromium
 
-- Frontend: HTML + JavaScript modulare (`src/`)
-- Stili: Tailwind CSS (`src/input.css` -> `dist/output.css`)
-- Dati: `data/cv.json`
-- Generazione PDF: `scripts/pdf-renderer.js`, `scripts/pdf-generate.js`, `scripts/pdf-server.js`
+PDF rendering preserves selectable text, consistent pagination, and automated data checks.
 
-## Modalità PDF/Print
+## 1. Technical overview
 
-La SPA espone la modalità PDF tramite:
+- Frontend: HTML + JavaScript ES Modules (no JS bundler)
+- Styles: Tailwind CSS (`src/input.css` -> `dist/output.css`)
+- Dataset: `data/cv.json` (validated against a JSON schema)
+- Section rendering: pipeline configured in `src/config.js`
+- PDF: `scripts/pdf-renderer.js`, `scripts/pdf-generate.js`, `scripts/pdf-server.js`
+- Quality checks: lint, tests, dataset validation, external source verification, PDF smoke test
 
-- `/?pdf=1` oppure `?pdf=true`
-- `/print`
+## 2. Requirements
 
-In modalità PDF:
+- Node.js 20+ recommended (CI uses Node 20)
+- npm
+- Playwright Chromium installed locally
 
-- elementi con `data-pdf-hide` vengono nascosti
-- animazioni/transizioni vengono disabilitate
-- le pagine `.pdf-page` sono renderizzate in formato A4
+Install Playwright browser:
 
-### Opzioni rendering
+```bash
+npx playwright install chromium
+```
 
-Flag supportati via query string o hash:
+On Linux CI/container:
 
-- `no-personal-data`: nasconde dati personali e dichiarazione/firma
-- `no-link`: rimuove link a file interni (es. `files/...`)
-- `pdf-compact` (o `compact`): riduce il peso del PDF comprimendo immagini locali
+```bash
+npx playwright install --with-deps chromium
+```
 
-Esempi:
+## 3. Project setup
 
-- `http://localhost:4173/?pdf=1&no-personal-data&no-link`
-- `http://localhost:4173/#pdf-compact=1`
+```bash
+npm ci
+```
 
-## Comandi principali
-
-### Build CSS
+Initial CSS build:
 
 ```bash
 npm run build
 ```
 
-### Watch CSS
+CSS watch mode:
 
 ```bash
 npm run watch
 ```
 
-### Generazione PDF da CLI
+## 4. Local run (web version)
+
+The app is static, but it must be served over HTTP (not `file://`) so dataset `fetch` works.
+
+Quick example on port `4173`:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then open:
+
+- `http://localhost:4173/`
+
+## 5. Client-side PDF/Print mode
+
+PDF mode can be enabled with:
+
+- `/?pdf=1` or `/?pdf=true`
+- `/print`
+
+In PDF mode:
+
+- global state is set (`window.__PDF_READY__`, `window.__PDF_PAGE_COUNT__`, `window.__PDF_ERROR__`)
+- `.pdf-page` elements are treated as A4 pages
+- additional rendering options can be applied
+
+### Supported flags (query string or hash)
+
+- `no-personal-data`: hides personal data blocks and declaration/signature
+- `no-link`: removes links to internal files (`/files`, `/img`, `/data`, `/dist`, `/src`)
+- `pdf-compact` or `compact`: flattens visual effects and compresses local images
+
+Examples:
+
+- `http://localhost:4173/?pdf=1&no-personal-data&no-link`
+- `http://localhost:4173/?pdf=1&pdf-compact=1`
+- `http://localhost:4173/#compact=1`
+
+## 6. CLI PDF generation
+
+Main command:
 
 ```bash
 npm run pdf:generate
 ```
 
-`pdf:generate` avvia automaticamente un server statico locale interno (non serve avviare `python -m http.server`).
+Behavior:
 
-Output di default:
+- automatically starts a temporary local static server
+- renders the CV in PDF mode through Playwright
+- writes output to `dist/marco-cremaschi-cv.pdf`
+- closes server and browser when done
 
-- `dist/marco-cremaschi-cv.pdf`
-
-PDF compatto:
+Compact version:
 
 ```bash
 npm run pdf:generate:compact
 ```
 
-### Server HTTP per PDF on-demand
+## 7. On-demand PDF API server
 
 ```bash
 npm run pdf:server
@@ -76,14 +120,74 @@ npm run pdf:server
 
 Endpoint:
 
-- `http://localhost:8787/api/pdf`
+- `GET http://localhost:8787/api/pdf`
 
-Differenza operativa:
+Difference between approaches:
 
-- `pdf:generate`: produce un file PDF locale e termina
-- `pdf:server`: espone un endpoint API che genera PDF per ogni richiesta
+- `pdf:generate`: generates one local file and exits
+- `pdf:server`: exposes an endpoint that generates a PDF per request
 
-## Quality gates
+Important note:
+
+- `pdf:server` does **not** start a static server for the site
+- it requires `BASE_URL` to point to a reachable CV instance (local or remote)
+
+Example:
+
+```bash
+BASE_URL=http://localhost:4173 PDF_PORT=8787 npm run pdf:server
+```
+
+## 8. PDF environment variables
+
+### Rendering and routing
+
+- `BASE_URL` (default `http://localhost:4173`): base URL for rendering
+- `PDF_QUERY` (e.g. `no-link&no-personal-data`): extra query params appended to the URL
+- `PDF_PROFILE` (`compact`, `compact-strong`, ...): rendering profile
+- `PDF_COMPACT` (boolean): alternative to `PDF_PROFILE=compact`
+- `PDF_DEVICE_SCALE_FACTOR` (default `2`, or `1` in compact): Playwright device scale
+
+### Output and ports
+
+- `OUTPUT_PDF` (default `dist/marco-cremaschi-cv.pdf`): output file path
+- `PDF_SERVER_PORT` (default `4173`): internal static server port used by `pdf:generate`
+- `PDF_PORT` (default `8787`): HTTP API port used by `pdf:server`
+
+### Timeouts
+
+- `PDF_NAV_TIMEOUT_MS` (default `30000`): navigation/pre-render timeout
+- `PDF_TIMEOUT_MS` (default `30000`): `page.pdf()` timeout
+
+### Compression (optional, Ghostscript)
+
+- `PDF_COMPRESS` (boolean): enables final compression
+- `PDF_MAX_KB` (number): target file size in KB
+- `PDF_COMPRESS_PROFILE` (`screen`, `ebook`, `printer`, `prepress`, `default`)
+- `GHOSTSCRIPT_BIN` (default `gs`): Ghostscript binary path
+
+## 9. Data model and content updates
+
+Main file:
+
+- `data/cv.json`
+
+Schema:
+
+- `schemas/cv.schema.json`
+
+Rendering pipeline (section order):
+
+- `src/config.js` (`SECTION_RENDER_PIPELINE`)
+
+Main practical rules:
+
+- date fields (`time_period`, `period`, `date`): formats like `MMM YYYY`, `YYYY`, ranges `A - B`, with `Present`/`Current` supported
+- `publications.update_date`: format `DD Mon YYYY` (e.g. `16 Feb 2026`)
+- `logo` fields: filename must exist in `img/mini-logo/`
+- local links in dataset: use repository paths (`files/...`, `img/...`, etc.)
+
+## 10. Quality and validation commands
 
 ```bash
 npm run lint
@@ -94,67 +198,64 @@ npm run smoke:pdf
 npm run check
 ```
 
-`npm run check` esegue la pipeline completa di qualità/manutenibilità.
+Details:
 
-## Verifica correttezza informazioni
+- `lint`: ESLint checks on `.js/.mjs/.cjs`
+- `validate:data`: schema validation + file/date consistency checks + orphan-section warnings
+- `test`: Node unit tests (`tests/*.test.mjs`)
+- `verify:external`: checks Google Scholar, ORCID, DOI (Crossref), external links
+- `smoke:pdf`: end-to-end PDF generation smoke test (with retry on random port)
+- `check`: full pipeline in sequence
 
-### Validazione locale dataset
-
-```bash
-npm run validate:data
-```
-
-Controlla:
-
-- validità JSON/schema (`schemas/cv.schema.json`)
-- esistenza file locali referenziati (`files/...`, `img/...`)
-- coerenza formati data usati dal renderer
-- sezioni dati non renderizzate (warning)
-- duplicati testuali sospetti (warning)
-
-Report:
+Generated reports:
 
 - `dist/verification/data-validation-report.json`
-
-### Verifica fonti esterne
-
-```bash
-npm run verify:external
-```
-
-Controlla:
-
-- Google Scholar (Playwright) e confronto metriche
-- ORCID via API pubblica
-- DOI via Crossref API
-- link esterni con classificazione: `ok`, `blocked/bot-protected`, `broken`, `dns-error`, `tls-error`, `timeout`, `network-error`
-
-Report:
-
 - `dist/verification/external-sources-report.json`
 
-Nota: alcuni provider (es. Scopus, LinkedIn o siti protetti da Cloudflare) possono risultare `blocked/bot-protected` anche se il link è corretto in navigazione manuale.
+## 11. CI/CD
 
-## Variabili ambiente (PDF)
+- CI: `.github/workflows/ci.yml`
+  - `npm ci`
+  - install Playwright Chromium
+  - `npm run check`
+- Deploy: `.github/workflows/deploy.yml`
+  - CSS build
+  - publish GitHub Pages runtime assets from `site/`
+  - includes `index.html`, `robots.txt`, `src`, `data`, `img`, `dist`, `files`
 
-- `BASE_URL`: URL base sito (default `http://localhost:4173`)
-- `OUTPUT_PDF`: path output PDF (default `dist/marco-cremaschi-cv.pdf`)
-- `PDF_SERVER_PORT`: porta server statico interno usata da `pdf:generate` (default `4173`)
-- `PDF_NAV_TIMEOUT_MS`: timeout navigazione Playwright (default `30000`)
-- `PDF_TIMEOUT_MS`: timeout chiamata `page.pdf()` (default `30000`)
-- `PDF_DEVICE_SCALE_FACTOR`: scala dispositivo (default `2`, oppure `1` in profilo compact)
-- `PDF_PORT`: porta API per `pdf:server` (default `8787`)
-- `PDF_QUERY`: query addizionale per la stampa (es. `no-link&no-personal-data`)
-- `PDF_PROFILE`: profilo rendering (`compact` abilita anche `pdf-compact`)
-- `PDF_COMPACT`: flag booleano alternativo a `PDF_PROFILE=compact`
-- `PDF_COMPRESS`: abilita compressione finale via Ghostscript
-- `PDF_MAX_KB`: target massimo KB per compressione
-- `PDF_COMPRESS_PROFILE`: profilo Ghostscript (`screen`, `ebook`, `printer`, `prepress`, `default`)
-- `GHOSTSCRIPT_BIN`: percorso binario Ghostscript (default `gs`)
+## 12. Repository structure (essential)
 
-## CI/CD
+```text
+.
+├─ index.html
+├─ data/cv.json
+├─ src/
+│  ├─ main.js
+│  ├─ config.js
+│  ├─ data/loader.js
+│  ├─ cards/
+│  ├─ layout/
+│  └─ utils/
+├─ scripts/
+│  ├─ pdf-renderer.js
+│  ├─ pdf-generate.js
+│  ├─ pdf-server.js
+│  ├─ validate-cv-data.js
+│  ├─ verify-external-sources.js
+│  └─ smoke-pdf.js
+├─ schemas/cv.schema.json
+├─ tests/
+├─ dist/
+└─ files/
+```
 
-- CI (`.github/workflows/ci.yml`): esegue `npm run check`
-- Deploy (`.github/workflows/deploy.yml`): pubblica solo artefatti runtime da cartella `site/`:
-  - `index.html`, `src`, `data`, `img`, `dist`, `files`, `robots.txt`
+## 13. Quick troubleshooting
 
+- `Port ... already in use`
+  - change `PDF_SERVER_PORT` or free the port
+- missing Playwright/Chromium error
+  - run `npx playwright install chromium`
+- `missing-file` / `missing-logo` errors
+  - verify dataset paths against files actually present
+- external links marked `blocked/bot-protected`
+  - often expected (anti-bot); does not necessarily mean the link is wrong

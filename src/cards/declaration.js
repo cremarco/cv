@@ -4,7 +4,7 @@
 // =============================================================================
 
 /**
- * Formats current date in Italian format: "Milano, DD mese YYYY"
+ * Formats current date in English format: "Milan, DD Month YYYY"
  */
 function formatCurrentDate() {
   const now = new Date();
@@ -12,13 +12,13 @@ function formatCurrentDate() {
   const year = now.getFullYear();
   
   const months = [
-    'gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
-    'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
   ];
   
   const month = months[now.getMonth()];
   
-  return `Milano, ${day} ${month} ${year}`;
+  return `Milan, ${day} ${month} ${year}`;
 }
 
 /**
@@ -34,22 +34,22 @@ export function createDeclarationCard() {
   container.innerHTML = `
     <div class="text-xs-8 font-dm-sans font-medium text-slate-800 leading-normal mb-0">
       <p class="mb-0">
-        Il sottoscritto <span class="font-bold">Marco Cremaschi</span>, nato a
-        <span class="font-bold">Chiari (BS) il 04/10/1983</span>, residente in
-        <span class="font-bold">Viale Gramsci n. 730, 20099 Sesto San Giovanni (MI)</span>, C.F.
+        The undersigned <span class="font-bold">Marco Cremaschi</span>, born in
+        <span class="font-bold">Chiari (BS) on 04/10/1983</span>, residing at
+        <span class="font-bold">Viale Gramsci no. 730, 20099 Sesto San Giovanni (MI)</span>, Tax Code
         <span class="font-bold">CRMMRC83R04C618I</span>, Tel. <span class="font-bold">3664168368</span>, E-mail:
         <span class="font-bold">cremarco@gmail.com</span>
-        , PEC: <span class="font-bold">marco.cremaschi@postecertifica.it</span>
-        , consapevole delle sanzioni penali previste in caso di dichiarazioni mendaci e falsità in atti, ai sensi degli artt. 46, 47 e 76 del D.P.R. 28 dicembre 2000, n. 445,
+        , PEC (certified email): <span class="font-bold">marco.cremaschi@postecertifica.it</span>
+        , aware of the criminal penalties provided for false declarations and falsification of documents, pursuant to Articles 46, 47 and 76 of Presidential Decree no. 445 of 28 December 2000,
       </p>
       <p class="mb-0">&nbsp;</p>
-      <p class="mb-0 font-bold">DICHIARA</p>
+      <p class="mb-0 font-bold">DECLARES</p>
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0">
-        che le informazioni riportate nel presente curriculum vitae sono veritiere.
+        that the information provided in this curriculum vitae is true and accurate.
         <br aria-hidden="true" />
         <br aria-hidden="true" />
-        Ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018, autorizzo il trattamento dei dati personali contenuti nel presente curriculum per le finalità connesse alla valutazione della candidatura e/o a eventuali rapporti di collaborazione.
+        Pursuant to Regulation (EU) 2016/679 (GDPR) and Legislative Decree no. 196/2003, as amended by Legislative Decree no. 101/2018, I authorize the processing of the personal data contained in this curriculum vitae for purposes related to the evaluation of my application and/or potential collaboration relationships.
       </p>
       <p class="mb-0">&nbsp;</p>
       <p class="mb-0">&nbsp;</p>
@@ -59,7 +59,7 @@ export function createDeclarationCard() {
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-xs-6 font-dm-sans text-slate-500 opacity-60 text-center">Marco Cremaschi</div>
           </div>
-          <img src="img/signature.png" alt="Firma" class="h-24 object-contain relative z-10">
+          <img src="img/signature.png" alt="Signature" class="h-24 object-contain relative z-10">
         </div>
       </div>
     </div>

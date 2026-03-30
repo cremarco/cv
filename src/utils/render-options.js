@@ -4,6 +4,7 @@
 
 const INTERNAL_FILE_PREFIXES = ['/files/', '/img/', '/data/', '/dist/', '/src/'];
 const INTERNAL_FILE_EXTENSIONS = ['.pdf', '.png', '.jpg', '.jpeg', '.gif', '.svg'];
+const INTERNAL_HOSTNAMES = ['cremarco.github.io'];
 
 let cachedOptions = null;
 
@@ -160,6 +161,8 @@ export function isInternalFileLink(href) {
 
   const isRelative = !isAbsolute && !trimmed.startsWith('//');
   const isSameOrigin = url.origin === window.location.origin;
+  const isKnownInternalHost = INTERNAL_HOSTNAMES.includes((url.hostname || '').toLowerCase());
+  if (isKnownInternalHost) return true;
   if (!isRelative && !isSameOrigin) return false;
 
   const path = (url.pathname || '').toLowerCase();
