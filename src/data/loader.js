@@ -118,7 +118,7 @@ function hasRenderableData(sectionData) {
 }
 
 function sortSectionItems(sectionKey, items) {
-  if (sectionKey === 'teaching_webinar') {
+  if (sectionKey === 'teaching_webinar' || sectionKey === 'speaker_engagements') {
     return [...items].sort((a, b) => compareDatesDesc(a.date, b.date));
   }
   return items;

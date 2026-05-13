@@ -9,7 +9,9 @@ const SCHEMA_PATH = path.join(ROOT_DIR, 'schemas', 'cv.schema.json');
 const REPORT_PATH = path.join(ROOT_DIR, 'dist', 'verification', 'data-validation-report.json');
 
 const MONTH_PATTERN = '(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)';
-const SIMPLE_DATE_PATTERN = `(${MONTH_PATTERN} \\d{4}|\\d{4})`;
+const MONTH_YEAR_PATTERN = `${MONTH_PATTERN} \\d{4}`;
+const DAY_MONTH_YEAR_PATTERN = `\\d{1,2} ${MONTH_PATTERN} \\d{4}`;
+const SIMPLE_DATE_PATTERN = `(${DAY_MONTH_YEAR_PATTERN}|${MONTH_YEAR_PATTERN}|\\d{4})`;
 const PERIOD_PATTERN = new RegExp(`^${SIMPLE_DATE_PATTERN}( - (${SIMPLE_DATE_PATTERN}|Present|Current))?$`);
 const UPDATE_DATE_PATTERN = new RegExp(`^\\d{1,2} ${MONTH_PATTERN} \\d{4}$`);
 

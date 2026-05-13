@@ -13,6 +13,7 @@
     "teaching_in_phd_courses",
     "teaching",
     "teaching_webinar",
+    "speaker_engagements",
     "thesis_supervisor",
     "awards",
     "research_metrics",
@@ -60,6 +61,10 @@
     "teaching_webinar": {
       "type": "array",
       "items": { "$ref": "#/$defs/webinarItem" }
+    },
+    "speaker_engagements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/speakerEngagementItem" }
     },
     "thesis_supervisor": {
       "type": "object",
@@ -154,6 +159,22 @@
         "date": { "type": "string" },
         "logo": { "type": "string" },
         "link": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "speakerEngagementItem": {
+      "type": "object",
+      "required": ["event", "talk_title", "date"],
+      "properties": {
+        "event": { "type": "string", "minLength": 1 },
+        "talk_title": { "type": "string", "minLength": 1 },
+        "date": { "type": "string", "minLength": 1 },
+        "organizer": { "type": "string" },
+        "place": { "type": "string" },
+        "role": { "type": "string" },
+        "session": { "type": "string" },
+        "link": { "type": "string" },
+        "logo": { "type": "string" }
       },
       "additionalProperties": true
     },
