@@ -4,6 +4,7 @@
 
 import { getCardClasses } from '../utils/css-classes.js';
 import { CARD_INTERNAL_GAP, CARD_PADDING_CLASSES, CARD_SURFACE_CLASSES, CURRENT_BADGE_BG, CURRENT_BADGE_TEXT, CURRENT_TEXT_LIGHT } from '../config.js';
+import { createLinkBadge } from './shared.js';
 
 const formatMetricValue = (value) => (value ?? '—');
 
@@ -239,6 +240,10 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
         <span class="text-slate-800 text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight"><span class="font-bold">CEUR:</span> <a href="${ceurUrl}" target="_blank" rel="noopener noreferrer" class="underline">${ceurId}</a></span>
       </div>
     `;
+  }
+
+  if (paper.link) {
+    attrsHTML += createLinkBadge(paper.link);
   }
   
   // Use same structure as other cards: contentDiv with flex-1

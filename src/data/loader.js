@@ -6,7 +6,7 @@ import { DATA_URL, SECTION_CONFIG, SECTION_CONFIG_BY_ID } from '../config.js';
 import { setPdfState } from '../utils/pdf-state.js';
 import { getRenderOptions } from '../utils/render-options.js';
 import { compareDatesDesc } from '../utils/date.js';
-import { renderSection, renderSpecialSection, renderSpecialSectionWithPageBreaks, renderPublications } from '../layout/section-renderer.js';
+import { renderSection, renderSpecialSection, renderSpecialSectionWithPageBreaks, renderPublications, renderPublicationCardsSection } from '../layout/section-renderer.js';
 import { createThesisSupervisorCard } from '../cards/thesis.js';
 import { createAwardsCard } from '../cards/awards.js';
 import { createCommunityServiceCard } from '../cards/community-service.js';
@@ -118,7 +118,7 @@ function hasRenderableData(sectionData) {
 }
 
 function sortSectionItems(sectionKey, items) {
-  if (sectionKey === 'teaching_webinar') {
+  if (sectionKey === 'teaching_webinar' || sectionKey === 'speaker_engagements') {
     return [...items].sort((a, b) => compareDatesDesc(a.date, b.date));
   }
   return items;
@@ -216,6 +216,25 @@ export async function loadPublications() {
       config,
       data.publications,
       metrics,
+      previousSectionSelector
+    );
+  });
+}
+
+/**
+ * Loads and renders submitted publications section
+ */
+export async function loadSubmittedPublications() {
+  return withSectionError('Submitted publications', async () => {
+    const data = await loadCVData();
+    if (!data.submitted_publications?.papers?.length) return;
+
+    const config = getConfigByKey('submitted_publications');
+    const previousSectionSelector = resolvePreviousSectionSelector(config);
+
+    renderPublicationCardsSection(
+      config,
+      data.submitted_publications.papers,
       previousSectionSelector
     );
   });

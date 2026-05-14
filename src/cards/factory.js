@@ -8,6 +8,7 @@ import { createTransferCard } from './transfer.js';
 import { createEducationCard } from './education.js';
 import { createTeachingCard } from './teaching.js';
 import { createWebinarCard } from './webinar.js';
+import { createSpeakerCard } from './speaker.js';
 
 export function createCard(type, data, options = {}) {
   switch (type) {
@@ -23,11 +24,12 @@ export function createCard(type, data, options = {}) {
       return createTeachingCard(data, { ...options, isPhd: false });
     case 'webinar':
       return createWebinarCard(data);
+    case 'speaker':
+      return createSpeakerCard(data);
     default:
       console.warn(`Unknown card type: ${type}`);
       return document.createElement('div');
   }
 }
-
 
 

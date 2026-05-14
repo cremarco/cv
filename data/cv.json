@@ -2,12 +2,24 @@
   "academic_experiences": [
     {
       "department": "Department of Informatics, Systems and Communication",
+      "link": "https://cremarco.github.io/cv/files/contratti-precedenti/09-contratto-di-ricerca-01-04-2026-31-03-2028.pdf",
+      "logo": "unimib.png",
+      "place": "Milan, Italy",
+      "position": "Research Contract (Contrattista di Ricerca)",
+      "ssd": "INFO-01/A",
+      "time_period": "01 Apr 2026 - 31 Mar 2028",
+      "topic": "Data architectures and Machine Learning for predictive maintenance of corporate fleets",
+      "topic_it": "Architetture dati e Machine Learning per la manutenzione predittiva di flotte aziendali",
+      "university": "University of Milan-Bicocca"
+    },
+    {
+      "department": "Department of Informatics, Systems and Communication",
       "link": "https://cremarco.github.io/cv/files/contratti-precedenti/08-assegno-01-02-2025-31-01-2026.pdf",
       "logo": "unimib.png",
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "INF/01",
-      "time_period": "Feb 2025 - Jan 2026",
+      "time_period": "01 Feb 2025 - 31 Jan 2026",
       "topic": "Design and development of an Artificial Intelligence/Machine Learning model for creating a decision support system in the psychological/psychiatric field",
       "topic_it": "Progettazione e sviluppo di un modello di Intelligenza Artificiale/Machine Learning per la creazione di un sistema di supporto alle decisioni in campo psicologico/psichiatrico",
       "university": "University of Milan-Bicocca"
@@ -19,7 +31,7 @@
       "place": "Milan, Italy",
       "position": "Assistant Professor (RTD/A)",
       "ssd": "INF/01",
-      "time_period": "Jan 2022 - Jan 2025",
+      "time_period": "10 Jan 2022 - 09 Jan 2025",
       "topic": "Semantic and AI technologies for early digital intervention in psychiatric services, funded by the Italian Ministero dell'Università e della Ricerca through the European project D.M. 1062/2021 – Piano Operativo Nazionale - PON \"Ricerca e Innovazione\" 2014- 2020 Asse IV, azioni IV.4 \"Dottorati e contratti di ricerca sulle tematiche dell'innovazione\"",
       "topic_it": "Tecnologie semantiche e di AI per Intervento Digitale Precoce nei Servizi Psichiatrici",
       "university": "University of Milan-Bicocca"
@@ -31,7 +43,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
-      "time_period": "Feb 2021 - Jan 2022",
+      "time_period": "01 Feb 2021 - 31 Jan 2022",
       "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
       "topic_it": "Analisi e annotazione semantica di dati relativi ai componenti nutrizionali dei cibi",
       "university": "University of Milan-Bicocca"
@@ -43,7 +55,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
-      "time_period": "Feb 2020 - Jan 2021",
+      "time_period": "01 Feb 2020 - 31 Jan 2021",
       "topic": "Analysis and semantic annotation of data related to the nutritional components of food",
       "topic_it": "Analisi e annotazione semantica di dati relativi ai componenti nutrizionali dei cibi",
       "university": "University of Milan-Bicocca"
@@ -55,7 +67,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
-      "time_period": "Nov 2015 - Oct 2016",
+      "time_period": "01 Nov 2015 - 31 Oct 2016",
       "topic": "Definition and implementation of the UniData centre's data architecture",
       "topic_it": "Definizione e implementazione dell'architettura dati del centro UniData",
       "university": "University of Milan-Bicocca"
@@ -67,7 +79,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
-      "time_period": "Sep 2014 - Aug 2015",
+      "time_period": "01 Sep 2014 - 31 Aug 2015",
       "topic": "Definition of tools for the population of semantic services for public administration",
       "topic_it": "Definizione di strumenti per il popolamento di servizi semantici per la pubblica amministrazione",
       "university": "University of Milan-Bicocca"
@@ -79,7 +91,7 @@
       "place": "Milan, Italy",
       "position": "Research Assistant (Assegnista di Ricerca)",
       "ssd": "ING-INF/05",
-      "time_period": "Sep 2013 - Aug 2014",
+      "time_period": "01 Sep 2013 - 31 Aug 2014",
       "topic": "Development of software components for the efficient implementation of semantic technologies for extraction, processing, and fruition of information on the web. Access to web services via mobile channels",
       "topic_it": "Sviluppo di componenti software per la implementazione efficiente di tecnologie semantiche di estrazione, elaborazione, fruizione della informazione nel web. Accesso a servizi web tramite canali mobili",
       "university": "University of Milan-Bicocca"
@@ -91,7 +103,7 @@
       "place": "Milan, Italy",
       "position": "Research fellow",
       "ssd": "ING-INF/09",
-      "time_period": "Feb 2011 - Jan 2012",
+      "time_period": "01 Feb 2011 - 31 Jan 2012",
       "topic": "Development Methodologies for Value-Added Services in Agriculture",
       "topic_it": "Metodologie di sviluppo di servizi a valore aggiunto per l'agricoltura",
       "university": "University of Milan-Bicocca"
@@ -103,7 +115,7 @@
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
       "position": "Researcher",
-      "time_period": "Apr 2022 - Mar 2024",
+      "time_period": "20 Apr 2022 - 31 Mar 2024",
       "topic": "Holder of a research contract on the topic \"Building competence in data enrichment for artificial intelligence,\" financed by the Bulgarian Ministry of Education and Science, as part of the implementation of the national program \"European Science Network.\" Big Data for Smart Society Institute.",
       "university": "Sofia University \"St. Kliment Ohridski\""
     },
@@ -112,7 +124,7 @@
       "logo": "sofia.png",
       "place": "Sofia, Bulgaria",
       "position": "Researcher",
-      "time_period": "Jul 2021 - Mar 2022",
+      "time_period": "15 Jul 2021 - 31 Mar 2022",
       "topic": "Holder of a research contract on the topic \"Building competence in data enrichment for artificial intelligence,\" financed by the Bulgarian Ministry of Education and Science, as part of the implementation of the national program \"European Science Network.\" Big Data for Smart Society Institute.",
       "university": "Sofia University \"St. Kliment Ohridski\""
     },
@@ -131,7 +143,7 @@
       "logo": "whattadata.png",
       "place": "Milan, Italy",
       "position": "CTO, Co-founder (60% equity stake)",
-      "time_period": "2025",
+      "time_period": "11 Apr 2025 - Present",
       "topic": "Approval as a university spin-off was deliberated by the Academic Senate of the University of Milan-Bicocca on 3 March 2025 and ratified by the Board of Directors of the University of Milan-Bicocca on 18 March 2025."
     },
     {
@@ -139,7 +151,7 @@
       "logo": "aton.png",
       "place": "Rome, Italy",
       "position": "Consultant",
-      "time_period": "2023",
+      "time_period": "11 Mar 2019 - 31 Aug 2025",
       "topic": "I provided hands-on R&D and technical consultancy, spanning software development, data/AI analytics and advanced digital solutions, across multiple publicly funded innovation projects."
     },
     {
@@ -147,7 +159,7 @@
       "logo": "nanabianca.png",
       "place": "Milan, Italy",
       "position": "Consultant",
-      "time_period": "Apr 2020 - May 2020",
+      "time_period": "01 Apr 2020 - 31 May 2020",
       "topic": "Definition of a software architecture based on LSTM algorithms for the lexicalization of RDF data."
     },
     {
@@ -155,7 +167,7 @@
       "logo": "umbria.png",
       "place": "Perugia, Italy",
       "position": "Consultant",
-      "time_period": "2015 - 2016",
+      "time_period": "15 Aug 2015 - 15 Aug 2016",
       "topic": "Consultancy on semantic technologies for public administration services, with focus on service interoperability, data integration and digital process support."
     }
   ],
@@ -257,7 +269,7 @@
               "course_name": "Introduction to Knowledge Graphs",
               "hours": "10 hours",
               "role": "Professor",
-              "time_period": "2025"
+              "time_period": "2024 - 2025"
             }
           ]
         },
@@ -268,7 +280,7 @@
               "course_name": "Digital Futures for Intangible Heritage",
               "hours": "8/4/4 hours",
               "role": "Professor",
-              "time_period": "2023 - 2025"
+              "time_period": "2022 - Present"
             }
           ]
         }
@@ -407,28 +419,48 @@
       "title": "AI2MED",
       "logo": "ai2med.png",
       "link": "https://www.ai2med.eu/587-2/",
-      "date": "Sep 2024",
-      "activities": "Webinar \"AI and Nutrition: Innovation for a Healthy and Sustainable Future\" (AI2MED European project, University of Pavia, 27/09/2024), focused on the role of artificial intelligence and Large Language Models in personalised nutrition and sustainable food systems."
+      "date": "27 Nov 2024",
+      "activities": "Webinar \"AI and Nutrition: Innovation for a Healthy and Sustainable Future\" (AI2MED European project, University of Pavia, 27/11/2024), focused on the role of artificial intelligence and Large Language Models in personalised nutrition and sustainable food systems."
     },
     {
       "title": "NODES: Nord Ovest Digitale E Sostenibile",
       "logo": "nodes.png",
-      "date": "Nov 2024",
+      "date": "8 Nov 2024",
       "activities": "Intervention in the modular training course Artificial Intelligence in support of AgriFood designed within Spoke 7 Secondary Agroindustry of the Innovation Ecosystem NODES Nord Ovest Digitale e Sostenibile."
     },
     {
       "title": "Edu on Air Higher Education EMEA",
       "logo": "google.png",
       "link": "https://educationonair.withgoogle.com/events/edu-on-air-emea-he",
-      "date": "Jun 2025",
-      "activities": "Edu on Air: Higher Education is an online Google for Education series (Feb–May 2025) offering monthly sessions on Gemini AI, NotebookLM and Google Workspace for Education to help universities and colleges across EMEA drive student success, foster academic innovation and build secure digital learning environments."
+      "date": "5 Jun 2025",
+      "activities": "Edu on Air: Higher Education is an online Google for Education session (5 Jun 2025) on Gemini AI, NotebookLM and Google Workspace for Education to help universities and colleges across EMEA drive student success, foster academic innovation and build secure digital learning environments."
     },
     {
       "title": "AICL Lectures 2025",
       "logo": "aicl.png",
       "link": "https://www.ai-lc.it/en/lectures-2/lectures-2025-ing/",
-      "date": "Jun 2025",
+      "date": "18 Jun 2025 - 20 Jun 2025",
       "activities": "\"Lectures on Computational Linguistics 2025\", a three-day training school (Milan, 18–20 June 2025) organised by the Italian Association for Computational Linguistics with Università Cattolica del Sacro Cuore and University of Milano-Bicocca, featuring tutorials, labs and student sessions on linguistic resources, Large Language Models and neuro-symbolic AI for PhD and Master's students."
+    }
+  ],
+  "speaker_engagements": [
+    {
+      "event": "The second EDU Forum - Global Perspectives in Educational Research",
+      "organizer": "Research Council of Lithuania (RCL)",
+      "logo": "edu-project.png",
+      "talk_title": "Artificial intelligence and technology-based self-directed learning",
+      "date": "11 Nov 2026 - 12 Nov 2026",
+      "place": "Lithuania",
+      "link": "https://lmt.lrv.lt/en/educational-reseach/"
+    },
+    {
+      "event": "IX Giornata Scientifica AIPP - La socialità dei nativi digitali. Psicopatologie emergenti e nuove prospettive terapeutiche",
+      "organizer": "Associazione Italiana per la Prevenzione e l'Intervento Precoce nella salute mentale (AIPP)",
+      "logo": "aipp.png",
+      "talk_title": "Intelligenza artificiale al servizio della psicopatologia",
+      "date": "12 Jun 2026",
+      "place": "Piacenza, Italy",
+      "link": "https://cremarco.github.io/cv/files/speaker/AIPP%202026_IX%20GIORNATA%20SCIENTIFICA_12JUN26_PC.pdf"
     }
   ],
   "thesis_supervisor": {
@@ -456,6 +488,11 @@
         "university": "UNIMIB"
       },
       {
+        "count": 1,
+        "program": "Artificial Intelligence",
+        "university": "UNIMIB"
+      },
+      {
         "count": 2,
         "program": "Linguistic Computing",
         "university": "UNICATT"
@@ -468,21 +505,21 @@
       "image": "9a4efce74599d8878ea6fd58d2d65c15a4e0e311.jpg",
       "link": "img/awards/9a4efce74599d8878ea6fd58d2d65c15a4e0e311.jpg",
       "event": "Extended Semantic Web Conference",
-      "year": "2019"
+      "year": "06 Jun 2019"
     },
     {
       "title": "Outstanding Improvement",
       "image": "37f087670a351b0a1ca59e2cd1f6171d42b0321d.jpg",
       "link": "img/awards/37f087670a351b0a1ca59e2cd1f6171d42b0321d.jpg",
       "event": "SemTab Challenge",
-      "year": "2019"
+      "year": "30 Oct 2019"
     },
     {
       "title": "3rd Place",
       "image": "d5949533966c15f50bc91bbab162798021365953.jpg",
       "link": "img/awards/d5949533966c15f50bc91bbab162798021365953.jpg",
       "event": "MobiDataLab Codagon",
-      "year": "2023"
+      "year": "27 Nov 2023"
     },
     {
       "title": "Best Resource Award",
@@ -494,14 +531,14 @@
   ],
   "research_metrics": {
     "google_scholar": {
-      "citations": 480,
-      "h_index": 13,
-      "i10_index": 18,
+      "citations": 517,
+      "h_index": 14,
+      "i10_index": 19,
       "url": "https://scholar.google.com/citations?user=tleqpQkAAAAJ"
     },
     "scopus": {
-      "citations": 207,
-      "h_index": 9,
+      "citations": 249,
+      "h_index": 10,
       "url": "https://www.scopus.com/authid/detail.uri?authorId=56167172000"
     },
     "orcid": {
@@ -510,14 +547,79 @@
     }
   },
   "publications": {
-    "update_date": "17 Dec 2025",
+    "update_date": "14 May 2026",
     "papers": [
       {
-        "authors": "Andrea Spoto, Anna Panzeri, <b>Marco Cremaschi</b>, Davide Di Tolve, Cesare Curcio, Andrea Maurino",
+        "authors": "Federico Belotti, <b>Marco Cremaschi</b>, Fabio D'Adda, Roberto Avogadro, Matteo Palmonari",
+        "title": "How good are LLMs in disambiguating entities in tabular data? A comprehensive study",
+        "venue": "Data & Knowledge Engineering, Volume 164, Elsevier B.V., 2026",
+        "editor": "Elsevier B.V.",
+        "type": "journal",
+        "doi": "10.1016/j.datak.2026.102596",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "BELOTTI2026102596",
+          "fields": {
+            "title": "How good are LLMs in disambiguating entities in tabular data? A comprehensive study",
+            "journal": "Data & Knowledge Engineering",
+            "volume": "164",
+            "pages": "102596",
+            "year": "2026",
+            "issn": "0169-023X",
+            "doi": "https://doi.org/10.1016/j.datak.2026.102596",
+            "url": "https://www.sciencedirect.com/science/article/pii/S0169023X26000431",
+            "author": "Federico Belotti and Marco Cremaschi and Fabio D'Adda and Roberto Avogadro and Matteo Palmonari",
+            "publisher": "Elsevier B.V."
+          }
+        }
+      },
+      {
+        "authors": "Oktie Hassanzadeh, <b>Marco Cremaschi</b>, Fabio D'Adda, Fidel Jiomekong Azanzi, Jean Petit BIKIM, Ernesto Jimenez-Ruiz",
+        "title": "Results of SemTab 2025",
+        "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 4144, CEUR Workshop Proceedings, 2025",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "challenge",
+        "ceur": "Vol-4144",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "results-of-semtab-2025",
+          "fields": {
+            "title": "Results of SemTab 2025",
+            "author": "Oktie Hassanzadeh and Marco Cremaschi and Fabio D'Adda and Fidel Jiomekong Azanzi and Jean Petit BIKIM and Ernesto Jimenez-Ruiz",
+            "year": "2025",
+            "booktitle": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 4144, CEUR Workshop Proceedings, 2025",
+            "publisher": "CEUR Workshop Proceedings"
+          }
+        }
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Sara Nocco, Alessandra Agostini, Andrea Maurino",
+        "title": "MiCare: An IoT-Based System for Real-Time Mental Health Monitoring and Early Disease Detection",
+        "venue": "In Proceedings of the 33rd Symposium on Advanced Database Systems (SEBD 2025), Volume 4182, CEUR Workshop Proceedings, 525-540, 2025",
+        "editor": "CEUR Workshop Proceedings",
+        "type": "conference",
+        "ceur": "Vol-4182",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "DBLP:conf/sebd/CremaschiNAM25",
+          "fields": {
+            "title": "MiCare: An IoT-Based System for Real-Time Mental Health Monitoring and Early Disease Detection",
+            "author": "Marco Cremaschi and Sara Nocco and Alessandra Agostini and Andrea Maurino",
+            "year": "2025",
+            "booktitle": "Proceedings of the 33rd Symposium on Advanced Database Systems, SEBD 2025, Ischia, Italy, June 16th to 19th, 2025",
+            "pages": "525--540",
+            "publisher": "CEUR-WS.org",
+            "url": "https://ceur-ws.org/Vol-4182/paper59.pdf"
+          }
+        }
+      },
+      {
+        "authors": "Andrea Spoto, Anna Panzeri, <b>Marco Cremaschi</b>, Davide Ditolve, Cesare Curcio, Andrea Maurino",
         "title": "LLMind to Enhance Diagnostic Decision-Making in Mental Health: Synergy Between AI Language Models and Clinical Expertise",
         "venue": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
         "editor": "AIP Sperimentale",
         "type": "conference",
+        "link": "https://indico.sissa.it/event/159/contributions/3999/",
         "bibtex": {
           "entry_type": "inproceedings",
           "citation_key": "llmind-to-enhance-diagnostic-decision-making-in-mental-health-synergy-between-ai",
@@ -526,6 +628,7 @@
             "author": "Andrea Spoto and Anna Panzeri and Marco Cremaschi and Davide Di Tolve and Cesare Curcio and Andrea Maurino",
             "year": "2025",
             "booktitle": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
+            "url": "https://indico.sissa.it/event/159/contributions/3999/",
             "publisher": "AIP Sperimentale"
           }
         }
@@ -1592,32 +1695,72 @@
       }
     ]
   },
+  "submitted_publications": {
+    "update_date": "13 May 2026",
+    "papers": [
+      {
+        "authors": "David La Barbera, Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>",
+        "title": "Clinically Grounded LLM Agents for Psychotherapy Patient Simulation",
+        "venue": "Submitted to Technology, Mind, and Behavior, Methodological Innovations, May 2026",
+        "editor": "Technology, Mind, and Behavior",
+        "type": "journal"
+      },
+      {
+        "authors": "Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>, David La Barbera",
+        "title": "Personality as a Constraint System for Large Language Model Simulations: A Clinical-Science Framework",
+        "venue": "Submitted to Journal of Psychopathology and Clinical Science, May 2026",
+        "editor": "Journal of Psychopathology and Clinical Science",
+        "type": "journal"
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Erika Fanti, Elisa Pisati, David La Barbera",
+        "title": "LLMPatients: A Hybrid Expert System for Multi-Session Virtual Patient Simulation in Psychotherapy Training",
+        "venue": "Submitted manuscript, May 2026",
+        "editor": "Submitted manuscript",
+        "type": "journal"
+      },
+      {
+        "authors": "Francesca Sottotetti, David Chieregato, Irene Bianco, Federica Loperfido, Giulia Volonte, Chiara Ferrara, Beatrice Maccarini, Dana El Masri, Hellas Cena, Chiara Breda, Livio Provenzi, Sarah Nazzari, <b>Marco Cremaschi</b>, Rachele De Giuseppe",
+        "title": "Translating Maternal Lifestyle Guidelines into a Digital Educational Tool: System Design, Formative Usability, and Pilot Trial Framework within the MATER Project",
+        "venue": "Submitted to IEEE Journal of Biomedical and Health Informatics, May 2026",
+        "editor": "IEEE",
+        "type": "journal"
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Blerina Spahiu, Matteo Palmonari, Ernesto Jimenez-Ruiz",
+        "title": "Survey on Semantic Interpretation of Tabular Data: Challenges and Directions",
+        "venue": "Submitted to Artificial Intelligence Review, Mar 2026",
+        "editor": "Artificial Intelligence Review",
+        "type": "journal"
+      }
+    ]
+  },
   "community_service": {
     "chair": [
       {
         "title": "ACM International Conference on AI in Finance (ICAIF 2026)",
-        "year": "2026"
+        "year": "14 Nov 2026 - 17 Nov 2026"
       },
       {
         "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
         "description": "SemTab@International Semantic Web Conference 2025 - ICORE rank: A - attended",
-        "year": "2025",
+        "year": "09 Jun 2025 - 06 Nov 2025",
         "link": "https://sem-tab-challenge.github.io/2025/"
       },
       {
         "title": "SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching",
         "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
-        "year": "2024",
+        "year": "30 Mar 2024 - 15 Nov 2024",
         "link": "https://sem-tab-challenge.github.io/2024/"
       },
       {
         "title": "Eighth Italian Conference on Computational Linguistics (CLIC-it 2021 - attended)",
-        "year": "2021",
+        "year": "29 Jun 2022 - 01 Jul 2022",
         "link": "https://clic2021.disco.unimib.it/organization/chairs/"
       },
       {
         "title": "International Conference on Data, Information, Knowledge and Wisdom (DIKW 2021 - attended)",
-        "year": "2021",
+        "year": "20 Dec 2021 - 22 Dec 2021",
         "link": "https://www.ieee-cybermatics.org/2021/dikw/"
       }
     ],
@@ -1625,7 +1768,7 @@
       {
         "title": "Tutorial on Semantic Table Interpretation",
         "description": "SemTab@International Semantic Web Conference 2024 - ICORE rank: A - attended",
-        "year": "2024",
+        "year": "11 Nov 2024 - 15 Nov 2024",
         "link": "https://unimib-datai.github.io/sti-website/tutorial/"
       }
     ],
@@ -1687,18 +1830,27 @@
   },
   "international_research_projects": [
     {
+      "name": "DigInMind",
+      "title": "DIGital INnovation in Mental health for INtervention and Diagnosis",
+      "period": "2026 - Current",
+      "link": "https://cremarco.github.io/DigInMind/",
+      "description": "COST Action proposal under evaluation for a pan-European, interdisciplinary network on responsible digital mental health, currently involving 39 partners across 20 countries. The project connects clinical, psychological and computer-science expertise to widen equitable access to care, support early identification and intervention through human-centred digital tools, and build shared standards, FAIR data practices, training and capacity across Europe.",
+      "role": "Principal proposer.",
+      "isFirst": true
+    },
+    {
       "name": "Goblin",
       "title": "CA23147 - Global Network on Large-Scale, Cross-domain and Multilingual Open KG",
-      "period": "2024 - 2028",
+      "period": "15 Oct 2024 - 14 Oct 2028",
       "link": "https://www.cost.eu/actions/CA23147/",
       "description": "This COST Action project aims to provide a large-scale, high quality, cross-domain and multilingual knowledge graph technology that is free to use, reuse, and redistribute.",
-      "role": "Science Communication Coordinator.\nTask Leader 2.4.\nMember of WG 1, WG 2, WG 3, WG 4.",
+      "role": "Management Committee Member.\nScience Communication Vice-Coordinator.",
       "isFirst": true
     },
     {
       "name": "NexusLinguarum",
       "title": "CA18209 - European network for Web-centred linguistic data science",
-      "period": "2019 - 2024",
+      "period": "28 Oct 2019 - 27 Apr 2024",
       "link": "https://www.cost.eu/actions/ca18209/",
       "description": "This COST Action project aims to promote synergies across Europe between linguists, computer scientists, terminologists, and other stakeholders in industry and society, in order to investigate and extend the area of linguistic data science.",
       "role": "Member of WG 2, WG 3.",
@@ -1709,7 +1861,7 @@
     {
       "institution": "University of Milan-Bicocca, INTERDEPARTMENTAL CENTRE",
       "name": "Best4Food",
-      "period": "2024 - 2025",
+      "period": "2024 - Current",
       "link": "https://bestforfood.unimib.it/",
       "description": "Best4food is a multidisciplinary centre dedicated to food research and innovation actions. It aims to identify the most suitable strategy to develop sustainable food systems able to support our future and the one of the next generations.",
       "role": "Member.",
@@ -1719,10 +1871,20 @@
     {
       "institution": "University of Milan-Bicocca, INTERDEPARTMENTAL CENTRE",
       "name": "BReCHS - Bicocca Research Centre in Health Services",
-      "period": "2024 - 2025",
+      "period": "2024 - Current",
       "link": "https://brechs.unimib.it/",
       "logo": "brechs.png",
       "role": "Member.",
+      "isFirst": false
+    },
+    {
+      "institution": "University of Milan-Bicocca, MMSP Laboratory",
+      "name": "MINDFUL - Computational Models for Mental Health and Well-Being",
+      "period": "2025 - Current",
+      "link": "https://mmsp.unimib.it/mindful/",
+      "description": "MINDFUL is a research interest group bringing together researchers from different fields and universities to exchange knowledge on computational methods for mental health and well-being, including early detection, monitoring, personalized interventions, multimodal analysis, digital phenotyping, explainable AI, privacy-preserving methods, and ethical, legal and societal implications.",
+      "role": "Member.",
+      "logo": "unimib.png",
       "isFirst": false
     }
   ],

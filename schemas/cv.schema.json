@@ -13,10 +13,12 @@
     "teaching_in_phd_courses",
     "teaching",
     "teaching_webinar",
+    "speaker_engagements",
     "thesis_supervisor",
     "awards",
     "research_metrics",
     "publications",
+    "submitted_publications",
     "community_service",
     "community_service_editorial",
     "international_research_projects",
@@ -61,6 +63,10 @@
       "type": "array",
       "items": { "$ref": "#/$defs/webinarItem" }
     },
+    "speaker_engagements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/speakerEngagementItem" }
+    },
     "thesis_supervisor": {
       "type": "object",
       "properties": {
@@ -75,6 +81,7 @@
     },
     "research_metrics": { "$ref": "#/$defs/researchMetrics" },
     "publications": { "$ref": "#/$defs/publications" },
+    "submitted_publications": { "$ref": "#/$defs/publications" },
     "community_service": {
       "type": "object",
       "properties": {
@@ -157,6 +164,22 @@
       },
       "additionalProperties": true
     },
+    "speakerEngagementItem": {
+      "type": "object",
+      "required": ["event", "talk_title", "date"],
+      "properties": {
+        "event": { "type": "string", "minLength": 1 },
+        "talk_title": { "type": "string", "minLength": 1 },
+        "date": { "type": "string", "minLength": 1 },
+        "organizer": { "type": "string" },
+        "place": { "type": "string" },
+        "role": { "type": "string" },
+        "session": { "type": "string" },
+        "link": { "type": "string" },
+        "logo": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
     "awardItem": {
       "type": "object",
       "required": ["title", "event", "year", "image"],
@@ -230,7 +253,8 @@
           "enum": ["journal", "conference", "workshop", "challenge", "book_chapter"]
         },
         "doi": { "type": "string" },
-        "ceur": { "type": ["string", "number"] }
+        "ceur": { "type": ["string", "number"] },
+        "link": { "type": "string" }
       },
       "additionalProperties": true
     },
