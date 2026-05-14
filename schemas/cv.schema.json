@@ -253,7 +253,8 @@
           "enum": ["journal", "conference", "workshop", "challenge", "book_chapter"]
         },
         "doi": { "type": "string" },
-        "ceur": { "type": ["string", "number"] }
+        "ceur": { "type": ["string", "number"] },
+        "link": { "type": "string" }
       },
       "additionalProperties": true
     },

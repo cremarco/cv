@@ -547,7 +547,7 @@
     }
   },
   "publications": {
-    "update_date": "13 May 2026",
+    "update_date": "14 May 2026",
     "papers": [
       {
         "authors": "Federico Belotti, <b>Marco Cremaschi</b>, Fabio D'Adda, Roberto Avogadro, Matteo Palmonari",
@@ -619,6 +619,7 @@
         "venue": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
         "editor": "AIP Sperimentale",
         "type": "conference",
+        "link": "https://indico.sissa.it/event/159/contributions/3999/",
         "bibtex": {
           "entry_type": "inproceedings",
           "citation_key": "llmind-to-enhance-diagnostic-decision-making-in-mental-health-synergy-between-ai",
@@ -627,6 +628,7 @@
             "author": "Andrea Spoto and Anna Panzeri and Marco Cremaschi and Davide Di Tolve and Cesare Curcio and Andrea Maurino",
             "year": "2025",
             "booktitle": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
+            "url": "https://indico.sissa.it/event/159/contributions/3999/",
             "publisher": "AIP Sperimentale"
           }
         }
