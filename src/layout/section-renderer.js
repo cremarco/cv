@@ -572,3 +572,97 @@ export function renderPublications(config, pubData, metrics, previousSectionSele
     finalMeasureContainer.remove();
   }
 }
+
+/**
+ * Renders a publication-like section without the publications metrics header.
+ */
+export function renderPublicationCardsSection(config, papers, previousSectionSelector) {
+  const pagesContainer = document.querySelector(SELECTORS.pagesContainer);
+  const templatePage = document.querySelector(SELECTORS.pageTemplate);
+
+  if (!pagesContainer || !templatePage) {
+    console.error('Missing pagesContainer or templatePage');
+    return;
+  }
+  if (!Array.isArray(papers) || papers.length === 0) return;
+
+  const allPages = document.querySelectorAll('.pdf-page');
+  const lastPage = allPages[allPages.length - 1];
+  const availableHeight = calculateAvailableHeightInPage(lastPage, previousSectionSelector);
+
+  const measureContainer = createMeasurementContainer(getMeasurementReference(templatePage, lastPage, config));
+  const firstPaperCard = createPublicationCard(papers[0], {
+    isFirstInPage: true,
+    isFirstInSection: true,
+    isLast: papers.length === 1,
+    index: 0,
+  });
+  const firstCardHeight = measureCardHeight(firstPaperCard, measureContainer);
+  measureContainer.remove();
+
+  const requiredHeight = SECTION_HEADER_HEIGHT_PX + firstCardHeight;
+
+  let currentPage = lastPage;
+  let currentContainer;
+  let currentPageNumber = allPages.length;
+  let currentPageMaxHeight;
+
+  if (availableHeight >= requiredHeight) {
+    const section = currentPage.querySelector('section');
+    if (section) {
+      section.insertAdjacentHTML('beforeend', createSectionHTML(config, true, true, false));
+    }
+    currentContainer = currentPage.querySelector(config.containerSelector);
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+    currentPageMaxHeight = availableHeight;
+  } else {
+    currentPage = createNewPage(currentPageNumber + 1, templatePage, pagesContainer, config, true);
+    currentContainer = currentPage.querySelector(config.containerSelector);
+    if (!currentContainer) {
+      console.error(`Missing ${config.title} container`);
+      return;
+    }
+    currentPageNumber = allPages.length + 1;
+    currentPageMaxHeight = calculateAvailableHeightInPage(currentPage, null);
+  }
+
+  const CARD_GAP_PX = 2;
+  const finalMeasureContainer = createMeasurementContainer(currentContainer);
+  let currentPageHeight = 0;
+  let isFirstInPage = true;
+
+  try {
+    renderCardsWithPageBreaks({
+      items: papers,
+      pagesContainer,
+      templatePage,
+      config,
+      measureContainer: finalMeasureContainer,
+      gapPx: CARD_GAP_PX,
+      recreateCardOnPageBreak: true,
+      initialState: {
+        currentPage,
+        currentContainer,
+        currentPageNumber,
+        currentPageMaxHeight,
+        currentPageHeight,
+        isFirstInPage,
+      },
+      createCardForItem: ({ item: paper, index, isFirstInPage: firstInPage, isFirstInSection, isLast }) =>
+        createPublicationCard(paper, {
+          isFirstInPage: firstInPage,
+          isFirstInSection,
+          isLast,
+          index,
+        }),
+      markLastCard: (card) => {
+        card.setAttribute('data-is-last-in-section', 'true');
+      },
+    });
+  } finally {
+    finalMeasureContainer.remove();
+  }
+}

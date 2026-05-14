@@ -82,6 +82,7 @@ async function getRenderedSectionKeys() {
     'thesis_supervisor',
     'awards',
     'publications',
+    'submitted_publications',
     'community_service',
     'community_service_editorial',
     'international_research_projects',

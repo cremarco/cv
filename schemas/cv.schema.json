@@ -18,6 +18,7 @@
     "awards",
     "research_metrics",
     "publications",
+    "submitted_publications",
     "community_service",
     "community_service_editorial",
     "international_research_projects",
@@ -80,6 +81,7 @@
     },
     "research_metrics": { "$ref": "#/$defs/researchMetrics" },
     "publications": { "$ref": "#/$defs/publications" },
+    "submitted_publications": { "$ref": "#/$defs/publications" },
     "community_service": {
       "type": "object",
       "properties": {

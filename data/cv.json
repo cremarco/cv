@@ -1693,6 +1693,46 @@
       }
     ]
   },
+  "submitted_publications": {
+    "update_date": "13 May 2026",
+    "papers": [
+      {
+        "authors": "David La Barbera, Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>",
+        "title": "Clinically Grounded LLM Agents for Psychotherapy Patient Simulation",
+        "venue": "Submitted to Technology, Mind, and Behavior, Methodological Innovations, May 2026",
+        "editor": "Technology, Mind, and Behavior",
+        "type": "journal"
+      },
+      {
+        "authors": "Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>, David La Barbera",
+        "title": "Personality as a Constraint System for Large Language Model Simulations: A Clinical-Science Framework",
+        "venue": "Submitted to Journal of Psychopathology and Clinical Science, May 2026",
+        "editor": "Journal of Psychopathology and Clinical Science",
+        "type": "journal"
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Erika Fanti, Elisa Pisati, David La Barbera",
+        "title": "LLMPatients: A Hybrid Expert System for Multi-Session Virtual Patient Simulation in Psychotherapy Training",
+        "venue": "Submitted manuscript, May 2026",
+        "editor": "Submitted manuscript",
+        "type": "journal"
+      },
+      {
+        "authors": "Francesca Sottotetti, David Chieregato, Irene Bianco, Federica Loperfido, Giulia Volonte, Chiara Ferrara, Beatrice Maccarini, Dana El Masri, Hellas Cena, Chiara Breda, Livio Provenzi, Sarah Nazzari, <b>Marco Cremaschi</b>, Rachele De Giuseppe",
+        "title": "Translating Maternal Lifestyle Guidelines into a Digital Educational Tool: System Design, Formative Usability, and Pilot Trial Framework within the MATER Project",
+        "venue": "Submitted to IEEE Journal of Biomedical and Health Informatics, May 2026",
+        "editor": "IEEE",
+        "type": "journal"
+      },
+      {
+        "authors": "<b>Marco Cremaschi</b>, Blerina Spahiu, Matteo Palmonari, Ernesto Jimenez-Ruiz",
+        "title": "Survey on Semantic Interpretation of Tabular Data: Challenges and Directions",
+        "venue": "Submitted to Artificial Intelligence Review, Mar 2026",
+        "editor": "Artificial Intelligence Review",
+        "type": "journal"
+      }
+    ]
+  },
   "community_service": {
     "chair": [
       {
