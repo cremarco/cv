@@ -555,6 +555,12 @@
         "venue": "Data & Knowledge Engineering, Volume 164, Elsevier B.V., 2026",
         "editor": "Elsevier B.V.",
         "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q2",
+            "field": "Information Systems and Management"
+          }
+        ],
         "doi": "10.1016/j.datak.2026.102596",
         "bibtex": {
           "entry_type": "article",
@@ -720,7 +726,7 @@
             "field": "Information Systems"
           },
           {
-            "rank": "Q1",
+            "rank": "Q2",
             "field": "Software"
           }
         ],
@@ -882,7 +888,7 @@
           },
           {
             "rank": "Q1",
-            "field": "Computer Science Application"
+            "field": "Computer Science Applications"
           },
           {
             "rank": "Q1",
@@ -1012,7 +1018,7 @@
         "type": "journal",
         "quartiles": [
           {
-            "rank": "Q2",
+            "rank": "Q3",
             "field": "Artificial Intelligence"
           }
         ],
@@ -1304,6 +1310,20 @@
         "venue": "Mediterranean Journal of Nutrition and Metabolism, Volume 15, SAGE Publications, 2022",
         "editor": "SAGE",
         "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q3",
+            "field": "Food Science"
+          },
+          {
+            "rank": "Q4",
+            "field": "Endocrinology, Diabetes and Metabolism"
+          },
+          {
+            "rank": "Q3",
+            "field": "Nutrition and Dietetics"
+          }
+        ],
         "doi": "10.3233/MNM-211500",
         "bibtex": {
           "entry_type": "article",
@@ -1741,7 +1761,25 @@
         "title": "Clinically Grounded LLM Agents for Psychotherapy Patient Simulation",
         "venue": "Submitted to Technology, Mind, and Behavior, Methodological Innovations, May 2026",
         "editor": "Technology, Mind, and Behavior",
-        "type": "journal"
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Communication"
+          },
+          {
+            "rank": "Q1",
+            "field": "Experimental and Cognitive Psychology"
+          },
+          {
+            "rank": "Q1",
+            "field": "Human-Computer Interaction"
+          },
+          {
+            "rank": "Q1",
+            "field": "Social Psychology"
+          }
+        ]
       },
       {
         "authors": "Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>, David La Barbera<sup>*</sup>",
@@ -1749,6 +1787,28 @@
         "venue": "Submitted to Journal of Psychopathology and Clinical Science, May 2026",
         "editor": "Journal of Psychopathology and Clinical Science",
         "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q2",
+            "field": "Biological Psychiatry"
+          },
+          {
+            "rank": "Q1",
+            "field": "Clinical Psychology"
+          },
+          {
+            "rank": "Q1",
+            "field": "Medicine (miscellaneous)"
+          },
+          {
+            "rank": "Q1",
+            "field": "Psychiatry and Mental Health"
+          },
+          {
+            "rank": "Q1",
+            "field": "Psychology (miscellaneous)"
+          }
+        ],
         "author_note": "* The last two authors contributed equally to this work."
       },
       {
@@ -1764,6 +1824,28 @@
         "venue": "Submitted to IEEE Journal of Biomedical and Health Informatics, May 2026",
         "editor": "IEEE",
         "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Biotechnology"
+          },
+          {
+            "rank": "Q1",
+            "field": "Computer Science Applications"
+          },
+          {
+            "rank": "Q1",
+            "field": "Electrical and Electronic Engineering"
+          },
+          {
+            "rank": "Q1",
+            "field": "Health Information Management"
+          },
+          {
+            "rank": "Q1",
+            "field": "Health Informatics"
+          }
+        ],
         "author_note": "* The last two authors contributed equally to this work."
       },
       {
@@ -1771,7 +1853,17 @@
         "title": "Survey on Semantic Interpretation of Tabular Data: Challenges and Directions",
         "venue": "Submitted to Artificial Intelligence Review, Mar 2026",
         "editor": "Artificial Intelligence Review",
-        "type": "journal"
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Artificial Intelligence"
+          },
+          {
+            "rank": "Q1",
+            "field": "Linguistics and Language"
+          }
+        ]
       }
     ]
   },
