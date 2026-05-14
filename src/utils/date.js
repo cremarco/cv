@@ -37,7 +37,15 @@ function parseComparableDate(dateString) {
   const period = dateString.trim();
   if (period.includes(' - ')) {
     const parts = period.split(' - ');
-    return parseMonthYear(parts[parts.length - 1].trim());
+    return parseComparableDate(parts[parts.length - 1].trim());
+  }
+
+  if (/^(Present|Current)$/i.test(period)) {
+    return new Date(9999, 11, 31);
+  }
+
+  if (/^\d{4}$/.test(period)) {
+    return new Date(parseInt(period, 10), 11, 31);
   }
 
   return parseMonthYear(period);

@@ -119,12 +119,12 @@ function createInternationalResearchProjectCard(project, { isFirstInPage, isFirs
     roleDiv.className = 'flex flex-col justify-center relative shrink-0 w-full';
     const roleP = document.createElement('p');
     roleP.className = 'font-dm-sans font-bold leading-normal text-xs-7 mb-0 text-slate-800';
-    // Handle line breaks in role and add star icon for Science Communication Coordinator
+    // Handle line breaks in role and add star icon for Science Communication roles
     let roleHTML = project.role.replace(/\n/g, '<br>');
-    // Add yellow star icon after "Science Communication Coordinator."
+    // Add yellow star icon after "Science Communication Coordinator." variants.
     roleHTML = roleHTML.replace(
-      /Science Communication Coordinator\./g,
-      'Science Communication Coordinator. <i class=\'bx bx-star text-[8px] text-amber-500 inline-block align-middle\'></i>'
+      /(Science Communication (?:Vice-)?Coordinator\.)/g,
+      '$1 <i class=\'bx bx-star text-[8px] text-amber-500 inline-block align-middle\'></i>'
     );
     roleP.innerHTML = roleHTML;
     roleDiv.appendChild(roleP);

@@ -7,6 +7,13 @@ import { createLinkBadge } from './shared.js';
 import { CARD_INTERNAL_GAP, CARD_TEXT_GAP } from '../config.js';
 import { getCardClasses } from '../utils/css-classes.js';
 
+function renderActivityText(activities) {
+  return activities.replace(
+    /\blead writer\b/g,
+    'lead writer <i class="bx bx-star text-[8px] text-amber-500 inline-block align-middle"></i>'
+  );
+}
+
 /**
  * Creates a single project card
  */
@@ -144,7 +151,7 @@ function createProjectCard(project, { isFirstInPage, isFirstInSection, isLast })
     activitiesContent.className = 'basis-0 flex flex-col grow justify-center min-h-px min-w-px relative shrink-0 text-xs-7 text-slate-800';
     const contentP = document.createElement('p');
     contentP.className = 'leading-normal mb-0 text-slate-800';
-    contentP.textContent = project.activities;
+    contentP.innerHTML = renderActivityText(project.activities);
     activitiesContent.appendChild(contentP);
     activitiesRow.appendChild(activitiesContent);
     

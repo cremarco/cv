@@ -574,6 +574,37 @@
         }
       },
       {
+        "authors": "Sara Nocco, <b>Marco Cremaschi</b>",
+        "title": "Uncovering the Sound of Immersion: EEG and Self-Reported Correlates of Diegetic Audio in Gaming",
+        "venue": "International Journal of Human-Computer Interaction, Taylor & Francis, 1-19, 2026",
+        "editor": "Taylor & Francis",
+        "type": "journal",
+        "quartiles": [
+          {
+            "rank": "Q1",
+            "field": "Human-Computer Interaction"
+          }
+        ],
+        "doi": "10.1080/10447318.2026.2638546",
+        "bibtex": {
+          "entry_type": "article",
+          "citation_key": "Nocco2026",
+          "fields": {
+            "author": "Sara Nocco and Marco Cremaschi",
+            "title": "Uncovering the Sound of Immersion: EEG and Self-Reported Correlates of Diegetic Audio in Gaming",
+            "journal": "International Journal of Human-Computer Interaction",
+            "volume": "0",
+            "number": "0",
+            "pages": "1--19",
+            "year": "2026",
+            "publisher": "Taylor \\& Francis",
+            "doi": "10.1080/10447318.2026.2638546",
+            "url": "https://doi.org/10.1080/10447318.2026.2638546",
+            "eprint": "https://doi.org/10.1080/10447318.2026.2638546"
+          }
+        }
+      },
+      {
         "authors": "Oktie Hassanzadeh, <b>Marco Cremaschi</b>, Fabio D'Adda, Fidel Jiomekong Azanzi, Jean Petit BIKIM, Ernesto Jimenez-Ruiz",
         "title": "Results of SemTab 2025",
         "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 4144, CEUR Workshop Proceedings, 2025",
@@ -1696,8 +1727,15 @@
     ]
   },
   "submitted_publications": {
-    "update_date": "13 May 2026",
+    "update_date": "14 May 2026",
     "papers": [
+      {
+        "authors": "Blerina Spahiu, <b>Marco Cremaschi</b>, Giuseppe Vizzari",
+        "title": "Eventour: A GeoSPARQL Knowledge Graph for Cultural and Service-Aware Urban Exploration",
+        "venue": "Submitted to the International Semantic Web Conference (ISWC 2026), May 2026",
+        "editor": "ISWC 2026",
+        "type": "conference"
+      },
       {
         "authors": "David La Barbera, Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>",
         "title": "Clinically Grounded LLM Agents for Psychotherapy Patient Simulation",
@@ -1706,11 +1744,12 @@
         "type": "journal"
       },
       {
-        "authors": "Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>, David La Barbera",
+        "authors": "Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>, David La Barbera<sup>*</sup>",
         "title": "Personality as a Constraint System for Large Language Model Simulations: A Clinical-Science Framework",
         "venue": "Submitted to Journal of Psychopathology and Clinical Science, May 2026",
         "editor": "Journal of Psychopathology and Clinical Science",
-        "type": "journal"
+        "type": "journal",
+        "author_note": "* The last two authors contributed equally to this work."
       },
       {
         "authors": "<b>Marco Cremaschi</b>, Erika Fanti, Elisa Pisati, David La Barbera",
@@ -1720,11 +1759,12 @@
         "type": "journal"
       },
       {
-        "authors": "Francesca Sottotetti, David Chieregato, Irene Bianco, Federica Loperfido, Giulia Volonte, Chiara Ferrara, Beatrice Maccarini, Dana El Masri, Hellas Cena, Chiara Breda, Livio Provenzi, Sarah Nazzari, <b>Marco Cremaschi</b>, Rachele De Giuseppe",
+        "authors": "Francesca Sottotetti, David Chieregato, Irene Bianco, Federica Loperfido, Giulia Volonte, Chiara Ferrara, Beatrice Maccarini, Dana El Masri, Hellas Cena, Chiara Breda, Livio Provenzi, Sarah Nazzari, <b>Marco Cremaschi</b>, Rachele De Giuseppe<sup>*</sup>",
         "title": "Translating Maternal Lifestyle Guidelines into a Digital Educational Tool: System Design, Formative Usability, and Pilot Trial Framework within the MATER Project",
         "venue": "Submitted to IEEE Journal of Biomedical and Health Informatics, May 2026",
         "editor": "IEEE",
-        "type": "journal"
+        "type": "journal",
+        "author_note": "* The last two authors contributed equally to this work."
       },
       {
         "authors": "<b>Marco Cremaschi</b>, Blerina Spahiu, Matteo Palmonari, Ernesto Jimenez-Ruiz",
@@ -1955,8 +1995,8 @@
       "title": "Mobile Services for Agrofood",
       "period": "Dec 2010 - Jun 2012",
       "funding_agency": "Lombardia Region",
-      "description": "The research project, sponsored by Lombardy region, aimed at the development of high value mobile services to deliver information about food via smart labels.",
-      "activities": "As part of this project, I analysed service value and I cooperated to the identification and definition of requirements and functionality to be implemented in the associated application. I also performed a usability study, proposing a possible interface and defining interaction modalities.",
+      "description": "MS4A developed mobile services for the agri-food sector, using smart labels to deliver contextual product information and support value-added interactions between producers, retailers and consumers.",
+      "activities": "I analysed service value, contributed to requirements and functional specifications for the mobile application, and designed a usability study with interface proposals and interaction models.",
       "logo": "ms4a.png"
     },
     {
@@ -1964,8 +2004,8 @@
       "title": "Services & Meta-services for smART eGovernment",
       "period": "Feb 2011 - Feb 2014",
       "funding_agency": "MIUR - Ministry of Education, University and Research",
-      "description": "The project aimed at developing methodologies and tools for the design and implementation of value-added services.",
-      "activities": "I was involved in the definition of a series of steps for the SMART methodology, aimed at planning, designing and producing services which were consistent with the value for the user. Moreover, during a second phase, I implemented some information tools to help Italian citizens (through user profiling) to identify useful services based upon their needs.",
+      "description": "SMART developed methods and tools for planning, designing and implementing value-added e-government services, with attention to service composition and user-centred public administration workflows.",
+      "activities": "I contributed to the SMART methodology for producing user-value-oriented services and implemented profiling-based tools to help citizens identify public services matching their needs.",
       "logo": "smart.png"
     },
     {
@@ -1973,7 +2013,7 @@
       "title": "Components Supporting The Open Data Exploitation Project",
       "period": "Oct 2013 - Sep 2015",
       "funding_agency": "EU",
-      "description": "The purpose of the project was to progress the capabilities in the Open Data reuse field, by fostering better integration and quality improvement.",
+      "description": "COMSODE advanced open data reuse by developing components and methods for publishing, improving and integrating open datasets through the Open Data Node platform.",
       "activities": "I managed the development of components to extract, transform and load Open Data for the Open Data Node platform.",
       "logo": "comsode.png"
     },
@@ -1982,8 +2022,8 @@
       "title": "Servizi smart della nuova Pubblica amministrazione per la Citizen-Centricity in cloud",
       "period": "Apr 2014 - May 2015",
       "funding_agency": "Lombardia Region",
-      "description": "The purpose of the project was to streamline service processes in the Public Administration.",
-      "activities": "I managed the definition of scenarios to be implemented in the platform, which provides SPAC3 services.",
+      "description": "SPAC3 redesigned Public Administration service processes through cloud-based, citizen-centric smart services and reusable application scenarios.",
+      "activities": "I managed the definition of service scenarios and functional requirements implemented in the SPAC3 platform.",
       "logo": "spac.png"
     },
     {
@@ -1991,8 +2031,8 @@
       "title": "Food Social Sensor Network",
       "period": "Jan 2017 - Mar 2021",
       "funding_agency": "Lombardia Region",
-      "description": "Food NET is a Smart Cities and Communities project aimed at identifying and addressing the nutritional needs of specific consumer groups, fostering innovation in the agri-food industry through advanced infrastructures for functional foods.",
-      "activities": "Project management.",
+      "description": "Food NET was a Smart Cities and Communities project aimed at identifying and addressing the nutritional needs of specific consumer groups, fostering innovation in the agri-food industry through advanced infrastructures for functional foods.",
+      "activities": "I managed project coordination, partner alignment, technical planning and progress tracking across the research and development activities.",
       "logo": "foodnet.png"
     },
     {
@@ -2000,24 +2040,26 @@
       "title": "Supporting Event and Weather-based Data Analytics and Marketing along the Shopper Journey",
       "period": "Jan 2017 - Dec 2019",
       "funding_agency": "EU",
-      "description": "The aim of the project is to build a platform with innovative services based on advanced data analysis techniques capable to leverage the large variety and volume of data from multiple sources.",
-      "activities": "Within the project I participated in the definition of algorithms for the semantic annotation of tabular data.",
+      "description": "EW-Shopp built event- and weather-aware analytics services that exploit heterogeneous, high-volume data sources to support marketing decisions along the shopper journey.",
+      "activities": "I contributed to algorithms for semantic annotation of tabular data within the data integration and enrichment workflow.",
       "logo": "eww.png"
     },
     {
       "name": "ARCA",
+      "title": "Semantic Search and Exploration for Book Catalogues",
       "period": "Oct 2017 - Nov 2021",
       "funding_agency": "Lazio Region",
-      "description": "ARCA is a software system that enables semantic search and exploration over a book catalog.",
-      "activities": "I contributed to this project by developing algorithms for data extraction and semantic combination, leveraging AI-based matchmaking techniques.",
+      "description": "ARCA developed a semantic search and exploration system for book catalogues, combining data extraction, semantic enrichment and AI-based matchmaking to improve discovery.",
+      "activities": "I developed algorithms for data extraction and semantic combination, leveraging AI-based matchmaking techniques.",
       "logo": "arca.png"
     },
     {
       "name": "GoForIt",
+      "title": "Accessible Digital Services for Hospitality",
       "period": "2018 - 2020",
       "funding_agency": "MIUR - Ministry of Education, University and Research",
-      "description": "The project consists of R&D activities aimed at identifying the special needs expressed by people with various types of disabilities, the elderly, etc., based on the ICF (International Classification of Functioning, Disability & Health) framework.",
-      "activities": "In this project I contributed to the realisation of an accessible hotel booking platform and a prototype of a homeassistant interface for hospitality.",
+      "description": "GoForIt investigated digital services for people with disabilities and older adults, using the International Classification of Functioning, Disability and Health framework to model accessibility needs in hospitality contexts.",
+      "activities": "I contributed to an accessible hotel booking platform and a home-assistant interface prototype for hospitality services.",
       "logo": "goforit.png"
     },
     {
@@ -2025,8 +2067,8 @@
       "title": "Mobility Ecosystem for Low-carbon and INnovative moDal shifts in the Alps",
       "period": "Apr 2018 - Aug 2021",
       "funding_agency": "EU",
-      "description": "The MELINDA project promoted multimodality and modal shift in mobility behaviours for more sustainable mobility in the Alps. By providing an integrated set of mobility and behaviour data, it supports policy making and service planning.",
-      "activities": "I provided support for the development of a web questionnaire for collecting information from users.",
+      "description": "The MELINDA project promoted multimodality and modal shift in mobility behaviours for more sustainable mobility in the Alps, providing integrated mobility and behaviour data to support policy making and service planning.",
+      "activities": "I supported the design and development of a web questionnaire for collecting user mobility information.",
       "logo": "melinda.png"
     },
     {
@@ -2035,8 +2077,8 @@
       "period": "Sep 2021 - Jul 2023",
       "link": "https://maps-eh.atoninformatica.it/",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
-      "description": "MAPS-EH provides comprehensive support for the automated compliance verification between recorded access events on IT resources and the security policies established by an organisation, enabling the automatic detection of potential anomalies.",
-      "activities": "In this project I provided support in the analysis of solutions in the SOTA and the definition of the compliance verification algorithm.",
+      "description": "MAPS-EH provided automated compliance verification between recorded access events on IT resources and the security policies established by an organisation, enabling the detection of potential anomalies.",
+      "activities": "I analysed state-of-the-art solutions and contributed to the definition of the compliance verification algorithm.",
       "logo": "maps-eh.png"
     },
     {
@@ -2046,8 +2088,8 @@
       "link": "https://ampel.unimib.it/",
       "funding_agency": "Fondazione Cariplo",
       "funding_type": "Funder",
-      "description": "The project Artificial intelligence facing Multidimensional Poverty in Elderly (AMPEL) focuses on the use of cutting edge technologies in Artificial Intelligence (AI), Machine Learning (ML), data analysis and data visualisation to identify the risk of poverty in elderly people, relying on multidimensional indicators, learned from heterogeneous sources of information.",
-      "activities": "I provided support in defining the concept of multidimensional poverty and in defining the ML algorithms.",
+      "description": "AMPEL used AI, machine learning, data analysis and visualisation to identify multidimensional poverty risk in older adults from heterogeneous social, health and service-access indicators.",
+      "activities": "I contributed to the conceptual model of multidimensional poverty and to the definition of machine-learning methods for risk assessment.",
       "logo": "ampel.png"
     },
     {
@@ -2056,8 +2098,8 @@
       "period": "Mar 2022 - Sep 2023",
       "link": "https://bintrawine.atoninformatica.it/",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
-      "description": "BinTraWine, based on Blockchain technology, aims to ensure transparency, traceability, verifiability, and data certification for all producers, winemakers, distributors, consumers, and certification bodies involved in the process.",
-      "activities": "In the project I was responsible for defining the architecture for managing smart contracts.",
+      "description": "BinTraWine used blockchain technology to support transparency, traceability, verifiability and data certification for producers, winemakers, distributors, consumers and certification bodies.",
+      "activities": "I was responsible for defining the smart-contract architecture supporting traceability and certification workflows.",
       "logo": "bintrawine.png"
     },
     {
@@ -2066,17 +2108,17 @@
       "period": "Oct 2022 - Sep 2023",
       "link": "https://enrichmydata.eu/",
       "funding_agency": "EU",
-      "description": "The project aims to provide a novel paradigm for building rich, high-quality, and valuable datasets to feed Big Data Analytics and AI applications.",
-      "activities": "Within the project I participated in the definition of algorithms for the semantic annotation of tabular data.",
+      "description": "enRichMyData developed data enrichment pipelines for building high-quality datasets that feed Big Data analytics and AI-driven business applications.",
+      "activities": "I contributed to algorithms for semantic annotation of tabular data within the enrichment pipeline.",
       "logo": "enrich.png"
     },
     {
       "name": "DIPPS",
       "title": "Digital Intervention in Psychiatric and Psychologist Services",
-      "period": "Mar 2023 - Dec 2026",
+      "period": "Mar 2023 - Feb 2026",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
-      "description": "The project aims to enhance mental health care through innovative digital solutions, improving accessibility, efficiency, and patient outcomes.",
-      "activities": "Project management.",
+      "description": "DIPPS developed a digital ecosystem for psychological and psychiatric services, combining a clinician dashboard, patient-facing applications, digital psychodiagnostic tools, conversational support and decision-support models for monitoring and intervention.",
+      "activities": "I was the lead writer of the project proposal and served as project manager for both the overall project and the research unit.",
       "logo": "dipps.png"
     },
     {
@@ -2084,8 +2126,8 @@
       "title": "Biodiverse Information Organization, Management, Analysis, Transformation and Reporting with Innovative eXperience",
       "period": "Sep 2024 - Nov 2025",
       "funding_agency": "MUR - Ministry of University and Research",
-      "description": "BIOMATRIX focuses on data acquisition, transformation, and the implementation of a dashboard for data delivery through the creation of a pipeline consisting of three main phases: acquisition, processing, and analysis.",
-      "activities": "As part of this project I contributed to the analysis of the available datasets and to the data integration and visualisation dashboard which was realised.",
+      "description": "BIOMATRIX focused on data acquisition, transformation and dashboard-based data delivery through a pipeline structured around acquisition, processing and analysis.",
+      "activities": "I analysed the available datasets and contributed to the data integration and visualisation dashboard.",
       "logo": "biomatrix.png"
     },
     {
@@ -2093,8 +2135,8 @@
       "title": "Crowd Response Optimisation With Digital-twin InTervention",
       "period": "Dec 2024 - Dec 2025",
       "funding_agency": "MUR - Ministry of University and Research",
-      "description": "CrowdIT is a Digital Twin system for the management of urban crowds, with special emphasis on anomaly detection and early warning generation.",
-      "activities": "In this project I contributed to the algorithms for the route optimisation in crowd management.",
+      "description": "CrowdIT developed a digital-twin system for urban crowd management, with special emphasis on anomaly detection and early warning generation.",
+      "activities": "I contributed to route-optimisation algorithms for crowd management and intervention planning.",
       "logo": "crowdit.png"
     },
     {
@@ -2102,8 +2144,8 @@
       "title": "Automotive Predictive Maintenance",
       "period": "Jun 2025 - Jun 2028",
       "funding_agency": "MIMIT - Ministry of Business and Made in Italy",
-      "description": "The APM project aims to develop an innovative AI and Machine Learning-based platform for predictive maintenance of corporate fleets and public transport. The goal is to reduce costs, improve efficiency, and enhance vehicle safety by anticipating failures and optimising maintenance operations.",
-      "activities": "As part of this project I will contribute to the corporate fleet predictive maintenance algorithms.",
+      "description": "APM develops an AI and machine-learning platform for predictive maintenance in corporate fleets and local public transport, integrating IoT/CAN data, maintenance history and analytics for combustion and electric vehicles.",
+      "activities": "I was the lead writer of the project proposal and currently serve as project manager for both the overall project and the research unit. I also contribute to predictive-maintenance methods for corporate fleets.",
       "logo": "apm.png"
     }
   ]

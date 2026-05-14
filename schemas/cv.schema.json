@@ -248,6 +248,7 @@
         "authors": { "type": "string" },
         "title": { "type": "string" },
         "venue": { "type": "string" },
+        "author_note": { "type": "string" },
         "type": {
           "type": "string",
           "enum": ["journal", "conference", "workshop", "challenge", "book_chapter"]

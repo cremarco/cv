@@ -8,20 +8,49 @@ import { SECTION_CONFIG, CURRENT_CARD_BG, CURRENT_BADGE_BG, CURRENT_BADGE_TEXT, 
 import { parseMonthYear } from './date.js';
 
 /**
- * Checks if a time period string indicates an active/current period
+ * Checks if a time period string indicates an active/current or not-yet-expired period
  * Handles formats like:
+ * - "D MMM YYYY - D MMM YYYY" (e.g., "11 Nov 2026 - 12 Nov 2026")
  * - "MMM YYYY - MMM YYYY" (e.g., "Feb 2025 - Jan 2026")
  * - "MMM YYYY - Present" (e.g., "Jan 2019 - Present")
  * - "YYYY - Present" (e.g., "2019 - Present")
  * - "YYYY" (e.g., "2025")
  * - "YYYY - YYYY" (e.g., "2024 - 2025")
  */
-function isTimePeriodActive(timePeriod) {
+function parseBoundaryDate(value, { isEnd = false } = {}) {
+  if (!value) return null;
+
+  const dateText = value.trim();
+  if (/^(Present|Current)$/i.test(dateText)) {
+    return new Date(9999, 11, 31);
+  }
+
+  const yearOnly = dateText.match(/^\d{4}$/);
+  if (yearOnly) {
+    return new Date(parseInt(dateText, 10), isEnd ? 11 : 0, isEnd ? 31 : 1);
+  }
+
+  const parsedDate = parseMonthYear(dateText);
+  if (!parsedDate) return null;
+
+  const isMonthYearOnly = /^[A-Z][a-z]{2} \d{4}$/.test(dateText);
+  if (isEnd && isMonthYearOnly) {
+    return new Date(parsedDate.getFullYear(), parsedDate.getMonth() + 1, 0);
+  }
+
+  return parsedDate;
+}
+
+function startOfDay(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function isNotExpired(endDate, referenceDate) {
+  return endDate >= startOfDay(referenceDate);
+}
+
+export function isTimePeriodActive(timePeriod, referenceDate = new Date()) {
   if (!timePeriod) return false;
-  
-  const now = new Date();
-  const currentYear = now.getFullYear();
-  const currentMonth = now.getMonth();
   
   const period = timePeriod.trim();
   
@@ -39,74 +68,14 @@ function isTimePeriodActive(timePeriod) {
   if (period.includes(' - ')) {
     const parts = period.split(' - ');
     if (parts.length === 2) {
-      const startDateStr = parts[0].trim();
       const endDateStr = parts[1].trim();
-      const currentDate = new Date(currentYear, currentMonth);
-      
-      // If end date is "Present", check if start date has passed
-      if (endDateStr.toLowerCase() === 'present') {
-        const startDate = parseMonthYear(startDateStr);
-        if (startDate) {
-          return startDate <= currentDate;
-        }
-        // If start is just a year
-        const startYear = parseInt(startDateStr, 10);
-        if (!isNaN(startYear) && startYear.toString().length === 4) {
-          return startYear <= currentYear;
-        }
-        // If we can't parse start, assume it's active if it says "Present"
-        return true;
-      }
-      
-      // Try to parse both dates
-      const startDate = parseMonthYear(startDateStr);
-      const endDate = parseMonthYear(endDateStr);
-      
-      if (startDate && endDate) {
-        // Period is active if current date is between start and end (inclusive)
-        return startDate <= currentDate && endDate >= currentDate;
-      }
-      
-      // Handle year-only ranges: "YYYY - YYYY"
-      const startYear = parseInt(startDateStr, 10);
-      const endYear = parseInt(endDateStr, 10);
-      if (!isNaN(startYear) && !isNaN(endYear) && 
-          startYear.toString().length === 4 && endYear.toString().length === 4) {
-        return startYear <= currentYear && endYear >= currentYear;
-      }
-      
-      // Mixed formats: try to parse what we can
-      if (startDate && !endDate) {
-        const endYear = parseInt(endDateStr, 10);
-        if (!isNaN(endYear) && endYear.toString().length === 4) {
-          return startDate <= currentDate && endYear >= currentYear;
-        }
-      }
-      
-      if (!startDate && endDate) {
-        const startYear = parseInt(startDateStr, 10);
-        if (!isNaN(startYear) && startYear.toString().length === 4) {
-          return startYear <= currentYear && endDate >= currentDate;
-        }
-      }
+      const endDate = parseBoundaryDate(endDateStr, { isEnd: true });
+      return endDate ? isNotExpired(endDate, referenceDate) : false;
     }
   }
   
-  // Handle single year format: "YYYY"
-  // A single year is considered active if it's the current year
-  const singleYear = parseInt(period, 10);
-  if (!isNaN(singleYear) && singleYear.toString().length === 4) {
-    return singleYear === currentYear;
-  }
-  
-  // Handle single month-year format: "MMM YYYY"
-  // A single date is considered active if it's the current month or a past month in current year
-  const singleDate = parseMonthYear(period);
-  if (singleDate) {
-    // Consider active if it's in the current month or past months of current year
-    return singleDate.getFullYear() === currentYear && 
-           singleDate.getMonth() <= currentMonth;
-  }
+  const singleDate = parseBoundaryDate(period, { isEnd: true });
+  if (singleDate) return isNotExpired(singleDate, referenceDate);
   
   return false;
 }
@@ -152,7 +121,7 @@ function highlightActiveTimeBadges() {
 /**
  * Highlights the background of cards that contain active time periods
  * Only for specific sections: academic-experiences, research-and-technology-transfer,
- * international-research-projects, italian-research-projects
+ * international-research-projects, italian-research-projects, projects
  */
 function highlightActiveCardBackgrounds() {
   ACTIVE_BACKGROUND_SECTIONS.forEach(sectionId => {

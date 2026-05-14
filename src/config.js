@@ -197,6 +197,7 @@ export const SECTION_CONFIG = {
     timelineId: 'projects',
     cardType: 'projects',
     previousSectionId: 'italian-research-projects',
+    highlightActiveBackground: true,
   },
   tender_commissions: {
     title: 'Tender commissions',

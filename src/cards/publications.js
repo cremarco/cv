@@ -245,6 +245,10 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
   if (paper.link) {
     attrsHTML += createLinkBadge(paper.link);
   }
+
+  const authorNoteHTML = paper.author_note
+    ? `<p class="mb-0 text-slate-500 text-xs-5">${paper.author_note}</p>`
+    : '';
   
   // Use same structure as other cards: contentDiv with flex-1
   const contentDiv = document.createElement('div');
@@ -256,6 +260,7 @@ export function createPublicationCard(paper, { isFirstInPage, isFirstInSection, 
         <p class="mb-0">${paper.authors}</p>
         <p class="italic mb-0 font-dm-sans">${paper.title}</p>
         <p class="mb-0">${paper.venue}</p>
+        ${authorNoteHTML}
       </div>
       <div class="${CURRENT_BADGE_BG} flex h-2.5 items-center justify-center px-0.5 rounded-sm shrink-0">
         <span class="${CURRENT_TEXT_LIGHT} text-xs-5 font-dm-sans text-center tracking-[0.06px] leading-tight">${typeLabels[paper.type] || paper.type}</span>

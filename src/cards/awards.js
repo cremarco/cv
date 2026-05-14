@@ -9,11 +9,11 @@ import { createLinkBadge } from './shared.js';
  */
 function createAwardCard(award) {
   const card = document.createElement('div');
-  card.className = 'flex flex-col gap-0.5 items-center relative shrink-0';
+  card.className = 'flex flex-col gap-0.5 items-center min-w-0 relative w-full';
   
   // Award image
   const imgContainer = document.createElement('div');
-  imgContainer.className = 'h-[115px] relative shrink-0 w-[160px] flex items-center justify-center';
+  imgContainer.className = 'h-[108px] relative shrink-0 w-full max-w-[145px] flex items-center justify-center';
   const img = document.createElement('img');
   img.src = `img/awards/${award.image}`;
   img.alt = `${award.title} - ${award.event} ${award.year}`;
@@ -23,10 +23,10 @@ function createAwardCard(award) {
   
   // Title and link badge
   const titleContainer = document.createElement('div');
-  titleContainer.className = 'flex gap-1 items-center relative shrink-0 w-full';
+  titleContainer.className = 'flex gap-1 items-center justify-center min-w-0 relative shrink-0 w-full';
   
   const title = document.createElement('p');
-  title.className = 'font-dm-sans font-medium leading-tight relative shrink-0 text-slate-600 text-[7px] whitespace-nowrap';
+  title.className = 'font-dm-sans font-medium leading-tight min-w-0 relative text-center text-slate-600 text-[7px] whitespace-normal';
   title.textContent = award.title;
   titleContainer.appendChild(title);
   
@@ -37,7 +37,7 @@ function createAwardCard(award) {
   
   // Event and year
   const eventText = document.createElement('p');
-  eventText.className = 'font-dm-sans font-normal leading-tight min-w-full relative shrink-0 text-slate-500 text-xs-6';
+  eventText.className = 'font-dm-sans font-normal leading-tight max-w-full relative shrink-0 text-center text-slate-500 text-xs-6 w-full whitespace-normal break-words';
   eventText.innerHTML = `${award.event} <span class="font-dm-sans font-bold">${award.year}</span>`;
   card.appendChild(eventText);
   
@@ -54,12 +54,10 @@ export function createAwardsCard(awards) {
   if (!awards?.length) return wrapper;
   
   const row = document.createElement('div');
-  row.className = 'flex gap-3 h-[137px] items-center justify-center relative shrink-0 w-full';
+  row.className = 'grid grid-cols-2 gap-x-10 gap-y-4 items-start relative shrink-0 w-full';
   
   awards.forEach(award => row.appendChild(createAwardCard(award)));
   wrapper.appendChild(row);
   
   return wrapper;
 }
-
-

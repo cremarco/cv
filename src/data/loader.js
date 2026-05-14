@@ -118,9 +118,17 @@ function hasRenderableData(sectionData) {
 }
 
 function sortSectionItems(sectionKey, items) {
-  if (sectionKey === 'teaching_webinar' || sectionKey === 'speaker_engagements') {
-    return [...items].sort((a, b) => compareDatesDesc(a.date, b.date));
+  const dateFieldBySection = {
+    teaching_webinar: 'date',
+    speaker_engagements: 'date',
+    projects: 'period',
+  };
+
+  const dateField = dateFieldBySection[sectionKey];
+  if (dateField) {
+    return [...items].sort((a, b) => compareDatesDesc(a[dateField], b[dateField]));
   }
+
   return items;
 }
 
@@ -149,9 +157,12 @@ function loadSpecialSection({
   if (!hasRenderableData(sectionData)) return;
 
   const config = getConfigByKey(configKey);
+  const renderData = Array.isArray(sectionData)
+    ? sortSectionItems(dataKey, sectionData)
+    : sectionData;
   const previousSectionSelector = resolvePreviousSectionSelector(config);
   const renderer = withPageBreaks ? renderSpecialSectionWithPageBreaks : renderSpecialSection;
-  renderer(config, sectionData, createCardFn, previousSectionSelector);
+  renderer(config, renderData, createCardFn, previousSectionSelector);
 }
 
 /**

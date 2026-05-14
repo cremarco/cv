@@ -41,3 +41,15 @@ test('compareDatesDesc supports date ranges', () => {
   const sorted = [...values].sort(compareDatesDesc);
   assert.deepEqual(sorted, ['11 Nov 2026 - 12 Nov 2026', '12 Jun 2026']);
 });
+
+test('compareDatesDesc supports year-only ranges', () => {
+  const values = ['Dec 2010 - Jun 2012', '2018 - 2020', 'Feb 2011 - Feb 2014'];
+  const sorted = [...values].sort(compareDatesDesc);
+  assert.deepEqual(sorted, ['2018 - 2020', 'Feb 2011 - Feb 2014', 'Dec 2010 - Jun 2012']);
+});
+
+test('compareDatesDesc sorts current ranges before dated ranges', () => {
+  const values = ['Sep 2024 - Nov 2025', '2026 - Current', 'Jan 2015 - Present'];
+  const sorted = [...values].sort(compareDatesDesc);
+  assert.deepEqual(sorted, ['2026 - Current', 'Jan 2015 - Present', 'Sep 2024 - Nov 2025']);
+});
