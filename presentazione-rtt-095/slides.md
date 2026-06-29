@@ -514,6 +514,7 @@ class: section-03
         <div class="project-pm-period">2023-2026 · MIMIT</div>
       </div>
     </div>
+    <div class="project-pm-value"><span>Project value</span><strong>~€5.6M</strong></div>
     <p>Digital ecosystem for psychological and psychiatric services: clinician dashboard, patient apps, psychodiagnostic tools, conversational support and decision support.</p>
     <div class="project-pm-role">Lead proposal writer · project manager · research-unit PM</div>
   </div>
@@ -525,6 +526,7 @@ class: section-03
         <div class="project-pm-period">2025-2028 · MIMIT</div>
       </div>
     </div>
+    <div class="project-pm-value"><span>Project value</span><strong>€6.16M</strong></div>
     <p>AI and machine-learning platform for predictive maintenance in corporate fleets and local public transport, integrating IoT/CAN data and maintenance history.</p>
     <div class="project-pm-role">Lead proposal writer · project manager · research-unit PM</div>
   </div>
@@ -536,13 +538,14 @@ class: section-03
         <div class="project-pm-period">2017-2021 · Regione Lombardia</div>
       </div>
     </div>
+    <div class="project-pm-value"><span>Project value</span><strong>~€6.7M</strong></div>
     <p>Smart Cities and Communities project on nutritional needs, functional foods and agri-food innovation through advanced research infrastructures.</p>
     <div class="project-pm-role">Project coordination · partner alignment · technical planning</div>
   </div>
 </section>
 
 <!--
-This slide makes explicit the project-management qualification. DIPPS and APM are the strongest examples because I wrote the proposals and served, or currently serve, as project manager for the overall project and the research unit. FOODNET adds earlier evidence of project coordination for Bicocca: partner alignment, technical planning and progress tracking across the R&D activities.
+This slide makes explicit the project-management qualification. DIPPS and APM are the strongest examples because I wrote the proposals and served, or currently serve, as project manager for the overall project and the research unit. The project values add scale: around 5.6 million euro for DIPPS, 6.16 million euro for APM and around 6.7 million euro for FOODNET. FOODNET adds earlier evidence of project coordination for Bicocca: partner alignment, technical planning and progress tracking across the R&D activities.
 -->
 
 ---
