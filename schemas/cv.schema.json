@@ -124,6 +124,12 @@
   "additionalProperties": true,
   "$defs": {
     "timelineItem": {
+      "oneOf": [
+        { "$ref": "#/$defs/datedTimelineItem" },
+        { "$ref": "#/$defs/timelineMarkerItem" }
+      ]
+    },
+    "datedTimelineItem": {
       "type": "object",
       "required": ["time_period"],
       "properties": {
@@ -131,6 +137,15 @@
         "logo": { "type": "string" },
         "link": { "type": "string" },
         "topic": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "timelineMarkerItem": {
+      "type": "object",
+      "required": ["type", "label"],
+      "properties": {
+        "type": { "const": "timeline_marker" },
+        "label": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": true
     },

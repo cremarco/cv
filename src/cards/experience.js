@@ -7,10 +7,38 @@ import { formatSentence, buildTopicText } from '../utils/text.js';
 import { getTimeBadgeClasses } from '../utils/css-classes.js';
 import { createLogoImage, createLinkBadge, createLocationMarkup } from './shared.js';
 
+function isTimelineMarker(exp) {
+  return exp?.type === 'timeline_marker';
+}
+
+function createTimelineMarker(label) {
+  const marker = document.createElement('div');
+  marker.className = 'flex items-center gap-2 px-4 py-1.5 break-inside-avoid-page';
+  marker.dataset.card = 'timeline-marker';
+  marker.dataset.preserveClasses = 'true';
+
+  const leftLine = document.createElement('div');
+  leftLine.className = 'h-px flex-1 bg-slate-200';
+
+  const labelEl = document.createElement('div');
+  labelEl.className = 'text-xs-7 text-slate-500 font-dm-sans font-medium';
+  labelEl.textContent = label;
+
+  const rightLine = document.createElement('div');
+  rightLine.className = 'h-px flex-1 bg-slate-200';
+
+  marker.append(leftLine, labelEl, rightLine);
+  return marker;
+}
+
 /**
  * Creates an experience card (used for academic experiences and foreign contracts)
  */
 export function createExperienceCard(exp, { isCurrent }) {
+  if (isTimelineMarker(exp)) {
+    return createTimelineMarker(exp.label || '');
+  }
+
   const card = document.createElement('div');
   card.className = CARD_BASE_CLASSES;
   card.dataset.card = 'experience';

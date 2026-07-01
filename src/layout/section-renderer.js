@@ -33,6 +33,10 @@ function getMeasurementReference(templatePage, currentPage, config) {
     || null;
 }
 
+function shouldPreserveCardClasses(card) {
+  return card?.dataset?.preserveClasses === 'true';
+}
+
 /**
  * Shared card loop used by all paginated sections.
  * It keeps measurement and page-break logic centralized to avoid drift.
@@ -179,6 +183,8 @@ export function renderSection(items, config, previousSectionSelector = null) {
         },
         createCardForItem: ({ item }) => createCard(config.cardType, item, { isCurrent: false }),
         decorateCard: (card, { isFirstInPage: finalFirstInPage, isFirstInSection, isLast }) => {
+          if (shouldPreserveCardClasses(card)) return;
+
           card.className = getCardClasses({
             isFirstInPage: finalFirstInPage,
             isFirstInSection,
@@ -264,6 +270,8 @@ export function renderSection(items, config, previousSectionSelector = null) {
       },
       createCardForItem: ({ item }) => createCard(config.cardType, item, { isCurrent: false }),
       decorateCard: (card, { isFirstInPage: finalFirstInPage, isFirstInSection, isLast }) => {
+        if (shouldPreserveCardClasses(card)) return;
+
         card.className = getCardClasses({
           isFirstInPage: finalFirstInPage,
           isFirstInSection,
