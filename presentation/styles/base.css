@@ -1,0 +1,371 @@
+/* ============================================================
+   APPLE-STYLE DESIGN SYSTEM — base canvas and layouts
+   Applies to every slide EXCEPT the cover (.intro-slide).
+   ============================================================ */
+
+/* ---- Base canvas: typography only, no colour/background ---- */
+.slidev-layout:not(.intro-slide) {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  padding: 3.2rem 5rem 3rem;
+  font-family: var(--aipp-font);
+  letter-spacing: -0.012em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Headings (inherit text-main; no hard-coded colour) ---- */
+.slidev-layout:not(.intro-slide) h1 {
+  margin: 0 0 1.3rem;
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+}
+
+.slidev-layout:not(.intro-slide) h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.5rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+/* ---- Body copy ---- */
+.slidev-layout:not(.intro-slide) p {
+  margin: 0 0 0.85rem;
+  color: var(--aipp-soft);
+  font-size: 1.17rem;
+  line-height: 1.55;
+}
+
+.slidev-layout:not(.intro-slide) h1 + p {
+  margin-top: -0.3rem;
+  font-size: 1.22rem;
+}
+
+.slidev-layout:not(.intro-slide) strong,
+.slidev-layout:not(.intro-slide) b {
+  color: var(--aipp-fg);
+  font-weight: 640;
+}
+
+.slidev-layout:not(.intro-slide) em {
+  font-style: italic;
+}
+
+/* ---- Lists with refined gradient markers ---- */
+.slidev-layout:not(.intro-slide) ul {
+  list-style: none;
+  margin: 0.3rem 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.72rem;
+}
+
+.slidev-layout:not(.intro-slide) ol {
+  list-style: none;
+  counter-reset: aipp-step;
+  margin: 0.3rem 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.72rem;
+}
+
+.slidev-layout:not(.intro-slide) li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.7rem;
+  font-size: 1.16rem;
+  line-height: 1.5;
+}
+
+.slidev-layout:not(.intro-slide) ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.05rem;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--aipp-accent);
+}
+
+.slidev-layout:not(.intro-slide) ol > li {
+  padding-left: 2.4rem;
+}
+
+.slidev-layout:not(.intro-slide) ol > li::before {
+  counter-increment: aipp-step;
+  content: counter(aipp-step);
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--aipp-accent) 14%, transparent);
+  color: var(--aipp-accent);
+  font-size: 0.86rem;
+  font-weight: 680;
+  letter-spacing: 0;
+}
+
+/* ---- Tables as Apple-style cards ----
+   Hairline, fill and elevation come from the shared card chrome
+   in components.css. */
+.slidev-layout:not(.intro-slide) table {
+  width: 100%;
+  margin: 0.5rem 0 0.6rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--aipp-radius);
+  overflow: hidden;
+  font-size: 1.01rem;
+}
+
+.slidev-layout:not(.intro-slide) thead th {
+  --aipp-table-row-line: color-mix(in srgb, var(--aipp-accent) 22%, transparent);
+  background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
+  color: var(--aipp-accent);
+  font-size: 0.74rem;
+  font-weight: 640;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.slidev-layout:not(.intro-slide) th,
+.slidev-layout:not(.intro-slide) td {
+  padding: 0.72rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+  border: 0;
+  border-bottom: 1px solid var(--aipp-table-row-line, var(--aipp-line));
+}
+
+.slidev-layout:not(.intro-slide) th:first-child,
+.slidev-layout:not(.intro-slide) td:first-child {
+  padding-left: 1.5rem;
+}
+
+.slidev-layout:not(.intro-slide) th:last-child,
+.slidev-layout:not(.intro-slide) td:last-child {
+  padding-right: 1.5rem;
+}
+
+.slidev-layout:not(.intro-slide) td {
+  line-height: 1.34;
+}
+
+.slidev-layout:not(.intro-slide) tbody td:first-child {
+  font-weight: 600;
+  color: var(--aipp-fg);
+}
+
+.slidev-layout:not(.intro-slide) tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.slidev-layout:not(.intro-slide) tr {
+  border: 0;
+}
+
+/* ---- Pinned "key takeaway" callout (blockquote) ---- */
+.slidev-layout:not(.intro-slide):has(blockquote) {
+  position: relative;
+}
+
+.slidev-layout.default:has(blockquote),
+.slidev-layout.image-right:has(blockquote),
+.slidev-layout.image-left:has(blockquote) {
+  padding-bottom: 7.4rem;
+}
+
+.slidev-layout:not(.intro-slide) blockquote {
+  position: absolute;
+  right: 5rem;
+  bottom: 2.4rem;
+  left: 5rem;
+  box-sizing: border-box;
+  width: auto;
+  margin: 0;
+  padding: 1rem 1.35rem 1rem 1.2rem;
+  border: 0;
+  border-radius: var(--aipp-radius);
+  background: color-mix(in srgb, var(--aipp-accent) var(--aipp-callout-strength), transparent);
+  box-shadow: var(--aipp-shadow-soft);
+  color: var(--aipp-soft);
+  display: grid;
+  grid-template-columns: 1.55rem minmax(0, 1fr);
+  column-gap: 0.9rem;
+  align-items: center;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.slidev-layout:not(.intro-slide) blockquote::before {
+  content: "";
+  width: 1.45rem;
+  height: 1.45rem;
+  align-self: center;
+  background: var(--aipp-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.8' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.8' stroke='black'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.slidev-layout:not(.intro-slide) blockquote strong {
+  color: var(--aipp-fg);
+}
+
+.slidev-layout:not(.intro-slide) blockquote > * {
+  grid-column: 2;
+  margin: 0;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p > strong:first-child {
+  display: block;
+  margin-bottom: 0.12rem;
+  color: var(--aipp-fg);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p + p {
+  margin-top: 0.25rem;
+}
+
+.slidev-layout:not(.intro-slide) blockquote p::before,
+.slidev-layout:not(.intro-slide) blockquote p::after {
+  content: none !important;
+}
+
+/* ---- Default / image layouts ----
+   Apple keynote slides are vertically balanced, never top-heavy with a
+   dead zone underneath. We center the title + content block as a unit; on
+   slides with a pinned callout the bottom padding-reserve keeps the optical
+   center slightly high, which reads as intentional rather than cramped. */
+.slidev-layout.default,
+.slidev-layout.image-right,
+.slidev-layout.image-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slidev-layout.default > :not(blockquote),
+.slidev-layout.image-right > :not(blockquote),
+.slidev-layout.image-left > :not(blockquote) {
+  width: 100%;
+}
+
+/* Image side of image-right gets rounded corners + soft shadow */
+.slidev-layout.image-right + div,
+.slidev-layout.image-left + div {
+  border-radius: var(--aipp-radius);
+  box-shadow: var(--aipp-shadow);
+}
+
+/* ---- Two-column layouts ---- */
+.slidev-layout.two-columns {
+  padding: 3.2rem 5rem 3rem;
+  gap: 3.2rem;
+}
+
+.slidev-layout.two-columns .col-left,
+.slidev-layout.two-columns .col-right {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slidev-layout.two-cols-header {
+  column-gap: 3.2rem;
+}
+
+.slidev-layout.two-cols-header .col-left,
+.slidev-layout.two-cols-header .col-right {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* ============================================================
+   HERO LAYOUTS — statement / quote
+   ============================================================ */
+.slidev-layout.statement,
+.slidev-layout.quote {
+  padding: 3.4rem 6rem;
+}
+
+.slidev-layout.statement {
+  text-align: center;
+}
+
+.slidev-layout.statement h1 {
+  margin: 0 auto;
+  max-width: 17ch;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.03em;
+}
+
+.slidev-layout.statement p {
+  max-width: 56ch;
+  margin: 0 auto;
+  color: var(--aipp-soft);
+  font-size: 1.4rem;
+  line-height: 1.42;
+}
+
+.slidev-layout.statement h1 + p {
+  margin-top: 2.35rem;
+}
+
+/* Quote layout — large editorial pull-quote */
+.slidev-layout.quote {
+  position: relative;
+}
+
+.slidev-layout.quote h1 {
+  max-width: 20ch;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.slidev-layout.quote h1 + p {
+  margin-top: 1.4rem;
+  color: var(--aipp-soft);
+  font-size: 1.32rem;
+  font-weight: 500;
+}
+
+.slidev-layout.quote::before {
+  content: "\201C";
+  position: absolute;
+  top: 2.2rem;
+  left: 5.4rem;
+  color: color-mix(in srgb, var(--aipp-accent) 16%, transparent);
+  font-size: 9rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
