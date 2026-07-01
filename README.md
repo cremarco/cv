@@ -1,6 +1,6 @@
 # CV Web + PDF (Print-grade)
 
-Application to manage and publish an academic CV in dual format:
+Application to manage and render an academic CV in dual format:
 
 - static web (`index.html` + `src/` modules)
 - multi-page A4 PDF generated with Playwright/Chromium
@@ -212,16 +212,12 @@ Generated reports:
 - `dist/verification/data-validation-report.json`
 - `dist/verification/external-sources-report.json`
 
-## 11. CI/CD
+## 11. CI
 
 - CI: `.github/workflows/ci.yml`
   - `npm ci`
   - install Playwright Chromium
   - `npm run check`
-- Deploy: `.github/workflows/deploy.yml`
-  - CSS build
-  - publish GitHub Pages runtime assets from `site/`
-  - includes `index.html`, `robots.txt`, `src`, `data`, `img`, `dist`, `files`
 
 ## 12. Repository structure (essential)
 

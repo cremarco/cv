@@ -14,7 +14,7 @@
 
    Image url() properties (--aipp-*-bg-image, --aipp-agenda-shape-*,
    --aipp-parche-shape) are injected at runtime by setup/main.ts so
-   they resolve against the deploy base path.
+   they resolve against the configured base path.
    ============================================================ */
 
 :root {

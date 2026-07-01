@@ -1,6 +1,5 @@
-/* Asset URL helpers. The deck can be served from a sub-path (GitHub Pages
-   mounts it at /AIPP/), so every asset URL must be resolved against
-   BASE_URL at runtime instead of being hard-coded. */
+/* Asset URL helpers. The deck can be served from a sub-path, so every asset URL
+   must be resolved against BASE_URL at runtime instead of being hard-coded. */
 
 export function withBase(path: string) {
   const base = import.meta.env.BASE_URL || '/'

@@ -3,7 +3,7 @@ import { cssUrl, imageUrl } from '../utils/images'
 
 /* Backgrounds and decorative shapes consumed by the stylesheets.
    Injected at runtime (not hard-coded in CSS) so the URLs resolve
-   correctly under any deploy base path. */
+   correctly under any configured base path. */
 const imageCssVariables: Record<string, string> = {
   '--aipp-cover-bg-image': 'aipp-cover-bg.png',
   '--aipp-marco-bg-image': 'aipp-marco-bg.png',
@@ -34,8 +34,8 @@ function setImageCssVariables() {
     root.setProperty(name, cssUrl(path))
 }
 
-/* Links shared from GitHub Pages can carry the mount segment inside the
-   hash (e.g. #/AIPP/5); strip it so the router lands on the right slide. */
+/* Shared links can carry the mount segment inside the hash (e.g. #/AIPP/5);
+   strip it so the router lands on the right slide. */
 async function normalizeHashRoute(router: AppContext['router']) {
   const mountSegment = location.pathname.split('/').filter(Boolean)[0]
   const hashPath = location.hash.startsWith('#/')
