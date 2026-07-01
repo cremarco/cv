@@ -61,6 +61,10 @@
       "university": "University of Milan-Bicocca"
     },
     {
+      "type": "timeline_marker",
+      "label": "PhD"
+    },
+    {
       "department": "Department of Informatics, Systems and Communication",
       "link": "https://cremarco.github.io/cv/files/contratti-precedenti/04-assegno-01-11-2015-31-10-2016.pdf",
       "logo": "unimib.png",
@@ -176,7 +180,7 @@
       "company": "Whattaspot srl",
       "logo": "whattaspot.png",
       "place": "Bergamo, Italy",
-      "position": "CEO, Co-funder",
+      "position": "CEO, Co-founder",
       "time_period": "Jan 2014 - Oct 2016",
       "topic": "Innovative start-up specialising in the development of cutting-edge applications for the sports industry."
     },
@@ -184,7 +188,7 @@
       "company": "NPCrew srl",
       "logo": "npcrew.png",
       "place": "Bergamo, Italy",
-      "position": "CTO, Co-funder",
+      "position": "CTO, Co-founder",
       "time_period": "2012 - 2014",
       "topic": "Company specialising in web development, communication, and event organisation."
     }
@@ -263,7 +267,7 @@
       "logo": "unimib.png",
       "programs": [
         {
-          "program_name": "PHD in Computer Science",
+          "program_name": "PhD in Computer Science",
           "courses": [
             {
               "course_name": "Introduction to Knowledge Graphs",
@@ -274,7 +278,7 @@
           ]
         },
         {
-          "program_name": "PHD in Intangible Heritage in Socio-Cultural Innovation",
+          "program_name": "PhD in Intangible Heritage in Socio-Cultural Innovation",
           "courses": [
             {
               "course_name": "Digital Futures for Intangible Heritage",
@@ -611,6 +615,24 @@
         }
       },
       {
+        "authors": "Erika Fanti, Elisa Pisati, <b>Marco Cremaschi</b>",
+        "title": "When Artificial Intelligence Meets Personality: Simulating Personality Structure in Virtual Patients",
+        "venue": "AIP Clinica Dinamica 2026, XXVI Congresso Nazionale AIP di Psicologia Clinica e Dinamica (symposium talk: Digital Innovation and the Socio-Political Dimension in Contemporary Clinical Practice), Palermo, 17-19 Sep 2026",
+        "editor": "AIP Clinica Dinamica 2026",
+        "type": "conference",
+        "bibtex": {
+          "entry_type": "inproceedings",
+          "citation_key": "fanti-when-artificial-intelligence-meets-personality-2026",
+          "fields": {
+            "title": "When Artificial Intelligence Meets Personality: Simulating Personality Structure in Virtual Patients",
+            "author": "Erika Fanti and Elisa Pisati and Marco Cremaschi",
+            "year": "2026",
+            "booktitle": "AIP Clinica Dinamica 2026, XXVI Congresso Nazionale AIP di Psicologia Clinica e Dinamica (symposium talk: Digital Innovation and the Socio-Political Dimension in Contemporary Clinical Practice), Palermo, 17-19 Sep 2026",
+            "publisher": "AIP Clinica Dinamica 2026"
+          }
+        }
+      },
+      {
         "authors": "Oktie Hassanzadeh, <b>Marco Cremaschi</b>, Fabio D'Adda, Fidel Jiomekong Azanzi, Jean Petit BIKIM, Ernesto Jimenez-Ruiz",
         "title": "Results of SemTab 2025",
         "venue": "In Proceedings of the SemTab: Semantic Web Challenge on Tabular Data to Knowledge Graph Matching (SemTab@ISWC), Volume 4144, CEUR Workshop Proceedings, 2025",
@@ -656,7 +678,6 @@
         "venue": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
         "editor": "AIP Sperimentale",
         "type": "conference",
-        "link": "https://indico.sissa.it/event/159/contributions/3999/",
         "bibtex": {
           "entry_type": "inproceedings",
           "citation_key": "llmind-to-enhance-diagnostic-decision-making-in-mental-health-synergy-between-ai",
@@ -665,7 +686,6 @@
             "author": "Andrea Spoto and Anna Panzeri and Marco Cremaschi and Davide Di Tolve and Cesare Curcio and Andrea Maurino",
             "year": "2025",
             "booktitle": "AIP Sperimentale 2025, 31° Congresso annuale (symposium talk: Menti artificiali e menti umane: l'intelligenza al confine tra psicologia e tecnologia)",
-            "url": "https://indico.sissa.it/event/159/contributions/3999/",
             "publisher": "AIP Sperimentale"
           }
         }
@@ -1888,7 +1908,7 @@
       {
         "title": "Eighth Italian Conference on Computational Linguistics (CLIC-it 2021 - attended)",
         "year": "29 Jun 2022 - 01 Jul 2022",
-        "link": "https://clic2021.disco.unimib.it/organization/chairs/"
+        "link": "https://books.openedition.org/aaccademia/14626"
       },
       {
         "title": "International Conference on Data, Information, Knowledge and Wisdom (DIKW 2021 - attended)",
@@ -1924,11 +1944,11 @@
         "items": [
           {
             "name": "SemTab 2019",
-            "link": "http://www.cs.ox.ac.uk/isg/challenges/sem-tab/2019/index.html"
+            "link": "https://www.cs.ox.ac.uk/isg/challenges/sem-tab/2019/"
           },
           {
             "name": "EAIoT 2021",
-            "link": "https://eaiot2021.connect.rs/"
+            "link": "http://eaiot2021.connect.rs/"
           },
           {
             "name": "DIKWN 2021",

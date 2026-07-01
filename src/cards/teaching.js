@@ -50,7 +50,7 @@ function renderCourseRow(course, isPhd = true) {
  */
 function parseProgramName(programName, isPhd = true) {
   const prefixes = isPhd 
-    ? [{ match: 'PHD in ', type: 'PHD' }]
+    ? [{ match: 'PhD in ', type: 'PhD' }]
     : [
         { match: 'MD ', type: 'MD' },
         { match: 'BD ', type: 'BD' },
@@ -63,7 +63,7 @@ function parseProgramName(programName, isPhd = true) {
     }
   }
   
-  return isPhd ? { type: 'PHD', name: programName } : { type: '', name: programName };
+  return isPhd ? { type: 'PhD', name: programName } : { type: '', name: programName };
 }
 
 /**
